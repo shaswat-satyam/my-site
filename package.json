@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "home": "https://shaswat-satyam.github.io/my-site",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
