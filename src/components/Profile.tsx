@@ -7,7 +7,7 @@ export default function Profile() {
       >
         <div className=" md:p-12 text-center lg:text-left">
           <div className="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center">
-            <img src="src/assets/img/profile-removebg-preview.png" alt="Me" />
+            <img src="./src/assets/img/profile-removebg-preview.png" alt="Me" />
           </div>
 
           <h1 className="text-3xl font-bold pt-8 lg:pt-0">Shaswat Satyam</h1>

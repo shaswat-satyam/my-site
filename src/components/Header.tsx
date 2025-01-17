@@ -1,4 +1,8 @@
-const Header = ({ setScreen }) => {
+const Header = ({
+  setScreen,
+}: {
+  setScreen: React.Dispatch<React.SetStateAction<string>>;
+}) => {
   return (
     <div className="center w-full backdrop-blur-sm border-2 border-gray-900 rounded-xl p-3">
       <ul className="flex gap-5 ">

@@ -4,15 +4,20 @@ export default function Card({
   path,
   creator,
   date,
-  background,
   url,
+}: {
+  name: string;
+  desc: string;
+  path: string;
+  creator: string;
+  date: string;
+  url: string;
 }) {
   return (
     <a href={url} target="_blank">
       <div
         className={
-          "bg-gray-800 rounded-lg shadow-lg overflow-hidden max-w-lg w-full" +
-          background
+          "bg-gray-800 rounded-lg shadow-lg overflow-hidden max-w-lg w-full"
         }
       >
         <img
