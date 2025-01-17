@@ -1,0 +1,1791 @@
+<html>
+  <head>
+    <!-- 2025-01-12 日 18:35 -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Algo</title>
+    <meta name="author" content="Shaswat" />
+    <meta name="generator" content="Org Mode" />
+    <style type="text/css">
+      #content {
+        max-width: 60em;
+        margin: auto;
+      }
+      .title {
+        text-align: center;
+        margin-bottom: 0.2em;
+      }
+      .subtitle {
+        text-align: center;
+        font-size: medium;
+        font-weight: bold;
+        margin-top: 0;
+      }
+      .todo {
+        font-family: monospace;
+        color: red;
+      }
+      .done {
+        font-family: monospace;
+        color: green;
+      }
+      .priority {
+        font-family: monospace;
+        color: orange;
+      }
+      .tag {
+        background-color: #eee;
+        font-family: monospace;
+        padding: 2px;
+        font-size: 80%;
+        font-weight: normal;
+      }
+      .timestamp {
+        color: #bebebe;
+      }
+      .timestamp-kwd {
+        color: #5f9ea0;
+      }
+      .org-right {
+        margin-left: auto;
+        margin-right: 0px;
+        text-align: right;
+      }
+      .org-left {
+        margin-left: 0px;
+        margin-right: auto;
+        text-align: left;
+      }
+      .org-center {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+      .underline {
+        text-decoration: underline;
+      }
+      #postamble p,
+      #preamble p {
+        font-size: 90%;
+        margin: 0.2em;
+      }
+      p.verse {
+        margin-left: 3%;
+      }
+      pre {
+        border: 1px solid #e6e6e6;
+        border-radius: 3px;
+        background-color: #f2f2f2;
+        padding: 8pt;
+        font-family: monospace;
+        overflow: auto;
+        margin: 1.2em;
+      }
+      pre.src {
+        position: relative;
+        overflow: auto;
+      }
+      pre.src:before {
+        display: none;
+        position: absolute;
+        top: -8px;
+        right: 12px;
+        padding: 3px;
+        color: #555;
+        background-color: #f2f2f299;
+      }
+      pre.src:hover:before {
+        display: inline;
+        margin-top: 14px;
+      }
+      /* Languages per Org manual */
+      pre.src-asymptote:before {
+        content: "Asymptote";
+      }
+      pre.src-awk:before {
+        content: "Awk";
+      }
+      pre.src-authinfo::before {
+        content: "Authinfo";
+      }
+      pre.src-C:before {
+        content: "C";
+      }
+      /* pre.src-C++ doesn't work in CSS */
+      pre.src-clojure:before {
+        content: "Clojure";
+      }
+      pre.src-css:before {
+        content: "CSS";
+      }
+      pre.src-D:before {
+        content: "D";
+      }
+      pre.src-ditaa:before {
+        content: "ditaa";
+      }
+      pre.src-dot:before {
+        content: "Graphviz";
+      }
+      pre.src-calc:before {
+        content: "Emacs Calc";
+      }
+      pre.src-emacs-lisp:before {
+        content: "Emacs Lisp";
+      }
+      pre.src-fortran:before {
+        content: "Fortran";
+      }
+      pre.src-gnuplot:before {
+        content: "gnuplot";
+      }
+      pre.src-haskell:before {
+        content: "Haskell";
+      }
+      pre.src-hledger:before {
+        content: "hledger";
+      }
+      pre.src-java:before {
+        content: "Java";
+      }
+      pre.src-js:before {
+        content: "Javascript";
+      }
+      pre.src-latex:before {
+        content: "LaTeX";
+      }
+      pre.src-ledger:before {
+        content: "Ledger";
+      }
+      pre.src-lisp:before {
+        content: "Lisp";
+      }
+      pre.src-lilypond:before {
+        content: "Lilypond";
+      }
+      pre.src-lua:before {
+        content: "Lua";
+      }
+      pre.src-matlab:before {
+        content: "MATLAB";
+      }
+      pre.src-mscgen:before {
+        content: "Mscgen";
+      }
+      pre.src-ocaml:before {
+        content: "Objective Caml";
+      }
+      pre.src-octave:before {
+        content: "Octave";
+      }
+      pre.src-org:before {
+        content: "Org mode";
+      }
+      pre.src-oz:before {
+        content: "OZ";
+      }
+      pre.src-plantuml:before {
+        content: "Plantuml";
+      }
+      pre.src-processing:before {
+        content: "Processing.js";
+      }
+      pre.src-python:before {
+        content: "Python";
+      }
+      pre.src-R:before {
+        content: "R";
+      }
+      pre.src-ruby:before {
+        content: "Ruby";
+      }
+      pre.src-sass:before {
+        content: "Sass";
+      }
+      pre.src-scheme:before {
+        content: "Scheme";
+      }
+      pre.src-screen:before {
+        content: "Gnu Screen";
+      }
+      pre.src-sed:before {
+        content: "Sed";
+      }
+      pre.src-sh:before {
+        content: "shell";
+      }
+      pre.src-sql:before {
+        content: "SQL";
+      }
+      pre.src-sqlite:before {
+        content: "SQLite";
+      }
+      /* additional languages in org.el's org-babel-load-languages alist */
+      pre.src-forth:before {
+        content: "Forth";
+      }
+      pre.src-io:before {
+        content: "IO";
+      }
+      pre.src-J:before {
+        content: "J";
+      }
+      pre.src-makefile:before {
+        content: "Makefile";
+      }
+      pre.src-maxima:before {
+        content: "Maxima";
+      }
+      pre.src-perl:before {
+        content: "Perl";
+      }
+      pre.src-picolisp:before {
+        content: "Pico Lisp";
+      }
+      pre.src-scala:before {
+        content: "Scala";
+      }
+      pre.src-shell:before {
+        content: "Shell Script";
+      }
+      pre.src-ebnf2ps:before {
+        content: "ebfn2ps";
+      }
+      /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+      pre.src-cpp:before {
+        content: "C++";
+      }
+      pre.src-abc:before {
+        content: "ABC";
+      }
+      pre.src-coq:before {
+        content: "Coq";
+      }
+      pre.src-groovy:before {
+        content: "Groovy";
+      }
+      /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+      pre.src-bash:before {
+        content: "bash";
+      }
+      pre.src-csh:before {
+        content: "csh";
+      }
+      pre.src-ash:before {
+        content: "ash";
+      }
+      pre.src-dash:before {
+        content: "dash";
+      }
+      pre.src-ksh:before {
+        content: "ksh";
+      }
+      pre.src-mksh:before {
+        content: "mksh";
+      }
+      pre.src-posh:before {
+        content: "posh";
+      }
+      /* Additional Emacs modes also supported by the LaTeX listings package */
+      pre.src-ada:before {
+        content: "Ada";
+      }
+      pre.src-asm:before {
+        content: "Assembler";
+      }
+      pre.src-caml:before {
+        content: "Caml";
+      }
+      pre.src-delphi:before {
+        content: "Delphi";
+      }
+      pre.src-html:before {
+        content: "HTML";
+      }
+      pre.src-idl:before {
+        content: "IDL";
+      }
+      pre.src-mercury:before {
+        content: "Mercury";
+      }
+      pre.src-metapost:before {
+        content: "MetaPost";
+      }
+      pre.src-modula-2:before {
+        content: "Modula-2";
+      }
+      pre.src-pascal:before {
+        content: "Pascal";
+      }
+      pre.src-ps:before {
+        content: "PostScript";
+      }
+      pre.src-prolog:before {
+        content: "Prolog";
+      }
+      pre.src-simula:before {
+        content: "Simula";
+      }
+      pre.src-tcl:before {
+        content: "tcl";
+      }
+      pre.src-tex:before {
+        content: "TeX";
+      }
+      pre.src-plain-tex:before {
+        content: "Plain TeX";
+      }
+      pre.src-verilog:before {
+        content: "Verilog";
+      }
+      pre.src-vhdl:before {
+        content: "VHDL";
+      }
+      pre.src-xml:before {
+        content: "XML";
+      }
+      pre.src-nxml:before {
+        content: "XML";
+      }
+      /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+      pre.src-conf:before {
+        content: "Configuration File";
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+      caption.t-above {
+        caption-side: top;
+      }
+      caption.t-bottom {
+        caption-side: bottom;
+      }
+      td,
+      th {
+        vertical-align: top;
+      }
+      th.org-right {
+        text-align: center;
+      }
+      th.org-left {
+        text-align: center;
+      }
+      th.org-center {
+        text-align: center;
+      }
+      td.org-right {
+        text-align: right;
+      }
+      td.org-left {
+        text-align: left;
+      }
+      td.org-center {
+        text-align: center;
+      }
+      dt {
+        font-weight: bold;
+      }
+      .footpara {
+        display: inline;
+      }
+      .footdef {
+        margin-bottom: 1em;
+      }
+      .figure {
+        padding: 1em;
+      }
+      .figure p {
+        text-align: center;
+      }
+      .equation-container {
+        display: table;
+        text-align: center;
+        width: 100%;
+      }
+      .equation {
+        vertical-align: middle;
+      }
+      .equation-label {
+        display: table-cell;
+        text-align: right;
+        vertical-align: middle;
+      }
+      .inlinetask {
+        padding: 10px;
+        border: 2px solid gray;
+        margin: 10px;
+        background: #ffffcc;
+      }
+      #org-div-home-and-up {
+        text-align: right;
+        font-size: 70%;
+        white-space: nowrap;
+      }
+      textarea {
+        overflow-x: auto;
+      }
+      .linenr {
+        font-size: smaller;
+      }
+      .code-highlighted {
+        background-color: #ffff00;
+      }
+      .org-info-js_info-navigation {
+        border-style: none;
+      }
+      #org-info-js_console-label {
+        font-size: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+      .org-info-js_search-highlight {
+        background-color: #ffff00;
+        color: #000000;
+        font-weight: bold;
+      }
+      .org-svg {
+      }
+    </style>
+    <script>
+      window.MathJax = {
+        tex: {
+          ams: {
+            multlineWidth: "85%",
+          },
+          tags: "ams",
+          tagSide: "right",
+          tagIndent: ".8em",
+        },
+        chtml: {
+          scale: 1.0,
+          displayAlign: "center",
+          displayIndent: "0em",
+        },
+        svg: {
+          scale: 1.0,
+          displayAlign: "center",
+          displayIndent: "0em",
+        },
+        output: {
+          font: "mathjax-modern",
+          displayOverflow: "overflow",
+        },
+      };
+    </script>
+
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+  </head>
+  <body>
+    <div id="content" class="content">
+      <h1 class="title">Algo</h1>
+      <div id="table-of-contents" role="doc-toc">
+        <h2>Table of Contents</h2>
+        <div id="text-table-of-contents" role="doc-toc">
+          <ul>
+            <li>
+              <a href="#orge87b5f5">1. Introduction</a>
+              <ul>
+                <li><a href="#orgafe9933">1.1. Properties</a></li>
+                <li><a href="#org7029802">1.2. Problem solving cycle</a></li>
+                <li>
+                  <a href="#orgbefbf8a">1.3. Types</a>
+                  <ul>
+                    <li>
+                      <a href="#orgc058be9"
+                        >1.3.1. Experimental/Relative/Apostrium Analysis</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#org15a9b1a"
+                        >1.3.2. Absolute/Independent/Apriori Analysis</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org815c799">1.4. Asympotic Notation</a>
+                  <ul>
+                    <li><a href="#org7cbd57b">1.4.1. Big O Notation</a></li>
+                    <li><a href="#org5a6f84c">1.4.2. Omega Notation</a></li>
+                    <li><a href="#orgf216eed">1.4.3. Theta Notation</a></li>
+                    <li><a href="#org9b98b85">1.4.4. Small notation</a></li>
+                  </ul>
+                </li>
+                <li><a href="#org086cd73">1.5. Master theorem</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#org802d91b">2. Sorting and Ordering</a>
+              <ul>
+                <li>
+                  <a href="#orge67d277">2.1. Searching</a>
+                  <ul>
+                    <li><a href="#orgf75d071">2.1.1. Linear Search</a></li>
+                    <li><a href="#org71c934b">2.1.2. Binary Search</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org6a7ab01">2.2. Sorting</a>
+                  <ul>
+                    <li><a href="#org94b4a79">2.2.1. Bubble Sort</a></li>
+                    <li><a href="#orgccf4081">2.2.2. Insertion Sort</a></li>
+                    <li><a href="#orgcd90ca1">2.2.3. Selection Sort</a></li>
+                    <li><a href="#orge1a7796">2.2.4. Quick Sort</a></li>
+                    <li><a href="#orgbd96999">2.2.5. Merge Sort</a></li>
+                    <li><a href="#org94875e1">2.2.6. Shell Sort</a></li>
+                    <li><a href="#org4cc39a1">2.2.7. Heap Sort</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#org0af7fc4">3. Divide and Conquer</a>
+              <ul>
+                <li><a href="#orgcaba127">3.1. Matrix Multiplication</a></li>
+                <li><a href="#orgdf45f03">3.2. Convex Hull</a></li>
+                <li><a href="#orge59114c">3.3. Binary Search</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#org8714f21">4. Greedy Methods</a>
+              <ul>
+                <li><a href="#orgdaf0702">4.1. Optimization Problem</a></li>
+                <li>
+                  <a href="#org3872936">4.2. Activity Selection problem</a>
+                  <ul>
+                    <li><a href="#orgf0d0d85">4.2.1. Approach</a></li>
+                    <li><a href="#org6f4a78e">4.2.2. Pseudo Code</a></li>
+                    <li>
+                      <a href="#orgb920b93">4.2.3. Use Case and Complexity</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#orgdc2e1a1">4.3. Knap Sack Problem</a>
+                  <ul>
+                    <li><a href="#orgb8f8586">4.3.1. Algorithms</a></li>
+                  </ul>
+                </li>
+                <li><a href="#orgea4fef6">4.4. Job Sequencing</a></li>
+                <li>
+                  <a href="#org93b28e3">4.5. Huffman Coding</a>
+                  <ul>
+                    <li><a href="#org917727d">4.5.1. Algo</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org28de465">4.6. Minimum Spanning Trees</a>
+                  <ul>
+                    <li><a href="#org58037b0">4.6.1. Algos</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org83d50be">4.7. Single Source Shortest Path</a>
+                  <ul>
+                    <li><a href="#org844b7a2">4.7.1. Algos</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#orgbdc7145">5. Backtracking</a>
+              <ul>
+                <li><a href="#orgb745b09">5.1. N Queen Problems</a></li>
+                <li>
+                  <a href="#org91719ba">5.2. Graph Coloring</a>
+                  <ul>
+                    <li>
+                      <a href="#org0459325"
+                        >5.2.1. M Coloring Decision Problem</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#org3e455b1"
+                        >5.2.2. M Coloring Optimization Problem</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="#org8a41d27">5.3. Hamiltion Cycle</a></li>
+              </ul>
+            </li>
+            <li><a href="#org2ba6acd">6. Dynamic Programming</a></li>
+            <li><a href="#org72612aa">7. Advanced Data Strucutres</a></li>
+            <li>
+              <a href="#org1271f8c">8. Unit - 4</a>
+              <ul>
+                <li>
+                  <a href="#org3a505e5">8.1. Sorting Network</a>
+                  <ul>
+                    <li><a href="#orgb1abac4">8.1.1. Block Diagram</a></li>
+                  </ul>
+                </li>
+                <li><a href="#org6d17a1d">8.2. Bitonic Sorted</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="outline-container-orge87b5f5" class="outline-2">
+        <h2 id="orge87b5f5">
+          <span class="section-number-2">1.</span> Introduction
+        </h2>
+        <div class="outline-text-2" id="text-1">
+          <p>
+            In maths and CS, an algorithm is a finite sequence of well defined
+            computer implementable instructions typically to solve a class of
+            problems or to perform a computation. A step by step procedure they
+            are unambiguous specifications for performing ccalculations, data
+            processing, automated reasoning and other tasks Will accept Zero or
+            more input but generate atleast one output
+          </p>
+        </div>
+        <div id="outline-container-orgafe9933" class="outline-3">
+          <h3 id="orgafe9933">
+            <span class="section-number-3">1.1.</span> Properties
+          </h3>
+          <div class="outline-text-3" id="text-1-1">
+            <p>
+              Should terminate in finite time unambiguous Input zero or more
+              output at least one Every instruction in algo should be effective
+              It should be deterministic
+            </p>
+            <table
+              border="2"
+              cellspacing="0"
+              cellpadding="6"
+              rules="groups"
+              frame="hsides"
+            >
+              <colgroup>
+                <col class="org-left" />
+
+                <col class="org-left" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col" class="org-left">Algorithm</th>
+                  <th scope="col" class="org-left">Program</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="org-left">Written in design phase</td>
+                  <td class="org-left">Written in implementation process</td>
+                </tr>
+
+                <tr>
+                  <td class="org-left">Needs Domain Knowledge</td>
+                  <td class="org-left">Needs Programmer Knowledge</td>
+                </tr>
+
+                <tr>
+                  <td class="org-left">Can be written in any lang</td>
+                  <td class="org-left">Can be written in programming lang</td>
+                </tr>
+
+                <tr>
+                  <td class="org-left">INdpenedent of hardware and software</td>
+                  <td class="org-left">Dependent on Hardware and software</td>
+                </tr>
+
+                <tr>
+                  <td class="org-left">We analysis algo for time and space</td>
+                  <td class="org-left">We test programs for faults</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="outline-container-org7029802" class="outline-3">
+          <h3 id="org7029802">
+            <span class="section-number-3">1.2.</span> Problem solving cycle
+          </h3>
+          <div class="outline-text-3" id="text-1-2">
+            <p>
+              Problem Definition Constraint and conditions Design Strategies
+              Express and develop the algo Validatiion Analysis Coding Testing
+              and Debuggin Installation Maintenance
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-orgbefbf8a" class="outline-3">
+          <h3 id="orgbefbf8a">
+            <span class="section-number-3">1.3.</span> Types
+          </h3>
+          <div class="outline-text-3" id="text-1-3"></div>
+          <div id="outline-container-orgc058be9" class="outline-4">
+            <h4 id="orgc058be9">
+              <span class="section-number-4">1.3.1.</span>
+              Experimental/Relative/Apostrium Analysis
+            </h4>
+            <div class="outline-text-4" id="text-1-3-1">
+              <p>
+                Exact values not rough FInal Result instead of depending only
+                algo depends on other factors like background s/w and h/w,
+                programming langugage
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org15a9b1a" class="outline-4">
+            <h4 id="org15a9b1a">
+              <span class="section-number-4">1.3.2.</span>
+              Absolute/Independent/Apriori Analysis
+            </h4>
+            <div class="outline-text-4" id="text-1-3-2">
+              <p>
+                It is a determination of order of magnitude of a statement We do
+                analysis using asymptomatic notations and mathematics tools of
+                only algorithm
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org815c799" class="outline-3">
+          <h3 id="org815c799">
+            <span class="section-number-3">1.4.</span> Asympotic Notation
+          </h3>
+          <div class="outline-text-3" id="text-1-4">
+            <p>
+              WE evaluate the performance of an algo in terms of input size we
+              calculate how does the time or space taken by an algorihtm
+              increases with input size These are not perfect but thats the best
+              way available for analyszing for algo
+            </p>
+
+            <p>
+              These are abstract notations for describing the behaviour of
+              algorithm and determine the rate of growth of function
+            </p>
+          </div>
+          <div id="outline-container-org7cbd57b" class="outline-4">
+            <h4 id="org7cbd57b">
+              <span class="section-number-4">1.4.1.</span> Big O Notation
+            </h4>
+            <div class="outline-text-4" id="text-1-4-1">
+              <p>
+                The big O notation defines an upper bound of an algorithm it
+                bounds a function only from above The big O notations is useful
+                when we only have upper bound on time complexity of an algorithm
+                Many times we easily find an upper bound by simply looking at
+                the algorihtm O(g(n)) = {f(n): there exist positive constant C
+                and N0 such that 0 &lt;= f(n) &lt;= C*G(n) for all N &gt; N0}
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org5a6f84c" class="outline-4">
+            <h4 id="org5a6f84c">
+              <span class="section-number-4">1.4.2.</span> Omega Notation
+            </h4>
+            <div class="outline-text-4" id="text-1-4-2">
+              <p>
+                It provides an asymptomatic lower bound It can be useful wehen
+                we have lower bound on time complexity of an algorithm
+                omega(g(n)) = {f(n): there exist positive constants c and n0
+                such that 0 &lt;= c*g(n) &lt;= f(n) for all n &gt;= n0}
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgf216eed" class="outline-4">
+            <h4 id="orgf216eed">
+              <span class="section-number-4">1.4.3.</span> Theta Notation
+            </h4>
+            <div class="outline-text-4" id="text-1-4-3">
+              <p>
+                The theta notation bounds a funciton from above and below so it
+                defines exact asymptomatic behaviour theta(g(n)) = {f(n): there
+                exist positive constant C1 C2 and no such that 0 &lt;= C1*g(n)
+                &lt;= f(n) &lt;= C2*g(n) for all n &gt;= n0} The above
+                definition means if f(n) is theta of g(n) then value of f(n) is
+                always between C1*g(n) and C2*g(n) for large values of n (n
+                &gt;= n0) f(n) must be non negative for values of n greater than
+                n0
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org9b98b85" class="outline-4">
+            <h4 id="org9b98b85">
+              <span class="section-number-4">1.4.4.</span> Small notation
+            </h4>
+            <div class="outline-text-4" id="text-1-4-4">
+              <p>
+                Every thing is same as big notation just we take strictly
+                increasing or monotonically increasing case and equal case is
+                not allowed
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org086cd73" class="outline-3">
+          <h3 id="org086cd73">
+            <span class="section-number-3">1.5.</span> Master theorem
+          </h3>
+          <div class="outline-text-3" id="text-1-5">
+            <p>
+              The master theorem for divide and conqer recurrences provides an
+              asymptotic analysis for recurrence relations of type that occur in
+              the analysis of many divide and conquer algorithms For example
+              T(n) = aT(n/b) + f(n)
+            </p>
+
+            <p>
+              If f(n) = O(n<sup>(log<sub>b</sub>(a)-E)</sup>) from some constant
+              E &gt; 0 then T(n) = theta(n<sup>(log<sub>b</sub>(a))</sup>)
+            </p>
+
+            <p>
+              elif f(n) = theta(n<sup>(log<sub>b</sub>(a))</sup>) then T(n) =
+              theta(n<sup>(log<sub>b</sub>(a) * log(n))</sup>)
+            </p>
+
+            <p>
+              elif f(n) = omeag(n ^ (log<sub>b</sub>(a+e))) for some constant e
+              &gt; 0 and if af(n/b) &lt;= c f(n) for some constant c &lt; 1 and
+              all sufficiently large n then T(n) = theta(f(n))
+            </p>
+
+            <p>
+              If fn is O(n<sup>k</sup>) then if a &lt; 1 then T(n) =
+              O(n<sup>k</sup>) if a == 1 then T(n) = O(n<sup>(k+1)</sup>) if a
+              &gt; 1 then T(n) = I(n<sup>k</sup> * a<sup>(n/b)</sup>)
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-org802d91b" class="outline-2">
+        <h2 id="org802d91b">
+          <span class="section-number-2">2.</span> Sorting and Ordering
+        </h2>
+        <div class="outline-text-2" id="text-2"></div>
+        <div id="outline-container-orge67d277" class="outline-3">
+          <h3 id="orge67d277">
+            <span class="section-number-3">2.1.</span> Searching
+          </h3>
+          <div class="outline-text-3" id="text-2-1"></div>
+          <div id="outline-container-orgf75d071" class="outline-4">
+            <h4 id="orgf75d071">
+              <span class="section-number-4">2.1.1.</span> Linear Search
+            </h4>
+            <div class="outline-text-4" id="text-2-1-1">
+              <p>For unsorted array</p>
+            </div>
+          </div>
+          <div id="outline-container-org71c934b" class="outline-4">
+            <h4 id="org71c934b">
+              <span class="section-number-4">2.1.2.</span> Binary Search
+            </h4>
+            <div class="outline-text-4" id="text-2-1-2">
+              <p>For sorted array only</p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org6a7ab01" class="outline-3">
+          <h3 id="org6a7ab01">
+            <span class="section-number-3">2.2.</span> Sorting
+          </h3>
+          <div class="outline-text-3" id="text-2-2">
+            <p>
+              Internal means when a sorting algo does not require any additional
+              memory apart from the space acquired by the problem External
+              Stable When the input sequence contains copies then we check
+              whether the output sequence preserve the order of the respectives
+              copies or not Unstable
+            </p>
+          </div>
+          <div id="outline-container-org94b4a79" class="outline-4">
+            <h4 id="org94b4a79">
+              <span class="section-number-4">2.2.1.</span> Bubble Sort
+            </h4>
+            <div class="outline-text-4" id="text-2-2-1">
+              <p>
+                Compare two consecutive element if first is greater than second
+                then swap
+              </p>
+
+              <p>
+                Depends on Strucuter and Content Internal Sorting Stable in
+                nature Best O(n) and Worst Case O(n<sup>2</sup>) Subtract and
+                Conquer
+              </p>
+              <div class="org-src-container">
+                <pre
+                  class="src src-c"
+                ><span style="color: #c678dd;">Bubble_sort</span>(A,n){
+  <span style="color: #51afef;">for</span> K &lt;- <span style="color: #da8548; font-weight: bold;">1</span> to n-<span style="color: #da8548; font-weight: bold;">1</span>{
+      ptr = <span style="color: #da8548; font-weight: bold;">1</span>
+        <span style="color: #51afef;">while</span> (ptr &lt;= n -k){
+          <span style="color: #51afef;">if</span>(A[ptr] &gt; A[ptr+<span style="color: #da8548; font-weight: bold;">1</span>]){
+            swap(A[k],A[ptr+<span style="color: #da8548; font-weight: bold;">1</span>])
+          }
+        }
+    }
+}
+</pre>
+              </div>
+            </div>
+          </div>
+          <div id="outline-container-orgccf4081" class="outline-4">
+            <h4 id="orgccf4081">
+              <span class="section-number-4">2.2.2.</span> Insertion Sort
+            </h4>
+            <div class="outline-text-4" id="text-2-2-2">
+              <p>
+                Choose an element and insert it into its position in sorted
+                array
+              </p>
+
+              <p>
+                Depends on Strucuter and Content Internal Sorting Stable in
+                nature Best O(n) and Worst Case O(n<sup>2</sup>) Subtract and
+                Conquer
+              </p>
+              <div class="org-src-container">
+                <pre
+                  class="src src-c"
+                ><span style="color: #c678dd;">Insertion_sort</span>(A,n){
+  <span style="color: #51afef;">for</span> j &lt;- <span style="color: #da8548; font-weight: bold;">2</span> to n{
+      key = A[j]
+      i = j -<span style="color: #da8548; font-weight: bold;">1</span>
+      <span style="color: #51afef;">while</span> (i&gt;<span style="color: #da8548; font-weight: bold;">0</span> and A[i] &gt; key){
+          A[i+<span style="color: #da8548; font-weight: bold;">1</span>] = A[i]
+          i = i - <span style="color: #da8548; font-weight: bold;">1</span>
+     }
+      A[i+<span style="color: #da8548; font-weight: bold;">1</span>] = key
+        }
+    }
+}
+</pre>
+              </div>
+            </div>
+          </div>
+          <div id="outline-container-orgcd90ca1" class="outline-4">
+            <h4 id="orgcd90ca1">
+              <span class="section-number-4">2.2.3.</span> Selection Sort
+            </h4>
+            <div class="outline-text-4" id="text-2-2-3">
+              <p>
+                Select the smallest and swap with the first element Select the
+                second smallest and swap with the second element Repeat till the
+                array is sorted
+              </p>
+
+              <p>
+                Depends on Strucuter Internal Sorting Unstable in nature Best
+                and Worst Case O(n<sup>2</sup>) Subtract and Conquer
+              </p>
+              <div class="org-src-container">
+                <pre
+                  class="src src-c"
+                ><span style="color: #c678dd;">Selection_sort</span>(A,n){
+  <span style="color: #51afef;">for</span> K &lt;- <span style="color: #da8548; font-weight: bold;">1</span> to n-<span style="color: #da8548; font-weight: bold;">1</span>{
+        min = A[k]
+        loc = k
+        <span style="color: #51afef;">for</span> j &lt;- k+<span style="color: #da8548; font-weight: bold;">1</span> to n{
+            <span style="color: #51afef;">if</span>(min &gt; A[j]){
+              min = A[j]
+              Loc = j
+            }
+        }
+    swap(A[k],A[Loc])
+    }
+}
+
+</pre>
+              </div>
+
+              <p>Example of subtract and conquer</p>
+            </div>
+          </div>
+          <div id="outline-container-orge1a7796" class="outline-4">
+            <h4 id="orge1a7796">
+              <span class="section-number-4">2.2.4.</span> Quick Sort
+            </h4>
+          </div>
+
+          <div id="outline-container-orgbd96999" class="outline-4">
+            <h4 id="orgbd96999">
+              <span class="section-number-4">2.2.5.</span> Merge Sort
+            </h4>
+            <div class="outline-text-4" id="text-2-2-5">
+              <p>
+                Divide the array in half Mergesort these array Merge the array
+                return the array
+              </p>
+
+              <p>O(nlog(n)) Divide and Conquer</p>
+              <div class="org-src-container">
+                <pre
+                  class="src src-C"
+                ><span style="color: #c678dd;">Merge_sort</span>(A,p,r){
+  <span style="color: #51afef;">if</span>(p&lt;r)
+    q = floor((p+q)/<span style="color: #da8548; font-weight: bold;">2</span>)
+    Merge_sort(A,p,q)
+    Merge_sort(A,q+<span style="color: #da8548; font-weight: bold;">1</span>,r)
+    Merge(A,p,q,r)
+}
+
+<span style="color: #c678dd;">Merge</span>(A,p,q,r){
+  Merge two <span style="color: #ECBE7B;">sorted</span> <span style="color: #dcaeea;">Array</span>
+}
+
+</pre>
+              </div>
+              <p>
+                It depends on structure External Sort algorithm Stable sorting
+                O(nlog n ) best to worst O(nlogn) Divide and conquer
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org94875e1" class="outline-4">
+            <h4 id="org94875e1">
+              <span class="section-number-4">2.2.6.</span> Shell Sort
+            </h4>
+          </div>
+          <div id="outline-container-org4cc39a1" class="outline-4">
+            <h4 id="org4cc39a1">
+              <span class="section-number-4">2.2.7.</span> Heap Sort
+            </h4>
+            <div class="outline-text-4" id="text-2-2-7">
+              <p>
+                Store all the elements in form of heap then remove smallest
+                element and add at last
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-org0af7fc4" class="outline-2">
+        <h2 id="org0af7fc4">
+          <span class="section-number-2">3.</span> Divide and Conquer
+        </h2>
+        <div class="outline-text-2" id="text-3">
+          <p>
+            Divide and conquer is a fundamental algo design paradigm in CS It
+            works by recursively breaking down a problem into two or more sub
+            problems of the same or related type, until these become simple
+            enough to be solved directly The solutions to the sub problems are
+            then combined to give the solution of the original problem
+          </p>
+        </div>
+        <div id="outline-container-orgcaba127" class="outline-3">
+          <h3 id="orgcaba127">
+            <span class="section-number-3">3.1.</span> Matrix Multiplication
+          </h3>
+          <div class="outline-text-3" id="text-3-1">
+            <div class="org-src-container">
+              <pre
+                class="src src-c"
+              ><span style="color: #c678dd;">matrixMult</span>(A,b){
+  n = A.rows
+    let c be new n x n matrix
+    <span style="color: #51afef;">for</span> i = <span style="color: #da8548; font-weight: bold;">1</span> to n
+        <span style="color: #51afef;">for</span> j = <span style="color: #da8548; font-weight: bold;">1</span> to n
+            Cij = <span style="color: #da8548; font-weight: bold;">0</span>
+            <span style="color: #51afef;">for</span> k = <span style="color: #da8548; font-weight: bold;">1</span> to n
+                Cij = Cij + aik x bkj
+  <span style="color: #51afef;">return</span> C
+}
+
+</pre>
+            </div>
+
+            <p>
+              Conside mat 1x1 and 2x2 as base case Divide mat nxn into n/2xn/2
+              mat consider them as a single element
+            </p>
+            <div class="org-src-container">
+              <pre
+                class="src src-c"
+              ><span style="color: #c678dd;">matMul</span>(A,B,n){
+  <span style="color: #51afef;">if</span>(n &lt;= <span style="color: #da8548; font-weight: bold;">2</span>){
+    C11 = a11*b11 + a12*b21
+    C12 = a11*b12 + a12*b22
+    C21 = a21*b11 + a22*b21
+    C22 = a21*b12 + a22*b22
+  }
+  Divide A and B of <span style="color: #ECBE7B;">nxn</span> <span style="color: #c678dd;">into</span> <span style="color: #da8548; font-weight: bold;">4</span> submatrices
+    each of order n/<span style="color: #da8548; font-weight: bold;">2</span> x n/<span style="color: #da8548; font-weight: bold;">2</span>
+    MatMul(A11,B11,n/<span style="color: #da8548; font-weight: bold;">2</span>) + MatMul(A12,B21,n/<span style="color: #da8548; font-weight: bold;">2</span>)
+    MatMul(A11,B12,n/<span style="color: #da8548; font-weight: bold;">2</span>) + MatMul(A12,B22,n/<span style="color: #da8548; font-weight: bold;">2</span>)
+    MatMul(A21,B11,n/<span style="color: #da8548; font-weight: bold;">2</span>) + MatMul(A22,B21,n/<span style="color: #da8548; font-weight: bold;">2</span>)
+    MatMul(A21,B11,n/<span style="color: #da8548; font-weight: bold;">2</span>) + MatMul(A22,B22,n/<span style="color: #da8548; font-weight: bold;">2</span>)
+
+}
+
+</pre>
+            </div>
+
+            <p>Strassen matrix Multiplication O(n<sup>2.81</sup>)</p>
+
+            <div class="org-src-container">
+              <pre
+                class="src src-c"
+              ><span style="color: #ECBE7B;">function</span> <span style="color: #c678dd;">strassen_multiply</span>(A, B):
+    n = size(A)
+
+<span style="color: #51afef; font-weight: bold;">    # Base</span> <span style="color: #51afef;">case</span>
+    <span style="color: #51afef;">if</span> n == <span style="color: #da8548; font-weight: bold;">1</span>:
+        <span style="color: #51afef;">return</span> A[<span style="color: #da8548; font-weight: bold;">0</span>][<span style="color: #da8548; font-weight: bold;">0</span>] * B[<span style="color: #da8548; font-weight: bold;">0</span>][<span style="color: #da8548; font-weight: bold;">0</span>]
+
+<span style="color: #51afef; font-weight: bold;">    # Divide</span> A and B into submatrices
+    A11, A12, A21, A22 = split_matrix(A)
+    B11, B12, B21, B22 = split_matrix(B)
+
+<span style="color: #51afef; font-weight: bold;">    # Compute</span> <span style="color: #da8548; font-weight: bold;">7</span> matrix products recursively
+    P1 = strassen_multiply(A11 + A22, B11 + B22)
+    P2 = strassen_multiply(A21 + A22, B11)
+    P3 = strassen_multiply(A11, B12 - B22)
+    P4 = strassen_multiply(A22, B21 - B11)
+    P5 = strassen_multiply(A11 + A12, B22)
+    P6 = strassen_multiply(A21 - A11, B11 + B12)
+    P7 = strassen_multiply(A12 - A22, B21 + B22)
+
+<span style="color: #51afef; font-weight: bold;">    # Compute</span> the resulting submatrices
+    C11 = P1 + P4 - P5 + P7
+    C12 = P3 + P5
+    C21 = P2 + P4
+    C22 = P1 - P2 + P3 + P6
+
+<span style="color: #51afef; font-weight: bold;">    # Combine</span> the submatrices into a single matrix
+    <span style="color: #51afef;">return</span> combine_matrices(C11, C12, C21, C22)
+
+<span style="color: #ECBE7B;">function</span> <span style="color: #c678dd;">split_matrix</span>(A):
+<span style="color: #51afef; font-weight: bold;">    # Split</span> matrix A into submatrices
+    n = size(A)
+    m = n <span style="color: #5B6268;">// </span><span style="color: #5B6268;">2</span>
+    A11 = A[:m, :m]
+    A12 = A[:m, m:]
+    A21 = A[m:, :m]
+    A22 = A[m:, m:]
+    <span style="color: #51afef;">return</span> A11, A12, A21, A22
+
+<span style="color: #ECBE7B;">function</span> <span style="color: #c678dd;">combine_matrices</span>(C11, C12, C21, C22):
+<span style="color: #51afef; font-weight: bold;">    # Combine</span> the submatrices into a single matrix
+    n = len(C11)
+    m = <span style="color: #da8548; font-weight: bold;">2</span> * n
+    C = zeros((m, m))
+    <span style="color: #ECBE7B;">C</span>[:n, :n] = C11
+    C[:n, n:] = C12
+    C[n:, :n] = C21
+    C[n:, n:] = C22
+    <span style="color: #51afef;">return</span> C
+</pre>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-orgdf45f03" class="outline-3">
+          <h3 id="orgdf45f03">
+            <span class="section-number-3">3.2.</span> Convex Hull
+          </h3>
+          <div class="outline-text-3" id="text-3-2">
+            <p>
+              The convex hull problem is a classic algo problem. The goal is to
+              find the smallest convex polygon that encloses a set of points in
+              a plane. In simple terms, if you imagine a set of nails hammered
+              into a board and you wrap a rubber brand around all the nails the
+              rubber band would outline the convex hull
+            </p>
+
+            <p>
+              The smallest convex polygon formed by a set of points such that no
+              point from the set lies outside the polygon
+            </p>
+
+            <p>
+              Used in Pathfining And motion planning problems Collison
+              Detectionin physical simulations and computer games Clustering
+              analysis in data minning
+            </p>
+
+            <div class="org-src-container">
+              <pre
+                class="src src-c"
+              ><span style="color: #c678dd;">Graham_scan</span>(q){
+  let p0 be the point in Q with the minimum y coordinate or the leftmost such <span style="color: #ECBE7B;">point</span> <span style="color: #dcaeea;">in</span> <span style="color: #51afef;">case</span> of a tie
+    Let p1,<span style="color: #dcaeea;">p2</span>,...pm be the remaining points in Q sorted by polar angle in counter clockwise order around P0
+    Top[S] &lt;- <span style="color: #da8548; font-weight: bold;">0</span>
+    push(p0,S)
+    push(p1,S)
+    push(p2,S)
+    <span style="color: #51afef;">for</span> i &lt;- <span style="color: #da8548; font-weight: bold;">3</span> to m
+             <span style="color: #51afef;">do</span> <span style="color: #51afef;">while</span> the angle formed by points NextToTOp(S), TOp(s) and Pi makess a non left <span style="color: #ECBE7B;">turn</span>
+                 <span style="color: #c678dd;">Pop</span>(S)
+                Push(Pi,s)
+           <span style="color: #ECBE7B;">Return</span> <span style="color: #dcaeea;">S</span>
+}
+
+</pre>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-orge59114c" class="outline-3">
+          <h3 id="orge59114c">
+            <span class="section-number-3">3.3.</span> Binary Search
+          </h3>
+          <div class="outline-text-3" id="text-3-3">
+            <p>
+              Get middle element then compares then decide if to go to left or
+              irght then iteratie
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-org8714f21" class="outline-2">
+        <h2 id="org8714f21">
+          <span class="section-number-2">4.</span> Greedy Methods
+        </h2>
+        <div class="outline-text-2" id="text-4">
+          <p>
+            A greedy algorithm is a problem solving approach like subtact and
+            conquer divide and conquer and DP which is used for solving
+            optimality problem out of all feasible solution It is any algo that
+            follows thhe problem solving heuristic of making the locally optimal
+            choice at each stage with the intent of finding a global optimum It
+            does not produces an global optimal solution all the time
+          </p>
+        </div>
+        <div id="outline-container-orgdaf0702" class="outline-3">
+          <h3 id="orgdaf0702">
+            <span class="section-number-3">4.1.</span> Optimization Problem
+          </h3>
+          <div class="outline-text-3" id="text-4-1">
+            <p>
+              An optimization problem is a type of problem that seeks to find
+              the best solution from all feasible Objective - Minimize or
+              maximize some quantity Constraint - Set of restrictions or
+              conditions that the solutioni must say Feasible Solution - A
+              solution that meets all constraints Optimal Solution - A Feasible
+              solution that yields the best value of the objective function
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org3872936" class="outline-3">
+          <h3 id="org3872936">
+            <span class="section-number-3">4.2.</span> Activity Selection
+            problem
+          </h3>
+          <div class="outline-text-3" id="text-4-2">
+            <p>
+              It is a classical problem You have a set of activites each with
+              start and end time. Each activity has Si a start time and Fi a
+              finish time. If activity ii is selected, the resource is occupied
+              in the intervals. WE say I and j are compatible activites if their
+              start and finish time does not overlap. i and j are compatiable if
+              Si &gt;= Fj and Sj &gt;= Fi You need to select the maximum number
+              of activites that don&rsquo;t overlap in time.
+            </p>
+          </div>
+          <div id="outline-container-orgf0d0d85" class="outline-4">
+            <h4 id="orgf0d0d85">
+              <span class="section-number-4">4.2.1.</span> Approach
+            </h4>
+            <div class="outline-text-4" id="text-4-2-1">
+              <p>
+                Sort Activites: First Sort sll activites by their finish time
+                Select First Activity: Chose the activity which ends fast
+                Iterate and select: For each subsequent activity, if its start
+                time is after or at the finsih time of the previously selected
+                activity
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org6f4a78e" class="outline-4">
+            <h4 id="org6f4a78e">
+              <span class="section-number-4">4.2.2.</span> Pseudo Code
+            </h4>
+            <div class="outline-text-4" id="text-4-2-2">
+              <p>
+                N = length(s) A - [a1] i = 1 m = 2 to n do if sm &gt;= f1 then A
+                = A U {am} i = m return A
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgb920b93" class="outline-4">
+            <h4 id="orgb920b93">
+              <span class="section-number-4">4.2.3.</span> Use Case and
+              Complexity
+            </h4>
+            <div class="outline-text-4" id="text-4-2-3">
+              <p>
+                At each step, you make the choice that seems best at the moment
+                . This local optimization leads to a global optimeal solution
+                Use Case Scheduling task in a single resource environment.
+                Allocating time slots for interviews or exams where no overlap
+                is allowed
+              </p>
+
+              <p>
+                If the aactivites are not sorted, The main complexity is in the
+                sorting step which is typically O(n logN) from activites. The
+                selection process is O (N_ as it involve iterating throught item
+                ;eak The problem is an execellent way to teach greedy algorithms
+                showing this how a locally optimal chcoice can lead to globally
+                optimal soltion in certain scenario
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-orgdc2e1a1" class="outline-3">
+          <h3 id="orgdc2e1a1">
+            <span class="section-number-3">4.3.</span> Knap Sack Problem
+          </h3>
+          <div class="outline-text-3" id="text-4-3">
+            <p>
+              This problem is combinatorial optimization. Given a set of items,
+              each with a weight and value. determine number of each item to
+              incllude so that the total weight is less than or equal to a given
+              limit and the total value is as large as possibe Can be divided
+              into 2 types Fractional Knap sack and 0/1 Knap Sack.
+            </p>
+          </div>
+          <div id="outline-container-orgb8f8586" class="outline-4">
+            <h4 id="orgb8f8586">
+              <span class="section-number-4">4.3.1.</span> Algorithms
+            </h4>
+            <div class="outline-text-4" id="text-4-3-1">
+              <p>
+                We can be greedy for various parameters like by profit, by
+                profit/weight or by decreasing weight
+              </p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="org9fba4a3"></a>Fractional Knap Sack<br />
+                <div class="outline-text-5" id="text-4-3-1-1">
+                  <p>
+                    It can be solved by Greedy Algorithms There are N numbers of
+                    Objects o1 to On each object has a weight associated with
+                    its Wi and a profit associated with it Pi we can take Xi
+                    fraction of the object ranging from 0 &lt;= Xi &lt;= 1
+                    Weight Condition Summation of product of object weight and
+                    fraction must be less than equal to M Profit is the
+                    summation of product of object profit and fraction
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="org3fee878"></a>0/1 Knap Sack<br />
+                <div class="outline-text-5" id="text-4-3-1-2">
+                  <p>It is solved by Dynamic Programming</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div id="outline-container-orgea4fef6" class="outline-3">
+          <h3 id="orgea4fef6">
+            <span class="section-number-3">4.4.</span> Job Sequencing
+          </h3>
+          <div class="outline-text-3" id="text-4-4">
+            <p>
+              We are give n jobs where each job is associated with a deadline Di
+              and a profit Pi if the job is finished before the deadline We have
+              a single CPU with non Primitive Scheduling With each job we assume
+              arrival time is 0 Burst time of each job requirement is 1 Select
+              the subset of n jobs such that the jobs in the subset can be
+              completed within the deadline and generate max profit.
+            </p>
+
+            <p>
+              In this we first be greedy by profit and then greedy by decreasing
+              deadline So first get the maximum profit job then execute it as
+              late as possible
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org93b28e3" class="outline-3">
+          <h3 id="org93b28e3">
+            <span class="section-number-3">4.5.</span> Huffman Coding
+          </h3>
+          <div class="outline-text-3" id="text-4-5">
+            <p>
+              It is a particular type of optimal prefix code that is commonly
+              used for losseless data compression The output from
+              huffman&rsquo;s algorithm can be viewed as a variable length code
+              table for encoding a source symbol It always satisfy prefix code
+              property so no code is a prefix for another code and helps avoid
+              confusion if the word is totally transffered The algo derives this
+              table from the estimated probability or frequency of occurences
+              for each possible value of the source symbol Huffman&rsquo;s
+              method can be efficiently implemented, finding a code in time
+              linear to the the number of input weights if these weights are
+              sorted Howeve although optimal among methods encoding symbols
+              separately, Huffman coding is not always optimal among all
+              compressions methods
+            </p>
+
+            <p>
+              Assign binary numbers to characters and assign the higher numbers
+              to the characters which are less frequent
+            </p>
+          </div>
+          <div id="outline-container-org917727d" class="outline-4">
+            <h4 id="org917727d">
+              <span class="section-number-4">4.5.1.</span> Algo
+            </h4>
+            <div class="outline-text-4" id="text-4-5-1">
+              <p>
+                n = |C| Q = C for i = 1 to n -1 allocate a new node Z z.left = x
+                = Extact-Min(Q) remove the minimum value form array z.right = x
+                = Extact-Min(Q) z.freq = x.freq + y.freq Insert(Q,Z) return
+                Extract-MIN(Q)
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org28de465" class="outline-3">
+          <h3 id="org28de465">
+            <span class="section-number-3">4.6.</span> Minimum Spanning Trees
+          </h3>
+          <div class="outline-text-3" id="text-4-6">
+            <p>
+              Spanning tree is a tree of a connected graph G if it is a subgraph
+              of G and it conains all vertices of G If each edge has a cost then
+              the spanning tree with minimum weight is MST
+            </p>
+
+            <p>
+              A MST is a subset of edges of a connected edge weight undirected
+              graph that connects all the vertices together without any cycles
+              and with the minimum possible total edge weight There can be
+              multiple MST
+            </p>
+          </div>
+          <div id="outline-container-org58037b0" class="outline-4">
+            <h4 id="org58037b0">
+              <span class="section-number-4">4.6.1.</span> Algos
+            </h4>
+            <div class="outline-text-4" id="text-4-6-1"></div>
+            <ol class="org-ol">
+              <li>
+                <a id="org3d4dbae"></a>Krushkal<br />
+                <div class="outline-text-5" id="text-4-6-1-1">
+                  <p>
+                    O(ElogE) O(ElogV) Take smallest edge If it forms cycle avoid
+                    continue till the whole graph is connected
+                  </p>
+
+                  <div class="org-src-container">
+                    <pre
+                      class="src src-c"
+                    ><span style="color: #c678dd;">MST</span>(G,w){
+  A = <span style="color: #ECBE7B;">void</span>
+  <span style="color: #51afef;">for</span> each vertex v in V(G){
+      <span style="color: #51afef;">do</span> makeSet(v)
+    }
+  Sort the edges of E into non decreasing order by <span style="color: #ECBE7B;">weight</span> <span style="color: #c678dd;">w</span>
+    <span style="color: #51afef;">for</span> each edge(u,v) in E then in non decreasing order <span style="color: #ECBE7B;">by</span> <span style="color: #dcaeea;">weigh</span>
+               {
+                 <span style="color: #51afef;">if</span> FindSet(u) != FindSet(v){
+                     A = A <span style="color: #51afef;">union</span> {(u,v)}
+                       UNION(u,v)
+                   }
+               }
+
+<span style="color: #51afef;">return</span> A
+}
+
+FindSet returns the all edges connected to u in the <span style="color: #ECBE7B;">current</span> <span style="color: #dcaeea;">Tree</span>
+
+</pre>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a id="org1671d52"></a>Prim<br />
+                <div class="outline-text-5" id="text-4-6-1-2">
+                  <p>
+                    take a vertex find the smallest edges from that vertex given
+                    that no cycle forms continue until whole graph is connected
+                  </p>
+
+                  <p>O(ElogV)</p>
+                  <div class="org-src-container">
+                    <pre
+                      class="src src-c"
+                    ><span style="color: #c678dd;">MST</span>(G,W,R){
+  <span style="color: #51afef;">for</span> each u in V(G){
+      key[u] = inf
+        Pi[u] = <span style="color: #ECBE7B;">void</span>
+}
+  key[r] = <span style="color: #da8548; font-weight: bold;">0</span>
+  Q = V[G]
+    <span style="color: #51afef;">while</span> Q != null{
+        u = ExtractMin(Q)
+        <span style="color: #51afef;">for</span> each v in adj[u]{
+            <span style="color: #51afef;">if</span>(v in Q <span style="color: #ECBE7B;">and</span> <span style="color: #c678dd;">w</span>(u,v) &lt; key[v]){
+              pi[v] = u
+              key[u] = w(u,v)
+            }
+          }
+      }
+
+}
+
+</pre>
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div id="outline-container-org83d50be" class="outline-3">
+          <h3 id="org83d50be">
+            <span class="section-number-3">4.7.</span> Single Source Shortest
+            Path
+          </h3>
+          <div class="outline-text-3" id="text-4-7">
+            <p>
+              The shortest path problem is the problem of finding a path between
+              two vertices in a graph such that the sum of the weights of its
+              consistutent edges are minimized
+            </p>
+          </div>
+          <div id="outline-container-org844b7a2" class="outline-4">
+            <h4 id="org844b7a2">
+              <span class="section-number-4">4.7.1.</span> Algos
+            </h4>
+            <div class="outline-text-4" id="text-4-7-1"></div>
+            <ol class="org-ol">
+              <li>
+                <a id="org754b913"></a>Dijkstra<br />
+                <div class="outline-text-5" id="text-4-7-1-1">
+                  <p>Can fail if graph has negative weight O(VlogV + E)</p>
+                  <div class="org-src-container">
+                    <pre
+                      class="src src-c"
+                    ><span style="color: #c678dd;">Dijkstra</span>(G,W,S){
+  initalizeSingleSource(G,S)
+  s = null
+  q = V[G]
+    <span style="color: #51afef;">while</span> (Q != null){
+      u = extractMin(Q)
+      s = S <span style="color: #51afef;">union</span> {u}
+      <span style="color: #51afef;">for</span> each vertex v in adj(u){
+          relax(u,v,w)
+        }
+    }
+}
+
+<span style="color: #c678dd;">initalizeSingleSource</span>(G,S){
+  <span style="color: #51afef;">for</span> each vertex v in V[G]{
+      d[v] = inf
+      parent[v] = nil
+    }
+  d[s] = <span style="color: #da8548; font-weight: bold;">0</span>
+}
+
+<span style="color: #c678dd;">relax</span>(u,v,w){
+  <span style="color: #51afef;">if</span> d[v] &gt; d[u] + w(u,v){
+      d[v] = d[u] + w(u,v)
+        parent[v] = u
+    }
+}
+
+</pre>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a id="org55464a2"></a>Bellman Ford<br />
+                <div class="outline-text-5" id="text-4-7-1-2">
+                  <p>
+                    It can guarantees a shortes path or detects a negative
+                    weight cycle
+                  </p>
+                  <div class="org-src-container">
+                    <pre
+                      class="src src-c"
+                    ><span style="color: #c678dd;">BellmanFord</span>(G,W,S){
+  initalizeSingleSource(G,S)
+    <span style="color: #51afef;">for</span> i &lt;- <span style="color: #da8548; font-weight: bold;">1</span> to |V(g)|-<span style="color: #da8548; font-weight: bold;">1</span>{
+        <span style="color: #51afef;">for</span> each edge(u,v) <span style="color: #ECBE7B;">in</span> <span style="color: #c678dd;">E</span>(G){
+            Relax(u,v,w)
+          }
+      }
+  <span style="color: #51afef;">for</span> each edge(u,v) <span style="color: #ECBE7B;">in</span> <span style="color: #c678dd;">E</span>(G){
+      <span style="color: #51afef;">if</span>(d[v] &gt; d[u] + w(u,v)){
+        <span style="color: #51afef;">return</span> <span style="color: #a9a1e1;">false</span>
+      }
+    }
+}
+
+<span style="color: #c678dd;">initalizeSingleSource</span>(G,S){
+  <span style="color: #51afef;">for</span> each vertex v in V[G]{
+      d[v] = inf
+      parent[v] = nil
+    }
+  d[s] = <span style="color: #da8548; font-weight: bold;">0</span>
+}
+
+<span style="color: #c678dd;">relax</span>(u,v,w){
+  <span style="color: #51afef;">if</span> d[v] &gt; d[u] + w(u,v){
+      d[v] = d[u] + w(u,v)
+        parent[v] = u
+    }
+}
+
+</pre>
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-orgbdc7145" class="outline-2">
+        <h2 id="orgbdc7145">
+          <span class="section-number-2">5.</span> Backtracking
+        </h2>
+        <div class="outline-text-2" id="text-5">
+          <p>
+            It is a brute force problem. It is not for optimization problem, It
+            helps in finding the number of solutions to a problem The solutions
+            can be represented as a tree called State Space Tree. These problems
+            have some constraint called as Bounding Functions It follows Depth
+            First Search It can similar to Branch and Bound But Branch and Bound
+            follows Breadth First Search
+          </p>
+        </div>
+        <div id="outline-container-orgb745b09" class="outline-3">
+          <h3 id="orgb745b09">
+            <span class="section-number-3">5.1.</span> N Queen Problems
+          </h3>
+          <div class="outline-text-3" id="text-5-1">
+            <p>
+              We have N queens and a Chess board We have to place these queens
+              such that no queen can harm other queen It can be said we have to
+              not place queens in same row, same column or same diagonal This
+              problem has multiple solutions and we want each of them To reduce
+              the search space we constraint that we place a queen on each row
+              We avoid placing the queen in same column We have to check Maximum
+              1 + 3 sigma i = 0 (i pi j = 0 (N-j)) cells
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org91719ba" class="outline-3">
+          <h3 id="org91719ba">
+            <span class="section-number-3">5.2.</span> Graph Coloring
+          </h3>
+          <div class="outline-text-3" id="text-5-2">
+            <p>
+              We have a graph with N nodes and then we have to color these nodes
+              such that no two adjacent nodes have the same color It take M<sup
+                >n</sup
+              >
+              time
+            </p>
+          </div>
+          <div id="outline-container-org0459325" class="outline-4">
+            <h4 id="org0459325">
+              <span class="section-number-4">5.2.1.</span> M Coloring Decision
+              Problem
+            </h4>
+            <div class="outline-text-4" id="text-5-2-1">
+              <p>
+                If graph can be colored with M colors or If the chromatic number
+                of graph is M
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org3e455b1" class="outline-4">
+            <h4 id="org3e455b1">
+              <span class="section-number-4">5.2.2.</span> M Coloring
+              Optimization Problem
+            </h4>
+            <div class="outline-text-4" id="text-5-2-2">
+              <p>How many colors are required to color the graph</p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org8a41d27" class="outline-3">
+          <h3 id="org8a41d27">
+            <span class="section-number-3">5.3.</span> Hamiltion Cycle
+          </h3>
+          <div class="outline-text-3" id="text-5-3">
+            <p>
+              In this problem we have to find a path through a graph such that
+              we don&rsquo;t cross a vertices twice This is a NP hard Problem so
+              it takes exponential time to solve the problem For this first
+              check if the graph is connected No hamiltion cycle is possible for
+              graph with articulation point We have to not differ the cycle if
+              the starting point is not the same
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-org2ba6acd" class="outline-2">
+        <h2 id="org2ba6acd">
+          <span class="section-number-2">6.</span> Dynamic Programming
+        </h2>
+        <div class="outline-text-2" id="text-6">
+          <p>
+            It is exhaustive and is guaranteeed to find the solution. After
+            every stage, dynamic programming makes decision based on all the
+            decision made in the previous stage
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org72612aa" class="outline-2">
+        <h2 id="org72612aa">
+          <span class="section-number-2">7.</span> Advanced Data Strucutres
+        </h2>
+      </div>
+      <div id="outline-container-org1271f8c" class="outline-2">
+        <h2 id="org1271f8c">
+          <span class="section-number-2">8.</span> Unit - 4
+        </h2>
+        <div class="outline-text-2" id="text-8"></div>
+        <div id="outline-container-org3a505e5" class="outline-3">
+          <h3 id="org3a505e5">
+            <span class="section-number-3">8.1.</span> Sorting Network
+          </h3>
+          <div class="outline-text-3" id="text-8-1">
+            <ul class="org-ul">
+              <li>
+                The sorting network sorter [N] is constructed using Merger[N]
+              </li>
+              <li>
+                First Stage -&gt; Merger[2] Second -&gt; M[u],BB[2] - tile
+                \frac{m}{2^k} copies of merger [2<sup>k</sup>]
+              </li>
+            </ul>
+          </div>
+          <div id="outline-container-orgb1abac4" class="outline-4">
+            <h4 id="orgb1abac4">
+              <span class="section-number-4">8.1.1.</span> Block Diagram
+            </h4>
+            <div class="outline-text-4" id="text-8-1-1">
+              <p>i &lt;-&gt; m-i+1 m[4]BS[2] M[8]BS[4]BS[2]</p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org6d17a1d" class="outline-3">
+          <h3 id="org6d17a1d">
+            <span class="section-number-3">8.2.</span> Bitonic Sorted
+          </h3>
+          <div class="outline-text-3" id="text-8-2">
+            <p>
+              It is a comparison m/w that is used to sort bitonic input sequence
+              that is a sequence which is continously increasing continously or
+              monotonically increasing or decreaseing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="postamble" class="status">
+      <p class="author">Author: Shaswat</p>
+      <p class="date">Created: 2025-01-12 日 18:35</p>
+    </div>
+  </body>
+</html>

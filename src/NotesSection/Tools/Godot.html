@@ -1,0 +1,776 @@
+<html>
+<head>
+<!-- 2025-01-12 日 18:40 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Godot</title>
+<meta name="author" content="Brackeys" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Godot</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgc3fdd11">1. Godot</a>
+<ul>
+<li><a href="#orgd045c9e">1.1. World Building</a></li>
+</ul>
+</li>
+<li><a href="#org095a43e">2. GDscript</a>
+<ul>
+<li><a href="#org68da6e3">2.1. Hello World</a>
+<ul>
+<li><a href="#org781e99a">2.1.1. _ready()</a></li>
+<li><a href="#org89524d1">2.1.2. _process(delta)</a></li>
+</ul>
+</li>
+<li><a href="#org2b0e4f2">2.2. Modifying Nodes</a>
+<ul>
+<li><a href="#org228c24d">2.2.1. First Method</a></li>
+<li><a href="#orgc53850e">2.2.2. Second Method</a></li>
+</ul>
+</li>
+<li><a href="#org52ac310">2.3. Input</a></li>
+<li><a href="#org8d83db4">2.4. Variables</a>
+<ul>
+<li><a href="#org084d113">2.4.1. First Method</a></li>
+<li><a href="#org05ad102">2.4.2. Second Method</a></li>
+</ul>
+</li>
+<li><a href="#orgb87b4a3">2.5. Comment</a></li>
+<li><a href="#org1ccba25">2.6. Casting</a></li>
+<li><a href="#org2557992">2.7. Function</a></li>
+<li><a href="#orgeaf3e84">2.8. Documentation</a></li>
+<li><a href="#orgbc6cccb">2.9. Array</a></li>
+<li><a href="#org4739d35">2.10. Loops</a></li>
+<li><a href="#orgf5370ac">2.11. Dictionary</a></li>
+<li><a href="#orga2589a6">2.12. Enum</a></li>
+<li><a href="#org6f548e5">2.13. Match</a></li>
+<li><a href="#orgc7b435c">2.14. Signal</a></li>
+<li><a href="#org4e8bb96">2.15. Getter and Setter</a></li>
+<li><a href="#orgb4f751b">2.16. Class</a></li>
+<li><a href="#org06fd980">2.17. Call Down Signal Up</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgc3fdd11" class="outline-2">
+<h2 id="orgc3fdd11"><span class="section-number-2">1.</span> Godot</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Playing the game f5
+Stopping the game f8
+</p>
+
+<p>
+Select current  to play the current scene
+Player Scene
+Root Node - CharacterBody 2d
+2D Physics node specialized for character moved by script
+AnimatedSprite2D - Node for Animated Graphics
+Sprite is images in game
+Use inspector to change the properties of the nodes
+Select Sprite frames &gt; New SpriteFrames
+In Sprite frame window at the bottom select the actual sprites for the player
+For animation we need to work with lots of sprites so use a sprite sheet which multiple sprite
+for the various frames
+Change the horizontal and verticals divisions to get the perfect number of frames so that each grid cell has a single frame
+Select the frames in the same order we want the frames to animate
+Add Frames
+To Remove blur filter go to Project &gt; settings &gt; rendering &gt; texture &gt; default texture filter &gt; Nearest
+Increase the FPS to faster animation
+Enable the autoplay to play the animated automatically
+Move the sprite to be above the x axis
+Add a collisionShape2D to give it a shape to collide with the other object
+Colliders do not need to perfect in the shape and is expected to be smaller than the actual sprite
+Add new node Camera2D to control what to show
+zoom in the camera
+Add a script use the template A CharacterBody2D basic movement template to avoid writing the script
+We need a collider to stand on
+StaticBody2D to create bodies which don&rsquo;t need to move like platforms
+They need a shape or a CollisionShape2D use new World Boundary shape
+World Boundary for extending infinitely to x axis
+Edit the speed to have a better movement
+</p>
+</div>
+<div id="outline-container-orgd045c9e" class="outline-3">
+<h3 id="orgd045c9e"><span class="section-number-3">1.1.</span> World Building</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+REmove the staticBody2D
+Add a tilemap Node
+It is used to make the game world using a grid of tiles
+Similar to sprite sheet we can use a tile map to get the various sprites of the tiles
+Under the inspector Tileset &gt; create new tileset
+Tile Size to manage the tilesize
+Drag the tileset to the tileset window below
+Create the tileset automatically
+Use the eraser to remove unused tiles
+use shift and drag to create a new single tile
+Shift to tile map window and select paint mode to start painting in the tilemap
+right click to remove
+Select multiple tiles in tilemap to paint multiple tiles at once
+Use select mode to select multiple tiles in the game scene
+We need to add physics layer to the map to give the physics to the map
+Inspector &gt; TileMap &gt; PhysicsLayer &gt; Add a new layer
+Go to paint &gt; Paint Properties &gt; Physics Layer 0 &gt; Add thee collision to required maps and not to the scenery
+C and F are the shortcut to paint with physics or clear the physics
+Move the colliders in the left side to paint a partial collider as per need
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org095a43e" class="outline-2">
+<h2 id="org095a43e"><span class="section-number-2">2.</span> GDscript</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+High level Object Oriented Gradully Typed Python Like Syntax
+</p>
+</div>
+<div id="outline-container-org68da6e3" class="outline-3">
+<h3 id="org68da6e3"><span class="section-number-3">2.1.</span> Hello World</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Create a Node as Main
+Save as a Scene
+Add a script
+use default template
+</p>
+</div>
+<div id="outline-container-org781e99a" class="outline-4">
+<h4 id="org781e99a"><span class="section-number-4">2.1.1.</span> _ready()</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<p>
+_ready () is the start of the game when the object enteres the scene tree
+Function which runs immediately
+pass keyword to get out of a block
+</p>
+
+<div class="org-src-container">
+<pre class="src src-gdscript">func _ready():
+    print("Hello World")
+</pre>
+</div>
+<p>
+Then use the play button to run the function
+Or use shortcut F8
+</p>
+
+<p>
+Statements terminate with new line
+We use indentation to indicate a block
+GDscript is case sensitive
+</p>
+</div>
+</div>
+<div id="outline-container-org89524d1" class="outline-4">
+<h4 id="org89524d1"><span class="section-number-4">2.1.2.</span> _process(delta)</h4>
+<div class="outline-text-4" id="text-2-1-2">
+<p>
+_process(delta) is a function which is called every frame drawing
+</p>
+<div class="org-src-container">
+<pre class="src src-gdscript">
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org2b0e4f2" class="outline-3">
+<h3 id="org2b0e4f2"><span class="section-number-3">2.2.</span> Modifying Nodes</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-org228c24d" class="outline-4">
+<h4 id="org228c24d"><span class="section-number-4">2.2.1.</span> First Method</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+We need a node to modify
+Add a new label
+Add new text
+To edit this node we need
+</p>
+<ul class="org-ul">
+<li>Reference to the node</li>
+</ul>
+<p>
+To get the reference to the node we just drag and drop the node inside the code editor
+</p>
+
+<div class="org-src-container">
+<pre class="src src-gdscript">$Label
+</pre>
+</div>
+<ul class="org-ul">
+<li>Access the property to change</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-gdscript">$Label.text = "Hello"
+$Label.modulate = Color.green
+</pre>
+</div>
+<p>
+Property name is accessed by hovering over it
+</p>
+</div>
+</div>
+<div id="outline-container-orgc53850e" class="outline-4">
+<h4 id="orgc53850e"><span class="section-number-4">2.2.2.</span> Second Method</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<p>
+To create a reference to a node inside a variable
+Hold ctrl while dragging the node to create a var with the reference to the node
+</p>
+<div class="org-src-container">
+<pre class="src src-gdscript">@onready var weapon = $Player/Weapon
+</pre>
+</div>
+<p>
+onready makes sure that the node is actually created before taking a reference to it
+$ is a short to get<sub>node</sub>() function which takes a relative path
+To get the absolute path
+node.get<sub>path</sub>()
+</p>
+
+<p>
+Path should be avoid
+because if we change the location of the node or rename it the hardcoded path will throw an error
+</p>
+
+<p>
+We can export a node
+</p>
+<div class="org-src-container">
+<pre class="src src-gdscript">@export var my_node : Node
+</pre>
+</div>
+<p>
+This will give a option in the inspector to choose the specific node
+</p>
+
+
+<p>
+my<sub>node</sub> is Node2D
+to check the type along the inheritance path
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org52ac310" class="outline-3">
+<h3 id="org52ac310"><span class="section-number-3">2.3.</span> Input</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+To get input we need Input Action
+</p>
+
+<p>
+In Input Map, Add the new action my<sub>action</sub>
+Add new event to the action
+Click spacebar
+</p>
+
+
+<p>
+It is a default function by Godot which is called when any event is called
+func _input(event):
+        if event.is<sub>action</sub><sub>pressed</sub>(&ldquo;my<sub>action</sub>&rdquo;):
+          $Label.modulate = Color.RED
+        if event.is<sub>action</sub><sub>released</sub>(&ldquo;my<sub>action</sub>&rdquo;):
+                $Label.modulate = Color.GREEN
+</p>
+</div>
+</div>
+<div id="outline-container-org8d83db4" class="outline-3">
+<h3 id="org8d83db4"><span class="section-number-3">2.4.</span> Variables</h3>
+<div class="outline-text-3" id="text-2-4">
+</div>
+<div id="outline-container-org084d113" class="outline-4">
+<h4 id="org084d113"><span class="section-number-4">2.4.1.</span> First Method</h4>
+<div class="outline-text-4" id="text-2-4-1">
+<p>
+To hold some data
+</p>
+</div>
+</div>
+<div id="outline-container-org05ad102" class="outline-4">
+<h4 id="org05ad102"><span class="section-number-4">2.4.2.</span> Second Method</h4>
+<div class="outline-text-4" id="text-2-4-2">
+<p>
+We have to watch about the scope of the variable
+Try it to be global or local
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb87b4a3" class="outline-3">
+<h3 id="orgb87b4a3"><span class="section-number-3">2.5.</span> Comment</h3>
+</div>
+<div id="outline-container-org1ccba25" class="outline-3">
+<h3 id="org1ccba25"><span class="section-number-3">2.6.</span> Casting</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+str(number) to cast to strig
+int(float) to cast to integer by truncation
+</p>
+
+<p>
+Generally used for positions
+Vector2 store 2 floats
+Vector3 store 3 floats
+</p>
+
+<p>
+To static type
+We add the type during declaration
+</p>
+
+<p>
+var damage: int = 15
+var damage := 15 to infer the type to the variable
+</p>
+
+
+<p>
+@export variable
+Allows use to set the variable in the inspector
+</p>
+
+<p>
+const CONSTANT
+Allow to declare constants
+</p>
+</div>
+</div>
+<div id="outline-container-org2557992" class="outline-3">
+<h3 id="org2557992"><span class="section-number-3">2.7.</span> Function</h3>
+<div class="outline-text-3" id="text-2-7">
+<p>
+_ function are called by the engines itself
+</p>
+
+<p>
+func functionName():
+        return 1
+</p>
+
+<p>
+func add(num1: int, num2: int) -&gt; int:
+        return
+</p>
+
+<p>
+randf() - random 0 to 1
+randf<sub>range</sub>(start,end)
+randi<sub>range</sub>(start,end)
+</p>
+</div>
+</div>
+<div id="outline-container-orgeaf3e84" class="outline-3">
+<h3 id="orgeaf3e84"><span class="section-number-3">2.8.</span> Documentation</h3>
+<div class="outline-text-3" id="text-2-8">
+<p>
+Ctrl Click to view a topi
+</p>
+</div>
+</div>
+<div id="outline-container-orgbc6cccb" class="outline-3">
+<h3 id="orgbc6cccb"><span class="section-number-3">2.9.</span> Array</h3>
+<div class="outline-text-3" id="text-2-9">
+<p>
+To store a list of elements
+var items = []
+We can mix data types
+and also static type it
+items: Array[String] = []
+</p>
+
+<p>
+items.remove<sub>at</sub>(idx)
+items.append(item)
+</p>
+</div>
+</div>
+<div id="outline-container-org4739d35" class="outline-3">
+<h3 id="org4739d35"><span class="section-number-3">2.10.</span> Loops</h3>
+<div class="outline-text-3" id="text-2-10">
+<p>
+For iterating a part of code
+</p>
+
+<p>
+for item in items
+for i in 8
+</p>
+</div>
+</div>
+<div id="outline-container-orgf5370ac" class="outline-3">
+<h3 id="orgf5370ac"><span class="section-number-3">2.11.</span> Dictionary</h3>
+<div class="outline-text-3" id="text-2-11">
+<p>
+key value pairs
+var my<sub>dict</sub> = {}
+</p>
+
+<p>
+for key in dict:
+        print(key)
+        print(dict[key])
+</p>
+</div>
+</div>
+<div id="outline-container-orga2589a6" class="outline-3">
+<h3 id="orga2589a6"><span class="section-number-3">2.12.</span> Enum</h3>
+<div class="outline-text-3" id="text-2-12">
+<p>
+To marks tags or states
+It is basically a CONSTANT
+</p>
+
+<p>
+enum Alignment {ALLY = 1, NEUTRAL = 2, ENEMY = -1}
+</p>
+
+<p>
+@export var unit<sub>alignment</sub> : Alignment
+</p>
+</div>
+</div>
+<div id="outline-container-org6f548e5" class="outline-3">
+<h3 id="org6f548e5"><span class="section-number-3">2.13.</span> Match</h3>
+<div class="outline-text-3" id="text-2-13">
+<p>
+Switch equivalent
+match my<sub>alignment</sub>:
+        Alignment.ALLY:
+        Alignment.ENEMY:
+        _:
+</p>
+</div>
+</div>
+<div id="outline-container-orgc7b435c" class="outline-3">
+<h3 id="orgc7b435c"><span class="section-number-3">2.14.</span> Signal</h3>
+<div class="outline-text-3" id="text-2-14">
+<p>
+A way to send a signal from one node to another to trigger actions
+Select the Node from the inspector
+Select the signal from the tab
+select the script to join it
+</p>
+
+<p>
+It creates a func which is runned when the signal is emmited
+Signal helps in decoupling
+use to create new signal
+signal signal<sub>name</sub>
+</p>
+
+<p>
+Timer
+AutoStart to start the timer at the starting
+</p>
+
+<p>
+To connect signal with code
+signal<sub>name.connect</sub>(signal<sub>func</sub>)
+Without paranthesis
+We can even send an argument with a signal
+</p>
+
+<p>
+signal<sub>name.emit</sub>(para)
+</p>
+
+<p>
+func signal<sub>function</sub>(para):
+        pass
+</p>
+</div>
+</div>
+<div id="outline-container-org4e8bb96" class="outline-3">
+<h3 id="org4e8bb96"><span class="section-number-3">2.15.</span> Getter and Setter</h3>
+<div class="outline-text-3" id="text-2-15">
+<p>
+When a variable is changed we can use a code
+</p>
+
+<p>
+var health :-= 100
+        set(value):
+                health = clamp(value,0,100)
+</p>
+
+<p>
+var change := 0.2
+ver change<sub>pct</sub>: int
+        get:
+                return change * 100
+</p>
+
+<p>
+set(value):
+        chance = float(value / 100)
+</p>
+
+<p>
+So whatever float value change has
+change<sub>pct</sub> will be set to 10 times the value
+</p>
+</div>
+</div>
+<div id="outline-container-orgb4f751b" class="outline-3">
+<h3 id="orgb4f751b"><span class="section-number-3">2.16.</span> Class</h3>
+<div class="outline-text-3" id="text-2-16">
+<p>
+To create class
+</p>
+
+<p>
+class<sub>name</sub> Character
+extends Node
+</p>
+
+<p>
+@export var profession: String
+@export var health:int
+</p>
+
+<p>
+func die():
+        health = 0
+</p>
+
+<p>
+creates a Character class
+</p>
+
+<p>
+INner classes are classes inside another class
+They are alternative to dictionary as they are much safer
+</p>
+
+<p>
+class Equipment:
+</p>
+
+
+<p>
+To inherit from another classes
+</p>
+
+<p>
+extends className
+</p>
+
+<p>
+Composition
+Is a better way to structure code
+</p>
+</div>
+</div>
+<div id="outline-container-org06fd980" class="outline-3">
+<h3 id="org06fd980"><span class="section-number-3">2.17.</span> Call Down Signal Up</h3>
+<div class="outline-text-3" id="text-2-17">
+<p>
+It is a rule of thumb to communicate between nodes
+Parents can call functions in children
+But children must use signals to call functions
+Between siblings Use a signal through a parent node
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Brackeys</p>
+<p class="date">Created: 2025-01-12 日 18:40</p>
+</div>
+</body>
+</html>

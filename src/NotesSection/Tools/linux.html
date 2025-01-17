@@ -1,0 +1,962 @@
+<html>
+  <head>
+    <!-- 2025-01-12 日 18:40 -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Linux</title>
+    <meta name="author" content="Shaswat" />
+    <meta name="generator" content="Org Mode" />
+    <style type="text/css">
+      #content {
+        max-width: 60em;
+        margin: auto;
+      }
+      .title {
+        text-align: center;
+        margin-bottom: 0.2em;
+      }
+      .subtitle {
+        text-align: center;
+        font-size: medium;
+        font-weight: bold;
+        margin-top: 0;
+      }
+      .todo {
+        font-family: monospace;
+        color: red;
+      }
+      .done {
+        font-family: monospace;
+        color: green;
+      }
+      .priority {
+        font-family: monospace;
+        color: orange;
+      }
+      .tag {
+        background-color: #eee;
+        font-family: monospace;
+        padding: 2px;
+        font-size: 80%;
+        font-weight: normal;
+      }
+      .timestamp {
+        color: #bebebe;
+      }
+      .timestamp-kwd {
+        color: #5f9ea0;
+      }
+      .org-right {
+        margin-left: auto;
+        margin-right: 0px;
+        text-align: right;
+      }
+      .org-left {
+        margin-left: 0px;
+        margin-right: auto;
+        text-align: left;
+      }
+      .org-center {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+      .underline {
+        text-decoration: underline;
+      }
+      #postamble p,
+      #preamble p {
+        font-size: 90%;
+        margin: 0.2em;
+      }
+      p.verse {
+        margin-left: 3%;
+      }
+      pre {
+        border: 1px solid #e6e6e6;
+        border-radius: 3px;
+        background-color: #f2f2f2;
+        padding: 8pt;
+        font-family: monospace;
+        overflow: auto;
+        margin: 1.2em;
+      }
+      pre.src {
+        position: relative;
+        overflow: auto;
+      }
+      pre.src:before {
+        display: none;
+        position: absolute;
+        top: -8px;
+        right: 12px;
+        padding: 3px;
+        color: #555;
+        background-color: #f2f2f299;
+      }
+      pre.src:hover:before {
+        display: inline;
+        margin-top: 14px;
+      }
+      /* Languages per Org manual */
+      pre.src-asymptote:before {
+        content: "Asymptote";
+      }
+      pre.src-awk:before {
+        content: "Awk";
+      }
+      pre.src-authinfo::before {
+        content: "Authinfo";
+      }
+      pre.src-C:before {
+        content: "C";
+      }
+      /* pre.src-C++ doesn't work in CSS */
+      pre.src-clojure:before {
+        content: "Clojure";
+      }
+      pre.src-css:before {
+        content: "CSS";
+      }
+      pre.src-D:before {
+        content: "D";
+      }
+      pre.src-ditaa:before {
+        content: "ditaa";
+      }
+      pre.src-dot:before {
+        content: "Graphviz";
+      }
+      pre.src-calc:before {
+        content: "Emacs Calc";
+      }
+      pre.src-emacs-lisp:before {
+        content: "Emacs Lisp";
+      }
+      pre.src-fortran:before {
+        content: "Fortran";
+      }
+      pre.src-gnuplot:before {
+        content: "gnuplot";
+      }
+      pre.src-haskell:before {
+        content: "Haskell";
+      }
+      pre.src-hledger:before {
+        content: "hledger";
+      }
+      pre.src-java:before {
+        content: "Java";
+      }
+      pre.src-js:before {
+        content: "Javascript";
+      }
+      pre.src-latex:before {
+        content: "LaTeX";
+      }
+      pre.src-ledger:before {
+        content: "Ledger";
+      }
+      pre.src-lisp:before {
+        content: "Lisp";
+      }
+      pre.src-lilypond:before {
+        content: "Lilypond";
+      }
+      pre.src-lua:before {
+        content: "Lua";
+      }
+      pre.src-matlab:before {
+        content: "MATLAB";
+      }
+      pre.src-mscgen:before {
+        content: "Mscgen";
+      }
+      pre.src-ocaml:before {
+        content: "Objective Caml";
+      }
+      pre.src-octave:before {
+        content: "Octave";
+      }
+      pre.src-org:before {
+        content: "Org mode";
+      }
+      pre.src-oz:before {
+        content: "OZ";
+      }
+      pre.src-plantuml:before {
+        content: "Plantuml";
+      }
+      pre.src-processing:before {
+        content: "Processing.js";
+      }
+      pre.src-python:before {
+        content: "Python";
+      }
+      pre.src-R:before {
+        content: "R";
+      }
+      pre.src-ruby:before {
+        content: "Ruby";
+      }
+      pre.src-sass:before {
+        content: "Sass";
+      }
+      pre.src-scheme:before {
+        content: "Scheme";
+      }
+      pre.src-screen:before {
+        content: "Gnu Screen";
+      }
+      pre.src-sed:before {
+        content: "Sed";
+      }
+      pre.src-sh:before {
+        content: "shell";
+      }
+      pre.src-sql:before {
+        content: "SQL";
+      }
+      pre.src-sqlite:before {
+        content: "SQLite";
+      }
+      /* additional languages in org.el's org-babel-load-languages alist */
+      pre.src-forth:before {
+        content: "Forth";
+      }
+      pre.src-io:before {
+        content: "IO";
+      }
+      pre.src-J:before {
+        content: "J";
+      }
+      pre.src-makefile:before {
+        content: "Makefile";
+      }
+      pre.src-maxima:before {
+        content: "Maxima";
+      }
+      pre.src-perl:before {
+        content: "Perl";
+      }
+      pre.src-picolisp:before {
+        content: "Pico Lisp";
+      }
+      pre.src-scala:before {
+        content: "Scala";
+      }
+      pre.src-shell:before {
+        content: "Shell Script";
+      }
+      pre.src-ebnf2ps:before {
+        content: "ebfn2ps";
+      }
+      /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+      pre.src-cpp:before {
+        content: "C++";
+      }
+      pre.src-abc:before {
+        content: "ABC";
+      }
+      pre.src-coq:before {
+        content: "Coq";
+      }
+      pre.src-groovy:before {
+        content: "Groovy";
+      }
+      /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+      pre.src-bash:before {
+        content: "bash";
+      }
+      pre.src-csh:before {
+        content: "csh";
+      }
+      pre.src-ash:before {
+        content: "ash";
+      }
+      pre.src-dash:before {
+        content: "dash";
+      }
+      pre.src-ksh:before {
+        content: "ksh";
+      }
+      pre.src-mksh:before {
+        content: "mksh";
+      }
+      pre.src-posh:before {
+        content: "posh";
+      }
+      /* Additional Emacs modes also supported by the LaTeX listings package */
+      pre.src-ada:before {
+        content: "Ada";
+      }
+      pre.src-asm:before {
+        content: "Assembler";
+      }
+      pre.src-caml:before {
+        content: "Caml";
+      }
+      pre.src-delphi:before {
+        content: "Delphi";
+      }
+      pre.src-html:before {
+        content: "HTML";
+      }
+      pre.src-idl:before {
+        content: "IDL";
+      }
+      pre.src-mercury:before {
+        content: "Mercury";
+      }
+      pre.src-metapost:before {
+        content: "MetaPost";
+      }
+      pre.src-modula-2:before {
+        content: "Modula-2";
+      }
+      pre.src-pascal:before {
+        content: "Pascal";
+      }
+      pre.src-ps:before {
+        content: "PostScript";
+      }
+      pre.src-prolog:before {
+        content: "Prolog";
+      }
+      pre.src-simula:before {
+        content: "Simula";
+      }
+      pre.src-tcl:before {
+        content: "tcl";
+      }
+      pre.src-tex:before {
+        content: "TeX";
+      }
+      pre.src-plain-tex:before {
+        content: "Plain TeX";
+      }
+      pre.src-verilog:before {
+        content: "Verilog";
+      }
+      pre.src-vhdl:before {
+        content: "VHDL";
+      }
+      pre.src-xml:before {
+        content: "XML";
+      }
+      pre.src-nxml:before {
+        content: "XML";
+      }
+      /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+      pre.src-conf:before {
+        content: "Configuration File";
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+      caption.t-above {
+        caption-side: top;
+      }
+      caption.t-bottom {
+        caption-side: bottom;
+      }
+      td,
+      th {
+        vertical-align: top;
+      }
+      th.org-right {
+        text-align: center;
+      }
+      th.org-left {
+        text-align: center;
+      }
+      th.org-center {
+        text-align: center;
+      }
+      td.org-right {
+        text-align: right;
+      }
+      td.org-left {
+        text-align: left;
+      }
+      td.org-center {
+        text-align: center;
+      }
+      dt {
+        font-weight: bold;
+      }
+      .footpara {
+        display: inline;
+      }
+      .footdef {
+        margin-bottom: 1em;
+      }
+      .figure {
+        padding: 1em;
+      }
+      .figure p {
+        text-align: center;
+      }
+      .equation-container {
+        display: table;
+        text-align: center;
+        width: 100%;
+      }
+      .equation {
+        vertical-align: middle;
+      }
+      .equation-label {
+        display: table-cell;
+        text-align: right;
+        vertical-align: middle;
+      }
+      .inlinetask {
+        padding: 10px;
+        border: 2px solid gray;
+        margin: 10px;
+        background: #ffffcc;
+      }
+      #org-div-home-and-up {
+        text-align: right;
+        font-size: 70%;
+        white-space: nowrap;
+      }
+      textarea {
+        overflow-x: auto;
+      }
+      .linenr {
+        font-size: smaller;
+      }
+      .code-highlighted {
+        background-color: #ffff00;
+      }
+      .org-info-js_info-navigation {
+        border-style: none;
+      }
+      #org-info-js_console-label {
+        font-size: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+      .org-info-js_search-highlight {
+        background-color: #ffff00;
+        color: #000000;
+        font-weight: bold;
+      }
+      .org-svg {
+      }
+    </style>
+    <script>
+      window.MathJax = {
+        tex: {
+          ams: {
+            multlineWidth: "85%",
+          },
+          tags: "ams",
+          tagSide: "right",
+          tagIndent: ".8em",
+        },
+        chtml: {
+          scale: 1.0,
+          displayAlign: "center",
+          displayIndent: "0em",
+        },
+        svg: {
+          scale: 1.0,
+          displayAlign: "center",
+          displayIndent: "0em",
+        },
+        output: {
+          font: "mathjax-modern",
+          displayOverflow: "overflow",
+        },
+      };
+    </script>
+
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+  </head>
+  <body>
+    <div id="content" class="content">
+      <h1 class="title">Linux</h1>
+      <div id="table-of-contents" role="doc-toc">
+        <h2>Table of Contents</h2>
+        <div id="text-table-of-contents" role="doc-toc">
+          <ul>
+            <li><a href="#orgf432dce">1. Introduction</a></li>
+            <li><a href="#orgc651693">2. Docker</a></li>
+            <li><a href="#orgc107a60">3. Ansible</a></li>
+            <li><a href="#orgc434293">4. Dot Files</a></li>
+            <li><a href="#orgf2b93d7">5. GNU/stow</a></li>
+            <li><a href="#org3d68b20">6. YADM</a></li>
+            <li><a href="#orgb0feee4">7. i3wm</a></li>
+            <li><a href="#org0a3b01f">8. Shell</a></li>
+            <li><a href="#org1c3c0c3">9. Terminal</a></li>
+            <li><a href="#org54648e3">10. CLI piping</a></li>
+            <li><a href="#org465dc35">11. Tmux</a></li>
+            <li><a href="#org730acfa">12. FZF</a></li>
+            <li><a href="#org2e22891">13. CheatSheet</a></li>
+            <li><a href="#org207df80">14. Plugins</a></li>
+            <li><a href="#org3b47b26">15. GIT</a></li>
+            <li>
+              <a href="#org828bdc9">16. Linux Core Utils</a>
+              <ul>
+                <li><a href="#org182011b">16.1. xargs</a></li>
+                <li><a href="#org11dc30f">16.2. sed</a></li>
+                <li><a href="#org26f9624">16.3. important utils</a></li>
+              </ul>
+            </li>
+            <li><a href="#orge5a8c4a">17. Code Snippets</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="outline-container-orgf432dce" class="outline-2">
+        <h2 id="orgf432dce">
+          <span class="section-number-2">1.</span> Introduction
+        </h2>
+        <div class="outline-text-2" id="text-1">
+          <p>
+            Command to find all the files which have a REGEX -
+            <code>grep regex</code>
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-orgc651693" class="outline-2">
+        <h2 id="orgc651693"><span class="section-number-2">2.</span> Docker</h2>
+        <div class="outline-text-2" id="text-2">
+          <p>
+            It is used to create a new docker container to get a new clean
+            environment
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-orgc107a60" class="outline-2">
+        <h2 id="orgc107a60">
+          <span class="section-number-2">3.</span> Ansible
+        </h2>
+        <div class="outline-text-2" id="text-3">
+          <p>
+            How to install zsh
+            <code>sudo apt install zsh</code>
+            chsh -s &rsquo;which zsh&rsquo; curl and install oh my zsh edit
+            .zshrc add plugins={git zsh-autosuggestions} curl the plugin
+          </p>
+
+          <p>
+            To get a computer working we have to install all the libraries over
+            and over again SSH keys are also needed to be setup
+          </p>
+
+          <p>
+            Ansible can be used here to setup computer fast TO setup ZSH using
+            ansible
+          </p>
+
+          <p>anisble create a yaml file fem.yml</p>
+          <div class="org-src-container">
+            <pre class="src src-yaml">
+hosts: localhost
+become: true
+pre_tasks:
+ - name: Update Cache
+   apt:
+     update_cache: true
+     tags:
+     - node
+     - zsh
+tasks:
+ - name: Install zsh
+   apt: name=zsh
+   tags:
+   - zsh
+ - name: Change Shell
+   shell: chsh -s 'which zsh'
+   tags:
+   - zsh
+ - name: Install oh my zsh
+   shell: curl -L
+   tags:
+   - zsh
+ - name: Install autosuggestions
+   ansible.builtin.git:
+      repo:"repo.git"
+      dest: /path/to/zsh
+   tags:
+   - zsh
+ - name: Update the zshrc
+   shell: sed -i "s/(git/(git zsh-autosuggestions' ~/.zshrc"
+   tags:
+   - zsh
+ - name: install node
+   apt:
+     name:['nodejs','npm']
+   tags:
+   - node
+ - name: Install n
+   npm:
+     name: n
+     global: true
+   tags:
+   - node
+ - name: n 14
+   shell: n 14
+   tags:
+   - node
+</pre
+            >
+          </div>
+          <p>
+            This is better than bash install script as it allows for finer
+            control to the system ed is an editor then sed is a stream ed editor
+            Useful for log and repo
+          </p>
+
+          <p>
+            To look how to do something, google ansible git clone
+            ansible-playbook fem.yml
+          </p>
+
+          <p>
+            Only execute stuff with the node tag ansible-playbook -t node
+            fem.yml
+          </p>
+
+          <p>ansible runs from top to bottom Try to anisible for everything</p>
+
+          <p>
+            We can seperate this yml file node.yml zsh.yml and move all the zsh
+            tasks to zsh.yaml and node tasks to node.yml and include this files
+            in the main yaml files using tasks:
+          </p>
+          <ul class="org-ul">
+            <li>include: fem-tasks/zsh.yml</li>
+            <li>include: fem-tasks/node.yml</li>
+          </ul>
+
+          <p>
+            We can get ansible tasks from a remote repos ansible-pull -U url
+          </p>
+
+          <p>then we can write a bash script to run everything at once</p>
+
+          <p>
+            sudo apt-add-reposity -y ppa:ansible/ansible sudo apt-get update -y
+            sudo apt-get install -y curl git software-propteries-common anisble
+          </p>
+
+          <p>
+            sudo ansible-pull -U
+            <a href="https://github.com/ThePrimeagen/ansible.git"
+              >https://github.com/ThePrimeagen/ansible.git</a
+            >
+          </p>
+
+          <p>with clause to use commands dependent on the system OS</p>
+
+          <p>
+            How to setup SSH keys using ansible ansible-vault can be used to
+            setup these keys
+          </p>
+
+          <p>
+            ansible-vault encrypt testfile to encrypt the testfile using a
+            password easier to store on a public repo
+          </p>
+
+          <p>ansible-vault decrypt testfile to decrypt the file</p>
+
+          <p>ansible-playbook -t dotfiles &#x2013;ask-vault-pass local.yml</p>
+
+          <p>ansible-vault can also help in backup<sub>codes</sub></p>
+        </div>
+      </div>
+      <div id="outline-container-orgc434293" class="outline-2">
+        <h2 id="orgc434293">
+          <span class="section-number-2">4.</span> Dot Files
+        </h2>
+        <div class="outline-text-2" id="text-4">
+          <p>These files are used to</p>
+          <ul class="org-ul">
+            <li>Configure the programs</li>
+            <li>Keep track and commit our changes over time</li>
+            <li>
+              <p>Keep the program OS compatible</p>
+
+              <p>TO manage these files yadm GNU/stow dotbot</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="outline-container-orgf2b93d7" class="outline-2">
+        <h2 id="orgf2b93d7">
+          <span class="section-number-2">5.</span> GNU/stow
+        </h2>
+        <div class="outline-text-2" id="text-5">
+          <p>
+            It is simple It can manage symlinks It can have multiple OS and
+            versions
+          </p>
+
+          <p>
+            <code>sudo apt install stow</code>
+            A/B/C/some A is target directory B is stow directory. In B we use
+            stow C is what we are stowing
+          </p>
+
+          <p>
+            A symlink was added in target directory to testfile It brings the as
+            far as possible as sthe symlink To Remove a stow directory stow -D
+            tmux
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org3d68b20" class="outline-2">
+        <h2 id="org3d68b20"><span class="section-number-2">6.</span> YADM</h2>
+        <div class="outline-text-2" id="text-6">
+          <p>Yet Another Dotfile Manager</p>
+
+          <p>yadm clone git repo</p>
+
+          <p>yadm add configfile</p>
+
+          <p>yadm change</p>
+        </div>
+      </div>
+      <div id="outline-container-orgb0feee4" class="outline-2">
+        <h2 id="orgb0feee4"><span class="section-number-2">7.</span> i3wm</h2>
+        <div class="outline-text-2" id="text-7">
+          <p>
+            To manage various windows
+            <code>sudo apt install i3</code>
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org0a3b01f" class="outline-2">
+        <h2 id="org0a3b01f"><span class="section-number-2">8.</span> Shell</h2>
+        <div class="outline-text-2" id="text-8">
+          <p>
+            zsh Terminal gets the key input and sends to the a remote computer
+            which runs the command In the Ye olden days if there was a mistake
+            in the commands send to the remote computer It would log you out to
+            protect itself and one had to relogin To prevent it Shell around the
+            user to protect yourself to make mistakes Terminal only give and
+            takes input and output Shell actually interacts with the operating
+            system A terminal can be runned for a single application Shell can
+            be runned inside another shell
+          </p>
+
+          <p>Oh My Zsh Git Gud at core utils</p>
+        </div>
+      </div>
+      <div id="outline-container-org1c3c0c3" class="outline-2">
+        <h2 id="org1c3c0c3">
+          <span class="section-number-2">9.</span> Terminal
+        </h2>
+        <div class="outline-text-2" id="text-9">
+          <p>
+            xterm and tmux Problem - Multiple terminals xterm is a terminal
+            emulator Alternative is Alacrity, Kitty
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org54648e3" class="outline-2">
+        <h2 id="org54648e3">
+          <span class="section-number-2">10.</span> CLI piping
+        </h2>
+        <div class="outline-text-2" id="text-10">
+          <p>A | B Output of A is piped into B</p>
+        </div>
+      </div>
+      <div id="outline-container-org465dc35" class="outline-2">
+        <h2 id="org465dc35"><span class="section-number-2">11.</span> Tmux</h2>
+        <div class="outline-text-2" id="text-11">
+          <p>
+            We have a tmux server which have multiple session Each sessions have
+            one or more window Each windows have multiple panes
+            <code>sudo apt install tmux</code>
+            <code>tmux</code>
+            This started a tmux server, New session with one window and a pane
+            C-d - to remove pane without a pane a window is closed Without a
+            window a session is closed without a session the server is closed
+            Tmux is also scriptable to create what we want
+          </p>
+
+          <p>
+            <code>tmux list-session</code> List all the sessions
+            <code>tmux kill-server</code> Kill the server
+            <code>tmux</code> Create the tmux server
+            <code>tmux new-session</code> Create a new tmux session
+            <code>tmux new-session -d</code> Create a new tmux session detached
+            mode <code>tmux a</code> attach the terminal
+            <code>prefix - (</code> Move to the next session
+            <code>prefix - )</code> Move to the previous session
+            <code>prefix - d</code> Detach from the current session
+            <code>prefix - w</code> See all the sessions with the windows
+            <code>C-d</code> EOF Prefix key is C-b Next key is the command
+          </p>
+
+          <p>
+            Windows Group windows in sessions which have similar things
+            <code>prefix-C</code> <code>tmux new window</code> Create new Window
+            <code>prefix - n</code> Go to the next window
+            <code>prefix - p</code> Go to the previous window
+            <code>prefix - 1-7</code> Go to the 1-7 window Rename a session
+            <code>tmux new-session -d -s "foo"</code> Create a session with name
+            <code>tmux new-window -n "foo"</code> create a new window with a
+            name <code>tmux new-session -d -s "foo" -n "Name"</code> Create a
+            session with name with a nae to the first window
+            <code>prefix - %</code> helps to split a window into panes
+            <code>C - d</code> to delete a pane we can create window or session
+            for a particular directory
+            <code>tmux switch-client -t "foo"</code> Go to the foo
+            <code>tmux new-window -n "foobar" [coomand]</code> Create a new
+            window with a name and start this command
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org730acfa" class="outline-2">
+        <h2 id="org730acfa"><span class="section-number-2">12.</span> FZF</h2>
+        <div class="outline-text-2" id="text-12">
+          <p>
+            It is quick fuzzy finder It helps writing the line to which matches
+            the input the most C-r is used to FZF in the command history
+          </p>
+          <div class="org-src-container">
+            <pre class="src src-bash">
+<span style="color: #5B6268;">#</span><span style="color: #5B6268;">!/user/bin/env bash</span>
+session =$<span style="color: #51afef;">(</span><span style="color: #51afef; font-weight: bold;">find</span> ~ ~/personal/ ~/work/ -type d -mindepth <span style="color: #da8548; font-weight: bold;">1</span> -maxdepth <span style="color: #da8548; font-weight: bold;">1</span> | fzf<span style="color: #51afef;">)</span>
+<span style="color: #dcaeea;">session_name</span>=$<span style="color: #51afef;">(</span><span style="color: #51afef; font-weight: bold;">basename</span> <span style="color: #98be65;">"</span><span style="color: #a9a1e1;">$</span><span style="color: #dcaeea;">session</span><span style="color: #98be65;">"</span> | tr . _<span style="color: #51afef;">)</span>
+
+<span style="color: #51afef;">if</span> <span style="color: #51afef; font-weight: bold;">!</span>tmux has-session -t <span style="color: #98be65;">"${session_name"</span> <span style="color: #da8548; font-weight: bold;">2</span>&gt; /dev/null; <span style="color: #51afef;">then</span>
+
+    tmux new-session -s <span style="color: #98be65;">"</span><span style="color: #a9a1e1;">$</span><span style="color: #dcaeea;">session_name</span><span style="color: #98be65;">"</span> -c <span style="color: #98be65;">"</span><span style="color: #a9a1e1;">$</span><span style="color: #dcaeea;">session</span><span style="color: #98be65;">"</span> -d
+<span style="color: #51afef;">fi</span>
+
+tmux switch-client -t <span style="color: #98be65;">"</span><span style="color: #a9a1e1;">$</span><span style="color: #dcaeea;">session_name</span><span style="color: #98be65;">"</span>
+
+
+</pre>
+          </div>
+          <p><code>prefix-L</code> to jump back a session zsh has Vi mode</p>
+        </div>
+      </div>
+      <div id="outline-container-org2e22891" class="outline-2">
+        <h2 id="org2e22891">
+          <span class="section-number-2">13.</span> CheatSheet
+        </h2>
+        <div class="outline-text-2" id="text-13">
+          <p>tldr</p>
+
+          <p>
+            curl cht.sh/find~exec curl cht.sh/javascript/splice+array curl
+            cht.sh/typescript/enum curl cht.sh/typescript/enum+string curl
+            cht.sh/golang/:learn
+          </p>
+
+          <p><code>prefix-[</code> start vim mode</p>
+        </div>
+      </div>
+      <div id="outline-container-org207df80" class="outline-2">
+        <h2 id="org207df80">
+          <span class="section-number-2">14.</span> Plugins
+        </h2>
+        <div class="outline-text-2" id="text-14">
+          <p>
+            Tmuxinator Tmux sessionizer TmuxP Tmux sessionizer Tmux Reseurrect
+            to Presist Tmux session
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org3b47b26" class="outline-2">
+        <h2 id="org3b47b26"><span class="section-number-2">15.</span> GIT</h2>
+        <div class="outline-text-2" id="text-15">
+          <p>git push pull rebase</p>
+
+          <p>Work tree is a named commit in time</p>
+
+          <p>This is only the .git folder git clone &#x2013;bare</p>
+
+          <p>git worktree list</p>
+
+          <p>tldr git-worktreee git worktree add foo -b food</p>
+
+          <p>git worktree list</p>
+
+          <p>
+            cd foo - Repository in foo branch cd master - Repository in master
+            branch git branch -a - Worktree has multiple branchs
+          </p>
+
+          <p>
+            git log -S 106 Find the commits which contain 106 in the git diff
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org828bdc9" class="outline-2">
+        <h2 id="org828bdc9">
+          <span class="section-number-2">16.</span> Linux Core Utils
+        </h2>
+        <div class="outline-text-2" id="text-16">
+          <p>A set of programs that can make life easier doing ad hoc tasks</p>
+        </div>
+        <div id="outline-container-org182011b" class="outline-3">
+          <h3 id="org182011b">
+            <span class="section-number-3">16.1.</span> xargs
+          </h3>
+          <div class="outline-text-3" id="text-16-1">
+            <p>
+              How to find the occurences of each word
+              <code
+                >cat subtitles | xargs | tr ' ' '\n'| sort | uniq - c| sort
+                -nr</code
+              >
+              <code>awk</code>
+              <code>cat|sort|uniq</code>
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org11dc30f" class="outline-3">
+          <h3 id="org11dc30f">
+            <span class="section-number-3">16.2.</span> sed
+          </h3>
+          <div class="outline-text-3" id="text-16-2">
+            <p>
+              echo &ldquo;5 7 9 \n 11 13 15&rdquo; | tr &ldquo; &rdquo;
+              &ldquo;+&rdquo; | bc | sort -nr|head -1
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org26f9624" class="outline-3">
+          <h3 id="org26f9624">
+            <span class="section-number-3">16.3.</span> important utils
+          </h3>
+          <div class="outline-text-3" id="text-16-3">
+            <p>cat read grep tr echo</p>
+
+            <p>
+              echo &ldquo;hello world&rdquo; | sed &rsquo;s/world/front end
+              masters/&rsquo;
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-orge5a8c4a" class="outline-2">
+        <h2 id="orge5a8c4a">
+          <span class="section-number-2">17.</span> Code Snippets
+        </h2>
+      </div>
+    </div>
+    <div id="postamble" class="status">
+      <p class="author">Author: Shaswat</p>
+      <p class="date">Created: 2025-01-12 日 18:40</p>
+    </div>
+  </body>
+</html>

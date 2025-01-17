@@ -1,0 +1,1005 @@
+<html>
+  <head>
+    <!-- 2025-01-12 日 18:39 -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GIT</title>
+    <meta name="author" content="Shaswat" />
+    <meta name="generator" content="Org Mode" />
+    <style type="text/css">
+      #content {
+        max-width: 60em;
+        margin: auto;
+      }
+      .title {
+        text-align: center;
+        margin-bottom: 0.2em;
+      }
+      .subtitle {
+        text-align: center;
+        font-size: medium;
+        font-weight: bold;
+        margin-top: 0;
+      }
+      .todo {
+        font-family: monospace;
+        color: red;
+      }
+      .done {
+        font-family: monospace;
+        color: green;
+      }
+      .priority {
+        font-family: monospace;
+        color: orange;
+      }
+      .tag {
+        background-color: #eee;
+        font-family: monospace;
+        padding: 2px;
+        font-size: 80%;
+        font-weight: normal;
+      }
+      .timestamp {
+        color: #bebebe;
+      }
+      .timestamp-kwd {
+        color: #5f9ea0;
+      }
+      .org-right {
+        margin-left: auto;
+        margin-right: 0px;
+        text-align: right;
+      }
+      .org-left {
+        margin-left: 0px;
+        margin-right: auto;
+        text-align: left;
+      }
+      .org-center {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+      .underline {
+        text-decoration: underline;
+      }
+      #postamble p,
+      #preamble p {
+        font-size: 90%;
+        margin: 0.2em;
+      }
+      p.verse {
+        margin-left: 3%;
+      }
+      pre {
+        border: 1px solid #e6e6e6;
+        border-radius: 3px;
+        background-color: #f2f2f2;
+        padding: 8pt;
+        font-family: monospace;
+        overflow: auto;
+        margin: 1.2em;
+      }
+      pre.src {
+        position: relative;
+        overflow: auto;
+      }
+      pre.src:before {
+        display: none;
+        position: absolute;
+        top: -8px;
+        right: 12px;
+        padding: 3px;
+        color: #555;
+        background-color: #f2f2f299;
+      }
+      pre.src:hover:before {
+        display: inline;
+        margin-top: 14px;
+      }
+      /* Languages per Org manual */
+      pre.src-asymptote:before {
+        content: "Asymptote";
+      }
+      pre.src-awk:before {
+        content: "Awk";
+      }
+      pre.src-authinfo::before {
+        content: "Authinfo";
+      }
+      pre.src-C:before {
+        content: "C";
+      }
+      /* pre.src-C++ doesn't work in CSS */
+      pre.src-clojure:before {
+        content: "Clojure";
+      }
+      pre.src-css:before {
+        content: "CSS";
+      }
+      pre.src-D:before {
+        content: "D";
+      }
+      pre.src-ditaa:before {
+        content: "ditaa";
+      }
+      pre.src-dot:before {
+        content: "Graphviz";
+      }
+      pre.src-calc:before {
+        content: "Emacs Calc";
+      }
+      pre.src-emacs-lisp:before {
+        content: "Emacs Lisp";
+      }
+      pre.src-fortran:before {
+        content: "Fortran";
+      }
+      pre.src-gnuplot:before {
+        content: "gnuplot";
+      }
+      pre.src-haskell:before {
+        content: "Haskell";
+      }
+      pre.src-hledger:before {
+        content: "hledger";
+      }
+      pre.src-java:before {
+        content: "Java";
+      }
+      pre.src-js:before {
+        content: "Javascript";
+      }
+      pre.src-latex:before {
+        content: "LaTeX";
+      }
+      pre.src-ledger:before {
+        content: "Ledger";
+      }
+      pre.src-lisp:before {
+        content: "Lisp";
+      }
+      pre.src-lilypond:before {
+        content: "Lilypond";
+      }
+      pre.src-lua:before {
+        content: "Lua";
+      }
+      pre.src-matlab:before {
+        content: "MATLAB";
+      }
+      pre.src-mscgen:before {
+        content: "Mscgen";
+      }
+      pre.src-ocaml:before {
+        content: "Objective Caml";
+      }
+      pre.src-octave:before {
+        content: "Octave";
+      }
+      pre.src-org:before {
+        content: "Org mode";
+      }
+      pre.src-oz:before {
+        content: "OZ";
+      }
+      pre.src-plantuml:before {
+        content: "Plantuml";
+      }
+      pre.src-processing:before {
+        content: "Processing.js";
+      }
+      pre.src-python:before {
+        content: "Python";
+      }
+      pre.src-R:before {
+        content: "R";
+      }
+      pre.src-ruby:before {
+        content: "Ruby";
+      }
+      pre.src-sass:before {
+        content: "Sass";
+      }
+      pre.src-scheme:before {
+        content: "Scheme";
+      }
+      pre.src-screen:before {
+        content: "Gnu Screen";
+      }
+      pre.src-sed:before {
+        content: "Sed";
+      }
+      pre.src-sh:before {
+        content: "shell";
+      }
+      pre.src-sql:before {
+        content: "SQL";
+      }
+      pre.src-sqlite:before {
+        content: "SQLite";
+      }
+      /* additional languages in org.el's org-babel-load-languages alist */
+      pre.src-forth:before {
+        content: "Forth";
+      }
+      pre.src-io:before {
+        content: "IO";
+      }
+      pre.src-J:before {
+        content: "J";
+      }
+      pre.src-makefile:before {
+        content: "Makefile";
+      }
+      pre.src-maxima:before {
+        content: "Maxima";
+      }
+      pre.src-perl:before {
+        content: "Perl";
+      }
+      pre.src-picolisp:before {
+        content: "Pico Lisp";
+      }
+      pre.src-scala:before {
+        content: "Scala";
+      }
+      pre.src-shell:before {
+        content: "Shell Script";
+      }
+      pre.src-ebnf2ps:before {
+        content: "ebfn2ps";
+      }
+      /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+      pre.src-cpp:before {
+        content: "C++";
+      }
+      pre.src-abc:before {
+        content: "ABC";
+      }
+      pre.src-coq:before {
+        content: "Coq";
+      }
+      pre.src-groovy:before {
+        content: "Groovy";
+      }
+      /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+      pre.src-bash:before {
+        content: "bash";
+      }
+      pre.src-csh:before {
+        content: "csh";
+      }
+      pre.src-ash:before {
+        content: "ash";
+      }
+      pre.src-dash:before {
+        content: "dash";
+      }
+      pre.src-ksh:before {
+        content: "ksh";
+      }
+      pre.src-mksh:before {
+        content: "mksh";
+      }
+      pre.src-posh:before {
+        content: "posh";
+      }
+      /* Additional Emacs modes also supported by the LaTeX listings package */
+      pre.src-ada:before {
+        content: "Ada";
+      }
+      pre.src-asm:before {
+        content: "Assembler";
+      }
+      pre.src-caml:before {
+        content: "Caml";
+      }
+      pre.src-delphi:before {
+        content: "Delphi";
+      }
+      pre.src-html:before {
+        content: "HTML";
+      }
+      pre.src-idl:before {
+        content: "IDL";
+      }
+      pre.src-mercury:before {
+        content: "Mercury";
+      }
+      pre.src-metapost:before {
+        content: "MetaPost";
+      }
+      pre.src-modula-2:before {
+        content: "Modula-2";
+      }
+      pre.src-pascal:before {
+        content: "Pascal";
+      }
+      pre.src-ps:before {
+        content: "PostScript";
+      }
+      pre.src-prolog:before {
+        content: "Prolog";
+      }
+      pre.src-simula:before {
+        content: "Simula";
+      }
+      pre.src-tcl:before {
+        content: "tcl";
+      }
+      pre.src-tex:before {
+        content: "TeX";
+      }
+      pre.src-plain-tex:before {
+        content: "Plain TeX";
+      }
+      pre.src-verilog:before {
+        content: "Verilog";
+      }
+      pre.src-vhdl:before {
+        content: "VHDL";
+      }
+      pre.src-xml:before {
+        content: "XML";
+      }
+      pre.src-nxml:before {
+        content: "XML";
+      }
+      /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+      pre.src-conf:before {
+        content: "Configuration File";
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+      caption.t-above {
+        caption-side: top;
+      }
+      caption.t-bottom {
+        caption-side: bottom;
+      }
+      td,
+      th {
+        vertical-align: top;
+      }
+      th.org-right {
+        text-align: center;
+      }
+      th.org-left {
+        text-align: center;
+      }
+      th.org-center {
+        text-align: center;
+      }
+      td.org-right {
+        text-align: right;
+      }
+      td.org-left {
+        text-align: left;
+      }
+      td.org-center {
+        text-align: center;
+      }
+      dt {
+        font-weight: bold;
+      }
+      .footpara {
+        display: inline;
+      }
+      .footdef {
+        margin-bottom: 1em;
+      }
+      .figure {
+        padding: 1em;
+      }
+      .figure p {
+        text-align: center;
+      }
+      .equation-container {
+        display: table;
+        text-align: center;
+        width: 100%;
+      }
+      .equation {
+        vertical-align: middle;
+      }
+      .equation-label {
+        display: table-cell;
+        text-align: right;
+        vertical-align: middle;
+      }
+      .inlinetask {
+        padding: 10px;
+        border: 2px solid gray;
+        margin: 10px;
+        background: #ffffcc;
+      }
+      #org-div-home-and-up {
+        text-align: right;
+        font-size: 70%;
+        white-space: nowrap;
+      }
+      textarea {
+        overflow-x: auto;
+      }
+      .linenr {
+        font-size: smaller;
+      }
+      .code-highlighted {
+        background-color: #ffff00;
+      }
+      .org-info-js_info-navigation {
+        border-style: none;
+      }
+      #org-info-js_console-label {
+        font-size: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+      .org-info-js_search-highlight {
+        background-color: #ffff00;
+        color: #000000;
+        font-weight: bold;
+      }
+      .org-svg {
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content" class="content">
+      <h1 class="title">GIT</h1>
+      <div id="table-of-contents" role="doc-toc">
+        <h2>Table of Contents</h2>
+        <div id="text-table-of-contents" role="doc-toc">
+          <ul>
+            <li>
+              <a href="#org1fc1dc9">1. GIT</a>
+              <ul>
+                <li><a href="#orgeda7c65">1.1. Overview</a></li>
+                <li><a href="#orgc1555e4">1.2. Beginning</a></li>
+                <li><a href="#orgc98592b">1.3. Staging area</a></li>
+                <li><a href="#orgcb4b3ee">1.4. Config File</a></li>
+                <li><a href="#org1a46546">1.5. Branch and Merging</a></li>
+                <li><a href="#orgf5d6c6f">1.6. Git Diff and Stashing</a></li>
+                <li><a href="#org0cf47cf">1.7. Git Rebase</a></li>
+                <li><a href="#org43bedb8">1.8. GitHub</a></li>
+                <li><a href="#org1ea39de">1.9. Squash</a></li>
+              </ul>
+            </li>
+            <li><a href="#orgc079fbc">2. Git Configuration</a></li>
+            <li>
+              <a href="#org1e8ddc7">3. .git folder</a>
+              <ul>
+                <li><a href="#orgeecc6ba">3.1. Hooks</a></li>
+                <li><a href="#org6f9eccf">3.2. Config</a></li>
+                <li><a href="#org57db483">3.3. Objects</a></li>
+              </ul>
+            </li>
+            <li><a href="#orgbd38f72">4. Merging</a></li>
+            <li><a href="#org5685e4f">5. Rebase</a></li>
+            <li><a href="#org99de59e">6. HEAD</a></li>
+            <li><a href="#orgc83e0fa">7. Reflog</a></li>
+            <li><a href="#org823a37d">8. Cherry Pick</a></li>
+            <li><a href="#orga057a16">9. Remote</a></li>
+            <li><a href="#orgea85b14">10. Stashing</a></li>
+            <li><a href="#org6748add">11. Worktrees</a></li>
+            <li><a href="#orga4df4bb">12. Squashing</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="outline-container-org1fc1dc9" class="outline-2">
+        <h2 id="org1fc1dc9"><span class="section-number-2">1.</span> GIT</h2>
+        <div class="outline-text-2" id="text-1"></div>
+        <div id="outline-container-orgeda7c65" class="outline-3">
+          <h3 id="orgeda7c65">
+            <span class="section-number-3">1.1.</span> Overview
+          </h3>
+          <div class="outline-text-3" id="text-1-1">
+            <p>
+              Create by Linus tarvoldis It is a version control system GIT is
+              the software to version Control GITHub is a platform to share and
+              collaborate on code
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-orgc1555e4" class="outline-3">
+          <h3 id="orgc1555e4">
+            <span class="section-number-3">1.2.</span> Beginning
+          </h3>
+          <div class="outline-text-3" id="text-1-2">
+            <p>
+              ls - to see the current directory items cd - to change directory
+            </p>
+          </div>
+          <ol class="org-ol">
+            <li>
+              <a id="org43b9d2d"></a>Learning Path<br />
+              <ol class="org-ol">
+                <li>
+                  <a id="org243f8f1"></a><span class="todo TODO">TODO</span> Get
+                  the basics down<br />
+                </li>
+                <li>
+                  <a id="org66a2d3e"></a><span class="todo TODO">TODO</span> Use
+                  it daily<br />
+                </li>
+                <li>
+                  <a id="org0cfa5b9"></a
+                  ><span class="todo TODO">TODO</span> Face the problem and
+                  solve it<br />
+                </li>
+                <li>
+                  <a id="org0669155"></a><span class="todo TODO">TODO</span> Go
+                  into the depth<br />
+                </li>
+              </ol>
+            </li>
+            <li>
+              <a id="orgb3a8c15"></a>Repo<br />
+              <div class="outline-text-5" id="text-1-2-0-2">
+                <p>
+                  Repo or Repository is nothing but a folder which we want to
+                  track git is an acyclic graph meaning it cannot contain loop
+                  Each commit is a node in the graph and each pointer is the
+                  child to parent relationship Also known as work tree
+                  <code>git --version</code> - TO view the git version the
+                  system <code>git status</code> - To view the current status of
+                  the repo in the current folder <code>git init</code> - To
+                  start a repository in the current folder. It creates .git
+                  folder
+                </p>
+
+                <p>
+                  .git is a hidden folder to store the various commits, hooks
+                  and code snapshots To remove a repository delete this .git
+                  folder
+                </p>
+
+                <p>
+                  Commit are like checkpoints . We write some code. then add it
+                  to the git staging area then commit it to the repos It
+                  produces a unique SHA for identification It represents the
+                  project in its entirety
+                </p>
+
+                <p>
+                  Working Directory -&gt; <code>git add</code> -&gt; Staging
+                  area -&gt; <code>git commit</code> -&gt; Repo -&gt;
+                  <code>git push</code> -&gt; Github
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <div id="outline-container-orgc98592b" class="outline-3">
+          <h3 id="orgc98592b">
+            <span class="section-number-3">1.3.</span> Staging area
+          </h3>
+          <div class="outline-text-3" id="text-1-3">
+            <p>
+              staging area can be also referred as index
+              <code>pwd</code> to print current directory we work on some branch
+              git lens to watch the git commit tree
+              <code>touch one.txt two.txt</code>
+              <code>git status</code> - Above two files go into untracked files
+              <code>git add .</code> Adds all files to tracking
+              <code>git add one.txt</code> Add only one.txt to tracking
+              <code>git rm --cached file.txt</code> Remove file from staging
+              area <code>git commit -m "Added first files"</code> Commit the
+              current staging area with the message Without the -m file opens
+              the default editor to ask for message By default It opens vim By
+              Opnion Commit messages should be present tense and imperative
+              <code>git log</code> Shows the log file for the git history It
+              shows the commit with SHA hash with branch the author, email and
+              TimeStamp <code>git log --oneline</code> - Short form of log each
+              commit in a single line
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-orgcb4b3ee" class="outline-3">
+          <h3 id="orgcb4b3ee">
+            <span class="section-number-3">1.4.</span> Config File
+          </h3>
+          <div class="outline-text-3" id="text-1-4">
+            <p>
+              Git maintains a config file to manage various important details
+              about the system and the user like email or name
+              <code>git config --global core.editor "code --wait"</code>
+              <code>git config --global user.email "email@mail.com"</code>
+              <code>git config --global user.name "username"</code>
+            </p>
+
+            <p>
+              .gitignore is a file containing the list of files to ignore in the
+              repository like environment variables API keys or other sensitive
+              information It can contains the name of the files and directory as
+              it is COMMIT<sub>EDITMSG</sub> is edited everytime the commit
+              message is written It contains git log as comments .gitignore file
+              can be generated by gitignore generator
+            </p>
+
+            <p>
+              config file is stored in the root of system as .gitconfig it is
+              global config file
+            </p>
+
+            <p>
+              Commit is dependent on the previous commit except the first commit
+              Each commit contains a pointer to the previous commit
+            </p>
+
+            <p>
+              Commits, Head are stored in .git folder Hooks are used to execute
+              scripts just before committing
+            </p>
+
+            <p>Head is stored in .git/logs It stores the commit history</p>
+
+            <p>Branches are stored in .git/logs/refs</p>
+          </div>
+        </div>
+        <div id="outline-container-org1a46546" class="outline-3">
+          <h3 id="org1a46546">
+            <span class="section-number-3">1.5.</span> Branch and Merging
+          </h3>
+          <div class="outline-text-3" id="text-1-5">
+            <p>
+              Branches are like various timelines so people can work on some
+              code without interferring with other code
+              <code>git commit -m "Add index file"</code>
+              <code>git branch</code> Gives the current and all the other
+              branchs By default branchs were named as master now they are named
+              main
+            </p>
+
+            <p>
+              <code>git switch main</code> Alternative to
+              <code>git branch main</code>
+              <code>git switch -c newBranch</code> Creates a new branch and
+              moves the head to it
+              <code>git checkout -b newBranch2</code> Creates a new branch and
+              moves the head to it
+            </p>
+
+            <p>
+              Head contains the path to the current branch refs/heads/master
+            </p>
+
+            <p>
+              <code>git branch main</code> Creates a new branch main but not
+              points to it <code>git checkout main</code> Moves the head to the
+              main A branch can&rsquo;t effect other branch until they are
+              merged
+            </p>
+
+            <p>The Head can also moves within the branch to previous commits</p>
+
+            <p>
+              <code>git merge</code> TO merge various branches There are two
+              types of merge fast forward merge and non fast forward merge In
+              fast forward merge We create a new branch at the end of the main
+              branch and then convert this new branch to main branch In non fast
+              forward branch the simulatenous work is done on both main and new
+              branch and if they are merge capable they are merged together or
+              in short we resolve conflicts
+            </p>
+
+            <p>
+              first get the main branch using git checkout
+              <code>git merge nav-bar -m "nav-bar merged in main"</code> It
+              merges the nav-bar to the main branch as a commit with the commit
+              message
+            </p>
+
+            <p>
+              <code>git branch -d nav-bar</code> it deletes the nav-bar branch
+              in the present context
+            </p>
+
+            <p>
+              If there are conflicts Then the editor will open showing the code
+              on the current branch Then the code on the other Branch seperated
+              by equals Then we have to decide what to keep and what to discard
+              Edit the file as needed and try to merge again
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-orgf5d6c6f" class="outline-3">
+          <h3 id="orgf5d6c6f">
+            <span class="section-number-3">1.6.</span> Git Diff and Stashing
+          </h3>
+          <div class="outline-text-3" id="text-1-6">
+            <p>
+              <code>git diff --staged</code> Used to compare code with other
+              commits, branch interactively for the staged file
+              <code>git diff CommitID CommitID2</code> Used to compare code
+              between two commit IDS
+            </p>
+
+            <p>
+              <code>git diff branchOne..branchTwo</code> Used to compare code
+              between two branches
+            </p>
+
+            <ul class="org-ul">
+              <li>
+                and - doesn&rsquo;t mean code wass added or removed they just
+                represent the change between the two files
+              </li>
+            </ul>
+
+            <p>
+              Git Stash is used to store current uncommitted code while you can
+              do other work Stash can be moved from one branch to another
+              <code>Git Stash</code> Stash the work
+              <code>Git Stash list</code> List all the stash
+              <code>Git Stash pop</code> Bring back changes
+              <code>Git Stash apply stash@{0}</code> Apply the changes and then
+              keep in the stash
+            </p>
+
+            <p>
+              <code>git checkout hash</code> Checkout a particular commit
+              <code>git switch main</code> go the head of main branch
+              <code>Git checkeout head~2</code> go the second before the head of
+              the current branch <code>git restore file</code> Restore the file
+              to its latest commit <code>git reflog</code> got to the last
+              position of head
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org0cf47cf" class="outline-3">
+          <h3 id="org0cf47cf">
+            <span class="section-number-3">1.7.</span> Git Rebase
+          </h3>
+          <div class="outline-text-3" id="text-1-7">
+            <p>
+              It is used to rewrite the history It is an alternative to mergin
+              Never run this on the main branch
+              <code>git commit -am "commit message"</code> It is a shortcut to
+              add all the files and commit them On Merging we create a new
+              commit To merge without that commit we can use rebase
+              <code>git rebase master</code> To rebase the current branch with
+              the master branch Timeline is rewritten and moved every commit on
+              the current branch to the master branch Both branches point to the
+              same branch For Conflicts Resolve all conflicts git add the files
+              Then use git rebase &#x2013;continue or git rebase &#x2013;abort
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org43bedb8" class="outline-3">
+          <h3 id="org43bedb8">
+            <span class="section-number-3">1.8.</span> GitHub
+          </h3>
+          <div class="outline-text-3" id="text-1-8">
+            <p>
+              It helps to maintain our code, git history and files for sharing
+              and collaboration on cloud Setup SSH keys for the git CLI to help
+              github identification
+              <code>git init</code> Initalizing the git repository
+              <code>git add .</code> Adding all the files to the repository
+              <code>git commit -m "Commit message"</code> Commit the changes
+              with the message
+              <code>git remote add origin main urlToGithubRepo</code> Adding the
+              Path to the github repository
+              <code>git push -u origin main</code> Pushing the code to the
+              Github repository
+            </p>
+
+            <p>
+              <code>git clone url</code> to clone a repository in the current
+              directory using the url
+            </p>
+
+            <p>
+              <code>git remote -v</code> view all the remote repository
+              <code>git remote remove name</code> to remove the a remote
+              repository <code>git remote rename oldName newName</code> to
+              rename repository <code>git push -u origin main</code> is used to
+              push code to the upstream and allows to run future command
+              <code>git push</code> is used to directly push code to github
+              <code>git push --set-upstream origin main</code> It tells the git
+              to link current branch main to the remote repository main and
+              allows use of git push
+            </p>
+
+            <p>
+              readme.md is a file which is render at the github repo homepage
+              just to tell about the project
+            </p>
+
+            <p>
+              <code>git clone url</code> is used to get the repo copy at the
+              current directory <code>git fetch url</code> is used to sync the
+              local repo with the github repo
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org1ea39de" class="outline-3">
+          <h3 id="org1ea39de">
+            <span class="section-number-3">1.9.</span> Squash
+          </h3>
+          <div class="outline-text-3" id="text-1-9">
+            <p>
+              to take several commits and turn it into one comit technically
+              squash turn N commits to N-1 commits
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-orgc079fbc" class="outline-2">
+        <h2 id="orgc079fbc">
+          <span class="section-number-2">2.</span> Git Configuration
+        </h2>
+        <div class="outline-text-2" id="text-2">
+          <p>
+            We have multiple config file one for the global context and one for
+            local context git keys are in the form of section.key &#x2013;global
+            flag is for global context Use &#x2013;add flag to set some value
+            and use &#x2013;get flag to display the values Best way to remove
+            git repo just delete .git folder
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org1e8ddc7" class="outline-2">
+        <h2 id="org1e8ddc7">
+          <span class="section-number-2">3.</span> .git folder
+        </h2>
+        <div class="outline-text-2" id="text-3">
+          <p>It is the sign that a folder is a git repo</p>
+        </div>
+        <div id="outline-container-orgeecc6ba" class="outline-3">
+          <h3 id="orgeecc6ba">
+            <span class="section-number-3">3.1.</span> Hooks
+          </h3>
+          <div class="outline-text-3" id="text-3-1">
+            <p>
+              Hooks are code which run before committing or pushing Generally
+              Hooks are not used but their work is delegated to CI which is to
+              test the code
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org6f9eccf" class="outline-3">
+          <h3 id="org6f9eccf">
+            <span class="section-number-3">3.2.</span> Config
+          </h3>
+          <div class="outline-text-3" id="text-3-2">
+            <p>Contains the local config for the repo</p>
+          </div>
+        </div>
+        <div id="outline-container-org57db483" class="outline-3">
+          <h3 id="org57db483">
+            <span class="section-number-3">3.3.</span> Objects
+          </h3>
+          <div class="outline-text-3" id="text-3-3">
+            <p>
+              It ccontains all the commits in directories with SHA as name
+              Everything is compressed so is not human readable use the command
+              <code>git cat-file -p SHA</code>
+              It can be used to cat out the commit and the file itself too
+            </p>
+
+            <p>
+              Git stores every commit in the entirety of the project also if
+              some files are not changed the SHA remains the same inshort with a
+              single commit SHA one can create the whole project to view the git
+              config use git config &#x2013;list We can add multiple keys with
+              same name git config &#x2013;get fem.dev will fetch the later
+              value of the key But we can&rsquo;t remove the value using unset
+              due to ambugity but unset-all should be used
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-orgbd38f72" class="outline-2">
+        <h2 id="orgbd38f72">
+          <span class="section-number-2">4.</span> Merging
+        </h2>
+        <div class="outline-text-2" id="text-4">
+          <p>
+            git log &#x2013;oneline &#x2013;graph &#x2013;parents No commit
+            message if best common ancestor is a tip of a branch doesn&rsquo;t
+            give any conflict A commit message is need if there is a conflict as
+            there a need of new commit
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org5685e4f" class="outline-2">
+        <h2 id="org5685e4f"><span class="section-number-2">5.</span> Rebase</h2>
+        <div class="outline-text-2" id="text-5">
+          <p>
+            It rewrites the history so be careful It makes the history linear
+            helps in fast forward merge It helps create clean history Never
+            change history on public branch
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org99de59e" class="outline-2">
+        <h2 id="org99de59e"><span class="section-number-2">6.</span> HEAD</h2>
+        <div class="outline-text-2" id="text-6">
+          <p>
+            It points to whatever commit we are currently at It is a ref to a
+            current branch
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-orgc83e0fa" class="outline-2">
+        <h2 id="orgc83e0fa"><span class="section-number-2">7.</span> Reflog</h2>
+        <div class="outline-text-2" id="text-7">
+          <p>
+            It tells where the head has ebeen add -n to see the last n changes
+            to head Even though we can delete a whole branch but still the whole
+            work is stored in .git We merge with that commit SHA but takes all
+            the history with it may or maynot cause a branch creation Or we can
+            go through the tree and get the file
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org823a37d" class="outline-2">
+        <h2 id="org823a37d">
+          <span class="section-number-2">8.</span> Cherry Pick
+        </h2>
+        <div class="outline-text-2" id="text-8">
+          <p>cherrypick add a commit without taking the whole history</p>
+        </div>
+      </div>
+      <div id="outline-container-orga057a16" class="outline-2">
+        <h2 id="orga057a16"><span class="section-number-2">9.</span> Remote</h2>
+        <div class="outline-text-2" id="text-9">
+          <p>
+            A Remote is a copy of the repo somewhere else It can be online or
+            offline git remote add name uri git remote add origin ../my-git Name
+            the authority repo as origin For a fork name your fork as origin and
+            the original repo as upstream git fetch will fetch the all the info
+            from the origin but not merged everything git merge branch-name
+          </p>
+
+          <p>or just do git pull which will fetch and merge the branch</p>
+        </div>
+      </div>
+      <div id="outline-container-orgea85b14" class="outline-2">
+        <h2 id="orgea85b14">
+          <span class="section-number-2">10.</span> Stashing
+        </h2>
+        <div class="outline-text-2" id="text-10">
+          <p>
+            It is used to temporaily store the every change tracked by git and
+            provide it later It is like a stack to push changes use git stash -m
+            &ldquo;message&rdquo; to show the stash git stash list git stash
+            show
+          </p>
+
+          <p>
+            to pop the stash git stash pop git stash pop &#x2013;index
+            &lt;index&gt;
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org6748add" class="outline-2">
+        <h2 id="org6748add">
+          <span class="section-number-2">11.</span> Worktrees
+        </h2>
+      </div>
+      <div id="outline-container-orga4df4bb" class="outline-2">
+        <h2 id="orga4df4bb">
+          <span class="section-number-2">12.</span> Squashing
+        </h2>
+        <div class="outline-text-2" id="text-12">
+          <p>convert multiple commits to one commit</p>
+        </div>
+      </div>
+    </div>
+    <div id="postamble" class="status">
+      <p class="author">Author: Shaswat</p>
+      <p class="date">Created: 2025-01-12 日 18:39</p>
+    </div>
+  </body>
+</html>

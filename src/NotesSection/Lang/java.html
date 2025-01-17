@@ -1,0 +1,1445 @@
+<html>
+  <head>
+    <!-- 2025-01-12 日 18:38 -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Java</title>
+    <meta name="author" content="Shaswat Satyam" />
+    <meta name="generator" content="Org Mode" />
+    <style type="text/css">
+      #content {
+        max-width: 60em;
+        margin: auto;
+      }
+      .title {
+        text-align: center;
+        margin-bottom: 0.2em;
+      }
+      .subtitle {
+        text-align: center;
+        font-size: medium;
+        font-weight: bold;
+        margin-top: 0;
+      }
+      .todo {
+        font-family: monospace;
+        color: red;
+      }
+      .done {
+        font-family: monospace;
+        color: green;
+      }
+      .priority {
+        font-family: monospace;
+        color: orange;
+      }
+      .tag {
+        background-color: #eee;
+        font-family: monospace;
+        padding: 2px;
+        font-size: 80%;
+        font-weight: normal;
+      }
+      .timestamp {
+        color: #bebebe;
+      }
+      .timestamp-kwd {
+        color: #5f9ea0;
+      }
+      .org-right {
+        margin-left: auto;
+        margin-right: 0px;
+        text-align: right;
+      }
+      .org-left {
+        margin-left: 0px;
+        margin-right: auto;
+        text-align: left;
+      }
+      .org-center {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+      .underline {
+        text-decoration: underline;
+      }
+      #postamble p,
+      #preamble p {
+        font-size: 90%;
+        margin: 0.2em;
+      }
+      p.verse {
+        margin-left: 3%;
+      }
+      pre {
+        border: 1px solid #e6e6e6;
+        border-radius: 3px;
+        background-color: #f2f2f2;
+        padding: 8pt;
+        font-family: monospace;
+        overflow: auto;
+        margin: 1.2em;
+      }
+      pre.src {
+        position: relative;
+        overflow: auto;
+      }
+      pre.src:before {
+        display: none;
+        position: absolute;
+        top: -8px;
+        right: 12px;
+        padding: 3px;
+        color: #555;
+        background-color: #f2f2f299;
+      }
+      pre.src:hover:before {
+        display: inline;
+        margin-top: 14px;
+      }
+      /* Languages per Org manual */
+      pre.src-asymptote:before {
+        content: "Asymptote";
+      }
+      pre.src-awk:before {
+        content: "Awk";
+      }
+      pre.src-authinfo::before {
+        content: "Authinfo";
+      }
+      pre.src-C:before {
+        content: "C";
+      }
+      /* pre.src-C++ doesn't work in CSS */
+      pre.src-clojure:before {
+        content: "Clojure";
+      }
+      pre.src-css:before {
+        content: "CSS";
+      }
+      pre.src-D:before {
+        content: "D";
+      }
+      pre.src-ditaa:before {
+        content: "ditaa";
+      }
+      pre.src-dot:before {
+        content: "Graphviz";
+      }
+      pre.src-calc:before {
+        content: "Emacs Calc";
+      }
+      pre.src-emacs-lisp:before {
+        content: "Emacs Lisp";
+      }
+      pre.src-fortran:before {
+        content: "Fortran";
+      }
+      pre.src-gnuplot:before {
+        content: "gnuplot";
+      }
+      pre.src-haskell:before {
+        content: "Haskell";
+      }
+      pre.src-hledger:before {
+        content: "hledger";
+      }
+      pre.src-java:before {
+        content: "Java";
+      }
+      pre.src-js:before {
+        content: "Javascript";
+      }
+      pre.src-latex:before {
+        content: "LaTeX";
+      }
+      pre.src-ledger:before {
+        content: "Ledger";
+      }
+      pre.src-lisp:before {
+        content: "Lisp";
+      }
+      pre.src-lilypond:before {
+        content: "Lilypond";
+      }
+      pre.src-lua:before {
+        content: "Lua";
+      }
+      pre.src-matlab:before {
+        content: "MATLAB";
+      }
+      pre.src-mscgen:before {
+        content: "Mscgen";
+      }
+      pre.src-ocaml:before {
+        content: "Objective Caml";
+      }
+      pre.src-octave:before {
+        content: "Octave";
+      }
+      pre.src-org:before {
+        content: "Org mode";
+      }
+      pre.src-oz:before {
+        content: "OZ";
+      }
+      pre.src-plantuml:before {
+        content: "Plantuml";
+      }
+      pre.src-processing:before {
+        content: "Processing.js";
+      }
+      pre.src-python:before {
+        content: "Python";
+      }
+      pre.src-R:before {
+        content: "R";
+      }
+      pre.src-ruby:before {
+        content: "Ruby";
+      }
+      pre.src-sass:before {
+        content: "Sass";
+      }
+      pre.src-scheme:before {
+        content: "Scheme";
+      }
+      pre.src-screen:before {
+        content: "Gnu Screen";
+      }
+      pre.src-sed:before {
+        content: "Sed";
+      }
+      pre.src-sh:before {
+        content: "shell";
+      }
+      pre.src-sql:before {
+        content: "SQL";
+      }
+      pre.src-sqlite:before {
+        content: "SQLite";
+      }
+      /* additional languages in org.el's org-babel-load-languages alist */
+      pre.src-forth:before {
+        content: "Forth";
+      }
+      pre.src-io:before {
+        content: "IO";
+      }
+      pre.src-J:before {
+        content: "J";
+      }
+      pre.src-makefile:before {
+        content: "Makefile";
+      }
+      pre.src-maxima:before {
+        content: "Maxima";
+      }
+      pre.src-perl:before {
+        content: "Perl";
+      }
+      pre.src-picolisp:before {
+        content: "Pico Lisp";
+      }
+      pre.src-scala:before {
+        content: "Scala";
+      }
+      pre.src-shell:before {
+        content: "Shell Script";
+      }
+      pre.src-ebnf2ps:before {
+        content: "ebfn2ps";
+      }
+      /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+      pre.src-cpp:before {
+        content: "C++";
+      }
+      pre.src-abc:before {
+        content: "ABC";
+      }
+      pre.src-coq:before {
+        content: "Coq";
+      }
+      pre.src-groovy:before {
+        content: "Groovy";
+      }
+      /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+      pre.src-bash:before {
+        content: "bash";
+      }
+      pre.src-csh:before {
+        content: "csh";
+      }
+      pre.src-ash:before {
+        content: "ash";
+      }
+      pre.src-dash:before {
+        content: "dash";
+      }
+      pre.src-ksh:before {
+        content: "ksh";
+      }
+      pre.src-mksh:before {
+        content: "mksh";
+      }
+      pre.src-posh:before {
+        content: "posh";
+      }
+      /* Additional Emacs modes also supported by the LaTeX listings package */
+      pre.src-ada:before {
+        content: "Ada";
+      }
+      pre.src-asm:before {
+        content: "Assembler";
+      }
+      pre.src-caml:before {
+        content: "Caml";
+      }
+      pre.src-delphi:before {
+        content: "Delphi";
+      }
+      pre.src-html:before {
+        content: "HTML";
+      }
+      pre.src-idl:before {
+        content: "IDL";
+      }
+      pre.src-mercury:before {
+        content: "Mercury";
+      }
+      pre.src-metapost:before {
+        content: "MetaPost";
+      }
+      pre.src-modula-2:before {
+        content: "Modula-2";
+      }
+      pre.src-pascal:before {
+        content: "Pascal";
+      }
+      pre.src-ps:before {
+        content: "PostScript";
+      }
+      pre.src-prolog:before {
+        content: "Prolog";
+      }
+      pre.src-simula:before {
+        content: "Simula";
+      }
+      pre.src-tcl:before {
+        content: "tcl";
+      }
+      pre.src-tex:before {
+        content: "TeX";
+      }
+      pre.src-plain-tex:before {
+        content: "Plain TeX";
+      }
+      pre.src-verilog:before {
+        content: "Verilog";
+      }
+      pre.src-vhdl:before {
+        content: "VHDL";
+      }
+      pre.src-xml:before {
+        content: "XML";
+      }
+      pre.src-nxml:before {
+        content: "XML";
+      }
+      /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+      pre.src-conf:before {
+        content: "Configuration File";
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+      caption.t-above {
+        caption-side: top;
+      }
+      caption.t-bottom {
+        caption-side: bottom;
+      }
+      td,
+      th {
+        vertical-align: top;
+      }
+      th.org-right {
+        text-align: center;
+      }
+      th.org-left {
+        text-align: center;
+      }
+      th.org-center {
+        text-align: center;
+      }
+      td.org-right {
+        text-align: right;
+      }
+      td.org-left {
+        text-align: left;
+      }
+      td.org-center {
+        text-align: center;
+      }
+      dt {
+        font-weight: bold;
+      }
+      .footpara {
+        display: inline;
+      }
+      .footdef {
+        margin-bottom: 1em;
+      }
+      .figure {
+        padding: 1em;
+      }
+      .figure p {
+        text-align: center;
+      }
+      .equation-container {
+        display: table;
+        text-align: center;
+        width: 100%;
+      }
+      .equation {
+        vertical-align: middle;
+      }
+      .equation-label {
+        display: table-cell;
+        text-align: right;
+        vertical-align: middle;
+      }
+      .inlinetask {
+        padding: 10px;
+        border: 2px solid gray;
+        margin: 10px;
+        background: #ffffcc;
+      }
+      #org-div-home-and-up {
+        text-align: right;
+        font-size: 70%;
+        white-space: nowrap;
+      }
+      textarea {
+        overflow-x: auto;
+      }
+      .linenr {
+        font-size: smaller;
+      }
+      .code-highlighted {
+        background-color: #ffff00;
+      }
+      .org-info-js_info-navigation {
+        border-style: none;
+      }
+      #org-info-js_console-label {
+        font-size: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+      .org-info-js_search-highlight {
+        background-color: #ffff00;
+        color: #000000;
+        font-weight: bold;
+      }
+      .org-svg {
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content" class="content">
+      <h1 class="title">Java</h1>
+      <div id="table-of-contents" role="doc-toc">
+        <h2>Table of Contents</h2>
+        <div id="text-table-of-contents" role="doc-toc">
+          <ul>
+            <li><a href="#org8f84f68">1. Inheritance</a></li>
+            <li>
+              <a href="#org53641be">2. Exception Handling</a>
+              <ul>
+                <li>
+                  <a href="#org37564eb">2.1. Exception handling in JAVA</a>
+                  <ul>
+                    <li>
+                      <a href="#org5393ecc">2.1.1. Runtime Stack Mechanism</a>
+                    </li>
+                    <li>
+                      <a href="#orga0c73af">2.1.2. Structure of Exception</a>
+                    </li>
+                    <li>
+                      <a href="#orgd6237e6">2.1.3. Exception Hierarchy</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org4088c80">2.2. Keywords for Exception handling</a>
+                  <ul>
+                    <li><a href="#orgb04a44a">2.2.1. Try Catch Block</a></li>
+                    <li>
+                      <a href="#org3fbcc03"
+                        >2.2.2. Try with multiple Catch Block</a
+                      >
+                    </li>
+                    <li><a href="#org8601933">2.2.3. Finally</a></li>
+                    <li><a href="#orga4e0161">2.2.4. Throw</a></li>
+                    <li><a href="#org8cac619">2.2.5. Throws</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#orge1c7431">3. Strings</a>
+              <ul>
+                <li>
+                  <a href="#orga396443">3.1. String</a>
+                  <ul>
+                    <li>
+                      <a href="#org4b12c0d"
+                        >3.1.1. String s = &ldquo;Hello&rdquo;;</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#orgda254ce"
+                        >3.1.2. String s1 = new String(&ldquo;Hello&rdquo;);</a
+                      >
+                    </li>
+                    <li><a href="#org3153237">3.1.3. String Methods</a></li>
+                    <li><a href="#orgc714aea">3.1.4. Length vs Length()</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org0fbebb3">3.2. String Comparison</a>
+                  <ul>
+                    <li><a href="#org62be2b4">3.2.1. equals()</a></li>
+                    <li><a href="#orgec608a6">3.2.2. == Operator</a></li>
+                    <li><a href="#orga22f927">3.2.3. compareTo()</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#orga736954">3.3. StringBuffer</a>
+                  <ul>
+                    <li><a href="#orgbae1009">3.3.1. Important Methods</a></li>
+                    <li>
+                      <a href="#orga2c16ea"
+                        >3.3.2. Differences between string and string buffers</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org7ab9de8">3.4. StringTokenizer</a>
+                  <ul>
+                    <li><a href="#org8894205">3.4.1. Constructors</a></li>
+                    <li><a href="#org7e31140">3.4.2. Methods</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#org401f399">4. Applet</a>
+              <ul>
+                <li><a href="#org9517042">4.1. Life Cycle of Applet</a></li>
+                <li>
+                  <a href="#org3359df2">4.2. Creation of applet</a>
+                  <ul>
+                    <li><a href="#org6f32b9b">4.2.1. Java file</a></li>
+                    <li><a href="#org3394957">4.2.2. HTML file</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org8bd9fb7">4.3. Passing Parameter to Applet</a>
+                  <ul>
+                    <li><a href="#org59f963b">4.3.1. HTML file</a></li>
+                    <li><a href="#org71cb63d">4.3.2. Java file</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org9e21b39">4.4. Getting Input from the User</a>
+                  <ul>
+                    <li><a href="#orgae746de">4.4.1. Java file</a></li>
+                    <li><a href="#org5e97089">4.4.2. HTML file</a></li>
+                  </ul>
+                </li>
+                <li><a href="#org71202fe">4.5. Java Sandbox Model</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="outline-container-org8f84f68" class="outline-2">
+        <h2 id="org8f84f68">
+          <span class="section-number-2">1.</span> Inheritance
+        </h2>
+      </div>
+      <div id="outline-container-org53641be" class="outline-2">
+        <h2 id="org53641be">
+          <span class="section-number-2">2.</span> Exception Handling
+        </h2>
+        <div class="outline-text-2" id="text-2">
+          <p>
+            An exception is a problem that arises during the executing of a
+            program example -
+          </p>
+          <ul class="org-ul">
+            <li>Invalid file path</li>
+            <li>
+              Invalid data Exception handling is a task to maintain normal flow
+              of the program. Exception handling does not mean repairing an
+              exception, its is rather defining alternative way to continue rest
+              of the program normally
+            </li>
+          </ul>
+        </div>
+        <div id="outline-container-org37564eb" class="outline-3">
+          <h3 id="org37564eb">
+            <span class="section-number-3">2.1.</span> Exception handling in
+            JAVA
+          </h3>
+          <div class="outline-text-3" id="text-2-1"></div>
+          <div id="outline-container-org5393ecc" class="outline-4">
+            <h4 id="org5393ecc">
+              <span class="section-number-4">2.1.1.</span> Runtime Stack
+              Mechanism
+            </h4>
+            <div class="outline-text-4" id="text-2-1-1">
+              <p>
+                For every thread a runtime stack is created by JVM. Every method
+                calls are maintained in a runtime stack.
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orga0c73af" class="outline-4">
+            <h4 id="orga0c73af">
+              <span class="section-number-4">2.1.2.</span> Structure of
+              Exception
+            </h4>
+            <div class="outline-text-4" id="text-2-1-2">
+              <p>
+                Every Exception thrown is printed by JVM in the form Name:
+                description Location(Stack Trace)
+              </p>
+
+              <p>
+                JVM checks if a method handling the exception else JVM handles
+                the exception on its own.
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgd6237e6" class="outline-4">
+            <h4 id="orgd6237e6">
+              <span class="section-number-4">2.1.3.</span> Exception Hierarchy
+            </h4>
+            <div class="outline-text-4" id="text-2-1-3">
+              <p>
+                Throwable class acts a root for entire Java Exception hierarchy.
+                Exception and Error are inherited from throwable Exceptions are
+                recoverable but Errors are not recoverable Errors can be caused
+                by lack of system resources.
+              </p>
+
+              <p>Exception are divided into</p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="org84f0a1d"></a>Checked Exception<br />
+                <div class="outline-text-5" id="text-2-1-3-1">
+                  <p>
+                    These excceptions are checked by the compiler at the runtime
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="org04d9f77"></a>Unchecked Exception<br />
+                <div class="outline-text-5" id="text-2-1-3-2">
+                  <p>These exceptions are not checked by the compiler.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div id="outline-container-org4088c80" class="outline-3">
+          <h3 id="org4088c80">
+            <span class="section-number-3">2.2.</span> Keywords for Exception
+            handling
+          </h3>
+          <div class="outline-text-3" id="text-2-2"></div>
+          <div id="outline-container-orgb04a44a" class="outline-4">
+            <h4 id="orgb04a44a">
+              <span class="section-number-4">2.2.1.</span> Try Catch Block
+            </h4>
+            <div class="outline-text-4" id="text-2-2-1">
+              <p>
+                Contains the risky code within the try block and corresponding
+                handling code inside the catch block. Inside the catck block we
+                can print the exception
+              </p>
+              <ul class="org-ul">
+                <li>
+                  e.printStackTrace() gives the name:description and followed by
+                  stack trace
+                </li>
+                <li>e.toString() gives the name:description No stack trace</li>
+                <li>e.getMessage() gives only the description</li>
+              </ul>
+              <p>By default Exception handler using printStackTrace;</p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="org2ee6b0e"></a>Code<br />
+                <div class="outline-text-5" id="text-2-2-1-1">
+                  <div class="org-src-container">
+                    <pre
+                      class="src src-java"
+                    ><span style="color: #51afef;">try</span>{
+        <span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">i</span> = <span style="color: #da8548; font-weight: bold;">100</span>/<span style="color: #da8548; font-weight: bold;">0</span>;
+}<span style="color: #51afef;">catch</span>(<span style="color: #ECBE7B;">Exception</span> <span style="color: #dcaeea;">e</span>){
+        System.out.print(e);
+}
+</pre>
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div id="outline-container-org3fbcc03" class="outline-4">
+            <h4 id="org3fbcc03">
+              <span class="section-number-4">2.2.2.</span> Try with multiple
+              Catch Block
+            </h4>
+            <div class="outline-text-4" id="text-2-2-2">
+              <p>
+                If try with multiple catch block is present then the order of
+                catch blocks is very important and it should be from child to
+                parent. First arithmetic exception will be checked and if it is
+                not present then Exception class is checked.
+              </p>
+              <div class="org-src-container">
+                <pre
+                  class="src src-java"
+                ><span style="color: #51afef;">try</span>{
+        <span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">i</span> = <span style="color: #da8548; font-weight: bold;">100</span>/<span style="color: #da8548; font-weight: bold;">0</span>;
+} <span style="color: #51afef;">catch</span>(<span style="color: #ECBE7B;">ArithmeticException</span> <span style="color: #dcaeea;">e</span>){
+        <span style="color: #ECBE7B;">Sout</span>(<span style="color: #ECBE7B;">e</span>);
+} <span style="color: #51afef;">catch</span>(<span style="color: #ECBE7B;">Exception</span> <span style="color: #dcaeea;">e</span>){
+        <span style="color: #ECBE7B;">Sout</span>(<span style="color: #ECBE7B;">e</span>);
+}
+</pre>
+              </div>
+            </div>
+          </div>
+          <div id="outline-container-org8601933" class="outline-4">
+            <h4 id="org8601933">
+              <span class="section-number-4">2.2.3.</span> Finally
+            </h4>
+            <div class="outline-text-4" id="text-2-2-3">
+              <p>
+                Code in the finally block always executed, whether or not
+                exception has occurred. Used to run any cleanup type statements
+                that you want to execute.
+              </p>
+              <div class="org-src-container">
+                <pre
+                  class="src src-java"
+                ><span style="color: #51afef;">try</span>{
+        <span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">i</span> = <span style="color: #da8548; font-weight: bold;">100</span>/<span style="color: #da8548; font-weight: bold;">0</span>;
+}
+<span style="color: #51afef;">catch</span>(<span style="color: #ECBE7B;">exception</span> <span style="color: #dcaeea;">e</span>){
+        sout(e);
+}
+<span style="color: #51afef;">finally</span>{
+        sout(<span style="color: #98be65;">"Program is done"</span>);
+}
+</pre>
+              </div>
+              <p>If the exception is handled</p>
+              <ol class="org-ol">
+                <li>Catch block is used</li>
+                <li>Then the finally block is used</li>
+              </ol>
+
+              <p>Else</p>
+              <ol class="org-ol">
+                <li>Finally block is used</li>
+                <li>JVM handles the exception</li>
+              </ol>
+            </div>
+          </div>
+          <div id="outline-container-orga4e0161" class="outline-4">
+            <h4 id="orga4e0161">
+              <span class="section-number-4">2.2.4.</span> Throw
+            </h4>
+            <div class="outline-text-4" id="text-2-2-4">
+              <p>
+                It is used to explicitly throw an exception throw new
+                exception(&ldquo;exption&rdquo;); Only throwable class can be
+                throw.
+              </p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="org54d14d6"></a>Code<br />
+                <div class="outline-text-5" id="text-2-2-4-1">
+                  <div class="org-src-container">
+                    <pre
+                      class="src src-java"
+                    ><span style="color: #51afef;">try</span>{
+        <span style="color: #51afef;">if</span>(i&lt;<span style="color: #da8548; font-weight: bold;">18</span>){
+                 <span style="color: #51afef;">throw</span> <span style="color: #51afef;">new</span> <span style="color: #ECBE7B;">exception</span>(<span style="color: #98be65;">"Not adult"</span>);
+                <span style="color: #5B6268;">// </span><span style="color: #5B6268;">No statements can be written here</span>
+        }
+                <span style="color: #51afef;">else</span>{ Sout(<span style="color: #98be65;">"Okay to vote"</span>); }
+}
+<span style="color: #51afef;">catch</span>(<span style="color: #ECBE7B;">exception</span> <span style="color: #dcaeea;">e</span>){
+        <span style="color: #ECBE7B;">Sout</span>(<span style="color: #ECBE7B;">e</span>);
+}
+</pre>
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div id="outline-container-org8cac619" class="outline-4">
+            <h4 id="org8cac619">
+              <span class="section-number-4">2.2.5.</span> Throws
+            </h4>
+            <div class="outline-text-4" id="text-2-2-5">
+              <p>
+                Used to declare the exception, It provide information to the
+                programmer that there may occur an exception. So during call of
+                that method, programmer must use exception handling mechansim A
+                non runtime exception can&rsquo;t be propagated without throws
+                Throws Keyword is also used to propagate checked exception. If
+                main() throws exception then it is the responsibility of JVM to
+                handle exceptions and We can skip try catch in main function.
+                But it interrupts the control flow in form of runtim exception
+              </p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="org26ad26c"></a>Code<br />
+                <div class="outline-text-5" id="text-2-2-5-1">
+                  <div class="org-src-container">
+                    <pre
+                      class="src src-java"
+                    ><span style="color: #51afef;">class</span> <span style="color: #ECBE7B;">ex1</span> <span style="color: #51afef;">extends</span> <span style="color: #ECBE7B;">Exception</span>{
+        <span style="color: #c678dd;">ex1</span>(<span style="color: #ECBE7B;">String</span> <span style="color: #dcaeea;">s</span>){
+                <span style="color: #51afef;">super</span>(s);
+        }
+}
+
+<span style="color: #51afef;">class</span> <span style="color: #ECBE7B;">ex2</span>{
+        <span style="color: #51afef;">static</span> <span style="color: #ECBE7B;">void</span> <span style="color: #c678dd;">valid</span>(<span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">i</span> ) <span style="color: #51afef;">throws</span> <span style="color: #ECBE7B;">ex1</span>{
+                <span style="color: #51afef;">if</span>(i &lt; <span style="color: #da8548; font-weight: bold;">18</span>){
+                        <span style="color: #51afef;">throw</span> <span style="color: #51afef;">new</span> <span style="color: #ECBE7B;">ex1</span>(<span style="color: #98be65;">"Not Valid!"</span>);
+                }
+        }
+}
+</pre>
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-orge1c7431" class="outline-2">
+        <h2 id="orge1c7431">
+          <span class="section-number-2">3.</span> Strings
+        </h2>
+        <div class="outline-text-2" id="text-3"></div>
+        <div id="outline-container-orga396443" class="outline-3">
+          <h3 id="orga396443">
+            <span class="section-number-3">3.1.</span> String
+          </h3>
+          <div class="outline-text-3" id="text-3-1">
+            <p>
+              String as a object that represent sequence of char values. Strings
+              are defined in java.lang.String Strings in java is immutatable
+              that is cannot be changed When a string is created
+            </p>
+            <ol class="org-ol">
+              <li>JVM checks the String Pool</li>
+              <li>
+                A reference to the string is returned if the string is in the
+                pool
+              </li>
+              <li>A new string is created if string is not in the pool</li>
+            </ol>
+          </div>
+          <div id="outline-container-org4b12c0d" class="outline-4">
+            <h4 id="org4b12c0d">
+              <span class="section-number-4">3.1.1.</span> String s =
+              &ldquo;Hello&rdquo;;
+            </h4>
+            <div class="outline-text-4" id="text-3-1-1">
+              <p>
+                <code>String s1 = "Hello";</code>
+                s and s1 both have the reference to the same string in the
+                StringPool This is the reason java Strings are immutable This
+                helps in memory efficiency
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgda254ce" class="outline-4">
+            <h4 id="orgda254ce">
+              <span class="section-number-4">3.1.2.</span> String s1 = new
+              String(&ldquo;Hello&rdquo;);
+            </h4>
+            <div class="outline-text-4" id="text-3-1-2">
+              <p>
+                New keyword creates the object in the heap New memory is given
+                in heap
+              </p>
+              <div class="org-src-container">
+                <pre
+                  class="src src-java"
+                ><span style="color: #ECBE7B;">String</span> <span style="color: #dcaeea;">s</span> = <span style="color: #98be65;">"EEC"</span>; <span style="color: #5B6268;">// </span><span style="color: #5B6268;">this creates a new string in the stringpool</span>
+s = s.concat(<span style="color: #98be65;">"word"</span>); <span style="color: #5B6268;">// </span><span style="color: #5B6268;">this creates a new string in the stringpool</span>
+</pre>
+              </div>
+              <p>Both the strings exist together in the pool.</p>
+            </div>
+          </div>
+          <div id="outline-container-org3153237" class="outline-4">
+            <h4 id="org3153237">
+              <span class="section-number-4">3.1.3.</span> String Methods
+            </h4>
+            <div class="outline-text-4" id="text-3-1-3">
+              <ul class="org-ul">
+                <li>toUpperCase() String</li>
+                <li>toLowerCase() String</li>
+                <li>startsWith() Boolean</li>
+                <li>endsWith() Boolean</li>
+                <li>charAt() Character</li>
+                <li>length() Integer</li>
+                <li>replace() void</li>
+                <li>substring() String</li>
+                <li>
+                  regionMatches(int ioffset, String s, int oofset,int len)
+                </li>
+                <li>equalsIgnoreCase()</li>
+              </ul>
+            </div>
+          </div>
+          <div id="outline-container-orgc714aea" class="outline-4">
+            <h4 id="orgc714aea">
+              <span class="section-number-4">3.1.4.</span> Length vs Length()
+            </h4>
+            <div class="outline-text-4" id="text-3-1-4">
+              <table
+                border="2"
+                cellspacing="0"
+                cellpadding="6"
+                rules="groups"
+                frame="hsides"
+              >
+                <colgroup>
+                  <col class="org-left" />
+
+                  <col class="org-left" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col" class="org-left">Length</th>
+                    <th scope="col" class="org-left">Length()</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="org-left">
+                      A final variable applicable only for arrays
+                    </td>
+                    <td class="org-left">
+                      Final method applicable for string Object
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="org-left">Represents the size of arrays</td>
+                    <td class="org-left">
+                      Represents the number of characters in string
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="org-left">&#xa0;</td>
+                    <td class="org-left">&#xa0;</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org0fbebb3" class="outline-3">
+          <h3 id="org0fbebb3">
+            <span class="section-number-3">3.2.</span> String Comparison
+          </h3>
+          <div class="outline-text-3" id="text-3-2">
+            <p>Three methods for string comparison</p>
+          </div>
+          <div id="outline-container-org62be2b4" class="outline-4">
+            <h4 id="org62be2b4">
+              <span class="section-number-4">3.2.1.</span> equals()
+            </h4>
+            <div class="outline-text-4" id="text-3-2-1">
+              <p>
+                Compares original content of the Strings compares the string for
+                equality
+              </p>
+              <div class="org-src-container">
+                <pre
+                  class="src src-java"
+                ><span style="color: #ECBE7B;">String</span> <span style="color: #dcaeea;">s1</span> = <span style="color: #98be65;">"BBC"</span>;
+<span style="color: #ECBE7B;">String</span> <span style="color: #dcaeea;">s2</span> = <span style="color: #98be65;">"BBC"</span>;
+<span style="color: #ECBE7B;">String</span> <span style="color: #dcaeea;">s3</span> = <span style="color: #51afef;">new</span> <span style="color: #ECBE7B;">String</span>(<span style="color: #98be65;">"BBC"</span>);
+<span style="color: #ECBE7B;">String</span> <span style="color: #dcaeea;">s4</span> = <span style="color: #98be65;">"Cringe"</span>;
+s1.equals(s2); <span style="color: #5B6268;">// </span><span style="color: #5B6268;">True</span>
+s1.equals(s3); <span style="color: #5B6268;">// </span><span style="color: #5B6268;">True</span>
+s1.equals(s4); <span style="color: #5B6268;">// </span><span style="color: #5B6268;">False</span>
+</pre>
+              </div>
+            </div>
+          </div>
+          <div id="outline-container-orgec608a6" class="outline-4">
+            <h4 id="orgec608a6">
+              <span class="section-number-4">3.2.2.</span> == Operator
+            </h4>
+            <div class="outline-text-4" id="text-3-2-2">
+              <p>
+                Compares references of the Strings compares the string for
+                equality
+              </p>
+              <div class="org-src-container">
+                <pre
+                  class="src src-java"
+                ><span style="color: #ECBE7B;">String</span> <span style="color: #dcaeea;">s1</span> = <span style="color: #98be65;">"BBC"</span>;
+<span style="color: #ECBE7B;">String</span> <span style="color: #dcaeea;">s2</span> = <span style="color: #98be65;">"BBC"</span>;
+<span style="color: #ECBE7B;">String</span> <span style="color: #dcaeea;">s3</span> = <span style="color: #51afef;">new</span> <span style="color: #ECBE7B;">String</span>(<span style="color: #98be65;">"BBC"</span>);
+<span style="color: #ECBE7B;">String</span> <span style="color: #dcaeea;">s4</span> = <span style="color: #98be65;">"Cringe"</span>;
+
+s1 == s2; <span style="color: #5B6268;">// </span><span style="color: #5B6268;">True</span>
+s1 == s3; <span style="color: #5B6268;">// </span><span style="color: #5B6268;">False</span>
+s1 == s4; <span style="color: #5B6268;">// </span><span style="color: #5B6268;">False</span>
+</pre>
+              </div>
+            </div>
+          </div>
+          <div id="outline-container-orga22f927" class="outline-4">
+            <h4 id="orga22f927">
+              <span class="section-number-4">3.2.3.</span> compareTo()
+            </h4>
+            <div class="outline-text-4" id="text-3-2-3">
+              <p>
+                Compare values lexicographically and returns an integer value if
+                First string is less than equal to or greater than other string
+                s1 is equal to s2 -&gt; 0 s1 is greater to s2 -&gt; positive s1
+                is lesser to s2 -&gt; negative
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-orga736954" class="outline-3">
+          <h3 id="orga736954">
+            <span class="section-number-3">3.3.</span> StringBuffer
+          </h3>
+          <div class="outline-text-3" id="text-3-3">
+            <p>
+              StringBuffer class are mutable StringBuffer sb = new
+              StringBuffer(&ldquo;Hello &rdquo;);
+            </p>
+          </div>
+          <div id="outline-container-orgbae1009" class="outline-4">
+            <h4 id="orgbae1009">
+              <span class="section-number-4">3.3.1.</span> Important Methods
+            </h4>
+            <div class="outline-text-4" id="text-3-3-1"></div>
+            <ol class="org-ol">
+              <li>
+                <a id="orgc1b9065"></a>Append()<br />
+                <div class="outline-text-5" id="text-3-3-1-1">
+                  <p>
+                    Adds a substring to the string at the end
+                    sb.append(&ldquo;World&rdquo;);
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="orgca431db"></a>Insert()<br />
+                <div class="outline-text-5" id="text-3-3-1-2">
+                  <p>
+                    Adds a substring to the string at a particular index
+                    sb.insert(1,&ldquo; nice &rdquo;);
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="org089fba0"></a>replace()<br />
+                <div class="outline-text-5" id="text-3-3-1-3">
+                  <p>
+                    sb.replace(1,3,&ldquo;okay&rdquo;) Replaces the start index
+                    to end index with the string
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="org1e23116"></a>delete()<br />
+                <div class="outline-text-5" id="text-3-3-1-4">
+                  <p>It deletes the substring from start to end index</p>
+                </div>
+              </li>
+              <li>
+                <a id="org2527918"></a>reverse()<br />
+                <div class="outline-text-5" id="text-3-3-1-5">
+                  <p>It reverses the string</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div id="outline-container-orga2c16ea" class="outline-4">
+            <h4 id="orga2c16ea">
+              <span class="section-number-4">3.3.2.</span> Differences between
+              string and string buffers
+            </h4>
+            <div class="outline-text-4" id="text-3-3-2">
+              <table
+                border="2"
+                cellspacing="0"
+                cellpadding="6"
+                rules="groups"
+                frame="hsides"
+              >
+                <colgroup>
+                  <col class="org-left" />
+
+                  <col class="org-left" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th scope="col" class="org-left">String</th>
+                    <th scope="col" class="org-left">StringBuffer</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="org-left">Immutable</td>
+                    <td class="org-left">Mutable</td>
+                  </tr>
+
+                  <tr>
+                    <td class="org-left">Slow</td>
+                    <td class="org-left">Fast</td>
+                  </tr>
+
+                  <tr>
+                    <td class="org-left">
+                      Consumes more memory because too many string concat
+                    </td>
+                    <td class="org-left">Consumes less memory</td>
+                  </tr>
+
+                  <tr>
+                    <td class="org-left">
+                      Overrides equals() method of the object class
+                    </td>
+                    <td class="org-left">
+                      Doesn&rsquo;t Override equals() methods of object class
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org7ab9de8" class="outline-3">
+          <h3 id="org7ab9de8">
+            <span class="section-number-3">3.4.</span> StringTokenizer
+          </h3>
+          <div class="outline-text-3" id="text-3-4">
+            <p>
+              Defined in the java.util package Used to break a string into
+              tokens import java.util.*; or java.util.StringTokenizer
+              StringTokenizer s1 = new StringTokenizer(&ldquo;Hello
+              World&rdquo;); default deliminator is whitespace
+            </p>
+          </div>
+          <div id="outline-container-org8894205" class="outline-4">
+            <h4 id="org8894205">
+              <span class="section-number-4">3.4.1.</span> Constructors
+            </h4>
+            <div class="outline-text-4" id="text-3-4-1">
+              <ul class="org-ul">
+                <li>StringTokenizer(String str)</li>
+                <li>StringTokenizer(String str, String deliminator)</li>
+                <li>
+                  StringTokenizer(String str, String deliminator, boolean
+                  returnValue) if returnValue is true deliminator is considered
+                  as tokens else deliminator is used only for separating tokens
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="outline-container-org7e31140" class="outline-4">
+            <h4 id="org7e31140">
+              <span class="section-number-4">3.4.2.</span> Methods
+            </h4>
+            <div class="outline-text-4" id="text-3-4-2">
+              <ul class="org-ul">
+                <li>boolean hasMoreTokens() checks availability of tokens</li>
+                <li>String nextToken() returns the next token</li>
+                <li>
+                  String nextToken(String deliminator) return next token on the
+                  basis of deliminator
+                </li>
+                <li>boolean hasMoreElements() similar to has more tokens</li>
+                <li>int CountTokens() returns the total number of tokens</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-org401f399" class="outline-2">
+        <h2 id="org401f399"><span class="section-number-2">4.</span> Applet</h2>
+        <div class="outline-text-2" id="text-4">
+          <p>
+            Applet is a java program that runs in a web browser. Applet can be
+            runned only on a java enabled browesr. This is an old concept not
+            used nowadays. Applet is a java class that extends the
+            java.applet.Applet class. It has no Main() method. It has a public
+            void paint() method. Applet are designed to be embedded within a
+            HTML page. JVM is required to view an applet. Applet have strict
+            security rules that are enforced by the web browser Sandbox
+            Security. This is the rule that it can&rsquo;t access the machine
+            directly. appletviewer can be used to use an applet.
+          </p>
+        </div>
+        <div id="outline-container-org9517042" class="outline-3">
+          <h3 id="org9517042">
+            <span class="section-number-3">4.1.</span> Life Cycle of Applet
+          </h3>
+          <div class="outline-text-3" id="text-4-1">
+            <p>Applet is similar to lifecycle of thread</p>
+            <ol class="org-ol">
+              <li>Applet initialized Use the init() method</li>
+              <li>Applet Running Use the start() method</li>
+              <li>
+                Applet Stopped Use the stop() method then use start() again to
+                restart the applet
+              </li>
+              <li>Applet Stopped Use the destroy() method</li>
+            </ol>
+
+            <p>
+              Suppose a.html is having a java code start() is called by the
+              browser when the component of the applet is displayed. if
+              component goes out of the view the stop method is called if the
+              page is closed the destroy() method is called.
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org3359df2" class="outline-3">
+          <h3 id="org3359df2">
+            <span class="section-number-3">4.2.</span> Creation of applet
+          </h3>
+          <div class="outline-text-3" id="text-4-2">
+            <p>Create two files java file and html code</p>
+          </div>
+          <div id="outline-container-org6f32b9b" class="outline-4">
+            <h4 id="org6f32b9b">
+              <span class="section-number-4">4.2.1.</span> Java file
+            </h4>
+            <div class="outline-text-4" id="text-4-2-1">
+              <div class="org-src-container">
+                <pre
+                  class="src src-java"
+                ><span style="color: #51afef;">import</span> <span style="color: #a9a1e1;">java</span>.<span style="color: #a9a1e1;">applet</span>.*;
+<span style="color: #51afef;">import</span> <span style="color: #a9a1e1;">java</span>.<span style="color: #a9a1e1;">awt</span>.*; <span style="color: #5B6268;">// </span><span style="color: #5B6268;">Graphics present in the awt package</span>
+
+<span style="color: #51afef;">public</span> <span style="color: #51afef;">class</span> app_image <span style="color: #ECBE7B;">extend</span> <span style="color: #ECBE7B;">Applet</span>{
+        <span style="color: #51afef;">public</span> <span style="color: #ECBE7B;">void</span> <span style="color: #c678dd;">paint</span>(<span style="color: #ECBE7B;">Graphics</span> <span style="color: #dcaeea;">g</span>){
+                g.drawString(<span style="color: #98be65;">"My Applet"</span>,<span style="color: #da8548; font-weight: bold;">100</span>,<span style="color: #da8548; font-weight: bold;">100</span>);<span style="color: #5B6268;">// </span><span style="color: #5B6268;">Method to draw string at 100,100 coordinates</span>
+        }
+}
+</pre>
+              </div>
+
+              <p>
+                Save as app<sub>image.java</sub> javac app<sub>image.java</sub>
+                A file app<sub>image.class</sub> will be created
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org3394957" class="outline-4">
+            <h4 id="org3394957">
+              <span class="section-number-4">4.2.2.</span> HTML file
+            </h4>
+            <div class="outline-text-4" id="text-4-2-2">
+              <p>
+                &lt;html&gt; &lt;title&gt; Image Example &lt;/title&gt;
+                &lt;applet code = &ldquo;app<sub>image.class</sub>&rdquo;
+                width=400 height=400&gt; &lt;/applet&gt; &lt;/html&gt;
+              </p>
+
+              <p>
+                Save as a.html Open html in java enabled web Browser Use
+                appletviewer command appletviewer a.html
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org8bd9fb7" class="outline-3">
+          <h3 id="org8bd9fb7">
+            <span class="section-number-3">4.3.</span> Passing Parameter to
+            Applet
+          </h3>
+          <div class="outline-text-3" id="text-4-3">
+            <p>
+              &lt;PARAM&gt; tag is used to pass the paramter values from HTML
+              file to Applet code getParamter() is the method used to get value
+              from HTML file
+            </p>
+          </div>
+          <div id="outline-container-org59f963b" class="outline-4">
+            <h4 id="org59f963b">
+              <span class="section-number-4">4.3.1.</span> HTML file
+            </h4>
+            <div class="outline-text-4" id="text-4-3-1">
+              <div class="org-src-container">
+                <pre
+                  class="src src-html"
+                >&lt;<span style="color: #c678dd;">html</span>&gt;
+&lt;<span style="color: #c678dd;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;"> Image Example </span>&lt;/<span style="color: #c678dd;">title</span>&gt;
+&lt;<span style="color: #c678dd;">applet</span> code = <span style="color: #98be65;">"app_image.class"</span> width=400 height=400&gt;
+&lt;<span style="color: #c678dd;">PARAM</span> <span style="color: #dcaeea;">Name</span>=<span style="color: #98be65;">"name"</span> <span style="color: #dcaeea;">value</span>=<span style="color: #98be65;">"Hello Java"</span>&gt;
+&lt;/<span style="color: #c678dd;">applet</span>&gt;
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+</pre>
+              </div>
+
+              <p>Save as a.html</p>
+            </div>
+          </div>
+          <div id="outline-container-org71cb63d" class="outline-4">
+            <h4 id="org71cb63d">
+              <span class="section-number-4">4.3.2.</span> Java file
+            </h4>
+            <div class="outline-text-4" id="text-4-3-2">
+              <div class="org-src-container">
+                <pre
+                  class="src src-java"
+                ><span style="color: #51afef;">import</span> <span style="color: #a9a1e1;">java</span>.<span style="color: #a9a1e1;">applet</span>.*;
+<span style="color: #51afef;">import</span> <span style="color: #a9a1e1;">java</span>.<span style="color: #a9a1e1;">awt</span>.*; <span style="color: #5B6268;">// </span><span style="color: #5B6268;">Graphics present in the awt package</span>
+
+<span style="color: #51afef;">public</span> <span style="color: #51afef;">class</span> app_image <span style="color: #ECBE7B;">extend</span> <span style="color: #ECBE7B;">Applet</span>{
+        <span style="color: #ECBE7B;">String</span> <span style="color: #dcaeea;">str</span> = <span style="color: #a9a1e1;">null</span>;
+        <span style="color: #51afef;">public</span> <span style="color: #c678dd;">init</span>(){
+                str = getParamter(<span style="color: #98be65;">"name"</span>)
+        }
+        <span style="color: #51afef;">public</span> <span style="color: #ECBE7B;">void</span> <span style="color: #c678dd;">paint</span>(<span style="color: #ECBE7B;">Graphics</span> <span style="color: #dcaeea;">g</span>){
+                g.drawString(str,<span style="color: #da8548; font-weight: bold;">100</span>,<span style="color: #da8548; font-weight: bold;">100</span>);<span style="color: #5B6268;">// </span><span style="color: #5B6268;">Method to draw the parameter at 100,100 coordinates</span>
+        }
+}
+</pre>
+              </div>
+
+              <p>
+                Save as app<sub>image.java</sub> javac app<sub>image.java</sub>
+                A file app<sub>image.class</sub> will be created
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org9e21b39" class="outline-3">
+          <h3 id="org9e21b39">
+            <span class="section-number-3">4.4.</span> Getting Input from the
+            User
+          </h3>
+          <div class="outline-text-3" id="text-4-4">
+            <p>
+              Use the add() function to add the element to the applet use the
+              textField.setText or textField.getText to set/get string from
+              textField There are various ways to get Input
+            </p>
+            <ul class="org-ul">
+              <li>Text Field</li>
+              <li>CheckBox</li>
+              <li>Text Area</li>
+              <li>Label</li>
+              <li>Drop Down</li>
+            </ul>
+          </div>
+          <div id="outline-container-orgae746de" class="outline-4">
+            <h4 id="orgae746de">
+              <span class="section-number-4">4.4.1.</span> Java file
+            </h4>
+            <div class="outline-text-4" id="text-4-4-1">
+              <p>
+                import java.applet.*; import java.awt.*; // Graphics present in
+                the awt package
+              </p>
+
+              <p>
+                public class app<sub>image</sub> extend Applet{ TextField t1,t2;
+                public void init() { t1 = new TextField(5); t2 = new
+                TextField(5); add(t1); // To add the text field to the applet
+                add(t2); } public void paint(Graphics g){ int x = 0; x =
+                Integer.parseInt(t1.getText()); t2.setText(String.valueof(x*x));
+                } }
+              </p>
+
+              <p>
+                Save as app<sub>image.java</sub> javac app<sub>image.java</sub>
+                A file app<sub>image.class</sub> will be created
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org5e97089" class="outline-4">
+            <h4 id="org5e97089">
+              <span class="section-number-4">4.4.2.</span> HTML file
+            </h4>
+            <div class="outline-text-4" id="text-4-4-2">
+              <p>
+                &lt;html&gt; &lt;title&gt; Image Example &lt;/title&gt;
+                &lt;applet code = &ldquo;app<sub>image.class</sub>&rdquo;
+                width=400 height=400&gt; &lt;/applet&gt; &lt;/html&gt;
+              </p>
+
+              <p>
+                Save as a.html Open html in java enabled web Browser Use
+                appletviewer command appletviewer a.html
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org71202fe" class="outline-3">
+          <h3 id="org71202fe">
+            <span class="section-number-3">4.5.</span> Java Sandbox Model
+          </h3>
+          <div class="outline-text-3" id="text-4-5">
+            <ul class="org-ul">
+              <li>Security model for java</li>
+              <li>Provides restricted environment</li>
+              <li>
+                Local code is trusted to have full access to vital system
+                resources such as file system
+              </li>
+              <li>
+                Downloaded remote code is not trusted and can access only
+                limited resources provided inside the sandbox
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="postamble" class="status">
+      <p class="author">Author: Shaswat Satyam</p>
+      <p class="date">Created: 2025-01-12 日 18:38</p>
+    </div>
+  </body>
+</html>
