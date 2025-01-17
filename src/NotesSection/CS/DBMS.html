@@ -1,0 +1,3869 @@
+<html>
+  <head>
+    <!-- 2025-01-12 日 18:35 -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DBMS</title>
+    <meta name="author" content="Knowledge Gate" />
+    <meta name="generator" content="Org Mode" />
+    <style type="text/css">
+      #content {
+        max-width: 60em;
+        margin: auto;
+      }
+      .title {
+        text-align: center;
+        margin-bottom: 0.2em;
+      }
+      .subtitle {
+        text-align: center;
+        font-size: medium;
+        font-weight: bold;
+        margin-top: 0;
+      }
+      .todo {
+        font-family: monospace;
+        color: red;
+      }
+      .done {
+        font-family: monospace;
+        color: green;
+      }
+      .priority {
+        font-family: monospace;
+        color: orange;
+      }
+      .tag {
+        background-color: #eee;
+        font-family: monospace;
+        padding: 2px;
+        font-size: 80%;
+        font-weight: normal;
+      }
+      .timestamp {
+        color: #bebebe;
+      }
+      .timestamp-kwd {
+        color: #5f9ea0;
+      }
+      .org-right {
+        margin-left: auto;
+        margin-right: 0px;
+        text-align: right;
+      }
+      .org-left {
+        margin-left: 0px;
+        margin-right: auto;
+        text-align: left;
+      }
+      .org-center {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+      .underline {
+        text-decoration: underline;
+      }
+      #postamble p,
+      #preamble p {
+        font-size: 90%;
+        margin: 0.2em;
+      }
+      p.verse {
+        margin-left: 3%;
+      }
+      pre {
+        border: 1px solid #e6e6e6;
+        border-radius: 3px;
+        background-color: #f2f2f2;
+        padding: 8pt;
+        font-family: monospace;
+        overflow: auto;
+        margin: 1.2em;
+      }
+      pre.src {
+        position: relative;
+        overflow: auto;
+      }
+      pre.src:before {
+        display: none;
+        position: absolute;
+        top: -8px;
+        right: 12px;
+        padding: 3px;
+        color: #555;
+        background-color: #f2f2f299;
+      }
+      pre.src:hover:before {
+        display: inline;
+        margin-top: 14px;
+      }
+      /* Languages per Org manual */
+      pre.src-asymptote:before {
+        content: "Asymptote";
+      }
+      pre.src-awk:before {
+        content: "Awk";
+      }
+      pre.src-authinfo::before {
+        content: "Authinfo";
+      }
+      pre.src-C:before {
+        content: "C";
+      }
+      /* pre.src-C++ doesn't work in CSS */
+      pre.src-clojure:before {
+        content: "Clojure";
+      }
+      pre.src-css:before {
+        content: "CSS";
+      }
+      pre.src-D:before {
+        content: "D";
+      }
+      pre.src-ditaa:before {
+        content: "ditaa";
+      }
+      pre.src-dot:before {
+        content: "Graphviz";
+      }
+      pre.src-calc:before {
+        content: "Emacs Calc";
+      }
+      pre.src-emacs-lisp:before {
+        content: "Emacs Lisp";
+      }
+      pre.src-fortran:before {
+        content: "Fortran";
+      }
+      pre.src-gnuplot:before {
+        content: "gnuplot";
+      }
+      pre.src-haskell:before {
+        content: "Haskell";
+      }
+      pre.src-hledger:before {
+        content: "hledger";
+      }
+      pre.src-java:before {
+        content: "Java";
+      }
+      pre.src-js:before {
+        content: "Javascript";
+      }
+      pre.src-latex:before {
+        content: "LaTeX";
+      }
+      pre.src-ledger:before {
+        content: "Ledger";
+      }
+      pre.src-lisp:before {
+        content: "Lisp";
+      }
+      pre.src-lilypond:before {
+        content: "Lilypond";
+      }
+      pre.src-lua:before {
+        content: "Lua";
+      }
+      pre.src-matlab:before {
+        content: "MATLAB";
+      }
+      pre.src-mscgen:before {
+        content: "Mscgen";
+      }
+      pre.src-ocaml:before {
+        content: "Objective Caml";
+      }
+      pre.src-octave:before {
+        content: "Octave";
+      }
+      pre.src-org:before {
+        content: "Org mode";
+      }
+      pre.src-oz:before {
+        content: "OZ";
+      }
+      pre.src-plantuml:before {
+        content: "Plantuml";
+      }
+      pre.src-processing:before {
+        content: "Processing.js";
+      }
+      pre.src-python:before {
+        content: "Python";
+      }
+      pre.src-R:before {
+        content: "R";
+      }
+      pre.src-ruby:before {
+        content: "Ruby";
+      }
+      pre.src-sass:before {
+        content: "Sass";
+      }
+      pre.src-scheme:before {
+        content: "Scheme";
+      }
+      pre.src-screen:before {
+        content: "Gnu Screen";
+      }
+      pre.src-sed:before {
+        content: "Sed";
+      }
+      pre.src-sh:before {
+        content: "shell";
+      }
+      pre.src-sql:before {
+        content: "SQL";
+      }
+      pre.src-sqlite:before {
+        content: "SQLite";
+      }
+      /* additional languages in org.el's org-babel-load-languages alist */
+      pre.src-forth:before {
+        content: "Forth";
+      }
+      pre.src-io:before {
+        content: "IO";
+      }
+      pre.src-J:before {
+        content: "J";
+      }
+      pre.src-makefile:before {
+        content: "Makefile";
+      }
+      pre.src-maxima:before {
+        content: "Maxima";
+      }
+      pre.src-perl:before {
+        content: "Perl";
+      }
+      pre.src-picolisp:before {
+        content: "Pico Lisp";
+      }
+      pre.src-scala:before {
+        content: "Scala";
+      }
+      pre.src-shell:before {
+        content: "Shell Script";
+      }
+      pre.src-ebnf2ps:before {
+        content: "ebfn2ps";
+      }
+      /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+      pre.src-cpp:before {
+        content: "C++";
+      }
+      pre.src-abc:before {
+        content: "ABC";
+      }
+      pre.src-coq:before {
+        content: "Coq";
+      }
+      pre.src-groovy:before {
+        content: "Groovy";
+      }
+      /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+      pre.src-bash:before {
+        content: "bash";
+      }
+      pre.src-csh:before {
+        content: "csh";
+      }
+      pre.src-ash:before {
+        content: "ash";
+      }
+      pre.src-dash:before {
+        content: "dash";
+      }
+      pre.src-ksh:before {
+        content: "ksh";
+      }
+      pre.src-mksh:before {
+        content: "mksh";
+      }
+      pre.src-posh:before {
+        content: "posh";
+      }
+      /* Additional Emacs modes also supported by the LaTeX listings package */
+      pre.src-ada:before {
+        content: "Ada";
+      }
+      pre.src-asm:before {
+        content: "Assembler";
+      }
+      pre.src-caml:before {
+        content: "Caml";
+      }
+      pre.src-delphi:before {
+        content: "Delphi";
+      }
+      pre.src-html:before {
+        content: "HTML";
+      }
+      pre.src-idl:before {
+        content: "IDL";
+      }
+      pre.src-mercury:before {
+        content: "Mercury";
+      }
+      pre.src-metapost:before {
+        content: "MetaPost";
+      }
+      pre.src-modula-2:before {
+        content: "Modula-2";
+      }
+      pre.src-pascal:before {
+        content: "Pascal";
+      }
+      pre.src-ps:before {
+        content: "PostScript";
+      }
+      pre.src-prolog:before {
+        content: "Prolog";
+      }
+      pre.src-simula:before {
+        content: "Simula";
+      }
+      pre.src-tcl:before {
+        content: "tcl";
+      }
+      pre.src-tex:before {
+        content: "TeX";
+      }
+      pre.src-plain-tex:before {
+        content: "Plain TeX";
+      }
+      pre.src-verilog:before {
+        content: "Verilog";
+      }
+      pre.src-vhdl:before {
+        content: "VHDL";
+      }
+      pre.src-xml:before {
+        content: "XML";
+      }
+      pre.src-nxml:before {
+        content: "XML";
+      }
+      /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+      pre.src-conf:before {
+        content: "Configuration File";
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+      caption.t-above {
+        caption-side: top;
+      }
+      caption.t-bottom {
+        caption-side: bottom;
+      }
+      td,
+      th {
+        vertical-align: top;
+      }
+      th.org-right {
+        text-align: center;
+      }
+      th.org-left {
+        text-align: center;
+      }
+      th.org-center {
+        text-align: center;
+      }
+      td.org-right {
+        text-align: right;
+      }
+      td.org-left {
+        text-align: left;
+      }
+      td.org-center {
+        text-align: center;
+      }
+      dt {
+        font-weight: bold;
+      }
+      .footpara {
+        display: inline;
+      }
+      .footdef {
+        margin-bottom: 1em;
+      }
+      .figure {
+        padding: 1em;
+      }
+      .figure p {
+        text-align: center;
+      }
+      .equation-container {
+        display: table;
+        text-align: center;
+        width: 100%;
+      }
+      .equation {
+        vertical-align: middle;
+      }
+      .equation-label {
+        display: table-cell;
+        text-align: right;
+        vertical-align: middle;
+      }
+      .inlinetask {
+        padding: 10px;
+        border: 2px solid gray;
+        margin: 10px;
+        background: #ffffcc;
+      }
+      #org-div-home-and-up {
+        text-align: right;
+        font-size: 70%;
+        white-space: nowrap;
+      }
+      textarea {
+        overflow-x: auto;
+      }
+      .linenr {
+        font-size: smaller;
+      }
+      .code-highlighted {
+        background-color: #ffff00;
+      }
+      .org-info-js_info-navigation {
+        border-style: none;
+      }
+      #org-info-js_console-label {
+        font-size: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+      .org-info-js_search-highlight {
+        background-color: #ffff00;
+        color: #000000;
+        font-weight: bold;
+      }
+      .org-svg {
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content" class="content">
+      <h1 class="title">DBMS</h1>
+      <div id="table-of-contents" role="doc-toc">
+        <h2>Table of Contents</h2>
+        <div id="text-table-of-contents" role="doc-toc">
+          <ul>
+            <li>
+              <a href="#org67eabb5">1. Basics</a>
+              <ul>
+                <li><a href="#org2c95dc8">1.1. OLAP vs OLTP</a></li>
+                <li>
+                  <a href="#org1a2a301">1.2. Types of Database</a>
+                  <ul>
+                    <li>
+                      <a href="#org581642d">1.2.1. Commerical Database</a>
+                    </li>
+                    <li>
+                      <a href="#orgeccd79e">1.2.2. Multimedia Database</a>
+                    </li>
+                    <li><a href="#orgecc2cfa">1.2.3. Deductive Database</a></li>
+                    <li><a href="#orgbddd8bf">1.2.4. Temporal Database</a></li>
+                    <li>
+                      <a href="#orge91b635">1.2.5. Geological Database</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#orgbc6c0b1">1.3. Database Administrator</a>
+                  <ul>
+                    <li><a href="#org3580bb7">1.3.1. Schema definition</a></li>
+                    <li>
+                      <a href="#orgcde9b10"
+                        >1.3.2. Storage structure and access methods
+                        Definition</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#org28f9195"
+                        >1.3.3. Schema and physical Organisation
+                        Modifications</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#org8de0481"
+                        >1.3.4. Granting of authorization for data access</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#org941d691"
+                        >1.3.5. Integrity Constraint Specification</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org32d9dc8">1.4. Database Architecture</a>
+                  <ul>
+                    <li><a href="#org93706d6">1.4.1. Query Processor</a></li>
+                    <li><a href="#org8278f7c">1.4.2. Storage Manager</a></li>
+                    <li><a href="#org8069275">1.4.3. Disk Storage</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#orge2a390c">2. ER diagram</a>
+              <ul>
+                <li>
+                  <a href="#orgd981c03">2.1. Entity</a>
+                  <ul>
+                    <li><a href="#orge4998a4">2.1.1. Tangible</a></li>
+                    <li><a href="#org8774f01">2.1.2. Intangible</a></li>
+                  </ul>
+                </li>
+                <li><a href="#org57eabb6">2.2. Entity set</a></li>
+                <li>
+                  <a href="#orgde7c0d6">2.3. Attributes</a>
+                  <ul>
+                    <li><a href="#org8dd650a">2.3.1. Types</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org3dab6a2">2.4. Relationship</a>
+                  <ul>
+                    <li><a href="#orgd636c7b">2.4.1. Degree</a></li>
+                    <li><a href="#org7d803a6">2.4.2. Cardinality</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org871ac7a">2.5. Participation Constraint</a>
+                  <ul>
+                    <li><a href="#orgbfc8182">2.5.1. Types</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org55b7f8b"
+                    >2.6. Conversion from ER to Relational Model</a
+                  >
+                  <ul>
+                    <li><a href="#orgd126109">2.6.1. Entity Set</a></li>
+                    <li><a href="#orgc7b02cb">2.6.2. Relationship</a></li>
+                    <li><a href="#orgec57af4">2.6.3. Attributes</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org9836456">2.7. Grouped Entity sets</a>
+                  <ul>
+                    <li><a href="#org88253b3">2.7.1. Generalization</a></li>
+                    <li><a href="#org4a3bc1d">2.7.2. Specialization</a></li>
+                    <li><a href="#org0818b53">2.7.3. Aggregation</a></li>
+                  </ul>
+                </li>
+                <li><a href="#org3f0e44c">2.8. Advantages</a></li>
+                <li><a href="#org9be0c3b">2.9. Disadvantages</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#org57bec17">3. RDBMS</a>
+              <ul>
+                <li><a href="#org0b4380a">3.1. Basics</a></li>
+                <li><a href="#org7ef977f">3.2. Properties</a></li>
+                <li>
+                  <a href="#org85c0e4e">3.3. Problems</a>
+                  <ul>
+                    <li><a href="#org659ae74">3.3.1. Updation Anomalies</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#orgda58d24">3.4. Key</a>
+                  <ul>
+                    <li><a href="#org72241aa">3.4.1. Super Key</a></li>
+                    <li><a href="#org253d5f2">3.4.2. Candidate Key</a></li>
+                    <li><a href="#org0192317">3.4.3. Prime Attributes</a></li>
+                    <li><a href="#org9f0708f">3.4.4. Primary Key</a></li>
+                    <li><a href="#orgd44d51a">3.4.5. Foreign Key</a></li>
+                    <li><a href="#orge153245">3.4.6. Composite Key</a></li>
+                    <li><a href="#org21cf2f0">3.4.7. Secondary Key</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org9bc111a">3.5. Normalization</a>
+                  <ul>
+                    <li>
+                      <a href="#orgca07a69">3.5.1. Functional Dependency</a>
+                    </li>
+                    <li><a href="#org828a8ce">3.5.2. Normal Forms</a></li>
+                    <li><a href="#org20f70cc">3.5.3. Decomposition</a></li>
+                    <li><a href="#orgdce562a">3.5.4. Armstrong Axioms</a></li>
+                    <li><a href="#org0c902f7">3.5.5. Equivalence</a></li>
+                    <li><a href="#orgd81768f">3.5.6. Minimal Cover</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#orga63fc52">4. Indexing</a>
+              <ul>
+                <li>
+                  <a href="#org9dc1bbe">4.1. File Organisation</a>
+                  <ul>
+                    <li>
+                      <a href="#org30cf01a">4.1.1. Ordered file organisation</a>
+                    </li>
+                    <li>
+                      <a href="#org7968ff6"
+                        >4.1.2. Unordered file organisation</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org0ccd5d2">4.2. Indexing</a>
+                  <ul>
+                    <li><a href="#org0c6079f">4.2.1. Properties</a></li>
+                    <li><a href="#org204a103">4.2.2. Dense Vs Sparse</a></li>
+                    <li><a href="#org71aac32">4.2.3. Types</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#org055917e">5. Query Language</a>
+              <ul>
+                <li>
+                  <ul>
+                    <li>
+                      <a href="#org9183cc0"
+                        >5.0.1. Difference between RElational model and RDBMS</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org0efdd73">5.1. Types</a>
+                  <ul>
+                    <li><a href="#org6ec0221">5.1.1. Procedural</a></li>
+                    <li><a href="#org83aea86">5.1.2. Non Procedural</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org3adbcca">5.2. Expressive Power of Language</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#orge128b6c">6. Transaction</a>
+              <ul>
+                <li>
+                  <a href="#orgdd342ac">6.1. ACID properties</a>
+                  <ul>
+                    <li><a href="#org8a5a197">6.1.1. A - Atomicity</a></li>
+                    <li><a href="#orgf8fe781">6.1.2. C - Consistency</a></li>
+                    <li><a href="#orgc21a239">6.1.3. I - Isolation</a></li>
+                    <li><a href="#org3e21e8f">6.1.4. D - Durability</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#orgbad50aa">6.2. Transaction States</a>
+                  <ul>
+                    <li><a href="#orgbed630c">6.2.1. Active</a></li>
+                    <li><a href="#org84dfa57">6.2.2. Partially Commited</a></li>
+                    <li><a href="#org6085047">6.2.3. Failed</a></li>
+                    <li><a href="#org93ab0b1">6.2.4. Commited</a></li>
+                    <li><a href="#orgcc84c5e">6.2.5. Aborted</a></li>
+                    <li><a href="#orgdd9ccf4">6.2.6. Terminated</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org22af07f">6.3. Schedule</a>
+                  <ul>
+                    <li><a href="#org8603864">6.3.1. Serial Schedule</a></li>
+                    <li>
+                      <a href="#org62b8b2d">6.3.2. Non serial Schedule</a>
+                    </li>
+                    <li>
+                      <a href="#org7237274">6.3.3. Problems with Concurrency</a>
+                    </li>
+                    <li><a href="#orga02e95b">6.3.4. Properties</a></li>
+                    <li>
+                      <a href="#org2b0be8e"
+                        >6.3.5. On the basis of serializability</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#org6816e6e"
+                        >6.3.6. On the basis of recoverability</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#org3b2776d">7. Recovery and Concurreny</a>
+              <ul>
+                <li>
+                  <a href="#org72fab25">7.1. Log Based Recovery</a>
+                  <ul>
+                    <li>
+                      <a href="#org12873ed"
+                        >7.1.1. Different types of log records</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="#orgef1c5f9">7.2. Deferred Vs Immediate</a></li>
+                <li>
+                  <a href="#org07b5168"
+                    >7.3. Shadow paging recovery technique</a
+                  >
+                  <ul>
+                    <li><a href="#orge490b75">7.3.1. Initalization</a></li>
+                    <li><a href="#org3f8e9d8">7.3.2. Modification</a></li>
+                    <li><a href="#org1f50b19">7.3.3. Commit</a></li>
+                    <li><a href="#org394bce6">7.3.4. Recovery</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org4131b41">7.4. Data Fragmentation</a>
+                  <ul>
+                    <li>
+                      <a href="#orga2258a5">7.4.1. Horizontal Fragmentation</a>
+                    </li>
+                    <li>
+                      <a href="#org22a23a6">7.4.2. Vertical Fragmentation</a>
+                    </li>
+                    <li>
+                      <a href="#org883878f">7.4.3. Hybrid Fragmentation</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org7247cb4">7.5. Distributed Database</a>
+                  <ul>
+                    <li><a href="#org05772be">7.5.1. Data Replication</a></li>
+                    <li><a href="#org906358f">7.5.2. Data Fragmentation</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org9147853">7.6. Concurrency Control</a>
+                  <ul>
+                    <li><a href="#org19423e4">7.6.1. Time Stamping</a></li>
+                    <li><a href="#org03c977c">7.6.2. Lock based Method</a></li>
+                    <li>
+                      <a href="#orgca58e4a">7.6.3. Validation Based protocol</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="outline-container-org67eabb5" class="outline-2">
+        <h2 id="org67eabb5"><span class="section-number-2">1.</span> Basics</h2>
+        <div class="outline-text-2" id="text-1"></div>
+        <div id="outline-container-org2c95dc8" class="outline-3">
+          <h3 id="org2c95dc8">
+            <span class="section-number-3">1.1.</span> OLAP vs OLTP
+          </h3>
+          <div class="outline-text-3" id="text-1-1">
+            <table
+              border="2"
+              cellspacing="0"
+              cellpadding="6"
+              rules="groups"
+              frame="hsides"
+            >
+              <colgroup>
+                <col class="org-left" />
+
+                <col class="org-left" />
+
+                <col class="org-left" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col" class="org-left">Aspect</th>
+                  <th scope="col" class="org-left">OLAP</th>
+                  <th scope="col" class="org-left">OLTP</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="org-left">Full From</td>
+                  <td class="org-left">Online Analytical Processing</td>
+                  <td class="org-left">Online Transaction Processing</td>
+                </tr>
+
+                <tr>
+                  <td class="org-left">Primary Function</td>
+                  <td class="org-left">Designed for complex data analysis</td>
+                  <td class="org-left">
+                    Handles daily transactional data processing
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="org-left">Database Design</td>
+                  <td class="org-left">
+                    Star or snowflake schema optimized for read operations
+                  </td>
+                  <td class="org-left">
+                    Normalized database optimized for write operation
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="org-left">Query Complexity</td>
+                  <td class="org-left">
+                    Complex queries involving aggregations and computations
+                    across multiple dimensions
+                  </td>
+                  <td class="org-left">
+                    Simple and standard queries focusing on CRUD operations
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="org-left">Data Volume</td>
+                  <td class="org-left">
+                    Deals with large volume of data for historical analysis
+                  </td>
+                  <td class="org-left">
+                    Processes a high number of small transactions
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="org-left">Respone time</td>
+                  <td class="org-left">
+                    Slower response time due to complex queries
+                  </td>
+                  <td class="org-left">
+                    Fast response time to support high transaction rate
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="outline-container-org1a2a301" class="outline-3">
+          <h3 id="org1a2a301">
+            <span class="section-number-3">1.2.</span> Types of Database
+          </h3>
+          <div class="outline-text-3" id="text-1-2"></div>
+          <div id="outline-container-org581642d" class="outline-4">
+            <h4 id="org581642d">
+              <span class="section-number-4">1.2.1.</span> Commerical Database
+            </h4>
+            <div class="outline-text-4" id="text-1-2-1">
+              <p>
+                Predominately used in business sector to handle large volume of
+                transactions and customer data.A CRM system like salesforce
+                which handles large volume of customer data and transactions
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgeccd79e" class="outline-4">
+            <h4 id="orgeccd79e">
+              <span class="section-number-4">1.2.2.</span> Multimedia Database
+            </h4>
+            <div class="outline-text-4" id="text-1-2-2">
+              <p>
+                Stores datatype such as images, audio and video files,
+                facilitating the management and retrieval of multimedia content.
+                A digital asset management system like adobe experience manager
+                that facilitates the storage and retrieval of multimedia content
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgecc2cfa" class="outline-4">
+            <h4 id="orgecc2cfa">
+              <span class="section-number-4">1.2.3.</span> Deductive Database
+            </h4>
+            <div class="outline-text-4" id="text-1-2-3">
+              <p>
+                Utilizes logic programming to derive information from data
+                stored in a database, allowing for more complex and analytical
+                queries. A database using Datalog which allows for complex
+                logical queries and information derivation.
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgbddd8bf" class="outline-4">
+            <h4 id="orgbddd8bf">
+              <span class="section-number-4">1.2.4.</span> Temporal Database
+            </h4>
+            <div class="outline-text-4" id="text-1-2-4">
+              <p>
+                Keeps track of changing data over time allowing for queries
+                concerning time based data. A historical trading database in the
+                final sector which keeps track of stock prices over time.
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orge91b635" class="outline-4">
+            <h4 id="orge91b635">
+              <span class="section-number-4">1.2.5.</span> Geological Database
+            </h4>
+            <div class="outline-text-4" id="text-1-2-5">
+              <p>
+                Stores, Organizes and analyzes geographical data, aiding in
+                spatial analysis and mapping projects. A system ArcGIS which
+                enables storage, analysis and visualization of geographical
+                data.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-orgbc6c0b1" class="outline-3">
+          <h3 id="orgbc6c0b1">
+            <span class="section-number-3">1.3.</span> Database Administrator
+          </h3>
+          <div class="outline-text-3" id="text-1-3">
+            <p>
+              Database adminstrator hold authority over data and the program
+              facilitating data access. Their roles/functions are:
+            </p>
+          </div>
+          <div id="outline-container-org3580bb7" class="outline-4">
+            <h4 id="org3580bb7">
+              <span class="section-number-4">1.3.1.</span> Schema definition
+            </h4>
+            <div class="outline-text-4" id="text-1-3-1">
+              <p>
+                DBA outlines the original database schema. Acheived through
+                writing definition translated to permanent labels in the data
+                dictionary by the DDL compiler
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgcde9b10" class="outline-4">
+            <h4 id="orgcde9b10">
+              <span class="section-number-4">1.3.2.</span> Storage structure and
+              access methods Definition
+            </h4>
+            <div class="outline-text-4" id="text-1-3-2">
+              <p>
+                Responsible for forming appropriate storage structures and
+                access methods. Acheived through writing definition translated
+                by the Data storage and definition language compiler.
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org28f9195" class="outline-4">
+            <h4 id="org28f9195">
+              <span class="section-number-4">1.3.3.</span> Schema and physical
+              Organisation Modifications
+            </h4>
+            <div class="outline-text-4" id="text-1-3-3">
+              <p>
+                Involves altering the database schema or physical storage
+                organisation. Changes are implemented by writing definition that
+                modify the relevant internal system tables
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org8de0481" class="outline-4">
+            <h4 id="org8de0481">
+              <span class="section-number-4">1.3.4.</span> Granting of
+              authorization for data access
+            </h4>
+            <div class="outline-text-4" id="text-1-3-4">
+              <p>
+                DBA grants varied type of data access authorization to different
+                database users
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org941d691" class="outline-4">
+            <h4 id="org941d691">
+              <span class="section-number-4">1.3.5.</span> Integrity Constraint
+              Specification
+            </h4>
+            <div class="outline-text-4" id="text-1-3-5">
+              <p>
+                DBA implements and maintains integrity constraint to maintain
+                the accuracy and consistency
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org32d9dc8" class="outline-3">
+          <h3 id="org32d9dc8">
+            <span class="section-number-3">1.4.</span> Database Architecture
+          </h3>
+          <div class="outline-text-3" id="text-1-4"></div>
+          <div id="outline-container-org93706d6" class="outline-4">
+            <h4 id="org93706d6">
+              <span class="section-number-4">1.4.1.</span> Query Processor
+            </h4>
+            <div class="outline-text-4" id="text-1-4-1">
+              <p>
+                It is the component of DBMS that interprets and executes user
+                queries. It comprises several sub components including
+              </p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="orgc22b258"></a>DML Compiler<br />
+                <div class="outline-text-5" id="text-1-4-1-1">
+                  <p>
+                    Process Data Manipulation Language statements into low level
+                    instructions that can be executed
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="org6d7c781"></a>DDL Compiler<br />
+                <div class="outline-text-5" id="text-1-4-1-2">
+                  <p>
+                    Process Data definition Langauage statements into metadata
+                    tables
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="orgdf0c1cf"></a>Embedded DNL Pre Compiler<br />
+                <div class="outline-text-5" id="text-1-4-1-3">
+                  <p>
+                    Translates DML statements embedded in a application programs
+                    into procedural calls
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="org3f3e956"></a>Query Optimizer<br />
+                <div class="outline-text-5" id="text-1-4-1-4">
+                  <p>
+                    Determines the most efficient way to execute a query by
+                    evaluating different query plans
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div id="outline-container-org8278f7c" class="outline-4">
+            <h4 id="org8278f7c">
+              <span class="section-number-4">1.4.2.</span> Storage Manager
+            </h4>
+            <div class="outline-text-4" id="text-1-4-2">
+              <p>
+                Also known as database control system. It is responsible for
+                managging the data stored in the database, ensuring it
+                consistency and integrity. It includes the following sub
+                components
+              </p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="org56c4d37"></a>Authorization Manager<br />
+                <div class="outline-text-5" id="text-1-4-2-1">
+                  <p>Manages access controls and privileges</p>
+                </div>
+              </li>
+              <li>
+                <a id="orga0f4444"></a>Integrity Manager<br />
+                <div class="outline-text-5" id="text-1-4-2-2">
+                  <p>
+                    Ensures the data modification adhere to integrity
+                    constraints
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="org32d31df"></a>Transaction Manager<br />
+                <div class="outline-text-5" id="text-1-4-2-3">
+                  <p>
+                    Manages concurrent access to the database and maintains
+                    database consistency during transaction
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="org23509b4"></a>File Manager<br />
+                <div class="outline-text-5" id="text-1-4-2-4">
+                  <p>
+                    Manages file space and data structure representing
+                    information in the database
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="orgc19e6bc"></a>Buffer Manager<br />
+                <div class="outline-text-5" id="text-1-4-2-5">
+                  <p>
+                    Manages data cache and data transfer between main memory and
+                    secondary storage
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div id="outline-container-org8069275" class="outline-4">
+            <h4 id="org8069275">
+              <span class="section-number-4">1.4.3.</span> Disk Storage
+            </h4>
+            <div class="outline-text-4" id="text-1-4-3">
+              <p>
+                Represents the storage aspect of DBMS encompassing the followig
+                components
+              </p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="org5edb947"></a>Data files<br />
+                <div class="outline-text-5" id="text-1-4-3-1">
+                  <p>Files where the actual data is stored</p>
+                </div>
+              </li>
+              <li>
+                <a id="org48f7434"></a>Data dictionary<br />
+                <div class="outline-text-5" id="text-1-4-3-2">
+                  <p>
+                    Repository containing information about the structure and
+                    characteristics of database objects
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="org0d6699e"></a>Indices<br />
+                <div class="outline-text-5" id="text-1-4-3-3">
+                  <p>Data structure that facilitates faster data retrieval</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-orge2a390c" class="outline-2">
+        <h2 id="orge2a390c">
+          <span class="section-number-2">2.</span> ER diagram
+        </h2>
+        <div class="outline-text-2" id="text-2">
+          <p>
+            ER stands for entity relationship diagram This is central to
+            database design, encapsulates entities and their attributes within
+            an enterprise schema, serving clear and standardized tool for
+            translating real enterprise interactions into conceptual schema
+          </p>
+        </div>
+        <div id="outline-container-orgd981c03" class="outline-3">
+          <h3 id="orgd981c03">
+            <span class="section-number-3">2.1.</span> Entity
+          </h3>
+          <div class="outline-text-3" id="text-2-1">
+            <p>
+              An entity is a thing or object in the real world that is
+              distinguishable from other object based on the values of the
+              attributes it possess. An entity can be concreter or abstract Can
+              be
+            </p>
+          </div>
+          <div id="outline-container-orge4998a4" class="outline-4">
+            <h4 id="orge4998a4">
+              <span class="section-number-4">2.1.1.</span> Tangible
+            </h4>
+            <div class="outline-text-4" id="text-2-1-1">
+              <p>
+                Entities which physically exist in real world like Car Pen,
+                locker
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org8774f01" class="outline-4">
+            <h4 id="org8774f01">
+              <span class="section-number-4">2.1.2.</span> Intangible
+            </h4>
+            <div class="outline-text-4" id="text-2-1-2">
+              <p>Entities which exist logiically, Eg Account Video</p>
+
+              <p>
+                We cannot represent an Entity in a ER Diagram. But a entity set
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org57eabb6" class="outline-3">
+          <h3 id="org57eabb6">
+            <span class="section-number-3">2.2.</span> Entity set
+          </h3>
+          <div class="outline-text-3" id="text-2-2">
+            <p>
+              Collection of same type of entites that share the same properties
+              or attributes. In ER they are reprented by a rectangle
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-orgde7c0d6" class="outline-3">
+          <h3 id="orgde7c0d6">
+            <span class="section-number-3">2.3.</span> Attributes
+          </h3>
+          <div class="outline-text-3" id="text-2-3">
+            <p>
+              Attributes are the units defines and describe properties and
+              characteristics of entites Attributes are the descriptive
+              properties by each member of an entity set for each attribute
+              there is a set of permitted valus called domain They are
+              represented by ellipse or oval connected to a rectangle
+            </p>
+          </div>
+          <div id="outline-container-org8dd650a" class="outline-4">
+            <h4 id="org8dd650a">
+              <span class="section-number-4">2.3.1.</span> Types
+            </h4>
+            <div class="outline-text-4" id="text-2-3-1"></div>
+            <ol class="org-ol">
+              <li>
+                <a id="orgcdb2e54"></a>Single Valued<br />
+                <div class="outline-text-5" id="text-2-3-1-1">
+                  <p>
+                    Attributes having single value at any instance of time for
+                    an entity.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="orgce7ddb3"></a>Multivalued<br />
+                <div class="outline-text-5" id="text-2-3-1-2">
+                  <p>
+                    Attributes which can have more than one value for an entity
+                    at same time. Eg Phone NUmber Represented by double ellipse
+                    in Er diagram
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="orgfe5900b"></a>Simple<br />
+                <div class="outline-text-5" id="text-2-3-1-3">
+                  <p>Attributes which cannot divided further into sub parts</p>
+                </div>
+              </li>
+              <li>
+                <a id="orgb23d841"></a>Composite<br />
+                <div class="outline-text-5" id="text-2-3-1-4">
+                  <p>
+                    Attributes which can be further divided into sub parts as
+                    simple attributes Represented by ellipse connected to other
+                    ellipses
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="org7df770e"></a>Derived<br />
+                <div class="outline-text-5" id="text-2-3-1-5">
+                  <p>
+                    An attribute which can be made from another attribute
+                    Represented by dashed ellipse
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="orga235204"></a>Stored<br />
+                <div class="outline-text-5" id="text-2-3-1-6">
+                  <p>
+                    Main attribute whose value is permanently stored in database
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="orgdbbceb4"></a>Descriptive<br />
+                <div class="outline-text-5" id="text-2-3-1-7">
+                  <p>
+                    Attribute of relationship is called descriptive attribute
+                    Represented by ellipse connected to diamond
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div id="outline-container-org3dab6a2" class="outline-3">
+          <h3 id="org3dab6a2">
+            <span class="section-number-3">2.4.</span> Relationship
+          </h3>
+          <div class="outline-text-3" id="text-2-4">
+            <p>
+              It is an association between two or more entities of
+              same/different entity set Represented by a diamond In relational
+              model it is denoted by a foreign key or a seperate table Name -
+              Every relation must have a unique name
+            </p>
+          </div>
+          <div id="outline-container-orgd636c7b" class="outline-4">
+            <h4 id="orgd636c7b">
+              <span class="section-number-4">2.4.1.</span> Degree
+            </h4>
+            <div class="outline-text-4" id="text-2-4-1">
+              <p>
+                Means number of entities set associated in the relationship set
+              </p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="org8423330"></a>Types<br />
+                <ol class="org-ol">
+                  <li>
+                    <a id="org64bfd3f"></a>Binary<br />
+                    <div class="outline-text-6" id="text-2-4-1-1-1">
+                      <p>
+                        Most of the relationship sets in a db system are binary
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <a id="org4f22b88"></a>Unary<br />
+                    <div class="outline-text-6" id="text-2-4-1-1-2">
+                      <p>
+                        One single entity set participate in a relationship,
+                        means two entites of the same entity set are related to
+                        each other These are also called as self referential
+                        relationship set
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <a id="org17ba4ef"></a>Ternary<br />
+                    <div class="outline-text-6" id="text-2-4-1-1-3">
+                      <p>When three entities participate in a relationship</p>
+                    </div>
+                  </li>
+                  <li>
+                    <a id="org7255942"></a>Quaternary<br />
+                    <div class="outline-text-6" id="text-2-4-1-1-4">
+                      <p>When four entities participate in a relationship</p>
+                    </div>
+                  </li>
+                  <li>
+                    <a id="orgbfb3717"></a>N ary<br />
+                    <div class="outline-text-6" id="text-2-4-1-1-5">
+                      <p>When N number of entity set are associated</p>
+                    </div>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </div>
+          <div id="outline-container-org7d803a6" class="outline-4">
+            <h4 id="org7d803a6">
+              <span class="section-number-4">2.4.2.</span> Cardinality
+            </h4>
+            <div class="outline-text-4" id="text-2-4-2">
+              <p>
+                The number of entities to which another entity can be associated
+                via a relationship set
+              </p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="org4b94aef"></a>Types<br />
+                <ol class="org-ol">
+                  <li>
+                    <a id="org2ed28e8"></a>One to One<br />
+                    <div class="outline-text-6" id="text-2-4-2-1-1">
+                      <p>
+                        An entity in A is associated with at most one entity in
+                        B and entity in B is associated with at most one entity
+                        in A Represented by one arrow to another arrow
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <a id="org3b714c1"></a>One to Many<br />
+                    <div class="outline-text-6" id="text-2-4-2-1-2">
+                      <p>
+                        An entity in A is associated with any number of entities
+                        in B. An entity in B however can be associated with at
+                        most one entity in A Reprented by an arrow with a line
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <a id="orgd6ddbd1"></a>Many to One<br />
+                    <div class="outline-text-6" id="text-2-4-2-1-3">
+                      <p>
+                        An entity in A is associated with any number of entities
+                        in B. An entity in B however can be associated with at
+                        most one entity in B
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <a id="org10b66ba"></a>Many to Many<br />
+                    <div class="outline-text-6" id="text-2-4-2-1-4">
+                      <p>
+                        An entity in A is associated with any number of entites
+                        in B and an entity in B is associated with any number of
+                        entities in A
+                      </p>
+                    </div>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div id="outline-container-org871ac7a" class="outline-3">
+          <h3 id="org871ac7a">
+            <span class="section-number-3">2.5.</span> Participation Constraint
+          </h3>
+          <div class="outline-text-3" id="text-2-5">
+            <p>
+              It defines participations of entites of an entity type in a
+              relationship
+            </p>
+          </div>
+          <div id="outline-container-orgbfc8182" class="outline-4">
+            <h4 id="orgbfc8182">
+              <span class="section-number-4">2.5.1.</span> Types
+            </h4>
+            <div class="outline-text-4" id="text-2-5-1"></div>
+            <ol class="org-ol">
+              <li>
+                <a id="org686f8bc"></a>Partial Participation<br />
+                <div class="outline-text-5" id="text-2-5-1-1">
+                  <p>
+                    An entity is called a strong entity set if it has a primary
+                    key all the tuples in the set are distinguishable by that
+                    key Key is represented by a underline ellipse
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="org671e8bc"></a>Total Participation<br />
+                <div class="outline-text-5" id="text-2-5-1-2">
+                  <p>
+                    An entity set that does not process sufficient attribute to
+                    form a primary key is called a weak entity set It contains
+                    discriminator attributes which contain partial information
+                    the entity set but is not sufficient enough to identify each
+                    tuple uniquely Represented by double rectangle Discimator
+                    attribute is denoted by dashed underlined ellipse Weak
+                    relationship is represented by Double diamond
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div id="outline-container-org55b7f8b" class="outline-3">
+          <h3 id="org55b7f8b">
+            <span class="section-number-3">2.6.</span> Conversion from ER to
+            Relational Model
+          </h3>
+          <div class="outline-text-3" id="text-2-6"></div>
+          <div id="outline-container-orgd126109" class="outline-4">
+            <h4 id="orgd126109">
+              <span class="section-number-4">2.6.1.</span> Entity Set
+            </h4>
+            <div class="outline-text-4" id="text-2-6-1">
+              <p>
+                Convert every strong weak entity into a seperate table. In weak
+                entity set we make it dependent onto one strong entity set
+                (identifying or owner entity set)
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgc7b02cb" class="outline-4">
+            <h4 id="orgc7b02cb">
+              <span class="section-number-4">2.6.2.</span> Relationship
+            </h4>
+            <div class="outline-text-4" id="text-2-6-2">
+              <ul class="org-ul">
+                <li>
+                  Unary - No Separate table is required, add a new column as
+                  foreign key which refer the primary key of the same table
+                </li>
+                <li>
+                  1:1 - No separate table is required, take primary key of one
+                  side and put it as foreign key on other side, Priority must be
+                  given to the side having total participation
+                </li>
+                <li>
+                  1:N - No separate table is required, modify n side by taking
+                  primary key of one side as foreign key on N side
+                </li>
+                <li>
+                  M:N - Separate table is required take primary key of both
+                  table and declare their combination as a primary key of new
+                  table
+                </li>
+                <li>
+                  3:More - Take the primary key of all participating entity sets
+                  as Foreign key and declare their combinaton as primary key of
+                  the new table
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="outline-container-orgec57af4" class="outline-4">
+            <h4 id="orgec57af4">
+              <span class="section-number-4">2.6.3.</span> Attributes
+            </h4>
+            <div class="outline-text-4" id="text-2-6-3">
+              <ul class="org-ul">
+                <li>
+                  Multivalued - A separate table must be taken for all
+                  multivalued attributes, where we take primary key of the main
+                  table as foreign key and declaree combination of foreign key
+                  and multivalued attribute as primary key in the new table
+                </li>
+                <li>
+                  Composite Attribute - A separate column must be taken for all
+                  simple attributes of the composite attribute
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org9836456" class="outline-3">
+          <h3 id="org9836456">
+            <span class="section-number-3">2.7.</span> Grouped Entity sets
+          </h3>
+          <div class="outline-text-3" id="text-2-7"></div>
+          <div id="outline-container-org88253b3" class="outline-4">
+            <h4 id="org88253b3">
+              <span class="section-number-4">2.7.1.</span> Generalization
+            </h4>
+            <div class="outline-text-4" id="text-2-7-1">
+              <p>
+                Involves mergin two lower level entites to create a higher level
+                entity A bottom up approach that builds complexity from simpler
+                components Highlights similarities among lower level entity sets
+                while hiding differences Leads to a simplifed structured data
+                representation, aiding in database and querying process
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org4a3bc1d" class="outline-4">
+            <h4 id="org4a3bc1d">
+              <span class="section-number-4">2.7.2.</span> Specialization
+            </h4>
+            <div class="outline-text-4" id="text-2-7-2">
+              <p>
+                A process where a higher level entity is broken down into more
+                specific lower level entities This top down approach delineates
+                complexity into simpler components Acts as the converse of the
+                generalizatoin proccess focusing on differntiating properties
+                rather than similarities
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org0818b53" class="outline-4">
+            <h4 id="org0818b53">
+              <span class="section-number-4">2.7.3.</span> Aggregation
+            </h4>
+            <div class="outline-text-4" id="text-2-7-3">
+              <p>
+                A concept wherein relationships are abstracted to form
+                higher-level entites, enabling a more organized representation
+                of complex relationships
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org3f0e44c" class="outline-3">
+          <h3 id="org3f0e44c">
+            <span class="section-number-3">2.8.</span> Advantages
+          </h3>
+          <div class="outline-text-3" id="text-2-8">
+            <ul class="org-ul">
+              <li>
+                Constructs used in the ER Diagram can be easily be transformed
+                into relational tables
+              </li>
+              <li>It is simple and easy to understand with minimum training</li>
+            </ul>
+          </div>
+        </div>
+        <div id="outline-container-org9be0c3b" class="outline-3">
+          <h3 id="org9be0c3b">
+            <span class="section-number-3">2.9.</span> Disadvantages
+          </h3>
+          <div class="outline-text-3" id="text-2-9">
+            <ul class="org-ul">
+              <li>Loss of information content</li>
+              <li>Limited constraints representation</li>
+              <li>It is overly complex for small table</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-org57bec17" class="outline-2">
+        <h2 id="org57bec17"><span class="section-number-2">3.</span> RDBMS</h2>
+        <div class="outline-text-2" id="text-3">
+          <p>
+            Relational Database management system conceptualized by Edgar F.
+            Codd in 1970 serves as the foundation for most database applications
+          </p>
+        </div>
+        <div id="outline-container-org0b4380a" class="outline-3">
+          <h3 id="org0b4380a">
+            <span class="section-number-3">3.1.</span> Basics
+          </h3>
+          <div class="outline-text-3" id="text-3-1">
+            <p>
+              Domain (set of permissible value in particular column) is a set of
+              atomic values By atomic we mean that each value in the domain is
+              indivisible as far as the formal relational model is concerned A
+              common method of specifying a domain is to specify a datatype from
+              which the data values forming the domain are drawn
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org7ef977f" class="outline-3">
+          <h3 id="org7ef977f">
+            <span class="section-number-3">3.2.</span> Properties
+          </h3>
+          <div class="outline-text-3" id="text-3-2">
+            <ul class="org-ul">
+              <li>Cells contain atomic values</li>
+              <li>Values in a column are of the same kind</li>
+              <li>Each row is unique</li>
+              <li>No two tables can have same name in a relational schema</li>
+              <li>Each column has a unique name</li>
+              <li>The sequence of the rows is insignificant</li>
+              <li>The sequence of the columns is insignificant</li>
+            </ul>
+          </div>
+        </div>
+        <div id="outline-container-org85c0e4e" class="outline-3">
+          <h3 id="org85c0e4e">
+            <span class="section-number-3">3.3.</span> Problems
+          </h3>
+          <div class="outline-text-3" id="text-3-3"></div>
+          <div id="outline-container-org659ae74" class="outline-4">
+            <h4 id="org659ae74">
+              <span class="section-number-4">3.3.1.</span> Updation Anomalies
+            </h4>
+            <div class="outline-text-4" id="text-3-3-1">
+              <p>
+                Anomalies that cause redundant work to be done during insertion
+                into modification of a relation and that may cause accidental
+                loss of information during deletion from a relation
+              </p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="org3ee431a"></a>Insertion Anomalies<br />
+                <div class="outline-text-5" id="text-3-3-1-1">
+                  <p>
+                    An indepedent piece of information cannot be recorded into a
+                    relation unless an irrelevant information must be inserted
+                    together at the same time
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="org8a031dc"></a>Modification Anomalies<br />
+                <div class="outline-text-5" id="text-3-3-1-2">
+                  <p>
+                    The updation of a pieces of information must occur at
+                    multiple locations
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="orgc12ff2c"></a>Deletion Anomalies<br />
+                <div class="outline-text-5" id="text-3-3-1-3">
+                  <p>
+                    The deletion of a piece of information unintentionally
+                    removes other information
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div id="outline-container-orgda58d24" class="outline-3">
+          <h3 id="orgda58d24">
+            <span class="section-number-3">3.4.</span> Key
+          </h3>
+          <div class="outline-text-3" id="text-3-4"></div>
+          <div id="outline-container-org72241aa" class="outline-4">
+            <h4 id="org72241aa">
+              <span class="section-number-4">3.4.1.</span> Super Key
+            </h4>
+            <div class="outline-text-4" id="text-3-4-1">
+              <p>
+                Set of attributes using which we can identify each tuple
+                uniquely is called Super Key Let X be a set of attributes in a
+                relation R. If X+ determines the attributes of R then X is said
+                to be Super Key of R There should be atleast one Super key in
+                every relation
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org253d5f2" class="outline-4">
+            <h4 id="org253d5f2">
+              <span class="section-number-4">3.4.2.</span> Candidate Key
+            </h4>
+            <div class="outline-text-4" id="text-3-4-2">
+              <p>
+                Minimal Set of Attributes using which we can identify each tuple
+                uniquely is called Candidate key. A super key is called
+                candidate key if its No proper subset is a super key. Also
+                called as Minimal Super Key There should be atleast one
+                candidate key
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org0192317" class="outline-4">
+            <h4 id="org0192317">
+              <span class="section-number-4">3.4.3.</span> Prime Attributes
+            </h4>
+            <div class="outline-text-4" id="text-3-4-3">
+              <p>
+                Attributes that are member of atleast one candidate keys are
+                called Prime attributes
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org9f0708f" class="outline-4">
+            <h4 id="org9f0708f">
+              <span class="section-number-4">3.4.4.</span> Primary Key
+            </h4>
+            <div class="outline-text-4" id="text-3-4-4">
+              <p>
+                One of candidate keys is selected by DBA as primary means to
+                identify tuple is called Primary key. Primary key Attributed are
+                not allowed to have null values. Exactly one Primary Key per
+                Relation in RDMS. Candidate key which are not chosen as primary
+                key are called alternative key
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgd44d51a" class="outline-4">
+            <h4 id="orgd44d51a">
+              <span class="section-number-4">3.4.5.</span> Foreign Key
+            </h4>
+            <div class="outline-text-4" id="text-3-4-5">
+              <p>
+                A foreign key is a column or group of columns in a relational
+                database table that refers the primary key of the same table or
+                some other table to represent their relationship. The concept of
+                Referential Integrity is derived from foreign key Theory.
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orge153245" class="outline-4">
+            <h4 id="orge153245">
+              <span class="section-number-4">3.4.6.</span> Composite Key
+            </h4>
+            <div class="outline-text-4" id="text-3-4-6">
+              <p>
+                Composite key is a key composed of more than one column
+                sometimes it is also known as concatenated key
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org21cf2f0" class="outline-4">
+            <h4 id="org21cf2f0">
+              <span class="section-number-4">3.4.7.</span> Secondary Key
+            </h4>
+            <div class="outline-text-4" id="text-3-4-7">
+              <p>
+                Secondary key is a key used to speed up the search and retrieval
+                contrary to primary key, a secondary key does not necessary
+                contain unique value
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org9bc111a" class="outline-3">
+          <h3 id="org9bc111a">
+            <span class="section-number-3">3.5.</span> Normalization
+          </h3>
+          <div class="outline-text-3" id="text-3-5">
+            <p>
+              Normalization includes creating tables and establishing
+              relationships between those tables according to the rules to
+              protect data and make the database more flexible by elimnating
+              redundancy and inconsistent dependency 1NF&gt;2NF&gt;3NF&gt;BCNF
+            </p>
+          </div>
+          <div id="outline-container-orgca07a69" class="outline-4">
+            <h4 id="orgca07a69">
+              <span class="section-number-4">3.5.1.</span> Functional Dependency
+            </h4>
+            <div class="outline-text-4" id="text-3-5-1">
+              <p>
+                Formal tool for analysis of relational schemas If a relation R
+                if a ( R and b ( R, then attribute or a Set of attribute a
+                functionally derives an attribute or set of attributes of b if
+                each a value is associated with precisely on b values For all
+                pairs of table T1 and T2 such that If T1[a] = T2[a] Then T1[b] =
+                T2[b]
+              </p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="org463ac5f"></a>Trivial Functional Dependency<br />
+                <div class="outline-text-5" id="text-3-5-1-1">
+                  <p>
+                    If b is a subset of a then the functional dependency a -&gt;
+                    b will always hold XY -&gt; Y
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="org8fe8704"></a>Attribute closure<br />
+                <div class="outline-text-5" id="text-3-5-1-2">
+                  <p>
+                    Attribute closure of an attribute set can be defined as set
+                    of attributs which can be functionally determined from F
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="org21eac8d"></a>Partial Dependency<br />
+                <div class="outline-text-5" id="text-3-5-1-3">
+                  <p>
+                    When a non prime attribute is dependent only on a part of
+                    candidate key then it is called partial dependency. ( Prime
+                    -&gt; Non Prime )
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="orgd0f062e"></a>Full Dependency<br />
+                <div class="outline-text-5" id="text-3-5-1-4">
+                  <p>
+                    When a non prime attribute is dependent on the entire
+                    candidate key it is called full dependency.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="org24e9375"></a>Transitive Dependency<br />
+                <div class="outline-text-5" id="text-3-5-1-5">
+                  <p>
+                    A functional dependency from Non Prime attribute to non
+                    Prime attribute is called transitive
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="org87de97e"></a>Multivalued Dependency<br />
+                <div class="outline-text-5" id="text-3-5-1-6">
+                  <p>
+                    Denoted by A -&gt;-&gt; B means for every value of A there
+                    may exist more than one value of B
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="org9a4aa8a"></a>Trivial Multivalued Dependency<br />
+                <div class="outline-text-5" id="text-3-5-1-7">
+                  <p>
+                    X -&gt; -&gt; Y is one where either y is a subset of X or X
+                    and Y form the whole set of attributes of the relation
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div id="outline-container-org828a8ce" class="outline-4">
+            <h4 id="org828a8ce">
+              <span class="section-number-4">3.5.2.</span> Normal Forms
+            </h4>
+            <div class="outline-text-4" id="text-3-5-2">
+              <p>
+                A relation with two attributes is always in BCNF A relation
+                Schema R consist of only prime attributes then R is always in 3
+                NF, but may or may not be in BCNF
+              </p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="orgd9fcb29"></a>1 Normal Form<br />
+                <div class="outline-text-5" id="text-3-5-2-1">
+                  <p>
+                    1NF is the inital step of database normalization
+                    Implications of 1NF are
+                  </p>
+                  <ul class="org-ul">
+                    <li>
+                      Atomic Values - Each cell in a table contains indivisible,
+                      atomic values. Meaning Relation should not contain any
+                      multivalued or composite attributes
+                    </li>
+                    <li>
+                      Unique Columns - Each column must have a distinct name to
+                      identify the data
+                    </li>
+                    <li>
+                      Primary Key - A table in 1NF should have a primary key
+                      that uniquely identifies the row
+                    </li>
+                    <li>
+                      Eliminating Duplicates - Duplicate rows are removed to
+                      prevent data redundancy
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a id="orgab91acc"></a>2 Normal Form<br />
+                <div class="outline-text-5" id="text-3-5-2-2">
+                  <p>Relation R is in 2NF if</p>
+                  <ul class="org-ul">
+                    <li>R should be in 1 NF</li>
+                    <li>
+                      R should not contain any Partial Dependency ( that is
+                      every non prime attributes should be fully dependent of
+                      candidate key )
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a id="orgca3db61"></a>3 Normal Form<br />
+                <div class="outline-text-5" id="text-3-5-2-3">
+                  <p>
+                    Let R be the relational Schema, it is said to be in 3 NF
+                  </p>
+                  <ul class="org-ul">
+                    <li>R should be in 2 NF</li>
+                    <li>
+                      <p>It must not contain any transitive dependency</p>
+
+                      <p>
+                        A relational schema R is said to be 3 NF if every
+                        functional dependency of form a -&gt; b either a is
+                        super key or b is the prime attribute
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a id="orgd4199fd"></a>Boyee Codd Normal Form<br />
+                <div class="outline-text-5" id="text-3-5-2-4">
+                  <p>
+                    A relational schema R is said to be BCNF if every functional
+                    dependency in R form
+                  </p>
+                  <ul class="org-ul">
+                    <li>a -&gt; b</li>
+                    <li>a must be a super key</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a id="org31b7d08"></a>4 Normal Form<br />
+                <div class="outline-text-5" id="text-3-5-2-5">
+                  <p>A relation is in 4NF if</p>
+                  <ul class="org-ul">
+                    <li>It is in BCNF</li>
+                    <li>
+                      There must not exist any non trivial multivalued
+                      dependency
+                    </li>
+                  </ul>
+
+                  <p>
+                    Each MVD is decomposed in seperate table, where it becomes
+                    trivial MVD
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="org37d23f5"></a>5 Normal Form<br />
+                <div class="outline-text-5" id="text-3-5-2-6">
+                  <p>
+                    A relational table R is said to be in 5th Normal form if
+                  </p>
+                  <ul class="org-ul">
+                    <li>It is in 4NF</li>
+                    <li>It cannot be further non loss decomposed</li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div id="outline-container-org20f70cc" class="outline-4">
+            <h4 id="org20f70cc">
+              <span class="section-number-4">3.5.3.</span> Decomposition
+            </h4>
+            <div class="outline-text-4" id="text-3-5-3"></div>
+            <ol class="org-ol">
+              <li>
+                <a id="org707bb4c"></a>Lossless Dependency Preserving
+                Decomposition<br />
+                <div class="outline-text-5" id="text-3-5-3-1">
+                  <p>
+                    If we decompose a table r into two tables r1 and r2 because
+                    of normalization then at some later stage if want to join
+                    these tables r1 and r2 then we must get back the original
+                    table r without any change to original table Decomposition
+                    is lossy if R1 join R2 is a proper set of R Decomposition is
+                    lossy if R is a proper set of R1 join R2
+                  </p>
+
+                  <p>Checking</p>
+                  <ul class="org-ul">
+                    <li>
+                      Union of attributes of R1 and R2 mst be equal to attribute
+                      of R
+                    </li>
+                    <li>
+                      Insertion of attributes of R1 and R2 must not be null
+                    </li>
+                    <li>
+                      Common Attribute must be a key for atleast one relation
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a id="orgdfe658a"></a>Dependency Preserving Decomposition<br />
+                <div class="outline-text-5" id="text-3-5-3-2">
+                  <p>
+                    Let relation R be decomposed in to relations R1 R2 R3
+                    &#x2026;. Rn with their respective functional dependencies
+                    set as F1, f2 f3 &#x2026;. Fn then the decomposition is
+                    dependency preserving if
+                  </p>
+                  <ul class="org-ul">
+                    <li>{F1 U F2 U F3 &#x2026;. U Fn}+ = F+</li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div id="outline-container-orgdce562a" class="outline-4">
+            <h4 id="orgdce562a">
+              <span class="section-number-4">3.5.4.</span> Armstrong Axioms
+            </h4>
+            <div class="outline-text-4" id="text-3-5-4">
+              <p>
+                An axiom or postulate is a statement that is taken to be true to
+                serve as a premise or starting point for further reasoning and
+                arguments Armostrong Axioms are a set of axioms used to infer
+                all the functional dependencies on a relational database. The
+                axioms are sound in generating only functional dependencies in
+                the closure of a set of functional dependencies when applied to
+                that set
+              </p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="org83d3fbf"></a>Axioms<br />
+                <ol class="org-ol">
+                  <li>
+                    <a id="org70a9a3c"></a>Primary Axioms<br />
+                    <div class="outline-text-6" id="text-3-5-4-1-1">
+                      <ul class="org-ul">
+                        <li>
+                          Reflexivity - If Y is a subset of X, then X -&gt; Y
+                        </li>
+                        <li>Augmentation - If X -&gt; Y , then XZ -&gt; YZ</li>
+                        <li>
+                          Transitivity - If X -&gt; Y and Y -&gt; Z , then X
+                          -&gt; Z
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <a id="org81dd635"></a>Secondary Axioms<br />
+                    <div class="outline-text-6" id="text-3-5-4-1-2">
+                      <ul class="org-ul">
+                        <li>
+                          Union - If X -&gt; Y and X -&gt; Z, then X -&gt; YZ
+                        </li>
+                        <li>
+                          Decomposition - If X -&gt; YZ, then X -&gt; Y and X
+                          -&gt; Z
+                        </li>
+                        <li>
+                          Psuedo Transitivity - If X -&gt; Y and WY -&gt; Z,
+                          then WX -&gt; Z
+                        </li>
+                        <li>
+                          Composition - If X -&gt; Y and Z -&gt; W, then XZ
+                          -&gt; YW
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <a id="org8c9cfd0"></a>Sound<br />
+                <div class="outline-text-5" id="text-3-5-4-2">
+                  <p>
+                    By Sound, We mean that given a set of functional
+                    dependencies F specified on a relation Schema R, any
+                    dependency that we can infer from F by using the primary
+                    rules of Armstrong axioms holds in every relation state r of
+                    R that satisfies the dependencies in F
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="org0c20adb"></a>Complete<br />
+                <div class="outline-text-5" id="text-3-5-4-3">
+                  <p>
+                    By Complete, we mean that using primary rules of Armstrong
+                    axioms repeatedly to infer dependencies until no more
+                    dependencies can be inferred results in the complete set of
+                    all possible dependencies that can be inferred from F
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div id="outline-container-org0c902f7" class="outline-4">
+            <h4 id="org0c902f7">
+              <span class="section-number-4">3.5.5.</span> Equivalence
+            </h4>
+            <div class="outline-text-4" id="text-3-5-5">
+              <p>F1+ = F2+ F1 &lt; F2+ and F2 &lt; F1+</p>
+            </div>
+          </div>
+          <div id="outline-container-orgd81768f" class="outline-4">
+            <h4 id="orgd81768f">
+              <span class="section-number-4">3.5.6.</span> Minimal Cover
+            </h4>
+            <div class="outline-text-4" id="text-3-5-6">
+              <p>
+                A canoncial cover for a set of functional dependencies in a
+                database is a minimal set of functional dependencies that is
+                equivalent to the original set but with redundant dependencies
+                and extraneous attributes removed. It is used in the
+                normalization process of database design to simplify the set of
+                functional dependencies and to find good set of relations There
+                may be any following type of redundancy in the set of functional
+                dependencies Complete production may be redundant One or more
+                than one attribute may ne redundant on the right hand side of a
+                production One or more than one attribute may ne redundant on
+                the left hand side of a production
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-orga63fc52" class="outline-2">
+        <h2 id="orga63fc52">
+          <span class="section-number-2">4.</span> Indexing
+        </h2>
+        <div class="outline-text-2" id="text-4">
+          <p>Relational databases are based on set theory</p>
+          <ul class="org-ul">
+            <li>
+              In set theory the order of elements in unimportant, similarily in
+              database tables
+            </li>
+            <li>
+              However in pratical implementation, element order in tables are
+              often specfied
+            </li>
+            <li>
+              Various operations such as search, insertion and deletion are
+              influenced by the order of elements in the tables
+            </li>
+            <li>
+              Elements in a table can be stored in two ways: sorted or unsorted
+            </li>
+          </ul>
+        </div>
+        <div id="outline-container-org9dc1bbe" class="outline-3">
+          <h3 id="org9dc1bbe">
+            <span class="section-number-3">4.1.</span> File Organisation
+          </h3>
+          <div class="outline-text-3" id="text-4-1"></div>
+          <div id="outline-container-org30cf01a" class="outline-4">
+            <h4 id="org30cf01a">
+              <span class="section-number-4">4.1.1.</span> Ordered file
+              organisation
+            </h4>
+            <div class="outline-text-4" id="text-4-1-1">
+              <ul class="org-ul">
+                <li>
+                  All records in a file are ordered on some search key field
+                </li>
+                <li>Here binary search is possible</li>
+                <li>
+                  Maintanence is costly as it requires reorganization of entire
+                  file
+                </li>
+                <li>
+                  If file is unordered then no of blocks assesses required to
+                  reach correct block which contain the desired is O(log N)
+                  where n is the number of blocks
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="outline-container-org7968ff6" class="outline-4">
+            <h4 id="org7968ff6">
+              <span class="section-number-4">4.1.2.</span> Unordered file
+              organisation
+            </h4>
+            <div class="outline-text-4" id="text-4-1-2">
+              <ul class="org-ul">
+                <li>
+                  Records are typically added at the end of the file, without
+                  following any specific order.
+                </li>
+                <li>
+                  This insertion method only allows linear search, resulting in
+                  slower search times
+                </li>
+                <li>Despite slow searches, maintainance is simpler</li>
+                <li>No reorganization of the entire file is needed</li>
+                <li>
+                  If file is unordered then no of block assesses required to
+                  reach correct block which contains the desired record is O(N),
+                  where n is the number of blocks
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org0ccd5d2" class="outline-3">
+          <h3 id="org0ccd5d2">
+            <span class="section-number-3">4.2.</span> Indexing
+          </h3>
+          <div class="outline-text-3" id="text-4-2">
+            <p>
+              Indexes are supplementary structure in database, aiding in swift
+              record retrieval They enable quick data access based on particular
+              attributes identified for indexing. This technique is similar to
+              the index section in book. These provide secondary pathway to
+              acccess records without changing physical position in the main
+              file.
+            </p>
+          </div>
+          <div id="outline-container-org0c6079f" class="outline-4">
+            <h4 id="org0c6079f">
+              <span class="section-number-4">4.2.1.</span> Properties
+            </h4>
+            <div class="outline-text-4" id="text-4-2-1">
+              <ul class="org-ul">
+                <li>
+                  Indexes can be established on any relational field be it
+                  primary key or non key
+                </li>
+                <li>
+                  Each attribute can have a dedicated index file, meaning
+                  multiple index files may exist for one main file
+                </li>
+                <li>
+                  Index files are always organized, allowing for the utilization
+                  of binary search advantages, irrespective of the main
+                  file&rsquo;s order
+                </li>
+                <li>
+                  Indexing accelerates data retrieval time but also introduces
+                  space overhead for storing the index file
+                </li>
+                <li>
+                  The correct block in the main file can be located with
+                  log2(number of blocks in the index file) + 1 accesses
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="outline-container-org204a103" class="outline-4">
+            <h4 id="org204a103">
+              <span class="section-number-4">4.2.2.</span> Dense Vs Sparse
+            </h4>
+            <div class="outline-text-4" id="text-4-2-2">
+              <ul class="org-ul">
+                <li>
+                  Dense index there is an entry in the index file for every
+                  search key value in the main file. This makes searching faster
+                  but requires more space to store the index to records itself.
+                  Note that it is not for every record, it is for every search
+                  key value Number of records in the main file &gt; number of
+                  search keys in the index
+                </li>
+
+                <li>
+                  If an index entry is created only for some records of the main
+                  file, then it is called sparse index. No. of index entries in
+                  the index file &lt; No. of records in the main file.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="outline-container-org71aac32" class="outline-4">
+            <h4 id="org71aac32">
+              <span class="section-number-4">4.2.3.</span> Types
+            </h4>
+            <div class="outline-text-4" id="text-4-2-3"></div>
+            <ol class="org-ol">
+              <li>
+                <a id="org87c4ad0"></a>Single Level<br />
+                <ol class="org-ol">
+                  <li>
+                    <a id="org03b7c30"></a>Primary Index<br />
+                    <div class="outline-text-6" id="text-4-2-3-1-1">
+                      <ul class="org-ul">
+                        <li>
+                          Main file is always sorted according to the primary
+                          key
+                        </li>
+                        <li>
+                          Indexing is done on primary key therefore called
+                          primary
+                        </li>
+                        <li>
+                          Index file have two primary key and secondary anchor
+                          pointer
+                        </li>
+                        <li>
+                          It is an example of Sparse indexing No of entries in
+                          the index file = NO of blocks acquired by the main
+                          file
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <a id="org8c57dc7"></a>Clustering index<br />
+                    <div class="outline-text-6" id="text-4-2-3-1-2">
+                      <p>
+                        Main file will be ordered on some non key attrbiute No
+                        of entires in ht inde file = no of values of the
+                        attribute It is an examplle of sparse as well as dense
+                        indexing
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <a id="orgadfc44d"></a>Secondary index<br />
+                    <div class="outline-text-6" id="text-4-2-3-1-3">
+                      <ul class="org-ul">
+                        <li>
+                          Main file is order according to the attribute on which
+                          indexing is done
+                        </li>
+                        <li>
+                          Secondary indexing can be done on key or non key
+                          attribute
+                        </li>
+                        <li>It is an example of dense indexing</li>
+                      </ul>
+                    </div>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <a id="org386cd79"></a>MultiLevel<br />
+                <ol class="org-ol">
+                  <li><a id="org3f8abec"></a>Simple MultiLevel<br /></li>
+                  <li>
+                    <a id="org157a866"></a>B tree<br />
+                    <div class="outline-text-6" id="text-4-2-3-2-2">
+                      <p>
+                        A B tree of order m if non empty is an m way search tree
+                        in which
+                      </p>
+                      <ul class="org-ul">
+                        <li>
+                          The root has atleast zero child nodes and at most m
+                          child nodes
+                        </li>
+                        <li>
+                          The inertnal nodex except the root have at least
+                          ceiling(m/2) child nodes and at most m child nodes
+                        </li>
+                        <li>All leaf nodes are on the same level</li>
+                        <li>
+                          the number of keys in each internal node is one less
+                          than the number of child nodes these key partition the
+                          subtree of the nodes in a manner similar to that of a
+                          m -way tree
+                        </li>
+                      </ul>
+                    </div>
+                    <ol class="org-ol">
+                      <li>
+                        <a id="org19a9307"></a>Insertion<br />
+                        <div class="outline-text-7" id="text-4-2-3-2-2-1">
+                          <ul class="org-ul">
+                            <li>
+                              A B tree starts with a single root node at level
+                              0. Once the root node is full with m -1 search key
+                              values and we attempt to insert another entry in
+                              the tree, the root node splits into two nodes at
+                              level1
+                            </li>
+                            <li>
+                              Only the middle value is kept in the root node,
+                              and the rest of the values are split evenly
+                              between the other two nodes. When a non root node
+                              is full and a new entry is inserted into it, that
+                              nodes is split into two nodes at the same level,
+                              and the midde entry is mmoved to the parent node
+                              along with two pointers to the new split nodes
+                            </li>
+                            <li>
+                              If the parent node is full it is also split,
+                              Slippting can propagate all the way to the root
+                              node, creating a new level it the root is split
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ol>
+                  </li>
+                  <li><a id="org0d734c7"></a>B+ Tree<br /></li>
+                </ol>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-org055917e" class="outline-2">
+        <h2 id="org055917e">
+          <span class="section-number-2">5.</span> Query Language
+        </h2>
+        <div class="outline-text-2" id="text-5">
+          <ul class="org-ul">
+            <li>
+              After designing a database, that is ER diagram followed by
+              conversion in the relational model followed by normalization and
+              indexing, now next task is how to store, retrieve and modify data
+              in the database.
+            </li>
+            <li>
+              So here we will be concentrating more on the retrieval part. Query
+              lanague are used for this purpose. Query Langauage, DQL or
+              database query language are computer languages using user request
+              some information using which user request some information from
+              the database. A well known example is Structured Query Langauage
+              (SQL) RElational Algebra and Relational Calclus are mathematical
+              system which are used to query on the relational model
+            </li>
+            <li>
+              SQL works on RDBMS and it includes elements of both procedural and
+              non procedural query language
+            </li>
+          </ul>
+        </div>
+        <div id="outline-container-org9183cc0" class="outline-4">
+          <h4 id="org9183cc0">
+            <span class="section-number-4">5.0.1.</span> Difference between
+            RElational model and RDBMS
+          </h4>
+          <div class="outline-text-4" id="text-5-0-1">
+            <table
+              border="2"
+              cellspacing="0"
+              cellpadding="6"
+              rules="groups"
+              frame="hsides"
+            >
+              <colgroup>
+                <col class="org-left" />
+
+                <col class="org-left" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col" class="org-left">Relational Model</th>
+                  <th scope="col" class="org-left">RDBMS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="org-left">
+                    Relational Algebra, Relational Calculus
+                  </td>
+                  <td class="org-left">SQL</td>
+                </tr>
+
+                <tr>
+                  <td class="org-left">Algorithmic</td>
+                  <td class="org-left">Code</td>
+                </tr>
+
+                <tr>
+                  <td class="org-left">Conceptual</td>
+                  <td class="org-left">Reality</td>
+                </tr>
+
+                <tr>
+                  <td class="org-left">Theoretical</td>
+                  <td class="org-left">Practical</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="outline-container-org0efdd73" class="outline-3">
+          <h3 id="org0efdd73">
+            <span class="section-number-3">5.1.</span> Types
+          </h3>
+          <div class="outline-text-3" id="text-5-1"></div>
+          <div id="outline-container-org6ec0221" class="outline-4">
+            <h4 id="org6ec0221">
+              <span class="section-number-4">5.1.1.</span> Procedural
+            </h4>
+            <div class="outline-text-4" id="text-5-1-1">
+              <p>
+                Here User instructs the system to perform a sequence of
+                operations on the database in order to compiler the desired
+                result Means user provides both what to retrieve and how data to
+                be retrieved
+              </p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="orgd5bd855"></a>Relational Algebra<br />
+                <div class="outline-text-5" id="text-5-1-1-1">
+                  <p>
+                    Relational Algebra like any other mathematical system
+                    provides a number of operators and use relations as operands
+                    and produce a new relation as their result Every Operator n
+                    the relational Algebra accepts relations/ tables as input
+                    arguments and returns always a single relation instance as
+                    the result without a name
+                  </p>
+                </div>
+                <ol class="org-ol">
+                  <li>
+                    <a id="orgecc2c5c"></a>Basic Operators<br />
+                    <div class="outline-text-6" id="text-5-1-1-1-1">
+                      <p>
+                        Fundamental operations in the relational algebra are
+                        select( &Sigma; ), project (&Pi;), union(U), set
+                        difference(-), Cartesian Product(X) and rename(&Rho;).
+                      </p>
+                    </div>
+                    <ol class="org-ol">
+                      <li>
+                        <a id="orga25b03e"></a>Project<br />
+                        <div class="outline-text-7" id="text-5-1-1-1-1-1">
+                          <p>
+                            The project operation is a unary operation that its
+                            argument relation with certain attributes left out
+                          </p>
+                        </div>
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <a id="orga811cd6"></a>Derived Operators<br />
+                    <div class="outline-text-6" id="text-5-1-1-1-2">
+                      <p>
+                        Operators derived from the basic operators They are
+                        join(|X|), intersection(n), Division(%) and
+                        assignment(=)
+                      </p>
+                    </div>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </div>
+          <div id="outline-container-org83aea86" class="outline-4">
+            <h4 id="org83aea86">
+              <span class="section-number-4">5.1.2.</span> Non Procedural
+            </h4>
+            <div class="outline-text-4" id="text-5-1-2">
+              <p>
+                In Non Procedural language, the user describe the desired
+                information without giving a specific procedure for obtaining
+                that information What data to be retrieved eg Relational
+                Calculus, Tuple relational calculus, Domain relational calculus
+                are declarative query lanaguage based on mathematical logic
+              </p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="orgad7f6b8"></a>Relational Calculus<br />
+                <div class="outline-text-5" id="text-5-1-2-1">
+                  <p>
+                    Relational calculus is non procedural query language, where
+                    we have to define what to get and not how to get it
+                  </p>
+                </div>
+                <ol class="org-ol">
+                  <li>
+                    <a id="org2041646"></a>Domain Relational Calculus<br />
+                    <div class="outline-text-6" id="text-5-1-2-1-1">
+                      <p>
+                        Domain calculus differs from the tuple calculus in the
+                        type of variables used in the formulsas The variable
+                        range over a single values , we must have n of these
+                        domain variables. One for each variables An expression
+                        of the domain calculus is of the form (x1, x2,
+                        &#x2026;., xn|COND(x1,x2,&#x2026;..Xn+m)) where x1,
+                        x2,&#x2026;., xn are domain variables that range over
+                        domains and cond is a condition of the domain relational
+                        calculus Similar to TRC we can have an unsafe expression
+                        that may genereate infinite relations
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <a id="org3013b73"></a>Tuple Relational Calculus<br />
+                    <div class="outline-text-6" id="text-5-1-2-1-2">
+                      <p>
+                        Tuple Relational Calculus based on specifying a number
+                        of tuple variables. Each tuple varies usually range over
+                        a particular database relation, meaning that the
+                        variable may takes as its value from any indiviual tuple
+                        of a relation A simple tuple relational calculus query
+                        of the form {t| Condition(t)} Where t is a tuple
+                        variable and condition(t) is a conditional expression
+                        involving. The result of such a query is the set of all
+                        tuple t that satisfy condition (t) We use t[A] or t.A to
+                        denote the value of tuple t on attribute A. We use t E r
+                        or r(t) to denote that tuple t is in relation r
+                      </p>
+                    </div>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div id="outline-container-org3adbcca" class="outline-3">
+          <h3 id="org3adbcca">
+            <span class="section-number-3">5.2.</span> Expressive Power of
+            Language
+          </h3>
+          <div class="outline-text-3" id="text-5-2">
+            <p>
+              When the domain relational calculs is restricted to safe
+              expressions, it is equivalent in expressive power to the tuple
+              relational calculus restricted to safe expression All there of the
+              following are equivalent
+            </p>
+            <ul class="org-ul">
+              <li>The basic relational algebra</li>
+              <li>
+                The tuple relational calculus restricted to safe expressions
+              </li>
+              <li>
+                The domain relational calculus restricted to safe expressions
+                DRC calculus also does not have any equivalent of the aggreate
+                operations, but it can be extended to support aggreagation, and
+                extending it to handle arithmetic expressions straightforward.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-orge128b6c" class="outline-2">
+        <h2 id="orge128b6c">
+          <span class="section-number-2">6.</span> Transaction
+        </h2>
+        <div class="outline-text-2" id="text-6">
+          <p>
+            A transaction is a set of logically related instructions to perform
+            a logical unit of work A transaction should possess several
+            properties often called ACID properties Two Operations are used in
+            Transactions - Read, Write and Commit
+          </p>
+        </div>
+        <div id="outline-container-orgdd342ac" class="outline-3">
+          <h3 id="orgdd342ac">
+            <span class="section-number-3">6.1.</span> ACID properties
+          </h3>
+          <div class="outline-text-3" id="text-6-1"></div>
+          <div id="outline-container-org8a5a197" class="outline-4">
+            <h4 id="org8a5a197">
+              <span class="section-number-4">6.1.1.</span> A - Atomicity
+            </h4>
+            <div class="outline-text-4" id="text-6-1-1">
+              <p>
+                A transaction is an atomic unit of processing. It should either
+                be performed in its entirety or not performed at all Transaction
+                is rolled back if a failure is encountered before commit
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgf8fe781" class="outline-4">
+            <h4 id="orgf8fe781">
+              <span class="section-number-4">6.1.2.</span> C - Consistency
+            </h4>
+            <div class="outline-text-4" id="text-6-1-2">
+              <p>
+                A transaction should be consistency preserving, meaning that if
+                it is completely executed from beginning to end without
+                interference from other transactions, it should take the
+                database from one consistent state to another
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgc21a239" class="outline-4">
+            <h4 id="orgc21a239">
+              <span class="section-number-4">6.1.3.</span> I - Isolation
+            </h4>
+            <div class="outline-text-4" id="text-6-1-3">
+              <p>
+                A transaction should appear as though it is being executed in
+                isolation from other transactions, even though many transactions
+                are executing concurretly. Conversion of parallel schedule to
+                serial schedule
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org3e21e8f" class="outline-4">
+            <h4 id="org3e21e8f">
+              <span class="section-number-4">6.1.4.</span> D - Durability
+            </h4>
+            <div class="outline-text-4" id="text-6-1-4">
+              <p>
+                The changes applied to the database by a committed transaction
+                must persist in the database
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-orgbad50aa" class="outline-3">
+          <h3 id="orgbad50aa">
+            <span class="section-number-3">6.2.</span> Transaction States
+          </h3>
+          <div class="outline-text-3" id="text-6-2"></div>
+          <div id="outline-container-orgbed630c" class="outline-4">
+            <h4 id="orgbed630c">
+              <span class="section-number-4">6.2.1.</span> Active
+            </h4>
+            <div class="outline-text-4" id="text-6-2-1">
+              <p>
+                It is the inital state. Transaction remains in this state while
+                it is executing operations
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org84dfa57" class="outline-4">
+            <h4 id="org84dfa57">
+              <span class="section-number-4">6.2.2.</span> Partially Commited
+            </h4>
+            <div class="outline-text-4" id="text-6-2-2">
+              <p>
+                After the final statement of a transaction has been executed,
+                the state of transaction is partially committed as it is still
+                possible that it may have to be aborted since the actual output
+                may still be temporarily residing in main memory and not to disk
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org6085047" class="outline-4">
+            <h4 id="org6085047">
+              <span class="section-number-4">6.2.3.</span> Failed
+            </h4>
+            <div class="outline-text-4" id="text-6-2-3">
+              <p>
+                After the discovery that the transaction can no longer proceed.
+                Such a transaction must be rolled back A transaction can fail
+                from active or Partially Committed
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org93ab0b1" class="outline-4">
+            <h4 id="org93ab0b1">
+              <span class="section-number-4">6.2.4.</span> Commited
+            </h4>
+            <div class="outline-text-4" id="text-6-2-4">
+              <p>
+                A transaction enters committed state after successful completion
+                of a transaction and final updation in the database
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgcc84c5e" class="outline-4">
+            <h4 id="orgcc84c5e">
+              <span class="section-number-4">6.2.5.</span> Aborted
+            </h4>
+            <div class="outline-text-4" id="text-6-2-5">
+              <p>
+                A transaction is said to be in aborted state when the
+                transaction has been rolled back and the datbase has been
+                restored to its state prior to the start of execution.
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgdd9ccf4" class="outline-4">
+            <h4 id="orgdd9ccf4">
+              <span class="section-number-4">6.2.6.</span> Terminated
+            </h4>
+            <div class="outline-text-4" id="text-6-2-6">
+              <p>Closing of transaction Freeing of Resources</p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org22af07f" class="outline-3">
+          <h3 id="org22af07f">
+            <span class="section-number-3">6.3.</span> Schedule
+          </h3>
+          <div class="outline-text-3" id="text-6-3">
+            <p>
+              When two or more transaction executed together or one after
+              another then they can be bundled up into higher unit of execution
+              called schedule
+            </p>
+          </div>
+          <div id="outline-container-org8603864" class="outline-4">
+            <h4 id="org8603864">
+              <span class="section-number-4">6.3.1.</span> Serial Schedule
+            </h4>
+            <div class="outline-text-4" id="text-6-3-1">
+              <p>
+                A serial schedule consists of sequence of instruction belonging
+                to different transactions, where instructions belonging to one
+                single transaction appear together. Before complete execution of
+                one transaction another transaction cannot be started. Every
+                serial schedule leads database into consistent state.
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org62b8b2d" class="outline-4">
+            <h4 id="org62b8b2d">
+              <span class="section-number-4">6.3.2.</span> Non serial Schedule
+            </h4>
+            <div class="outline-text-4" id="text-6-3-2">
+              <p>
+                A schedule in which sequence of instructions of a transaction
+                appear in the same order as they appear in individual
+                transaction but the instructions may be interleaved with
+                instructions of different transaction i.e. Concurrent execution
+                of transactions takes place
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org7237274" class="outline-4">
+            <h4 id="org7237274">
+              <span class="section-number-4">6.3.3.</span> Problems with
+              Concurrency
+            </h4>
+            <div class="outline-text-4" id="text-6-3-3"></div>
+            <ol class="org-ol">
+              <li>
+                <a id="orgc540cc2"></a>Dirty Read<br />
+                <div class="outline-text-5" id="text-6-3-3-1">
+                  <p>
+                    Reading a value which is being written by another
+                    transaction which is not committed. Also known as
+                    Uncommitted Read or Read before Write Problem
+                  </p>
+                  <table
+                    border="2"
+                    cellspacing="0"
+                    cellpadding="6"
+                    rules="groups"
+                    frame="hsides"
+                  >
+                    <colgroup>
+                      <col class="org-left" />
+
+                      <col class="org-left" />
+
+                      <col class="org-left" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col" class="org-left">T1</th>
+                        <th scope="col" class="org-left">T2</th>
+                        <th scope="col" class="org-left">&#xa0;</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="org-left">R(A) = 70</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">A = A - 50</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">W(A) = 20</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">R(A) = 20</td>
+                        <td class="org-left">&lt;- Dirty Read</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">A = A * 2</td>
+                        <td class="org-left">&#xa0;</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">W(A) = 40</td>
+                        <td class="org-left">&#xa0;</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">Commit</td>
+                        <td class="org-left">&#xa0;</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">Failure</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>
+                    Transaction rolled back A is restored to 70 But T2 was
+                    completed
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="orgc137d01"></a>Incorrect Summary<br />
+                <div class="outline-text-5" id="text-6-3-3-2">
+                  <p>
+                    This Problem occurs when during a transaction, another
+                    transaction runs and performs aggregate function
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="org9892bae"></a>Lost Update<br />
+                <div class="outline-text-5" id="text-6-3-3-3">
+                  <p>
+                    This Problem occurs when during a transaction, another
+                    transaction operates some update function. So after this
+                    transaction completes the first transaction will update this
+                    already new value
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="org193781f"></a>Unrepeatable Read<br />
+                <div class="outline-text-5" id="text-6-3-3-4">
+                  <p>
+                    Read Write Conflict Reading a value gives multiple values,
+                    as the value was overwritten by other transaction
+                  </p>
+                  <table
+                    border="2"
+                    cellspacing="0"
+                    cellpadding="6"
+                    rules="groups"
+                    frame="hsides"
+                  >
+                    <colgroup>
+                      <col class="org-left" />
+
+                      <col class="org-left" />
+
+                      <col class="org-left" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col" class="org-left">T1</th>
+                        <th scope="col" class="org-left">T2</th>
+                        <th scope="col" class="org-left">&#xa0;</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="org-left">R(A) = 2</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&lt;- Read</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">R(A) = 2</td>
+                        <td class="org-left">&#xa0;</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">A = A-2</td>
+                        <td class="org-left">&#xa0;</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">W(A) = 0</td>
+                        <td class="org-left">&lt;- Write Conflict</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">Commit</td>
+                        <td class="org-left">&#xa0;</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">R(A) = 0</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">W(A)</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">Commit</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </li>
+              <li>
+                <a id="org0070ec7"></a>Phantom Read<br />
+                <div class="outline-text-5" id="text-6-3-3-5">
+                  <p>
+                    A write operation done after deletion which was read before
+                    deletion.
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div id="outline-container-orga02e95b" class="outline-4">
+            <h4 id="orga02e95b">
+              <span class="section-number-4">6.3.4.</span> Properties
+            </h4>
+            <div class="outline-text-4" id="text-6-3-4">
+              <p>
+                We dont have any method to proof that a schedule is consitent,
+                but form the above discussion we understand that a serial
+                schedule will always be consistent. So if somehow we proof that
+                a non serial schedule will also have same effects as of a serial
+                schedule that we can proof that, this particular non serial
+                schedule will also be consistent.
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org2b0be8e" class="outline-4">
+            <h4 id="org2b0be8e">
+              <span class="section-number-4">6.3.5.</span> On the basis of
+              serializability
+            </h4>
+            <div class="outline-text-4" id="text-6-3-5">
+              <p>Try swapping instructions to check if swap is equivalent</p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="orgd4444b0"></a>Conflict serializable<br />
+                <div class="outline-text-5" id="text-6-3-5-1">
+                  <p>
+                    If one schedule can be converted to another schedule by
+                    swapping of non conflicting instruction they are called
+                    conflict equivalent schedule The schedule which are conflict
+                    equivalent to a serial schedule are called conflict
+                    serializable schedule. If a schedule S can be transformed
+                    into a schedule s&rsquo; by a series of swaps of non -
+                    conflicting instructions, we say that S and S&rsquo; are
+                    conflict equivalent. A schedule S is conflict seriazable, if
+                    it is conflict equivalent to a serial schedule
+                  </p>
+                </div>
+                <ol class="org-ol">
+                  <li>
+                    <a id="org72bb623"></a>Procedure<br />
+                    <div class="outline-text-6" id="text-6-3-5-1-1">
+                      <p>
+                        It can be determined by precedence graph A precedence
+                        graph consist of pair G (V,E) V = Set of vertices
+                        consisting of all the transactions participating in the
+                        schedule. E = set of edges consists of all edges Ti
+                        -&gt; Tj for which one of the following conditions hold
+                        Ti executes write(Q) before Tj executes read(Q) Ti
+                        executes read(Q) before Tj executes write(Q) Ti executes
+                        write(Q) before Tj executes write(Q) If an edge Ti -&gt;
+                        Tj exists in the precedence graph, then in any serial
+                        schedule S&rsquo; equivalent to S Ti must appear before
+                        Tj If the precedence graph for S has no cycle, then
+                        Schedule S is conflict serializable else it is not
+                      </p>
+                    </div>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <a id="org53129db"></a>View serializable<br />
+                <div class="outline-text-5" id="text-6-3-5-2">
+                  <p>
+                    If a schedule is not conflict serializable still it can be
+                    consistent, so let us study a weaker form of serializability
+                    called View serializability and even if a schedule is view
+                    serializable still it can be consistent If a schedule is
+                    conflict serializable then it will also be view
+                    serializable, but a view serializability only if a schedule
+                    is not conflict serialiable.
+                  </p>
+                </div>
+                <ol class="org-ol">
+                  <li>
+                    <a id="org0258fa1"></a>Procedure<br />
+                    <div class="outline-text-6" id="text-6-3-5-2-1">
+                      <p>
+                        Two Schedule S and S&rsquo; are view equivalent, if they
+                        satisfy following conditions For each data item Q, if
+                        the transaction Ti reads the inital value of Q in
+                        schedule S, then the transaction Ti must in schedule
+                        S&rsquo; also read the inital value of Q If a
+                        transaction Ti in schedule S reads any data item Q,
+                        which is updated by transaction Tj, then a transaction
+                        Ti must in schedule S&rsquo; also read data item Q
+                        updated by transaction Tj in schedule S&rsquo; For each
+                        data item Q, the transaction that performs the final
+                        write operations in schedule S, then the same
+                        transaction must also perform final write(Q) in schedule
+                        S&rsquo;
+                      </p>
+                    </div>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </div>
+          <div id="outline-container-org6816e6e" class="outline-4">
+            <h4 id="org6816e6e">
+              <span class="section-number-4">6.3.6.</span> On the basis of
+              recoverability
+            </h4>
+            <div class="outline-text-4" id="text-6-3-6"></div>
+            <ol class="org-ol">
+              <li>
+                <a id="org5e69dac"></a>Recoverable<br />
+                <div class="outline-text-5" id="text-6-3-6-1">
+                  <p>
+                    A schedule in which for each pair of transaction Ti and Tj
+                    such that Tj reads a data item previously written by Ti,
+                    then the commit or abort operation of Ti appears before Tj.
+                    Such a schedule is called non Recoverable Schedule
+                  </p>
+                  <table
+                    border="2"
+                    cellspacing="0"
+                    cellpadding="6"
+                    rules="groups"
+                    frame="hsides"
+                  >
+                    <colgroup>
+                      <col class="org-left" />
+
+                      <col class="org-left" />
+
+                      <col class="org-left" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col" class="org-left">T1</th>
+                        <th scope="col" class="org-left">T2</th>
+                        <th scope="col" class="org-left">&#xa0;</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="org-left">R(A) = 10</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">A = A-5</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">W(A) = 5</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">R(A) = 5</td>
+                        <td class="org-left">&lt;- Dirty Read</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">A = A-2</td>
+                        <td class="org-left">&#xa0;</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">W(A) = 3</td>
+                        <td class="org-left">&#xa0;</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">Commit</td>
+                        <td class="org-left">&lt;- A = 3</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">R(B)</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">fail</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&lt;- A = 10</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <p>
+                    A schedule in which for each pair of transaction Ti and Tj
+                    such that Tj reads a data item previously written by Ti,
+                    then the commit or abort operation of Ti appears before Tj.
+                    Such a schedule is called Recoverable Schedule
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="org6286d04"></a>Cascadeless<br />
+                <div class="outline-text-5" id="text-6-3-6-2">
+                  <p>
+                    It is a phenomenon in which even if the schedule is
+                    recoverable, the a single transaction failure leads to a
+                    series of transaction rollbacks, is called cascading
+                    rollback. Cascading rollback is undesirable, since it leads
+                    to undoing of a significant amount of work. Uncommitted
+                    reads are not allowed in cascade less schedule It is only
+                    affets W(A) then R(A)
+                  </p>
+                  <table
+                    border="2"
+                    cellspacing="0"
+                    cellpadding="6"
+                    rules="groups"
+                    frame="hsides"
+                  >
+                    <colgroup>
+                      <col class="org-left" />
+
+                      <col class="org-left" />
+
+                      <col class="org-left" />
+
+                      <col class="org-left" />
+                    </colgroup>
+                    <thead>
+                      <tr>
+                        <th scope="col" class="org-left">T1</th>
+                        <th scope="col" class="org-left">T2</th>
+                        <th scope="col" class="org-left">T3</th>
+                        <th scope="col" class="org-left">T4</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="org-left">R(A)</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">W(A)</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">R(A)</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">R(A)</td>
+                        <td class="org-left">&#xa0;</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">R(A)</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">Fail</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <p>
+                    A schedule in which for each pair of transaction Ti and Tj
+                    such that if Tj reads a data item previously written by Ti
+                    then the commit or abort of Ti must appear before read
+                    operation of Tj. Such a schedule is called cascade less
+                    schedule We will not allow R(A) Before T1 Commits or aborts
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="org33b57ec"></a>Strict<br />
+                <div class="outline-text-5" id="text-6-3-6-3">
+                  <p>
+                    A schedule in which for each pair of transaction Ti and Tj,
+                    such that Tj reads a data item previously written by Ti then
+                    the commit or abort of Ti must appear before read and write
+                    operation of Tj
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-org3b2776d" class="outline-2">
+        <h2 id="org3b2776d">
+          <span class="section-number-2">7.</span> Recovery and Concurreny
+        </h2>
+        <div class="outline-text-2" id="text-7"></div>
+        <div id="outline-container-org72fab25" class="outline-3">
+          <h3 id="org72fab25">
+            <span class="section-number-3">7.1.</span> Log Based Recovery
+          </h3>
+          <div class="outline-text-3" id="text-7-1">
+            <p>
+              The system log or transaction log records all the changes or
+              activites happening in the database, ensuring that transaction are
+              durable and can be recovered in the event of a failure
+            </p>
+          </div>
+          <div id="outline-container-org12873ed" class="outline-4">
+            <h4 id="org12873ed">
+              <span class="section-number-4">7.1.1.</span> Different types of
+              log records
+            </h4>
+            <div class="outline-text-4" id="text-7-1-1">
+              <ul class="org-ul">
+                <li>
+                  Ti start - This log entry indicate that the transaction Ti has
+                  started its executed
+                </li>
+                <li>
+                  Ti, Xj, V1, V2 - This log entry documents a write operation.
+                  It states that transaction Ti changed the value of data item
+                  Xj from V1 to V2
+                </li>
+                <li>
+                  Ti Commit - This log entry marks the successful completion of
+                  transaction Ti
+                </li>
+                <li>
+                  Ti abort - This log entry denotes that the transaction Ti has
+                  been aborted, either due to an error or a rollback operation
+                </li>
+              </ul>
+
+              <p>
+                Before any write operation modifies the database, a log record
+                of that operation needs to created. This is to ensure that in
+                case of a failure, the system can restore database to consistent
+                state using the lgo records.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-orgef1c5f9" class="outline-3">
+          <h3 id="orgef1c5f9">
+            <span class="section-number-3">7.2.</span> Deferred Vs Immediate
+          </h3>
+          <div class="outline-text-3" id="text-7-2">
+            <table
+              border="2"
+              cellspacing="0"
+              cellpadding="6"
+              rules="groups"
+              frame="hsides"
+            >
+              <colgroup>
+                <col class="org-left" />
+
+                <col class="org-left" />
+
+                <col class="org-left" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col" class="org-left">
+                    Deferred Database Modification
+                  </th>
+                  <th scope="col" class="org-left">Aspect</th>
+                  <th scope="col" class="org-left">
+                    Immediate database modification
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="org-left">Only at the commit point</td>
+                  <td class="org-left">Write operation timing</td>
+                  <td class="org-left">As soon as changes occur</td>
+                </tr>
+
+                <tr>
+                  <td class="org-left">
+                    Reduced, as changes are batched and written at once during
+                    the commit saving on intermediate I/O operations
+                  </td>
+                  <td class="org-left">I/O operations</td>
+                  <td class="org-left">
+                    Increased, as each change triggers immediate write
+                    operations, leading to more frequent I/O operations
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="org-left">Recovery Complexity</td>
+                  <td class="org-left">
+                    Simpler, as uncommitted changes are not reflected in the
+                    database, making rollback easier in case of failure.
+                  </td>
+                  <td class="org-left">
+                    More complex as it may requre undoing changes from
+                    uncommitted transactions that have been written to the
+                    database.
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="org-left">&#xa0;</td>
+                  <td class="org-left">&#xa0;</td>
+                  <td class="org-left">&#xa0;</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div id="outline-container-org07b5168" class="outline-3">
+          <h3 id="org07b5168">
+            <span class="section-number-3">7.3.</span> Shadow paging recovery
+            technique
+          </h3>
+          <div class="outline-text-3" id="text-7-3">
+            <p>
+              In the shadow paging recovery technique, the database maintains
+              two pages tables during a transaction the current page table and
+              the shadow page table
+            </p>
+          </div>
+          <div id="outline-container-orge490b75" class="outline-4">
+            <h4 id="orge490b75">
+              <span class="section-number-4">7.3.1.</span> Initalization
+            </h4>
+            <div class="outline-text-4" id="text-7-3-1">
+              <p>
+                When a transaction begins, the database creates a shadow copy of
+                the page table. the database pages themselves are not
+                duplicated, only the page table entries are duplicated.
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org3f8e9d8" class="outline-4">
+            <h4 id="org3f8e9d8">
+              <span class="section-number-4">7.3.2.</span> Modification
+            </h4>
+            <div class="outline-text-4" id="text-7-3-2">
+              <p>
+                As the transaction progresses, any changes are reflected in the
+                current page table, while the shadow page table retains the
+                orginial state. if a page is modified, a new copy of the page is
+                created, and the current page table is updated to point to this
+                new version, thereby ensuring that the shadow page table still
+                points to the orginial unmodified page
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org1f50b19" class="outline-4">
+            <h4 id="org1f50b19">
+              <span class="section-number-4">7.3.3.</span> Commit
+            </h4>
+            <div class="outline-text-4" id="text-7-3-3">
+              <p>
+                Upon transaction commit, the shadow page table is discarded, and
+                the current page table becomes the new committed state of
+                database. The database atomically switches to using the current
+                page table, ensuring that changes are installed all at once.
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org394bce6" class="outline-4">
+            <h4 id="org394bce6">
+              <span class="section-number-4">7.3.4.</span> Recovery
+            </h4>
+            <div class="outline-text-4" id="text-7-3-4">
+              <p>
+                In case of a system failure before the transaction commits, the
+                database can easily recover by discarding the current page table
+                and reverting back to the shadow page table, thereby restoring
+                the database to its state before the transaction begins
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org4131b41" class="outline-3">
+          <h3 id="org4131b41">
+            <span class="section-number-3">7.4.</span> Data Fragmentation
+          </h3>
+          <div class="outline-text-3" id="text-7-4">
+            <p>
+              Data fragmentation in the context of a DBMS refers to the process
+              of breaking down a database into smaller, manageable pieces, and
+              distributing these pieces across a network of computers.
+            </p>
+          </div>
+          <div id="outline-container-orga2258a5" class="outline-4">
+            <h4 id="orga2258a5">
+              <span class="section-number-4">7.4.1.</span> Horizontal
+              Fragmentation
+            </h4>
+            <div class="outline-text-4" id="text-7-4-1">
+              <p>
+                In DBMS, horizontal fragmentation divides a table into sections
+                based on rows. Each fragment contains a subset of rows, usually
+                segmented based on certain conditions or attributes. This can
+                enhance performance by facilitating parallel processing and
+                quicker data retrieval especially useful in distributed database
+                systems
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org22a23a6" class="outline-4">
+            <h4 id="org22a23a6">
+              <span class="section-number-4">7.4.2.</span> Vertical
+              Fragmentation
+            </h4>
+            <div class="outline-text-4" id="text-7-4-2">
+              <p>
+                This fragmentation type divides a database table by columns,
+                with different sets of columns stored in seperate fragments.
+                This approach is employed when different users require access to
+                varied data attributes, promoting efficient data handling and
+                minimizing data transfer times, which is advantageous in
+                scenarios where queries only necessitate a subset of attribute
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org883878f" class="outline-4">
+            <h4 id="org883878f">
+              <span class="section-number-4">7.4.3.</span> Hybrid Fragmentation
+            </h4>
+            <div class="outline-text-4" id="text-7-4-3">
+              <p>
+                Hybrid or mixed fragmentationn in DBMS combines both horizontal
+                and vertical strategies, optimizing data storage and retrieval
+                for complex access patterns. This method can potentially offer
+                performance improvements by utilizating the merits of both
+                horizontal and vertical fragmentation, and is typically
+                impmented in datbases with complex, multifaceted data access
+                requirements
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org7247cb4" class="outline-3">
+          <h3 id="org7247cb4">
+            <span class="section-number-3">7.5.</span> Distributed Database
+          </h3>
+          <div class="outline-text-3" id="text-7-5">
+            <p>
+              A distributed database is a database in which storage devices are
+              not all attached to a common processor. It may be stored in
+              multiple computers, located in the same physical location, or
+              dispered over a network of interconnected computers
+            </p>
+          </div>
+          <div id="outline-container-org05772be" class="outline-4">
+            <h4 id="org05772be">
+              <span class="section-number-4">7.5.1.</span> Data Replication
+            </h4>
+            <div class="outline-text-4" id="text-7-5-1">
+              <ul class="org-ul">
+                <li>
+                  Advantages - Increased Availability, Improved Performance,
+                  Enchanced Reliability
+                </li>
+                <li>
+                  Disadvantages - Storage costs, Maintanance Complexity, Write
+                  complexity
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="outline-container-org906358f" class="outline-4">
+            <h4 id="org906358f">
+              <span class="section-number-4">7.5.2.</span> Data Fragmentation
+            </h4>
+            <div class="outline-text-4" id="text-7-5-2">
+              <ul class="org-ul">
+                <li>
+                  Advantages - Efficient Data access, Distributed Processing,
+                  localised Management
+                </li>
+                <li>
+                  Disadvantages - Complexity, Dependency on Network,
+                  Reconstruction Issues
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org9147853" class="outline-3">
+          <h3 id="org9147853">
+            <span class="section-number-3">7.6.</span> Concurrency Control
+          </h3>
+          <div class="outline-text-3" id="text-7-6"></div>
+          <div id="outline-container-org19423e4" class="outline-4">
+            <h4 id="org19423e4">
+              <span class="section-number-4">7.6.1.</span> Time Stamping
+            </h4>
+            <div class="outline-text-4" id="text-7-6-1">
+              <p>
+                When before entering the system a specific order is decided
+                among the transactino, so in case of clash we can decide which
+                one to allow and which to stop
+              </p>
+              <ul class="org-ul">
+                <li>
+                  With each transaction Ti in the system, we associate a unique
+                  fixed timestamp, denoted by TS(ti)
+                </li>
+                <li>
+                  This timestamp is assigned by database system to a transaction
+                  at time transaction enters into the system
+                </li>
+                <li>
+                  If a transaction has been assigned a timestamp TS(ti) and a
+                  new transaction Tj, enters into the system with a timestamp
+                  TS(tj), then always TS(ti) &lt; TS(tj)
+                </li>
+              </ul>
+              <p>
+                Timestamp with data item in order to assure such scheme, the
+                protocol maintains for each data item Q two timestamp values:
+              </p>
+              <ol class="org-ol">
+                <li>
+                  W-Timestamp(Q) is the largest timestamp of any transaction
+                  that executed write(Q) successfully
+                </li>
+                <li>
+                  R-Timestamp(Q) is the largest timestamp of any transaction
+                  that executed read(Q) successfully
+                </li>
+              </ol>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="orga6c39ca"></a>For Ti request a read(Q)<br />
+                <div class="outline-text-5" id="text-7-6-1-1">
+                  <p>
+                    1 if TS(t1) &lt; W-Timestamp(Q), then Ti needs to read a
+                    value of Q that was already overwritten, Hence, the read
+                    operation is rejected, and Ti is rolled back 2 If TS(t1)
+                    &gt;= W-Timestamp(Q), then the read operation is executed,
+                    and R-timestamp(Q) is set to the maximum of R-timestamp(Q)
+                    and TS(ti)
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div id="outline-container-org03c977c" class="outline-4">
+            <h4 id="org03c977c">
+              <span class="section-number-4">7.6.2.</span> Lock based Method
+            </h4>
+            <div class="outline-text-4" id="text-7-6-2">
+              <p>
+                Where we ask a transaction to first lock item before using it.
+                That no different transaction can use a data at the same time,
+                removing any possibilities of conflict
+              </p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="orgc4511d7"></a>Shared Exclusive Lock<br />
+                <div class="outline-text-5" id="text-7-6-2-1">
+                  <p>
+                    Shared Locked(S) -&gt; If transaction locked data item in
+                    shared mode then allowed to read only Exclusive Lock(X)
+                    -&gt; If transaction locked data item in Exclusive mdoe then
+                    allowed to read and write both
+                  </p>
+                  <table
+                    border="2"
+                    cellspacing="0"
+                    cellpadding="6"
+                    rules="groups"
+                    frame="hsides"
+                  >
+                    <colgroup>
+                      <col class="org-left" />
+
+                      <col class="org-left" />
+
+                      <col class="org-left" />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">Shared</td>
+                        <td class="org-left">Exclusive</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">Shared</td>
+                        <td class="org-left">Yes</td>
+                        <td class="org-left">No</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">Exclusive</td>
+                        <td class="org-left">No</td>
+                        <td class="org-left">No</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <ol class="org-ol">
+                  <li>
+                    <a id="org6b37c60"></a>Problems<br />
+                    <div class="outline-text-6" id="text-7-6-2-1-1">
+                      <p>
+                        May not be sufficient to produce only Serializable
+                        schedule May not free from Irrecoverability
+                      </p>
+                    </div>
+                    <ol class="org-ol">
+                      <li>
+                        <a id="orgacc71d8"></a>May not free from dead lock<br />
+                        <div class="outline-text-7" id="text-7-6-2-1-1-1">
+                          <p>
+                            In Dead Lock, 2 Transactions requesting exclusive
+                            access to resources held by another. So they wait
+                            for one other for infinitely
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <a id="orgb546a46"></a>May not free from Starvation<br />
+                        <div class="outline-text-7" id="text-7-6-2-1-1-2">
+                          <p>
+                            In Starvation, A Transaction requesting exclusive
+                            access wait for other transactions with shared locks
+                            for finite time.
+                          </p>
+                        </div>
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <a id="org8b89820"></a>2 Phase Lock<br />
+                <div class="outline-text-5" id="text-7-6-2-2">
+                  <p>
+                    Growing Phase -&gt; Locks are acquired and no locks are
+                    released Shrinking Phase -&gt; Locks are released and no
+                    locks are acquired
+                  </p>
+                </div>
+                <ol class="org-ol">
+                  <li>
+                    <a id="org421bad7"></a>Types<br />
+                    <ol class="org-ol">
+                      <li><a id="org9ffd0bd"></a>Basic 2pl<br /></li>
+                      <li><a id="org7f9c7de"></a>Conservative 2pl<br /></li>
+                      <li>
+                        <a id="orgcb791af"></a>Rigorous 2pl<br />
+                        <div class="outline-text-7" id="text-7-6-2-2-1-3">
+                          <p>
+                            It should satisfy the basic 2pl and all shared,
+                            exclusive locks should hold until commit/abort
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <a id="orgf8040be"></a>Strict 2pl<br />
+                        <div class="outline-text-7" id="text-7-6-2-2-1-4">
+                          <p>
+                            It should satisfy the basic 2PL and all exclusive
+                            locks should hold until commit/abort
+                          </p>
+                        </div>
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <a id="org2b01c73"></a>Problems<br />
+                    <div class="outline-text-6" id="text-7-6-2-2-2">
+                      <p>
+                        May not be free from irrecoverability May free from
+                        deadlocks May not free from starvation Not free from
+                        cascading Rollback
+                      </p>
+                    </div>
+                  </li>
+                </ol>
+              </li>
+              <li><a id="org24df2e5"></a>Graph based protocol<br /></li>
+            </ol>
+          </div>
+          <div id="outline-container-orgca58e4a" class="outline-4">
+            <h4 id="orgca58e4a">
+              <span class="section-number-4">7.6.3.</span> Validation Based
+              protocol
+            </h4>
+            <div class="outline-text-4" id="text-7-6-3">
+              <p>
+                Majority of transactions are read only instructions the rate of
+                conflicts among the transactions may be low, thus many of
+                transaction, if executed without the supervision of a
+                concurrency control scheme, would nerveless leave the system in
+                a consistent state
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="postamble" class="status">
+      <p class="author">Author: Knowledge Gate</p>
+      <p class="date">Created: 2025-01-12 日 18:35</p>
+    </div>
+  </body>
+</html>

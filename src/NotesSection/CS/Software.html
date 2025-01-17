@@ -1,0 +1,3199 @@
+<html>
+  <head>
+    <!-- 2025-01-12 日 18:35 -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Software Engineering</title>
+    <meta name="author" content="Shaswat" />
+    <meta name="generator" content="Org Mode" />
+    <style type="text/css">
+      #content {
+        max-width: 60em;
+        margin: auto;
+      }
+      .title {
+        text-align: center;
+        margin-bottom: 0.2em;
+      }
+      .subtitle {
+        text-align: center;
+        font-size: medium;
+        font-weight: bold;
+        margin-top: 0;
+      }
+      .todo {
+        font-family: monospace;
+        color: red;
+      }
+      .done {
+        font-family: monospace;
+        color: green;
+      }
+      .priority {
+        font-family: monospace;
+        color: orange;
+      }
+      .tag {
+        background-color: #eee;
+        font-family: monospace;
+        padding: 2px;
+        font-size: 80%;
+        font-weight: normal;
+      }
+      .timestamp {
+        color: #bebebe;
+      }
+      .timestamp-kwd {
+        color: #5f9ea0;
+      }
+      .org-right {
+        margin-left: auto;
+        margin-right: 0px;
+        text-align: right;
+      }
+      .org-left {
+        margin-left: 0px;
+        margin-right: auto;
+        text-align: left;
+      }
+      .org-center {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+      .underline {
+        text-decoration: underline;
+      }
+      #postamble p,
+      #preamble p {
+        font-size: 90%;
+        margin: 0.2em;
+      }
+      p.verse {
+        margin-left: 3%;
+      }
+      pre {
+        border: 1px solid #e6e6e6;
+        border-radius: 3px;
+        background-color: #f2f2f2;
+        padding: 8pt;
+        font-family: monospace;
+        overflow: auto;
+        margin: 1.2em;
+      }
+      pre.src {
+        position: relative;
+        overflow: auto;
+      }
+      pre.src:before {
+        display: none;
+        position: absolute;
+        top: -8px;
+        right: 12px;
+        padding: 3px;
+        color: #555;
+        background-color: #f2f2f299;
+      }
+      pre.src:hover:before {
+        display: inline;
+        margin-top: 14px;
+      }
+      /* Languages per Org manual */
+      pre.src-asymptote:before {
+        content: "Asymptote";
+      }
+      pre.src-awk:before {
+        content: "Awk";
+      }
+      pre.src-authinfo::before {
+        content: "Authinfo";
+      }
+      pre.src-C:before {
+        content: "C";
+      }
+      /* pre.src-C++ doesn't work in CSS */
+      pre.src-clojure:before {
+        content: "Clojure";
+      }
+      pre.src-css:before {
+        content: "CSS";
+      }
+      pre.src-D:before {
+        content: "D";
+      }
+      pre.src-ditaa:before {
+        content: "ditaa";
+      }
+      pre.src-dot:before {
+        content: "Graphviz";
+      }
+      pre.src-calc:before {
+        content: "Emacs Calc";
+      }
+      pre.src-emacs-lisp:before {
+        content: "Emacs Lisp";
+      }
+      pre.src-fortran:before {
+        content: "Fortran";
+      }
+      pre.src-gnuplot:before {
+        content: "gnuplot";
+      }
+      pre.src-haskell:before {
+        content: "Haskell";
+      }
+      pre.src-hledger:before {
+        content: "hledger";
+      }
+      pre.src-java:before {
+        content: "Java";
+      }
+      pre.src-js:before {
+        content: "Javascript";
+      }
+      pre.src-latex:before {
+        content: "LaTeX";
+      }
+      pre.src-ledger:before {
+        content: "Ledger";
+      }
+      pre.src-lisp:before {
+        content: "Lisp";
+      }
+      pre.src-lilypond:before {
+        content: "Lilypond";
+      }
+      pre.src-lua:before {
+        content: "Lua";
+      }
+      pre.src-matlab:before {
+        content: "MATLAB";
+      }
+      pre.src-mscgen:before {
+        content: "Mscgen";
+      }
+      pre.src-ocaml:before {
+        content: "Objective Caml";
+      }
+      pre.src-octave:before {
+        content: "Octave";
+      }
+      pre.src-org:before {
+        content: "Org mode";
+      }
+      pre.src-oz:before {
+        content: "OZ";
+      }
+      pre.src-plantuml:before {
+        content: "Plantuml";
+      }
+      pre.src-processing:before {
+        content: "Processing.js";
+      }
+      pre.src-python:before {
+        content: "Python";
+      }
+      pre.src-R:before {
+        content: "R";
+      }
+      pre.src-ruby:before {
+        content: "Ruby";
+      }
+      pre.src-sass:before {
+        content: "Sass";
+      }
+      pre.src-scheme:before {
+        content: "Scheme";
+      }
+      pre.src-screen:before {
+        content: "Gnu Screen";
+      }
+      pre.src-sed:before {
+        content: "Sed";
+      }
+      pre.src-sh:before {
+        content: "shell";
+      }
+      pre.src-sql:before {
+        content: "SQL";
+      }
+      pre.src-sqlite:before {
+        content: "SQLite";
+      }
+      /* additional languages in org.el's org-babel-load-languages alist */
+      pre.src-forth:before {
+        content: "Forth";
+      }
+      pre.src-io:before {
+        content: "IO";
+      }
+      pre.src-J:before {
+        content: "J";
+      }
+      pre.src-makefile:before {
+        content: "Makefile";
+      }
+      pre.src-maxima:before {
+        content: "Maxima";
+      }
+      pre.src-perl:before {
+        content: "Perl";
+      }
+      pre.src-picolisp:before {
+        content: "Pico Lisp";
+      }
+      pre.src-scala:before {
+        content: "Scala";
+      }
+      pre.src-shell:before {
+        content: "Shell Script";
+      }
+      pre.src-ebnf2ps:before {
+        content: "ebfn2ps";
+      }
+      /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+      pre.src-cpp:before {
+        content: "C++";
+      }
+      pre.src-abc:before {
+        content: "ABC";
+      }
+      pre.src-coq:before {
+        content: "Coq";
+      }
+      pre.src-groovy:before {
+        content: "Groovy";
+      }
+      /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+      pre.src-bash:before {
+        content: "bash";
+      }
+      pre.src-csh:before {
+        content: "csh";
+      }
+      pre.src-ash:before {
+        content: "ash";
+      }
+      pre.src-dash:before {
+        content: "dash";
+      }
+      pre.src-ksh:before {
+        content: "ksh";
+      }
+      pre.src-mksh:before {
+        content: "mksh";
+      }
+      pre.src-posh:before {
+        content: "posh";
+      }
+      /* Additional Emacs modes also supported by the LaTeX listings package */
+      pre.src-ada:before {
+        content: "Ada";
+      }
+      pre.src-asm:before {
+        content: "Assembler";
+      }
+      pre.src-caml:before {
+        content: "Caml";
+      }
+      pre.src-delphi:before {
+        content: "Delphi";
+      }
+      pre.src-html:before {
+        content: "HTML";
+      }
+      pre.src-idl:before {
+        content: "IDL";
+      }
+      pre.src-mercury:before {
+        content: "Mercury";
+      }
+      pre.src-metapost:before {
+        content: "MetaPost";
+      }
+      pre.src-modula-2:before {
+        content: "Modula-2";
+      }
+      pre.src-pascal:before {
+        content: "Pascal";
+      }
+      pre.src-ps:before {
+        content: "PostScript";
+      }
+      pre.src-prolog:before {
+        content: "Prolog";
+      }
+      pre.src-simula:before {
+        content: "Simula";
+      }
+      pre.src-tcl:before {
+        content: "tcl";
+      }
+      pre.src-tex:before {
+        content: "TeX";
+      }
+      pre.src-plain-tex:before {
+        content: "Plain TeX";
+      }
+      pre.src-verilog:before {
+        content: "Verilog";
+      }
+      pre.src-vhdl:before {
+        content: "VHDL";
+      }
+      pre.src-xml:before {
+        content: "XML";
+      }
+      pre.src-nxml:before {
+        content: "XML";
+      }
+      /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+      pre.src-conf:before {
+        content: "Configuration File";
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+      caption.t-above {
+        caption-side: top;
+      }
+      caption.t-bottom {
+        caption-side: bottom;
+      }
+      td,
+      th {
+        vertical-align: top;
+      }
+      th.org-right {
+        text-align: center;
+      }
+      th.org-left {
+        text-align: center;
+      }
+      th.org-center {
+        text-align: center;
+      }
+      td.org-right {
+        text-align: right;
+      }
+      td.org-left {
+        text-align: left;
+      }
+      td.org-center {
+        text-align: center;
+      }
+      dt {
+        font-weight: bold;
+      }
+      .footpara {
+        display: inline;
+      }
+      .footdef {
+        margin-bottom: 1em;
+      }
+      .figure {
+        padding: 1em;
+      }
+      .figure p {
+        text-align: center;
+      }
+      .equation-container {
+        display: table;
+        text-align: center;
+        width: 100%;
+      }
+      .equation {
+        vertical-align: middle;
+      }
+      .equation-label {
+        display: table-cell;
+        text-align: right;
+        vertical-align: middle;
+      }
+      .inlinetask {
+        padding: 10px;
+        border: 2px solid gray;
+        margin: 10px;
+        background: #ffffcc;
+      }
+      #org-div-home-and-up {
+        text-align: right;
+        font-size: 70%;
+        white-space: nowrap;
+      }
+      textarea {
+        overflow-x: auto;
+      }
+      .linenr {
+        font-size: smaller;
+      }
+      .code-highlighted {
+        background-color: #ffff00;
+      }
+      .org-info-js_info-navigation {
+        border-style: none;
+      }
+      #org-info-js_console-label {
+        font-size: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+      .org-info-js_search-highlight {
+        background-color: #ffff00;
+        color: #000000;
+        font-weight: bold;
+      }
+      .org-svg {
+      }
+    </style>
+    <script>
+      window.MathJax = {
+        tex: {
+          ams: {
+            multlineWidth: "85%",
+          },
+          tags: "ams",
+          tagSide: "right",
+          tagIndent: ".8em",
+        },
+        chtml: {
+          scale: 1.0,
+          displayAlign: "center",
+          displayIndent: "0em",
+        },
+        svg: {
+          scale: 1.0,
+          displayAlign: "center",
+          displayIndent: "0em",
+        },
+        output: {
+          font: "mathjax-modern",
+          displayOverflow: "overflow",
+        },
+      };
+    </script>
+
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+  </head>
+  <body>
+    <div id="content" class="content">
+      <h1 class="title">Software Engineering</h1>
+      <div id="table-of-contents" role="doc-toc">
+        <h2>Table of Contents</h2>
+        <div id="text-table-of-contents" role="doc-toc">
+          <ul>
+            <li>
+              <a href="#orgbe8bd16">1. Software</a>
+              <ul>
+                <li>
+                  <a href="#org8d23950">1.1. Components</a>
+                  <ul>
+                    <li><a href="#org0a53fd2">1.1.1. Program</a></li>
+                    <li><a href="#orgb9ede7e">1.1.2. Documentation</a></li>
+                    <li>
+                      <a href="#org95ce5c6">1.1.3. Operating Procedure</a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="#orge6faa3c">1.2. Crisis</a></li>
+                <li><a href="#orgb2024ae">1.3. Engineering</a></li>
+                <li>
+                  <a href="#orga5e99be">1.4. Charactersistics</a>
+                  <ul>
+                    <li>
+                      <a href="#orgf39aea6"
+                        >1.4.1. Software Development vs Manufacturing</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#orgcbb19a5">1.4.2. No Physical wear and tear</a>
+                    </li>
+                    <li>
+                      <a href="#org53e6416">1.4.3. Custom Built nature</a>
+                    </li>
+                    <li>
+                      <a href="#orgf9957d1">1.4.4. Intangibility of software</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org395cba6">1.5. Major Problems</a>
+                  <ul>
+                    <li>
+                      <a href="#org5f74bf0"
+                        >1.5.1. Inadequate Requirements Gathering</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#orgb120dc1">1.5.2. Poor Project Management</a>
+                    </li>
+                    <li>
+                      <a href="#orgaad0182"
+                        >1.5.3. Insufficient time and budget</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#org1fb3678">1.5.4. Lack of skilled personnel</a>
+                    </li>
+                    <li>
+                      <a href="#orgcea3711">1.5.5. Resistance to change</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#orge918320"
+                    >1.6. Similarity and Differences between Engineering</a
+                  >
+                  <ul>
+                    <li>
+                      <a href="#orgb674410">1.6.1. Nature of the Product</a>
+                    </li>
+                    <li>
+                      <a href="#orgb0de42b"
+                        >1.6.2. Design Flexibility and iteration</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#orge01f5d9"
+                        >1.6.3. Quality Assurance and testing</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#org2a14df7"
+                        >1.6.4. Project Management and Collobration</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#orgfab35b4">1.6.5. Maintenance and Evolution</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org5f52fb7">1.7. Software quality attributes</a>
+                </li>
+                <li>
+                  <a href="#org4f48f87">1.8. Software process</a>
+                  <ul>
+                    <li><a href="#orgf14b42f">1.8.1. Feasibility Study</a></li>
+                    <li>
+                      <a href="#org1c3431f"
+                        >1.8.2. Requirement analysis and specification</a
+                      >
+                    </li>
+                    <li><a href="#org5c739b9">1.8.3. Designing</a></li>
+                    <li><a href="#orgb0b4d72">1.8.4. Coding</a></li>
+                    <li><a href="#org420b902">1.8.5. Testing</a></li>
+                    <li><a href="#org824a4a9">1.8.6. Implementation</a></li>
+                    <li><a href="#org784f1f6">1.8.7. Maintenance</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org46012e3">1.9. Devlopment Life Cycle</a>
+                  <ul>
+                    <li><a href="#org0083e91">1.9.1. Waterfall Model</a></li>
+                    <li><a href="#orgcf07602">1.9.2. Prototype model</a></li>
+                    <li><a href="#org280fbe7">1.9.3. Spiral Model</a></li>
+                    <li>
+                      <a href="#org102cdbb"
+                        >1.9.4. Incremental Process / Incremental Development
+                        Model</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#org05f2faa">2. Unit 3</a>
+              <ul>
+                <li>
+                  <a href="#orgec391e0">2.1. Software Metrics</a>
+                  <ul>
+                    <li><a href="#orga62ef79">2.1.1. Lines of Code</a></li>
+                    <li><a href="#org66cda65">2.1.2. Function Count</a></li>
+                    <li><a href="#org945ef9b">2.1.3. Token Count</a></li>
+                    <li>
+                      <a href="#org19aad34">2.1.4. Data Structure Metrics</a>
+                    </li>
+                    <li><a href="#orgca5f4ec">2.1.5. Applications</a></li>
+                    <li><a href="#org43ad797">2.1.6. Reliability</a></li>
+                    <li>
+                      <a href="#org66f0ba5">2.1.7. Information Flow metrics</a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="#org0ddc44e">2.2. Failures and Faults</a></li>
+                <li>
+                  <a href="#org74e1767">2.3. Software Reliability Models</a>
+                  <ul>
+                    <li>
+                      <a href="#org4917f99"
+                        >2.3.1. Basic Execution Time Model</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#orgfa62f18"
+                        >2.3.2. Lograithmic Poisson execution time model</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org165df13">2.4. Quality Standards</a>
+                  <ul>
+                    <li><a href="#orga353fe2">2.4.1. ISO 9001</a></li>
+                    <li><a href="#org2c7da81">2.4.2. SEI CMM</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#org1a84911">3. Unit 4</a>
+              <ul>
+                <li><a href="#orgab19dee">3.1. Objective</a></li>
+                <li><a href="#orgdd726ac">3.2. Principles</a></li>
+                <li>
+                  <a href="#org8e5b607">3.3. Types of Testing</a>
+                  <ul>
+                    <li>
+                      <a href="#org84af2b5">3.3.1. Boundary Value testing</a>
+                    </li>
+                    <li>
+                      <a href="#org051ecdd">3.3.2. Equivalence Class testing</a>
+                    </li>
+                    <li>
+                      <a href="#org58f23be"
+                        >3.3.3. Decision Table Based Testing</a
+                      >
+                    </li>
+                    <li><a href="#org3395b44">3.3.4. Cause Effect Graph</a></li>
+                    <li><a href="#orga95f295">3.3.5. White Box Testing</a></li>
+                    <li><a href="#orge1214d3">3.3.6. Mutation Testing</a></li>
+                    <li><a href="#orgcfa620d">3.3.7. Unit testing</a></li>
+                    <li>
+                      <a href="#org340a78f">3.3.8. Integration testing</a>
+                    </li>
+                    <li><a href="#org10f26e6">3.3.9. System testing</a></li>
+                    <li>
+                      <a href="#org590d734">3.3.10. Regression testing</a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="#org4564779">3.4. Testing tools</a></li>
+                <li><a href="#orgde9c883">3.5. Testing Standards</a></li>
+                <li>
+                  <a href="#org85fe2d0">3.6. Debugging</a>
+                  <ul>
+                    <li><a href="#org89f9c5f">3.6.1. Characteristics</a></li>
+                    <li><a href="#orge0523c6">3.6.2. Approach</a></li>
+                    <li><a href="#orgc1aef49">3.6.3. Tools</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org075686a">3.7. Maintenance</a>
+                  <ul>
+                    <li><a href="#org8e35524">3.7.1. Types</a></li>
+                    <li><a href="#org9bb2c69">3.7.2. Process</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org680dd5d"
+                    >3.8. Reverse Engineering / Backward Engineering</a
+                  >
+                </li>
+                <li><a href="#org68f8d13">3.9. Re Engineering</a></li>
+                <li>
+                  <a href="#org3dad957">3.10. Documentation</a>
+                  <ul>
+                    <li><a href="#orgfe4ea29">3.10.1. Types</a></li>
+                    <li><a href="#org9e6c92f">3.10.2. SCM</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="outline-container-orgbe8bd16" class="outline-2">
+        <h2 id="orgbe8bd16">
+          <span class="section-number-2">1.</span> Software
+        </h2>
+        <div class="outline-text-2" id="text-1">
+          <p>
+            Program is a step by step instrruction to perform a specific task on
+            a computer in a programming language is called a program set of
+            instructions Software is a program along with proper document and
+            user manuals which mainly includes instllation and ohter manuals.
+          </p>
+        </div>
+        <div id="outline-container-org8d23950" class="outline-3">
+          <h3 id="org8d23950">
+            <span class="section-number-3">1.1.</span> Components
+          </h3>
+          <div class="outline-text-3" id="text-1-1"></div>
+          <div id="outline-container-org0a53fd2" class="outline-4">
+            <h4 id="org0a53fd2">
+              <span class="section-number-4">1.1.1.</span> Program
+            </h4>
+          </div>
+          <div id="outline-container-orgb9ede7e" class="outline-4">
+            <h4 id="orgb9ede7e">
+              <span class="section-number-4">1.1.2.</span> Documentation
+            </h4>
+            <div class="outline-text-4" id="text-1-1-2">
+              <p>
+                these consist all the descriptions programs graphics and
+                instructions pertaining to design coding testing and preparation
+                of software
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org95ce5c6" class="outline-4">
+            <h4 id="org95ce5c6">
+              <span class="section-number-4">1.1.3.</span> Operating Procedure
+            </h4>
+            <div class="outline-text-4" id="text-1-1-3">
+              <p>
+                Provides information about what software is how to work with it
+                how ot install it on your system and how to control all the
+                activites of the software
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-orge6faa3c" class="outline-3">
+          <h3 id="orge6faa3c">
+            <span class="section-number-3">1.2.</span> Crisis
+          </h3>
+          <div class="outline-text-3" id="text-1-2">
+            <p>
+              Problem with software the major problem with current scenario in
+              softwarre industry is, software usually overrun their development
+              cost, they exceed their development duration limits, are ususally
+              of poor quality As long as there were no machines, programming was
+              no problem at all when we had a few weak computers, programming
+              became a mild problem and now we have gigantic computers,
+              programming has become an equally gigantic problem
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-orgb2024ae" class="outline-3">
+          <h3 id="orgb2024ae">
+            <span class="section-number-3">1.3.</span> Engineering
+          </h3>
+          <div class="outline-text-3" id="text-1-3">
+            <p>
+              IN SW industry we understand that there is an urgent need to use a
+              proper strategies, processs and development cycles so that we can
+              produce or we can design quality products that are within budges,
+              with in time and must satisfy the requirement of their users. SE
+              is the systematic application of engineering principles and
+              methods to the desgin development testing and maintenance of
+              software prodcuts. It involves the use of various tools techniques
+              and methodologies to manage the software development process and
+              ensure the quality reliability and maintainablility of software
+              products
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-orga5e99be" class="outline-3">
+          <h3 id="orga5e99be">
+            <span class="section-number-3">1.4.</span> Charactersistics
+          </h3>
+          <div class="outline-text-3" id="text-1-4"></div>
+          <div id="outline-container-orgf39aea6" class="outline-4">
+            <h4 id="orgf39aea6">
+              <span class="section-number-4">1.4.1.</span> Software Development
+              vs Manufacturing
+            </h4>
+            <div class="outline-text-4" id="text-1-4-1">
+              <p>
+                Software is crafted through a process of coding and development
+                Unlick physical products it isn&rsquo;t produces in factories
+                through a manufacturing process
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgcbb19a5" class="outline-4">
+            <h4 id="orgcbb19a5">
+              <span class="section-number-4">1.4.2.</span> No Physical wear and
+              tear
+            </h4>
+            <div class="outline-text-4" id="text-1-4-2">
+              <p>
+                Software doesn&rsquo;t deteriorate over time like physical
+                objects Its performance doesn&rsquo;t degrade due to physical
+                use
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org53e6416" class="outline-4">
+            <h4 id="org53e6416">
+              <span class="section-number-4">1.4.3.</span> Custom Built nature
+            </h4>
+            <div class="outline-text-4" id="text-1-4-3">
+              <p>
+                Most software is specially designed to meet specific needs
+                It&rsquo;s often not just a combination of pre exisiting
+                components but requires unique coding and design
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgf9957d1" class="outline-4">
+            <h4 id="orgf9957d1">
+              <span class="section-number-4">1.4.4.</span> Intangibility of
+              software
+            </h4>
+            <div class="outline-text-4" id="text-1-4-4">
+              <p>
+                It can&rsquo;t be touched or handles physically It exist as code
+                and functions within computers or digitals devices
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org395cba6" class="outline-3">
+          <h3 id="org395cba6">
+            <span class="section-number-3">1.5.</span> Major Problems
+          </h3>
+          <div class="outline-text-3" id="text-1-5"></div>
+          <div id="outline-container-org5f74bf0" class="outline-4">
+            <h4 id="org5f74bf0">
+              <span class="section-number-4">1.5.1.</span> Inadequate
+              Requirements Gathering
+            </h4>
+            <div class="outline-text-4" id="text-1-5-1">
+              <p>
+                Ambigous or incomplete requirements Lack of communication
+                between stakeholders
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgb120dc1" class="outline-4">
+            <h4 id="orgb120dc1">
+              <span class="section-number-4">1.5.2.</span> Poor Project
+              Management
+            </h4>
+            <div class="outline-text-4" id="text-1-5-2">
+              <p>
+                Inadequate planning monitoring and control Lack of risk
+                assessment and mitigation Multiplicity of software development
+                life cycles Selection of wrong technology or tool for
+                development
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgaad0182" class="outline-4">
+            <h4 id="orgaad0182">
+              <span class="section-number-4">1.5.3.</span> Insufficient time and
+              budget
+            </h4>
+            <div class="outline-text-4" id="text-1-5-3">
+              <p>
+                Unrealistic deadline and resource constraint Inefficient
+                resource allocation and prioritization
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org1fb3678" class="outline-4">
+            <h4 id="org1fb3678">
+              <span class="section-number-4">1.5.4.</span> Lack of skilled
+              personnel
+            </h4>
+            <div class="outline-text-4" id="text-1-5-4">
+              <p>
+                Inadequate expertise in the development team High turnover rates
+                and loss of experienced staff
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgcea3711" class="outline-4">
+            <h4 id="orgcea3711">
+              <span class="section-number-4">1.5.5.</span> Resistance to change
+            </h4>
+            <div class="outline-text-4" id="text-1-5-5">
+              <p>
+                Difficulty in adapting to new technologies or process Reluctance
+                to modify established practices or mindsets Rapid technology
+                advancement
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-orge918320" class="outline-3">
+          <h3 id="orge918320">
+            <span class="section-number-3">1.6.</span> Similarity and
+            Differences between Engineering
+          </h3>
+          <div class="outline-text-3" id="text-1-6"></div>
+          <div id="outline-container-orgb674410" class="outline-4">
+            <h4 id="orgb674410">
+              <span class="section-number-4">1.6.1.</span> Nature of the Product
+            </h4>
+            <div class="outline-text-4" id="text-1-6-1">
+              <p>
+                Both processes aim to create high quality reliable products
+                Conventional engineering focus on physical systems,while
+                software engineering deals with intangible software systems
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgb0de42b" class="outline-4">
+            <h4 id="orgb0de42b">
+              <span class="section-number-4">1.6.2.</span> Design Flexibility
+              and iteration
+            </h4>
+            <div class="outline-text-4" id="text-1-6-2">
+              <p>
+                Both processes involve iterative design and prototyping Software
+                engineering allows for greater flexibility and ease of
+                modificiation due to non physical nature of software
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orge01f5d9" class="outline-4">
+            <h4 id="orge01f5d9">
+              <span class="section-number-4">1.6.3.</span> Quality Assurance and
+              testing
+            </h4>
+            <div class="outline-text-4" id="text-1-6-3">
+              <p>
+                Both processes emphasize the importance of testing and quality
+                assurance to ensure product performance and reliability
+                Conventional engineering often involves physical testing and
+                prototypes while software engineering relies on various types of
+                testing such as unit integration and system testing
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org2a14df7" class="outline-4">
+            <h4 id="org2a14df7">
+              <span class="section-number-4">1.6.4.</span> Project Management
+              and Collobration
+            </h4>
+            <div class="outline-text-4" id="text-1-6-4">
+              <p>
+                Both processes require effective project management, team
+                collaborationg and communication among stakeholders Software
+                engineering projects may involve distributed teams and rely more
+                heavily on digital communication and collaboration tools
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgfab35b4" class="outline-4">
+            <h4 id="orgfab35b4">
+              <span class="section-number-4">1.6.5.</span> Maintenance and
+              Evolution
+            </h4>
+            <div class="outline-text-4" id="text-1-6-5">
+              <p>
+                Both processes involve maintenance and support activites to
+                ensure the ongoing performance and reliability of the product
+                Software engineering typically demands more frequenet updates
+                patches and evolution due to rapidly changing nature of
+                technology and user requirements
+              </p>
+
+              <p>
+                For hardware same production cost every time for software
+                production cost only for the first time and then only
+                maintenance cost. This life cycle of the hardware follows the
+                bath tub curve while in the life cycle of software failure
+                intensity goes down with time
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org5f52fb7" class="outline-3">
+          <h3 id="org5f52fb7">
+            <span class="section-number-3">1.7.</span> Software quality
+            attributes
+          </h3>
+          <div class="outline-text-3" id="text-1-7">
+            <p>
+              Correctness- The ability of the software to perform its intended
+              tasks effectively and meet se requirements Usability - The ease
+              with which users can learn operate and navigate the software
+              Reliability - The software consistency in producing accurate
+              results and maintaining performance over time Efficiency - The
+              optimal use of system resources, such as memory and processing
+              power to achieve desired outcomes Maintainability - The ease of
+              updating modifying and fixing the software to accommodate changing
+              requirements or fix issues Portability - The ability of the
+              software to operate on different platforms or ennvironments
+              without siginicant modifications Scalability - The software
+              capacity to handle increases workloads or user demands withots
+              compromising performance Security - The software ability to
+              protect against unauthorized access data breaches and other
+              potentital threats Modularity - the degree to which the software
+              components are organized into seperate manageable units that can
+              be independently developed or updated Reusability - The potential
+              for the software components to be used in other applications or
+              contexts, reducing development time and costs. Testability - The
+              ease with which the software can be tested to ensure it meets its
+              requirements and peforms as expected
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org4f48f87" class="outline-3">
+          <h3 id="org4f48f87">
+            <span class="section-number-3">1.8.</span> Software process
+          </h3>
+          <div class="outline-text-3" id="text-1-8">
+            <p>
+              A software process is a set of related activites that leads to the
+              production of the software. These activites may involve the
+              development of the software from the scratcch or modifying an
+              exisiting system
+            </p>
+          </div>
+          <div id="outline-container-orgf14b42f" class="outline-4">
+            <h4 id="orgf14b42f">
+              <span class="section-number-4">1.8.1.</span> Feasibility Study
+            </h4>
+            <div class="outline-text-4" id="text-1-8-1">
+              <p>
+                FInd abstract definition of the problem Majorly checking the
+                financial and technical feasibility Analysis of cost and befit
+                ratio Checking availability of infrastructure and human resource
+                Examination of alternative solution strategies
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org1c3431f" class="outline-4">
+            <h4 id="org1c3431f">
+              <span class="section-number-4">1.8.2.</span> Requirement analysis
+              and specification
+            </h4>
+            <div class="outline-text-4" id="text-1-8-2">
+              <p>
+                Try to understood the exact and complete requirement of the
+                customer and document them properly Try to collecct and analysis
+                all data related to the project In last a large document will be
+                written in the natural lanaugage which we all be what the system
+                will do without descirbing it how, called SRS software requiemen
+                specification Very critical phase because a small error here can
+                result to severe problem in later stage
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org5c739b9" class="outline-4">
+            <h4 id="org5c739b9">
+              <span class="section-number-4">1.8.3.</span> Designing
+            </h4>
+            <div class="outline-text-4" id="text-1-8-3">
+              <p>
+                We transform the requirements into a structure that is uitable
+                for implementation of the code in a specific programming
+                language Overall architecture and the algorithmic strategy are
+                chosen Lastly will prepeare a document called Software design
+                Description which will describe hw the system will perform
+                functionally
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgb0b4d72" class="outline-4">
+            <h4 id="orgb0b4d72">
+              <span class="section-number-4">1.8.4.</span> Coding
+            </h4>
+            <div class="outline-text-4" id="text-1-8-4">
+              <p>
+                Goal of coding is to translate the design of the system into a
+                code of programming language It affects both testing and
+                maintenance so also critical feature
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org420b902" class="outline-4">
+            <h4 id="org420b902">
+              <span class="section-number-4">1.8.5.</span> Testing
+            </h4>
+            <div class="outline-text-4" id="text-1-8-5">
+              <p>
+                Because of human errors there will be a bug or fault in the code
+                and if that bug fault is executed it become a failure Software
+                tesing is a process of executing a program with the intention of
+                finding bugs or fault in the code
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org824a4a9" class="outline-4">
+            <h4 id="org824a4a9">
+              <span class="section-number-4">1.8.6.</span> Implementation
+            </h4>
+            <div class="outline-text-4" id="text-1-8-6">
+              <p>
+                Software is installed on the user site and training of the user
+                and hardware requirement check is done
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org784f1f6" class="outline-4">
+            <h4 id="org784f1f6">
+              <span class="section-number-4">1.8.7.</span> Maintenance
+            </h4>
+            <div class="outline-text-4" id="text-1-8-7">
+              <p>
+                Any change made in the software after its official release is
+                called maintenance. It could be of various types adaptive,
+                Corrective or Perfective
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org46012e3" class="outline-3">
+          <h3 id="org46012e3">
+            <span class="section-number-3">1.9.</span> Devlopment Life Cycle
+          </h3>
+          <div class="outline-text-3" id="text-1-9">
+            <p>
+              Software development Organization follows some process when
+              developing a software product in mature organization this is well
+              defined and managed In SDLC we develeopmen in a sysstematic and
+              disciplined manner SDLC willl define entry and exit for every
+              sstage. It makes assessment possible time prediction cost
+              prediction scheduling to identify faults early model Selection of
+              correct development model play an important role in cost quality
+              overall sucess of the project
+            </p>
+          </div>
+          <div id="outline-container-org0083e91" class="outline-4">
+            <h4 id="org0083e91">
+              <span class="section-number-4">1.9.1.</span> Waterfall Model
+            </h4>
+            <div class="outline-text-4" id="text-1-9-1">
+              <p>
+                Inspired by manufacturing and construction process where each
+                step relies on the completion of the previous one It is a
+                simplest SDLC in which phases are organized in a linear and
+                sequantial order It is called waterfall model as it diagrammatic
+                reprsent as like a water also known as classical life cycle
+                model This type of model is basically used for the small to
+                medium sized project with clear well defined requirements. When
+                the technology and tools to be used are well known and stable
+                Projects where minimal changes are expected during the
+                development process and predictability is prioritized over
+                adaptibiltiy
+              </p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="org95b2807"></a>Advantages<br />
+                <div class="outline-text-5" id="text-1-9-1-1">
+                  <p>
+                    Easy to understand and implement, with well defined stages
+                    and clear milestones Each phase has well defined input and
+                    output phases are porcessed and completed one at at time.
+                    Phases do not overlap Lowe cost and easy to schedule as all
+                    staff do not work concurrently on the same project, so can
+                    work on different projects.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="org443faea"></a>Disadvantages<br />
+                <div class="outline-text-5" id="text-1-9-1-2">
+                  <p>
+                    Not suitable to accommodate any change or iteration once
+                    development has begun. It is alway difficult to acquire of
+                    the requirement in the starting Working version is produced
+                    in the last level, so not good for large size sophisticated
+                    projects. High amount of risks and uncertanity.
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div id="outline-container-orgcf07602" class="outline-4">
+            <h4 id="orgcf07602">
+              <span class="section-number-4">1.9.2.</span> Prototype model
+            </h4>
+            <div class="outline-text-4" id="text-1-9-2">
+              <p>
+                It is an iterative approach, which involves developing an early
+                working model of the software based on the currently known
+                requirements with limited functionalites, low reliability and
+                untrusted performance Refining through user feedback, and
+                repeating the process until a satif then shown to the user as
+                per the feedback fo the user prototype is rebuilt and modified
+                and again shown to the user, the process continue till the
+                customer is not satisfied. After this process the final SRS
+                document is developed Developing the prototype helpp in building
+                the actual design Prototype model is of two types
+              </p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="orgfc8fa59"></a>Evolutionary prototype<br />
+                <div class="outline-text-5" id="text-1-9-2-1">
+                  <p>
+                    Also known as incremental or iterative prototyping, develops
+                    a working prototype gradually improving and refining it
+                    based on user feedback Prototype evolves into the final
+                    product over time with feature additions and modifications.
+                    Accommodates changing requirements during the development
+                    process.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="org362b5cd"></a>Throwaway prototype<br />
+                <div class="outline-text-5" id="text-1-9-2-2">
+                  <p>
+                    It is also known as rapid or exploratory prototyping,
+                    involves creating a temporary, simplified version of the
+                    software to validate the feasibility of specific features,
+                    test ideas or gain user feedback on the inital plam. The
+                    throwaway prototype is not intended to be used in the final
+                    product instead it is discarded once it has served its
+                    purpose. Once the developers have gathered the necessary
+                    information, They can then start developing the actual
+                    software product from scratch, using the lessons learned
+                    from the prototype. This approach is particularly useful for
+                    testing complex or risky features as it helps to minimize
+                    the potential impact of these feature inside the project.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="org0f0cbde"></a>Advantage<br />
+                <div class="outline-text-5" id="text-1-9-2-3">
+                  <p>
+                    Cutomer get a chance to see the product early in the life
+                    cycle, and give important feedback. There is a scope to
+                    accommodate new requirements Developer and more confident,
+                    hence risk is reduced
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="orgc75884c"></a>Disadvantage<br />
+                <div class="outline-text-5" id="text-1-9-2-4">
+                  <p>
+                    After seeing the early protoype use demand the actual system
+                    soon If not managed properly the iterative process can run
+                    for a long time If user is not satisifed, he may lose its
+                    interest in the project.
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div id="outline-container-org280fbe7" class="outline-4">
+            <h4 id="org280fbe7">
+              <span class="section-number-4">1.9.3.</span> Spiral Model
+            </h4>
+            <div class="outline-text-4" id="text-1-9-3">
+              <p>
+                The radial dimensions of the model represent the cumulatie
+                costs. Each path around the spiral is the indicative of the
+                increased cost. The angular dimenssions represent the progress
+                made in the completing each cycle, each loop of the spiral from
+                X axis clockwise through 360 represent one phase, which is
+                divided into four sectors Determinig Obeject and plainning the
+                next phase Risk Analysis Engineering the product, develop and
+                test the product Customer evalutation
+              </p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="org08f547b"></a>Advantages<br />
+                <div class="outline-text-5" id="text-1-9-3-1">
+                  <p>
+                    Provide early and frequent feedback of the customer,
+                    additional functionality can be added at a later date
+                    Management control of quality, correctness, cost, schedule
+                    is improved through review at the conclusion of each
+                    iteration Resolve all the possible risk involved in the
+                    product early in the life cycle Allows for incremental
+                    releases and testing
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="org811ff4f"></a>Disadvantages<br />
+                <div class="outline-text-5" id="text-1-9-3-2">
+                  <p>
+                    Not suitable for small size project It is complex and time
+                    consuming to use Risk analysis require highly specific
+                    expertise
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div id="outline-container-org102cdbb" class="outline-4">
+            <h4 id="org102cdbb">
+              <span class="section-number-4">1.9.4.</span> Incremental Process /
+              Incremental Development Model
+            </h4>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-org05f2faa" class="outline-2">
+        <h2 id="org05f2faa"><span class="section-number-2">2.</span> Unit 3</h2>
+        <div class="outline-text-2" id="text-2"></div>
+        <div id="outline-container-orgec391e0" class="outline-3">
+          <h3 id="orgec391e0">
+            <span class="section-number-3">2.1.</span> Software Metrics
+          </h3>
+          <div class="outline-text-3" id="text-2-1">
+            <p>
+              A unit of measurement of a software product or software related
+              process The continous application of measured based techniqures to
+              the software development process and its procedure to supply
+              meaningful and timely management information We are measuring
+            </p>
+
+            <p>Direct measures</p>
+            <ul class="org-ul">
+              <li>Execution Speed</li>
+              <li>No of errors</li>
+            </ul>
+          </div>
+          <div id="outline-container-orga62ef79" class="outline-4">
+            <h4 id="orga62ef79">
+              <span class="section-number-4">2.1.1.</span> Lines of Code
+            </h4>
+            <div class="outline-text-4" id="text-2-1-1">
+              <p>
+                Basic idea is to estimate size No general agreement about what
+                is line of code Some include data declaration comments or
+                unexectuable statements others exclude them Productivity =
+                LOC/(Person-month) Measuring by lines of code is like measuring
+                a building by no of bricks used Lines of code can predict
+                programming time, but fail to tell anything about efficiency,
+                reliability
+              </p>
+
+              <p>Indirect measure</p>
+              <ul class="org-ul">
+                <li>Efficiency</li>
+                <li>Reliability</li>
+                <li>
+                  <p>Portability</p>
+
+                  <p>
+                    Using numbers to improve the software or the process of
+                    developing software To improve mangement processo
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="outline-container-org66cda65" class="outline-4">
+            <h4 id="org66cda65">
+              <span class="section-number-4">2.1.2.</span> Function Count
+            </h4>
+            <div class="outline-text-4" id="text-2-1-2">
+              <p>
+                Counting Functions instead of components Measuring functionality
+                from user&rsquo;s point of view Measurement is independent of
+                technology used Inputs - INformation entering system Outputs -
+                INformationa leaving system Enquires - Request to instantly
+                access information Internal Logic Files - information held
+                within system External Logic files - infroamation held outisde
+                system
+              </p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="org7e73557"></a>Features<br />
+                <div class="outline-text-5" id="text-2-1-2-1">
+                  <p>
+                    INdpendent of language, tools and methodolgies used Function
+                    count can be estimated from requirements and design It is a
+                    relevant approach than LOC
+                  </p>
+                  <table
+                    border="2"
+                    cellspacing="0"
+                    cellpadding="6"
+                    rules="groups"
+                    frame="hsides"
+                  >
+                    <colgroup>
+                      <col class="org-left" />
+
+                      <col class="org-right" />
+
+                      <col class="org-right" />
+
+                      <col class="org-right" />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-right">Low</td>
+                        <td class="org-right">Average</td>
+                        <td class="org-right">High</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">External Input</td>
+                        <td class="org-right">3</td>
+                        <td class="org-right">4</td>
+                        <td class="org-right">6</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">External Output</td>
+                        <td class="org-right">4</td>
+                        <td class="org-right">5</td>
+                        <td class="org-right">7</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">External Inquiries</td>
+                        <td class="org-right">3</td>
+                        <td class="org-right">4</td>
+                        <td class="org-right">6</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">Internal Logic files</td>
+                        <td class="org-right">7</td>
+                        <td class="org-right">10</td>
+                        <td class="org-right">15</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">External Interface file</td>
+                        <td class="org-right">5</td>
+                        <td class="org-right">7</td>
+                        <td class="org-right">10</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <p>
+                    UFP = Unadjusted function point CAF = Complexity Adjustment
+                    = 0.65 + 0.01 * Sum of FunctionCount Influence = 0 to 5 FP =
+                    UFP * CAF
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div id="outline-container-org945ef9b" class="outline-4">
+            <h4 id="org945ef9b">
+              <span class="section-number-4">2.1.3.</span> Token Count
+            </h4>
+            <div class="outline-text-4" id="text-2-1-3">
+              <p>
+                Halstead&rsquo;s software metrics n = n1 + n2 p = operators +
+                operands n = vocabulary of a progarm or no of unqiue tokesn n1 =
+                no of unique operators n2 = no of unique operanads
+              </p>
+
+              <p>
+                N = N1 + N2 N = Program length N1 = Total occurences of
+                operators N2 = Total occurences of operands
+              </p>
+
+              <p>Ncap = n1logn1 + n2logn2</p>
+
+              <p>
+                N = 2 * LOC (if each line has 1 operators and 1 operand)
+                Potential Volume V* = represents program having minimal size V =
+                (2+n2*) log2(2+n2*) Program level the higher the level of
+                language the less effort it takes to develop a progarm using
+                that language L = V*/V L is between 0 and 1 if L =1 program is
+                having min size if l = 0 program is having max size Difficulty =
+                D = 1/L If the program level decreases difficulty to handle
+                increases
+              </p>
+
+              <p>
+                Programming Effort is the amount of effort needed to translate
+                an algorithm into implementation in specified programming
+                language E = V/L = D * V
+              </p>
+
+              <p>Language level = lambda = L * V* = L *L * V</p>
+
+              <p>
+                Programming time - shows time in minutes needed to translate
+                algorithm into implelmentation in specified program language T =
+                E / ( delta *s)
+              </p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="org5b47739"></a>Program Volume<br />
+                <div class="outline-text-5" id="text-2-1-3-1">
+                  <p>
+                    V = N * logn Volume is proportional to the program size,
+                    represent the size of space necessary for storing program
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="org4d9b535"></a>Counting Rules for C<br />
+                <div class="outline-text-5" id="text-2-1-3-2">
+                  <ul class="org-ul">
+                    <li>Comments ignore</li>
+                    <li>Identifer and function declarations are ignored</li>
+                    <li>
+                      Global variables are counted as multiple occurences of
+                      same variables
+                    </li>
+                    <li>
+                      Variables with same name in different functions are
+                      counted as unique
+                    </li>
+                    <li>Function calls are considered operators</li>
+                    <li>Do while for if else are operators</li>
+                    <li>switch case are operators</li>
+                    <li>return default continue break sizeof are operators</li>
+                    <li>GOTO is operator but label is operand</li>
+                    <li>a*b vs *ptr &amp;&amp; vs &amp;</li>
+                    <li>
+                      &ldquo;array-name &rdquo; and index are operand, [] are
+                      operators
+                    </li>
+                    <li>hash derivatives are ignored</li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div id="outline-container-org19aad34" class="outline-4">
+            <h4 id="org19aad34">
+              <span class="section-number-4">2.1.4.</span> Data Structure
+              Metrics
+            </h4>
+            <div class="outline-text-4" id="text-2-1-4">
+              <p>Software Planner INput</p>
+              <ul class="org-ul">
+                <li>Size</li>
+                <li>No. of developers</li>
+                <li>Duration</li>
+              </ul>
+
+              <p>Internal Data</p>
+              <ul class="org-ul">
+                <li>Rate per developer</li>
+                <li>Other factor</li>
+              </ul>
+
+              <p>Data Output</p>
+              <ul class="org-ul">
+                <li>Project effort</li>
+                <li>Duration</li>
+                <li>Estimate Cost</li>
+              </ul>
+
+              <p>Necessity A 30 20 10 B 15 20 10</p>
+
+              <p>
+                VARS = count of variables n2 = VARS + unique constants+ labels
+                n2 = n1v1 + n2v2 + n3v3
+              </p>
+
+              <p>
+                n2 and v2 are robust and variations in algorithm computation
+                schemes for computing them do not seem to affect inordinately
+                other measures based on them
+              </p>
+
+              <p>
+                A count of the amount of data input to pressed in and output
+                from software is called data structure metrics Some data metrics
+                concentrate on variables and constants within each module and
+                ignore input/output dependencies Others concern themselves with
+                input/output situation We will discuss about measuring amount of
+                data, the usage of data within modules, and degres to which data
+                shared among modules
+              </p>
+
+              <p>
+                Usage of data within a module what is a live variable a variable
+                is live frmo beginning of a procedure to the end of a procedure
+                A variable is live at a particular statement only if it is
+                referenced certain no of statements before or after that
+                statement A variable is live from its first to its last
+                references within a procedure
+              </p>
+
+              <p>
+                a variable is live at some point if it holds a value that may be
+                needed in future or equivalently if its value may be read before
+                the next time the variable is written to
+              </p>
+
+              <p>
+                Variable spacns is a metric that captures the essence of how
+                often a variables is used in a program is called the span SP
+                size of indicates no.of statemets that pass between successive
+                uses of variables n statments -&gt; n-1 spans
+              </p>
+
+              <p>
+                Applying knowledge to programs LV program = sum LVI / m SP
+                program = sum Sp/n
+              </p>
+
+              <p>
+                Program Weakness WM = LV * r r = average life of variables WP =
+                sum WM/m
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgca5f4ec" class="outline-4">
+            <h4 id="orgca5f4ec">
+              <span class="section-number-4">2.1.5.</span> Applications
+            </h4>
+            <div class="outline-text-4" id="text-2-1-5">
+              <ol class="org-ol">
+                <li>To estimate size and cost</li>
+                <li>Controlling whole project</li>
+                <li>Predictio of quality levels for software</li>
+              </ol>
+            </div>
+          </div>
+          <div id="outline-container-org43ad797" class="outline-4">
+            <h4 id="org43ad797">
+              <span class="section-number-4">2.1.6.</span> Reliability
+            </h4>
+            <div class="outline-text-4" id="text-2-1-6">
+              <p>Hardware has bath tub curve Software becomes obselete</p>
+              <ol class="org-ol">
+                <li>Change in environment</li>
+                <li>Change in technology</li>
+                <li>Faster Alternative</li>
+                <li>Poor GUI</li>
+                <li>Security issues</li>
+              </ol>
+
+              <p>
+                Software Reliability is the probability of a failure free
+                operation of a program for a specified time in a specified
+                environment If a system is employed by average user for a time
+                say 10 hr and have a reliability of 0.95. This means the system
+                would operate without failure for 95 of these periods out of
+                100. Thee source of failure in software is design faults while
+                in hardware failure are due to physical deterioration Software
+                reliability tends to change continually during test period.
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org66f0ba5" class="outline-4">
+            <h4 id="org66f0ba5">
+              <span class="section-number-4">2.1.7.</span> Information Flow
+              metrics
+            </h4>
+            <div class="outline-text-4" id="text-2-1-7">
+              <p>
+                Every system has components, work and structure of these
+                components determine complexity of function Cohension - If a
+                component has to do numerous discrete tasks, it is said to lack
+                cohesion Cohsension can be defined as the degree to which a
+                component performs a single function
+              </p>
+
+              <p>
+                Coupling - Degree of linkage between one components and others
+                Components having lack of cohesion and high linkage (highly
+                coupled) are less reliable and difficult to maintain
+              </p>
+
+              <p>If metrics are applied to components Three Measures</p>
+              <ol class="org-ol">
+                <li>FANIN - No of components that can call A</li>
+                <li>
+                  FANOUT - No of components that are called by A IFCAI =
+                  [FANICAI x FANOUTCA]<sup>2</sup>
+                </li>
+
+                <li>It can be done easily</li>
+                <li>Can be updated easily</li>
+                <li>Automation might be possible</li>
+                <li>Everything or every component is relative</li>
+                <li>High FANIN means lack of cohesion</li>
+                <li>High FANOUT means lack of cohesion or no abstraction</li>
+                <li>High IF indicates highly coupled components</li>
+                <li>
+                  Individual components -&gt; LEvel SUm -&gt; Systemsum
+
+                  <ul class="org-ul">
+                    <li>
+                      25% of components with highest scores for FAN values
+                      should be investigated
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  Sometimes things can&rsquo;t be improved. So lets&rsquo;
+                  reduce the failure rate
+                </li>
+                <li>
+                  Sudden increases in If values across levels indicate missed
+                  level of abstraction
+                </li>
+                <li>
+                  Final system SUM vlaue gives overall complexity rating and
+                  helps to compare alternative designs
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org0ddc44e" class="outline-3">
+          <h3 id="org0ddc44e">
+            <span class="section-number-3">2.2.</span> Failures and Faults
+          </h3>
+          <div class="outline-text-3" id="text-2-2">
+            <p>
+              A fault is the defect in the program that when executed under
+              particular conditions, causes a failure
+            </p>
+            <ul class="org-ul">
+              <li>A Program must execute for a failure to occure</li>
+              <li>A fault can be source of more than one failure</li>
+              <li>
+                Fault is the property of the program rather than property of its
+                execution
+              </li>
+              <li>Fault is mostly created due to error by programmer</li>
+            </ul>
+
+            <p>
+              Failure is the inability of a system or a component to perform
+              required function according to its specifications
+            </p>
+            <ul class="org-ul">
+              <li>
+                THe number of faults is difference between introduced and
+                removed
+              </li>
+              <li>
+                Faults might be introduced while modifying an exisiting code to
+                remove faultso
+              </li>
+            </ul>
+
+            <p>
+              How to Find Faults -Compiler diagnostics, Code Reading Ways to
+              characterize failure occurences ini time - Time of faliure, TIme
+              interval between failures, Failures experiences in a time interval
+            </p>
+
+            <p>All these quantities are random variables</p>
+
+            <p>
+              Failure behaviour is affected by The no of faults in the software
+              being executed The execution environment
+            </p>
+
+            <p>
+              Objective of reliability testing To discover the main cause of
+              failures To find no of failures occuring in specifc period of time
+              To find the perpetual structure of repeating failures
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org74e1767" class="outline-3">
+          <h3 id="org74e1767">
+            <span class="section-number-3">2.3.</span> Software Reliability
+            Models
+          </h3>
+          <div class="outline-text-3" id="text-2-3">
+            <p>
+              In reliability models, our emphasis is on failures rather than
+              faults. Software reliability models specifies the general form of
+              the dependence of the failure process on the factors mentioned T
+              == Execution Time t = calendar time
+            </p>
+
+            <p>
+              The reliability of a program increases through fault correction
+              and hence the failure intensity decreases
+            </p>
+          </div>
+          <div id="outline-container-org4917f99" class="outline-4">
+            <h4 id="org4917f99">
+              <span class="section-number-4">2.3.1.</span> Basic Execution Time
+              Model
+            </h4>
+            <div class="outline-text-4" id="text-2-3-1">
+              <p>
+                &lambda;<sub>o</sub> is the inital failure intensity at the
+                start of execution V<sub>o</sub> is the number of failures
+                experienced, if program is run for infinite time period &mu; is
+                the average or expected number of failures expeirenced at a
+                given point in time
+              </p>
+
+              <p>
+                d&lambda; / d&mu; = - &lambda;<sub>o</sub>/V<sub>o</sub>
+                Negative sign shows the decrementing trend in the failure
+                intensity
+              </p>
+
+              <p>
+                &mu;(t) = V<sub>o</sub>[1-exp(-&lambda;<sub>o</sub>
+                &Tau;/V<sub>o</sub>)] \lamda(t) =
+                lambda<sub>o</sub>[1-exp(-&lambda;<sub>o</sub>
+                &Tau;/V<sub>o</sub>)] &delta; &Tau; = V<sub>o</sub> /
+                &lambda;<sub>o</sub>(&lambda;<sub>p</sub>/&lambda;<sub>f</sub>)
+                &delta; &mu; = V<sub>o</sub> /
+                &lambda;<sub>o</sub>(&lambda;<sub>p</sub>-&lambda;<sub>f</sub>)
+              </p>
+
+              <p>
+                &lambda;<sub>p</sub> = present fialure intensity &delta; lamda =
+                additional failures &delta; Tau = Additional time &lambda;<sub
+                  >t</sub
+                >
+                = Filiure intensity objective
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgfa62f18" class="outline-4">
+            <h4 id="orgfa62f18">
+              <span class="section-number-4">2.3.2.</span> Lograithmic Poisson
+              execution time model
+            </h4>
+            <div class="outline-text-4" id="text-2-3-2">
+              <p>
+                &lambda;(&mu;) = &lambda;<sub>o</sub> exp(-&theta; &mu;) thata =
+                failure intensity decay parameter it also repersents the
+                relative change of failure intensity per failure expereienced
+              </p>
+
+              <p>
+                D&lambda;/d&mu; = - &lambda;<sub>0</sub> &theta; exp(-&mu;
+                &theta;) At larger value of execution time the logartihimc model
+                will have more failure intensity
+              </p>
+
+              <p>
+                \mut(&tau;) = 1/&theta; L-N(\lamda<sub>o</sub> &theta; &tau; +
+                1) \lamda(&tau;) = \lamda<sub>0</sub>/{&lambda;<sub>o</sub>
+                &theta; \ tau + 1} &delta; &mu; = 1/&theta;
+                L<sub>n</sub>(&lambda;<sub>p</sub>/&lambda;<sub>f</sub>) &delta;
+                &tau; = 1/&theta;(1/&Lambda;<sub>f</sub> - 1/\lamda<sub>P</sub>)
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org165df13" class="outline-3">
+          <h3 id="org165df13">
+            <span class="section-number-3">2.4.</span> Quality Standards
+          </h3>
+          <div class="outline-text-3" id="text-2-4"></div>
+          <div id="outline-container-orga353fe2" class="outline-4">
+            <h4 id="orga353fe2">
+              <span class="section-number-4">2.4.1.</span> ISO 9001
+            </h4>
+            <div class="outline-text-4" id="text-2-4-1">
+              <p>International Organization for standards</p>
+              <ul class="org-ul">
+                <li>International recognized quality management system QMS</li>
+                <li>
+                  It helps to continually monitor and manage quality across your
+                  besiness so you can identify areas for improvement
+                </li>
+                <li>Internal audits are conducted</li>
+                <li>
+                  Applies to organization engaged in design development
+                  production and servicing testing Features for software
+                  developmment organizatios
+                  <ol class="org-ol">
+                    <li>
+                      Documentations should be utilized and mainted properly
+                    </li>
+                    <li>testing product should be done</li>
+                    <li>Organizational aspects should be addressed</li>
+                  </ol>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="outline-container-org2c7da81" class="outline-4">
+            <h4 id="org2c7da81">
+              <span class="section-number-4">2.4.2.</span> SEI CMM
+            </h4>
+            <div class="outline-text-4" id="text-2-4-2">
+              <p>
+                Software Engineering Institution - Capabililty Maturity Model It
+                is used to design and improve software developement IT is based
+                on organizational matureity that determines effectiveness in
+                delivery quality software
+              </p>
+
+              <p>
+                Regressive - Chaos, Panic, Heroic Effort Repeatable - Process
+                documented, Lack of implementation Consistent - Process
+                integrated, traingin programs Quantitaive Metrics - Track
+                producity, processes and proudcts Optimizing - Well documented,
+                Post implementation reviews always improving and optimizing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-org1a84911" class="outline-2">
+        <h2 id="org1a84911"><span class="section-number-2">3.</span> Unit 4</h2>
+        <div class="outline-text-2" id="text-3">
+          <p>
+            Testing because of human error there will be a bug or fault in the
+            code and if that bug/fault is executed it becomes failure Human
+            Error -&gt; Bug/Fault -&gt; Failure Software testing is a process of
+            executing a program with the intention of finding bugs or fault in
+            the code.
+          </p>
+        </div>
+        <div id="outline-container-orgab19dee" class="outline-3">
+          <h3 id="orgab19dee">
+            <span class="section-number-3">3.1.</span> Objective
+          </h3>
+          <div class="outline-text-3" id="text-3-1">
+            <ul class="org-ul">
+              <li>
+                To check whether software is build accordance with the
+                requirement or not
+              </li>
+              <li>
+                It guarantees to give a more reliable or better quality product
+                to the customer which will ensure its satifaction
+              </li>
+              <li>
+                It also helps in software quality assurance where we understood
+                what are we lacking or making mistakes
+              </li>
+            </ul>
+
+            <p>
+              It is generally very difficult to test a software exhausitibilty
+              or completely because the ip space is very large. So we have to
+              write test cases wisely so that in minimum test we can provide the
+              maximum reliability.
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-orgdd726ac" class="outline-3">
+          <h3 id="orgdd726ac">
+            <span class="section-number-3">3.2.</span> Principles
+          </h3>
+          <div class="outline-text-3" id="text-3-2">
+            <ul class="org-ul">
+              <li>Testing must be based on user requirements</li>
+              <li>Test time, resouce cost is limited</li>
+              <li>It is impossible to check entire input space</li>
+              <li>Testing must start after a proper test plan</li>
+              <li>
+                The possibility of existence of more error in a module is
+                directly proportional to error already being found.
+              </li>
+              <li>Testing must be done by a third party</li>
+              <li>Assign best person of the company during testing</li>
+              <li>Tester must have a destructive attiude towards the code</li>
+              <li>
+                We must perform both functional and non functional testing
+              </li>
+              <li>
+                We must give emphasize on automated test tools but the final
+                testing must be done by the humans
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="outline-container-org8e5b607" class="outline-3">
+          <h3 id="org8e5b607">
+            <span class="section-number-3">3.3.</span> Types of Testing
+          </h3>
+          <div class="outline-text-3" id="text-3-3"></div>
+          <div id="outline-container-org84af2b5" class="outline-4">
+            <h4 id="org84af2b5">
+              <span class="section-number-4">3.3.1.</span> Boundary Value
+              testing
+            </h4>
+            <div class="outline-text-4" id="text-3-3-1">
+              <p>
+                The black box testing techinques are helpful for detecting any
+                errors or threats that happened at the boundary values of valid
+                or invalid partitions rather than focusing on the center of the
+                input data. We have a range for input values for the black test
+                We use the boundary values
+              </p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="orgcf593c3"></a>Example<br />
+                <div class="outline-text-5" id="text-3-3-1-1">
+                  <p>
+                    Assume a test case that takes the speed of a car from 40 t0
+                    80 to get the best fuel efficiency Test Cases Valid case -
+                    (Min,Min+1,Max-1, Max) INvalid case - (Min-1),(Max+1)
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div id="outline-container-org051ecdd" class="outline-4">
+            <h4 id="org051ecdd">
+              <span class="section-number-4">3.3.2.</span> Equivalence Class
+              testing
+            </h4>
+            <div class="outline-text-4" id="text-3-3-2">
+              <p>
+                The input and output domain is partitioned into mutually
+                exclusive parts called equivalence class Any one sample from a
+                class is representative of entire class
+              </p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="org07b55d1"></a>Steps<br />
+                <div class="outline-text-5" id="text-3-3-2-1">
+                  <ol class="org-ol">
+                    <li>
+                      Identify Equivalence classes by taking each input and
+                      output condition and partitioning it into valid and
+                      invalid classes
+                    </li>
+                    <li>Generate test cases using equaivalence classes.</li>
+                  </ol>
+                </div>
+              </li>
+              <li>
+                <a id="org988269b"></a>Example<br />
+                <div class="outline-text-5" id="text-3-3-2-2">
+                  <ol class="org-ol">
+                    <li>
+                      If a variable lies between 1 and 100 then equivalence
+                      classes will be Variable is below 1 Variable is between 1
+                      and 100 included Variable is more than 100
+                    </li>
+                    <li>
+                      Previous Data program with inputs day month year O1 : All
+                      valid inputs O2: Invalid Date I1: 1 &lt;= m &lt;= 12 I2: m
+                      &lt; 1 I3: m &gt; 12 I4: 1 &lt;= d &lt;= 31 I5: d &lt; 1
+                      I6: d &gt; 31 I7: 1900 &lt;= Y &lt;= 2025 I8: Y &gt; 2025
+                      I9: Y &lt; 1900
+                    </li>
+                  </ol>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div id="outline-container-org58f23be" class="outline-4">
+            <h4 id="org58f23be">
+              <span class="section-number-4">3.3.3.</span> Decision Table Based
+              Testing
+            </h4>
+            <div class="outline-text-4" id="text-3-3-3">
+              <p>
+                This testing technique is useful when a variety of actions exist
+                and we need to take a particular action depending upon the
+                exisiting condition If all entrires are binary then decision is
+                called Limited Decision Table/ Limited Entry Decision Table If
+                conditions can have several values then the decision table is
+                called Extended Entry decision table Condition represent the
+                input conditions that must hold Action represent the output
+                conditions
+              </p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="org5386f39"></a>Parts of Decision Table<br />
+                <div class="outline-text-5" id="text-3-3-3-1">
+                  <ol class="org-ol">
+                    <li>Condition Stub</li>
+                    <li>Action Stub</li>
+                    <li>Condition Entries</li>
+                    <li>Action entrires</li>
+                  </ol>
+                </div>
+              </li>
+              <li>
+                <a id="orga8af112"></a>Example<br />
+                <div class="outline-text-5" id="text-3-3-3-2">
+                  <table
+                    border="2"
+                    cellspacing="0"
+                    cellpadding="6"
+                    rules="groups"
+                    frame="hsides"
+                  >
+                    <colgroup>
+                      <col class="org-left" />
+
+                      <col class="org-left" />
+
+                      <col class="org-left" />
+
+                      <col class="org-left" />
+
+                      <col class="org-left" />
+
+                      <col class="org-left" />
+
+                      <col class="org-left" />
+
+                      <col class="org-left" />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <td class="org-left">T</td>
+                        <td class="org-left">T</td>
+                        <td class="org-left">T</td>
+                        <td class="org-left">T</td>
+                        <td class="org-left">F</td>
+                        <td class="org-left">F</td>
+                        <td class="org-left">F</td>
+                        <td class="org-left">F</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">T</td>
+                        <td class="org-left">T</td>
+                        <td class="org-left">F</td>
+                        <td class="org-left">F</td>
+                        <td class="org-left">T</td>
+                        <td class="org-left">T</td>
+                        <td class="org-left">F</td>
+                        <td class="org-left">F</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">T</td>
+                        <td class="org-left">F</td>
+                        <td class="org-left">T</td>
+                        <td class="org-left">F</td>
+                        <td class="org-left">T</td>
+                        <td class="org-left">F</td>
+                        <td class="org-left">T</td>
+                        <td class="org-left">F</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>
+                    Condition stub For C1, C2,C3 Merge the Trues and False
+                    consecutively
+                  </p>
+                  <table
+                    border="2"
+                    cellspacing="0"
+                    cellpadding="6"
+                    rules="groups"
+                    frame="hsides"
+                  >
+                    <colgroup>
+                      <col class="org-left" />
+
+                      <col class="org-left" />
+
+                      <col class="org-left" />
+
+                      <col class="org-left" />
+
+                      <col class="org-left" />
+
+                      <col class="org-left" />
+
+                      <col class="org-left" />
+
+                      <col class="org-left" />
+                    </colgroup>
+                    <tbody>
+                      <tr>
+                        <td class="org-left">X</td>
+                        <td class="org-left">X</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">X</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">X</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">X</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">X</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">X</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">X</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">X</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">X</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                      </tr>
+
+                      <tr>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">X</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">X</td>
+                        <td class="org-left">&#xa0;</td>
+                        <td class="org-left">&#xa0;</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p>Action stub for a1,a2,a3,a3</p>
+
+                  <p>
+                    If C1 is true and C2 is true and C3 is true we get A1, A2
+                    actions If C1 is true and C2 is true and C3 is false we get
+                    A1, A3 actions
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div id="outline-container-org3395b44" class="outline-4">
+            <h4 id="org3395b44">
+              <span class="section-number-4">3.3.4.</span> Cause Effect Graph
+            </h4>
+            <div class="outline-text-4" id="text-3-3-4">
+              <p>
+                It is a technique to systematically select a high yield set of
+                test cases. Benefits - It points out the incompleteness and
+                ambiguites in specifications
+              </p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="org8ba4def"></a>Steps<br />
+                <div class="outline-text-5" id="text-3-3-4-1">
+                  <ol class="org-ol">
+                    <li>
+                      Identify the cause and effects from the specifications and
+                      assign unique numbers to each of them Cause - Any distinct
+                      input conditions or a equivalence class of input
+                      conditions Effect - Output condition or a system
+                      transformation (the effect that any IP has on the state of
+                      system )
+                    </li>
+                    <li>Draw a boolean graph linking causes and effects</li>
+                    <li>
+                      Specify constraints on graph describing combinations of
+                      cause and/or effects that are impossible
+                    </li>
+                    <li>
+                      Convert the graph into limited entry decision table by
+                      tracing state conditions in the graph Each column in DT is
+                      converted into a Test Case
+                    </li>
+                  </ol>
+                </div>
+              </li>
+              <li>
+                <a id="org9afeafb"></a>Notations<br />
+                <div class="outline-text-5" id="text-3-3-4-2">
+                  <ol class="org-ol">
+                    <li>
+                      Identify Function - Arrow with identify If C1 is 1, then
+                      e1 is also 1 else e1 is 0
+                    </li>
+                    <li>
+                      Not function - Arrow with AC current symbol If C1 is 1,
+                      then e1 is also 0 else e1 is 1
+                    </li>
+                    <li>
+                      OR function - Ci merge together with V IF any Ci is 1 then
+                      e1 is also 1 else 0
+                    </li>
+                    <li>
+                      AND function - Ci merge together with ^ If all Ci is 1
+                      then e1 is also 1 else 0
+                    </li>
+                  </ol>
+                </div>
+              </li>
+              <li>
+                <a id="org21c7483"></a>Example<br />
+                <div class="outline-text-5" id="text-3-3-4-3">
+                  <p>
+                    The characters in a column 1 must be A or B. The characters
+                    in column 2 must be a digit. If these 2 hold then fill
+                    update is made. If the character in column1 is incorrect,
+                    message x is issued. If character in column 2 is not a
+                    digit, message y is issued. Causes are -
+                  </p>
+                  <ol class="org-ol">
+                    <li>C1 - Character in column 1 is A</li>
+                    <li>C2 - Character in column 2 is B</li>
+                    <li>C3 - Character in Column 2 is a digit</li>
+                  </ol>
+                  <p>Effects are-</p>
+                  <ol class="org-ol">
+                    <li>e1 - Update made - (C1 V C2) ^ C3</li>
+                    <li>e2 - Message x is issued - ~C1 ^ ~C2</li>
+                    <li>e3 - message y is issued - ~C3</li>
+                  </ol>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div id="outline-container-orga95f295" class="outline-4">
+            <h4 id="orga95f295">
+              <span class="section-number-4">3.3.5.</span> White Box Testing
+            </h4>
+            <div class="outline-text-4" id="text-3-3-5">
+              <p>
+                White box testing is a method of software testing that tests
+                internal structures or workings of an applications It is also
+                known as clear box, glass box, transparent box or structural
+                testing White box testing can be applied at the unit,
+                integration and system levels of the software testing process.
+                Tools - Veracode, CPPunit, Nunit, RCunit.
+              </p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="org7ddec9b"></a>Design Techinques<br />
+                <div class="outline-text-5" id="text-3-3-5-1">
+                  <ul class="org-ul">
+                    <li>Control flow testing - Every control statement</li>
+                    <li>Branch testing - Every Branch - Goto, Break</li>
+                    <li>Statement coverage - Every Statement</li>
+                    <li>Decision Coverage - Every decision statements</li>
+                  </ul>
+                </div>
+                <ol class="org-ol">
+                  <li>
+                    <a id="org41661bc"></a>Path testing<br />
+                    <div class="outline-text-6" id="text-3-3-5-1-1">
+                      <p>
+                        Every path It is completely based on selecting a set of
+                        test paths. We have to pick enough paths to assure that
+                        every source statement is executed at least once It is
+                        most applicable to units and moduels and requires deep
+                        knowledge of the program structure
+                      </p>
+                      <ul class="org-ul">
+                        <li>Flow diagram is a diagram to showcase the path</li>
+                        <li>
+                          Decision to Decision path graph only concentrate only
+                          on decision nodes It is used to find independent path
+                          . We should execute the independent paths at least one
+                          during path testing.
+                          <ul class="org-ul">
+                            <li>Standard tools -</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                    <ol class="org-ol">
+                      <li>
+                        <a id="orgaa8d17d"></a>Steps<br />
+                        <div class="outline-text-7" id="text-3-3-5-1-1-1">
+                          <ul class="org-ul">
+                            <li>
+                              Generating set of paths that will cover every
+                              branch in the program
+                            </li>
+                            <li>
+                              Finding a set of test cases that will execute
+                              every path in this set of program paths
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <a id="org9d80343"></a>Independent path<br />
+                        <div class="outline-text-7" id="text-3-3-5-1-1-2">
+                          <p>
+                            Any path through decision to decision path graph
+                            that introduces atleast one new set of processing
+                            statements that introduces atleast one new set of
+                            processing statements or new conditions. It must
+                            move along atleast one edge that has not been
+                            traversed before
+                          </p>
+                        </div>
+                      </li>
+                      <li>
+                        <a id="org46de7e6"></a>Goals<br />
+                        <div class="outline-text-7" id="text-3-3-5-1-1-3">
+                          <ol class="org-ol">
+                            <li>
+                              Every statement in the program has been executed
+                              atleast once
+                            </li>
+                            <li>
+                              Every branch has been exercised for true and false
+                              condition
+                            </li>
+                          </ol>
+                        </div>
+                      </li>
+                    </ol>
+                  </li>
+                  <li>
+                    <a id="org8be53b1"></a>Data flow testing<br />
+                    <div class="outline-text-6" id="text-3-3-5-1-2">
+                      <p>How data flows in system</p>
+                      <ul class="org-ul">
+                        <li>
+                          Data flow testing focuses on two points
+                          <ol class="org-ol">
+                            <li>
+                              In which statements the variables are defined
+                            </li>
+                            <li>In which statements the variables are used</li>
+                          </ol>
+                        </li>
+                        <li>
+                          It designs the test cases that cover control flow
+                          paths around variable definitions and their uses in
+                          the modules
+                        </li>
+                      </ul>
+                    </div>
+                    <ol class="org-ol">
+                      <li>
+                        <a id="orgfa857e9"></a>Example<br />
+                        <div class="outline-text-7" id="text-3-3-5-1-2-1">
+                          <div class="org-src-container">
+                            <pre
+                              class="src src-c"
+                            ><span style="color: #ECBE7B;">read</span> <span style="color: #dcaeea;">a</span>,<span style="color: #dcaeea;">b</span>,<span style="color: #dcaeea;">c</span>;
+<span style="color: #51afef;">if</span>(a&gt;b)
+  x = a+<span style="color: #da8548; font-weight: bold;">1</span>;
+  <span style="color: #ECBE7B;">print</span> <span style="color: #dcaeea;">x</span>;
+<span style="color: #51afef;">else</span>
+  x = b-<span style="color: #da8548; font-weight: bold;">1</span>;
+  <span style="color: #ECBE7B;">print</span> <span style="color: #dcaeea;">z</span>;
+</pre>
+                          </div>
+                          <table
+                            border="2"
+                            cellspacing="0"
+                            cellpadding="6"
+                            rules="groups"
+                            frame="hsides"
+                          >
+                            <colgroup>
+                              <col class="org-left" />
+
+                              <col class="org-right" />
+
+                              <col class="org-left" />
+                            </colgroup>
+                            <tbody>
+                              <tr>
+                                <td class="org-left">variables</td>
+                                <td class="org-right">Define</td>
+                                <td class="org-left">Use</td>
+                              </tr>
+
+                              <tr>
+                                <td class="org-left">a</td>
+                                <td class="org-right">1</td>
+                                <td class="org-left">2,3</td>
+                              </tr>
+
+                              <tr>
+                                <td class="org-left">b</td>
+                                <td class="org-right">1</td>
+                                <td class="org-left">2,5</td>
+                              </tr>
+
+                              <tr>
+                                <td class="org-left">c</td>
+                                <td class="org-right">1</td>
+                                <td class="org-left">NA</td>
+                              </tr>
+
+                              <tr>
+                                <td class="org-left">x</td>
+                                <td class="org-right">3,5</td>
+                                <td class="org-left">4</td>
+                              </tr>
+
+                              <tr>
+                                <td class="org-left">z</td>
+                                <td class="org-right">NA</td>
+                                <td class="org-left">6</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </li>
+                      <li>
+                        <a id="org124b541"></a>Advantage<br />
+                        <div class="outline-text-7" id="text-3-3-5-1-2-2">
+                          <ul class="org-ul">
+                            <li>
+                              A variable that is declared but never used within
+                              the program
+                            </li>
+                            <li>A variable that is used but never declared.</li>
+                            <li>
+                              A variable that is defined multiple times before
+                              it is used
+                            </li>
+                            <li>Deallocating a variable before it is used</li>
+                          </ul>
+                        </div>
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </div>
+          <div id="outline-container-orge1214d3" class="outline-4">
+            <h4 id="orge1214d3">
+              <span class="section-number-4">3.3.6.</span> Mutation Testing
+            </h4>
+            <div class="outline-text-4" id="text-3-3-6">
+              <ul class="org-ul">
+                <li>
+                  It is a software testing where we mutate certain statement in
+                  the program and check if the test case are able to find the
+                  errors
+                </li>
+                <li>
+                  The change in the mutant program are kept extremely small, so
+                  it does not effect the overall objective of the program
+                </li>
+                <li>
+                  The goal of mutation testing is to develop effective test
+                  cases. It makes test cases robust
+                </li>
+                <li>Also called fault based testing</li>
+                <li>
+                  Mutation score is the killed Mutant/ Total No of mutatants *
+                  100 If we can develop test cases then mutation score will be
+                  100%
+                </li>
+              </ul>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="orgbabc251"></a>Execution<br />
+                <div class="outline-text-5" id="text-3-3-6-1">
+                  <p>
+                    Change the code and compare the output If the output is
+                    different then killed the mutant
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="orgc5a10f6"></a>Example<br />
+                <div class="outline-text-5" id="text-3-3-6-2">
+                  <p>Original</p>
+                  <div class="org-src-container">
+                    <pre
+                      class="src src-c"
+                    ><span style="color: #ECBE7B;">void</span> <span style="color: #c678dd;">calc</span>(<span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">n</span>){
+  <span style="color: #51afef;">if</span>(n%<span style="color: #da8548; font-weight: bold;">2</span> == <span style="color: #da8548; font-weight: bold;">0</span>)
+    printf(<span style="color: #98be65;">"Even"</span>);
+  <span style="color: #51afef;">else</span>
+    printf(<span style="color: #98be65;">"Odd"</span>);
+  <span style="color: #51afef;">return</span>;
+}
+</pre>
+                  </div>
+
+                  <p>Mutant</p>
+                  <div class="org-src-container">
+                    <pre class="src src-c">
+<span style="color: #ECBE7B;">void</span> <span style="color: #c678dd;">calc</span>(<span style="color: #ECBE7B;">int</span> <span style="color: #dcaeea;">n</span>){
+  <span style="color: #51afef;">if</span>(n/<span style="color: #da8548; font-weight: bold;">2</span> == <span style="color: #da8548; font-weight: bold;">0</span>)
+    printf(<span style="color: #98be65;">"Even"</span>);
+  <span style="color: #51afef;">else</span>
+    printf(<span style="color: #98be65;">"Odd"</span>);
+  <span style="color: #51afef;">return</span>;
+}
+</pre>
+                  </div>
+
+                  <p>
+                    Results are differnent So we remove the mutant code IF the
+                    result would have been the same We would have changed the
+                    test cases.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <a id="orgfe31a4a"></a>Types<br />
+                <div class="outline-text-5" id="text-3-3-6-3">
+                  <ul class="org-ul">
+                    <li>Value mutation - We change the values</li>
+                    <li>
+                      Decision Mutations - We change the decision statements
+                    </li>
+                    <li>Statement Mutations - We change the statements</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a id="org99aba0c"></a>Advantage<br />
+                <div class="outline-text-5" id="text-3-3-6-4">
+                  <ul class="org-ul">
+                    <li>
+                      It brings a good level of error detection in the program
+                    </li>
+                    <li>It discovers ambiguites in the source code.</li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a id="org7194c97"></a>Disadvantage<br />
+                <div class="outline-text-5" id="text-3-3-6-5">
+                  <ul class="org-ul">
+                    <li>It is highly costly and time consuming</li>
+                    <li>It is not for black box testing</li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div id="outline-container-orgcfa620d" class="outline-4">
+            <h4 id="orgcfa620d">
+              <span class="section-number-4">3.3.7.</span> Unit testing
+            </h4>
+            <div class="outline-text-4" id="text-3-3-7">
+              <ul class="org-ul">
+                <li>
+                  It is the process of checking small pieces of code to ensure
+                  that the individual parts of a program work properly on their
+                  own
+                </li>
+                <li>
+                  Unit tests are used to test individual blocks of functionality
+                </li>
+                <li>Unit testing is done by developers</li>
+              </ul>
+            </div>
+          </div>
+          <div id="outline-container-org340a78f" class="outline-4">
+            <h4 id="org340a78f">
+              <span class="section-number-4">3.3.8.</span> Integration testing
+            </h4>
+            <div class="outline-text-4" id="text-3-3-8">
+              <ul class="org-ul">
+                <li>
+                  It is conducted to evaluate the compliance of a system or
+                  component with specified functional requirements.
+                </li>
+                <li>It occurs after unit testing and before system testing</li>
+              </ul>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="orgb583659"></a>Types<br />
+                <ol class="org-ol">
+                  <li>
+                    <a id="org0e61ca1"></a>Big Bang<br />
+                    <div class="outline-text-6" id="text-3-3-8-1-1">
+                      <p>
+                        2 or 3 compatible units are combined first then testing
+                        begins Then integrate sequentially
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <a id="orgf7fe7c5"></a>Mixed<br />
+                    <div class="outline-text-6" id="text-3-3-8-1-2">
+                      <p>
+                        It is the combination of the top down and bottom up
+                        approach
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <a id="orgc6741e4"></a>Top Down<br />
+                    <div class="outline-text-6" id="text-3-3-8-1-3">
+                      <p>First higher priority units are tested first.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <a id="orgce8f67d"></a>Bottom Up<br />
+                    <div class="outline-text-6" id="text-3-3-8-1-4">
+                      <p>First lower priority units are tested first.</p>
+                    </div>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </div>
+          <div id="outline-container-org10f26e6" class="outline-4">
+            <h4 id="org10f26e6">
+              <span class="section-number-4">3.3.9.</span> System testing
+            </h4>
+            <div class="outline-text-4" id="text-3-3-9">
+              <ul class="org-ul">
+                <li>
+                  It is a level of testing that validates the complete and fully
+                  integrated software product
+                </li>
+                <li>
+                  The purpose of a system test is to evaluate the end to end
+                  system specifications
+                </li>
+                <li>It is a black box testing</li>
+                <li>It based on categories : who is doing the testing</li>
+                <li>
+                  System testing ccategories based on : Functional/ Non -
+                  Functional requirements
+                </li>
+                <li>Alpha testing is the checking by the creators</li>
+                <li>
+                  Beta testing is the checking done by the small group of users
+                </li>
+                <li>
+                  Functional testing are the testing of the requirements
+                  mentioned on the SRS
+                </li>
+                <li>
+                  Non Functional testing are the testing of the requirements not
+                  mentioned on the SRS, include load (upto the capacity),
+                  stress(outside the capacity).
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="outline-container-org590d734" class="outline-4">
+            <h4 id="org590d734">
+              <span class="section-number-4">3.3.10.</span> Regression testing
+            </h4>
+            <div class="outline-text-4" id="text-3-3-10">
+              <p>
+                It is a type of software testing that verifies that the changes
+                made to the system such as bug fixes, or new features, do not
+                impact previous functionality
+              </p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="org8bc62ee"></a>Types<br />
+                <div class="outline-text-5" id="text-3-3-10-1">
+                  <p>
+                    Full Regression testing - Testing the entire application
+                    from start to finish after changes have been made. Partial
+                    regression testing - Testing only those parts of the
+                    application that were affected by the changes
+                  </p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div id="outline-container-org4564779" class="outline-3">
+          <h3 id="org4564779">
+            <span class="section-number-3">3.4.</span> Testing tools
+          </h3>
+          <div class="outline-text-3" id="text-3-4">
+            <p>Types</p>
+            <ul class="org-ul">
+              <li>
+                Static - Static are those tools which don&rsquo;t need to
+                execute the code
+              </li>
+              <li>
+                Dynamic - Dynamic are those tools which do need to execute the
+                code
+              </li>
+            </ul>
+
+            <p>
+              Dynamic Tools - Test file generators, Test data generation, output
+              comparators,Test archiving system Static - Code inspector,
+              Standard enforcer,
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-orgde9c883" class="outline-3">
+          <h3 id="orgde9c883">
+            <span class="section-number-3">3.5.</span> Testing Standards
+          </h3>
+          <div class="outline-text-3" id="text-3-5">
+            <p>
+              ISO/IEC 29119 -1 : Concepts and definitions of software ISO/IEC
+              29119 -2 : Test Process ISO/IEC 29119 -3 : Test Documents ISO/IEC
+              29119 -4 : Testing Techinques ISO/IEC 29119 -5 : Keyboard based
+              software testing techniques ISO/IEC 9126 : Functionality,
+              Reliability and Maintainability Others - IEEE 829 IEEE 1061 IEEE
+              1059, IEEE 1008
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org85fe2d0" class="outline-3">
+          <h3 id="org85fe2d0">
+            <span class="section-number-3">3.6.</span> Debugging
+          </h3>
+          <div class="outline-text-3" id="text-3-6">
+            <p>
+              Identifying the cause of error. It is the activity or locating and
+              correcting errors.
+            </p>
+          </div>
+          <div id="outline-container-org89f9c5f" class="outline-4">
+            <h4 id="org89f9c5f">
+              <span class="section-number-4">3.6.1.</span> Characteristics
+            </h4>
+            <div class="outline-text-4" id="text-3-6-1">
+              <ul class="org-ul">
+                <li>Symptom may be in one part cause might be in other part</li>
+                <li>Symptom may disapper when other error is corrected.</li>
+                <li>Symptom may be intermittent</li>
+                <li>
+                  Symptom might be due to human error and very difficult to
+                  trace.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="outline-container-orge0523c6" class="outline-4">
+            <h4 id="orge0523c6">
+              <span class="section-number-4">3.6.2.</span> Approach
+            </h4>
+            <div class="outline-text-4" id="text-3-6-2">
+              <ol class="org-ol">
+                <li>Print Statement</li>
+                <li>Core Dumps</li>
+                <li>Trial and Error</li>
+                <li>Backtracking</li>
+                <li>Commenting or Removing</li>
+              </ol>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="orgd7ea6a0"></a>Induction and Deduction<br />
+                <div class="outline-text-5" id="text-3-6-2-1">
+                  <ol class="org-ol">
+                    <li>
+                      Keep the data handy All available data, symptoms about the
+                      problem, different test cases which make the error or
+                      symptom disappear.
+                    </li>
+                    <li>
+                      Organize the data Structure the data to observe patterns
+                      Search for specialized observations eg - Error only occurs
+                      when no stock is left
+                    </li>
+                    <li>
+                      Devise a hypothesis We have to theorize using all the data
+                      It is a capital mistak to theorize before one has data. we
+                      begin to twist facts to fit theories instead of twisting
+                      theories to fit facts.
+                    </li>
+                    <li>
+                      Prove the hypothesis Don&rsquo;t skip this step to
+                      straightaway start fixing the problem Failure to do this
+                      might reduce only a portion of problem
+                    </li>
+                  </ol>
+                </div>
+              </li>
+              <li>
+                <a id="orgfe20a5c"></a>Deduction Approach<br />
+                <div class="outline-text-5" id="text-3-6-2-2">
+                  <ol class="org-ol">
+                    <li>
+                      Enumerate the possible causes Develop a list of all
+                      theories.
+                    </li>
+                    <li>
+                      Use the data to eliminate them If all are
+                      elminated,additional data is needed to devise new theories
+                    </li>
+                    <li>
+                      Refine the remaining hypothesis Use the available classes
+                    </li>
+                    <li>
+                      <p>
+                        Prove the remaining hypothesis Enumerate possible causes
+                        -&gt; Use Process of elimination -&gt; Refine remaining
+                        hypothesis -&gt; Prove remaining hypothesis
+                      </p>
+
+                      <p>Collect more data at every step</p>
+                    </li>
+                  </ol>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div id="outline-container-orgc1aef49" class="outline-4">
+            <h4 id="orgc1aef49">
+              <span class="section-number-4">3.6.3.</span> Tools
+            </h4>
+            <div class="outline-text-4" id="text-3-6-3">
+              <p>
+                Debugging compilers, automatic test case generation, Memory
+                dumps, Compiler diagnostics, compiler with meaningful error
+                messages and error detection features
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org075686a" class="outline-3">
+          <h3 id="org075686a">
+            <span class="section-number-3">3.7.</span> Maintenance
+          </h3>
+          <div class="outline-text-3" id="text-3-7">
+            <p>
+              Its primary goal is to modify and update software applications
+              after delivery to correct errors and improve performance Software
+              Maintenance is an inclusive activity that includes -
+            </p>
+            <ul class="org-ul">
+              <li>Error Corrections</li>
+              <li>Deletion of Obsolete Capabilites</li>
+              <li>Enhancement of capabilities</li>
+              <li>Optimization</li>
+            </ul>
+          </div>
+          <div id="outline-container-org8e35524" class="outline-4">
+            <h4 id="org8e35524">
+              <span class="section-number-4">3.7.1.</span> Types
+            </h4>
+            <div class="outline-text-4" id="text-3-7-1">
+              <ol class="org-ol">
+                <li>Corrective Maintenance</li>
+                <li>Adaptive Maintenance</li>
+                <li>Preventive Maintenance</li>
+                <li>Perfective Maintenance</li>
+              </ol>
+            </div>
+          </div>
+          <div id="outline-container-org9bb2c69" class="outline-4">
+            <h4 id="org9bb2c69">
+              <span class="section-number-4">3.7.2.</span> Process
+            </h4>
+            <div class="outline-text-4" id="text-3-7-2">
+              <ol class="org-ol">
+                <li>Requirements</li>
+                <li>Change request</li>
+                <li>Impact Analysis</li>
+                <li>Release planning</li>
+                <li>Change Design</li>
+                <li>Implementation and Test</li>
+                <li>Release the changes</li>
+              </ol>
+              <p>Repeat till customer satisfied</p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org680dd5d" class="outline-3">
+          <h3 id="org680dd5d">
+            <span class="section-number-3">3.8.</span> Reverse Engineering /
+            Backward Engineering
+          </h3>
+          <div class="outline-text-3" id="text-3-8">
+            <ul class="org-ul">
+              <li>
+                Software reverse engineering can help to improve the
+                understanding of the underlying source code for the maintenance
+                and improvement of the software.
+              </li>
+              <li>
+                In some cases the goal of the reverse engineering process can
+                simply be a redocumentation of legacy systems.
+              </li>
+              <li>
+                Malware Developers often use reverse engineering techniques to
+                find vulnearbilities in an operating system to build a computer
+                virus that can exploit the system vulnerabilities
+              </li>
+              <li>
+                Reverse engineering is also being used in cryptanalysis to find
+                vulnerabilities in substitution cipher, symmetric key algorithm
+                or public key cryptography.
+              </li>
+            </ul>
+
+            <p>
+              Code -&gt; Module Specification -&gt; Design -&gt; Requirements
+              specifications
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org68f8d13" class="outline-3">
+          <h3 id="org68f8d13">
+            <span class="section-number-3">3.9.</span> Re Engineering
+          </h3>
+          <div class="outline-text-3" id="text-3-9">
+            <p>
+              It is an activity that improves ones understanding of software or
+              prepares or improves the software itself usually for increased
+              maintainablility, reusability, evolvability. 2 Phases process
+              first reverse engineerinng to get the abstract view of the system
+              then forward engineering to get the reengineering system
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org3dad957" class="outline-3">
+          <h3 id="org3dad957">
+            <span class="section-number-3">3.10.</span> Documentation
+          </h3>
+          <div class="outline-text-3" id="text-3-10">
+            <p>
+              It is a written record of facts about a software system recorded
+              with the intent to convey purpose, content and clarity
+            </p>
+          </div>
+          <div id="outline-container-orgfe4ea29" class="outline-4">
+            <h4 id="orgfe4ea29">
+              <span class="section-number-4">3.10.1.</span> Types
+            </h4>
+            <div class="outline-text-4" id="text-3-10-1"></div>
+            <ol class="org-ol">
+              <li>
+                <a id="orgc023fd7"></a>User Documentation<br />
+                <div class="outline-text-5" id="text-3-10-1-1">
+                  <p>
+                    Non technical Contains description of all functionalities
+                  </p>
+                </div>
+                <ol class="org-ol">
+                  <li>
+                    <a id="org83ee5aa"></a>Contents<br />
+                    <div class="outline-text-6" id="text-3-10-1-1-1">
+                      <ul class="org-ul">
+                        <li>System Overview</li>
+                        <li>Installation Guide</li>
+                        <li>Begineer&rsquo;s guide</li>
+                        <li>Reference Guide</li>
+                        <li>Enhancement</li>
+                        <li>Quick Reference Card</li>
+                        <li>Network and security</li>
+                      </ul>
+                    </div>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <a id="orgcb055fa"></a>System Documentation<br />
+                <div class="outline-text-5" id="text-3-10-1-2">
+                  <p>
+                    Analysis, Specification, design, implementation, testing,
+                    security, error diagnosis, recovery
+                  </p>
+                </div>
+                <ol class="org-ol">
+                  <li>
+                    <a id="org1546e07"></a>Content<br />
+                    <div class="outline-text-6" id="text-3-10-1-2-1">
+                      <ol class="org-ol">
+                        <li>Objective of entire system</li>
+                        <li>SRS</li>
+                        <li>
+                          Specifications/ Design Information of various units
+                        </li>
+                        <li>Implementation</li>
+                        <li>System test Plan</li>
+                        <li>Acceptance test phase</li>
+                        <li>Data dictionaries</li>
+                      </ol>
+                    </div>
+                  </li>
+                </ol>
+              </li>
+            </ol>
+          </div>
+          <div id="outline-container-org9e6c92f" class="outline-4">
+            <h4 id="org9e6c92f">
+              <span class="section-number-4">3.10.2.</span> SCM
+            </h4>
+            <div class="outline-text-4" id="text-3-10-2">
+              <p>
+                Software Configuration Mangement is defined as a process to
+                systematically manage, Organize and control the changes in the
+                doucments, codes and other entities during the SDLC The primary
+                goal is to increase productivity with minimal mistakes.
+              </p>
+            </div>
+            <ol class="org-ol">
+              <li>
+                <a id="org8a8e288"></a>Need<br />
+                <div class="outline-text-5" id="text-3-10-2-1">
+                  <ol class="org-ol">
+                    <li>
+                      There are multiple people working on software which is
+                      continually updating
+                    </li>
+                    <li>
+                      It may be a case where multiple version, branches, authors
+                      are invloved in a software project, and the team is
+                      geographically distributed and works concurrently
+                    </li>
+                    <li>
+                      Changes in user requirement, policy, budget, schedule need
+                      to be accommodated.
+                    </li>
+                    <li>
+                      Software should be able to run on various machines and OS
+                    </li>
+                    <li>Helps to develop coordination among stakeholders</li>
+                    <li>
+                      SCM process is also beneficial to control the costs
+                      involved in making changes to a system
+                    </li>
+                  </ol>
+                </div>
+              </li>
+              <li>
+                <a id="org2d351d9"></a>Tasks<br />
+                <div class="outline-text-5" id="text-3-10-2-2">
+                  <ul class="org-ul">
+                    <li>Software Configuration</li>
+                    <li>
+                      Version Control Creating Versions of the exisiting product
+                      ot build new products from the help of SCM system VCS is a
+                      system or tool that captures the changes to a source code
+                      elements ie File, Folder, Image or binary
+                    </li>
+                    <li>
+                      Change Control Change control is a systematic approach to
+                      managing all changes made to a product or system. The
+                      purpose is to ensure that no unnecessary changes are made
+                      that all changes are documented, that services are not
+                      unnecessarily disrupted and that resources are used
+                      efficiently
+                    </li>
+                    <li>
+                      Configuration Control Software Configuration audits verify
+                      that all the software product satisfies the baseline
+                      needs. It ensures that what is build is what is delivered.
+                    </li>
+                    <li>
+                      Status reporting Providing accurate status and current
+                      configuaration data to developers, tester, end users,
+                      customers and stakeholders through admin guides, user
+                      guides, FAQs, Release notes, memos, Installation Guide,
+                      Configuration guide
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="postamble" class="status">
+      <p class="author">Author: Shaswat</p>
+      <p class="date">Created: 2025-01-12 日 18:35</p>
+    </div>
+  </body>
+</html>

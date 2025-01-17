@@ -1,0 +1,2812 @@
+<html>
+  <head>
+    <!-- 2025-01-12 日 18:40 -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>React</title>
+    <meta name="author" content="Shaswat Satyam" />
+    <meta name="generator" content="Org Mode" />
+    <style type="text/css">
+      #content {
+        max-width: 60em;
+        margin: auto;
+      }
+      .title {
+        text-align: center;
+        margin-bottom: 0.2em;
+      }
+      .subtitle {
+        text-align: center;
+        font-size: medium;
+        font-weight: bold;
+        margin-top: 0;
+      }
+      .todo {
+        font-family: monospace;
+        color: red;
+      }
+      .done {
+        font-family: monospace;
+        color: green;
+      }
+      .priority {
+        font-family: monospace;
+        color: orange;
+      }
+      .tag {
+        background-color: #eee;
+        font-family: monospace;
+        padding: 2px;
+        font-size: 80%;
+        font-weight: normal;
+      }
+      .timestamp {
+        color: #bebebe;
+      }
+      .timestamp-kwd {
+        color: #5f9ea0;
+      }
+      .org-right {
+        margin-left: auto;
+        margin-right: 0px;
+        text-align: right;
+      }
+      .org-left {
+        margin-left: 0px;
+        margin-right: auto;
+        text-align: left;
+      }
+      .org-center {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+      .underline {
+        text-decoration: underline;
+      }
+      #postamble p,
+      #preamble p {
+        font-size: 90%;
+        margin: 0.2em;
+      }
+      p.verse {
+        margin-left: 3%;
+      }
+      pre {
+        border: 1px solid #e6e6e6;
+        border-radius: 3px;
+        background-color: #f2f2f2;
+        padding: 8pt;
+        font-family: monospace;
+        overflow: auto;
+        margin: 1.2em;
+      }
+      pre.src {
+        position: relative;
+        overflow: auto;
+      }
+      pre.src:before {
+        display: none;
+        position: absolute;
+        top: -8px;
+        right: 12px;
+        padding: 3px;
+        color: #555;
+        background-color: #f2f2f299;
+      }
+      pre.src:hover:before {
+        display: inline;
+        margin-top: 14px;
+      }
+      /* Languages per Org manual */
+      pre.src-asymptote:before {
+        content: "Asymptote";
+      }
+      pre.src-awk:before {
+        content: "Awk";
+      }
+      pre.src-authinfo::before {
+        content: "Authinfo";
+      }
+      pre.src-C:before {
+        content: "C";
+      }
+      /* pre.src-C++ doesn't work in CSS */
+      pre.src-clojure:before {
+        content: "Clojure";
+      }
+      pre.src-css:before {
+        content: "CSS";
+      }
+      pre.src-D:before {
+        content: "D";
+      }
+      pre.src-ditaa:before {
+        content: "ditaa";
+      }
+      pre.src-dot:before {
+        content: "Graphviz";
+      }
+      pre.src-calc:before {
+        content: "Emacs Calc";
+      }
+      pre.src-emacs-lisp:before {
+        content: "Emacs Lisp";
+      }
+      pre.src-fortran:before {
+        content: "Fortran";
+      }
+      pre.src-gnuplot:before {
+        content: "gnuplot";
+      }
+      pre.src-haskell:before {
+        content: "Haskell";
+      }
+      pre.src-hledger:before {
+        content: "hledger";
+      }
+      pre.src-java:before {
+        content: "Java";
+      }
+      pre.src-js:before {
+        content: "Javascript";
+      }
+      pre.src-latex:before {
+        content: "LaTeX";
+      }
+      pre.src-ledger:before {
+        content: "Ledger";
+      }
+      pre.src-lisp:before {
+        content: "Lisp";
+      }
+      pre.src-lilypond:before {
+        content: "Lilypond";
+      }
+      pre.src-lua:before {
+        content: "Lua";
+      }
+      pre.src-matlab:before {
+        content: "MATLAB";
+      }
+      pre.src-mscgen:before {
+        content: "Mscgen";
+      }
+      pre.src-ocaml:before {
+        content: "Objective Caml";
+      }
+      pre.src-octave:before {
+        content: "Octave";
+      }
+      pre.src-org:before {
+        content: "Org mode";
+      }
+      pre.src-oz:before {
+        content: "OZ";
+      }
+      pre.src-plantuml:before {
+        content: "Plantuml";
+      }
+      pre.src-processing:before {
+        content: "Processing.js";
+      }
+      pre.src-python:before {
+        content: "Python";
+      }
+      pre.src-R:before {
+        content: "R";
+      }
+      pre.src-ruby:before {
+        content: "Ruby";
+      }
+      pre.src-sass:before {
+        content: "Sass";
+      }
+      pre.src-scheme:before {
+        content: "Scheme";
+      }
+      pre.src-screen:before {
+        content: "Gnu Screen";
+      }
+      pre.src-sed:before {
+        content: "Sed";
+      }
+      pre.src-sh:before {
+        content: "shell";
+      }
+      pre.src-sql:before {
+        content: "SQL";
+      }
+      pre.src-sqlite:before {
+        content: "SQLite";
+      }
+      /* additional languages in org.el's org-babel-load-languages alist */
+      pre.src-forth:before {
+        content: "Forth";
+      }
+      pre.src-io:before {
+        content: "IO";
+      }
+      pre.src-J:before {
+        content: "J";
+      }
+      pre.src-makefile:before {
+        content: "Makefile";
+      }
+      pre.src-maxima:before {
+        content: "Maxima";
+      }
+      pre.src-perl:before {
+        content: "Perl";
+      }
+      pre.src-picolisp:before {
+        content: "Pico Lisp";
+      }
+      pre.src-scala:before {
+        content: "Scala";
+      }
+      pre.src-shell:before {
+        content: "Shell Script";
+      }
+      pre.src-ebnf2ps:before {
+        content: "ebfn2ps";
+      }
+      /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+      pre.src-cpp:before {
+        content: "C++";
+      }
+      pre.src-abc:before {
+        content: "ABC";
+      }
+      pre.src-coq:before {
+        content: "Coq";
+      }
+      pre.src-groovy:before {
+        content: "Groovy";
+      }
+      /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+      pre.src-bash:before {
+        content: "bash";
+      }
+      pre.src-csh:before {
+        content: "csh";
+      }
+      pre.src-ash:before {
+        content: "ash";
+      }
+      pre.src-dash:before {
+        content: "dash";
+      }
+      pre.src-ksh:before {
+        content: "ksh";
+      }
+      pre.src-mksh:before {
+        content: "mksh";
+      }
+      pre.src-posh:before {
+        content: "posh";
+      }
+      /* Additional Emacs modes also supported by the LaTeX listings package */
+      pre.src-ada:before {
+        content: "Ada";
+      }
+      pre.src-asm:before {
+        content: "Assembler";
+      }
+      pre.src-caml:before {
+        content: "Caml";
+      }
+      pre.src-delphi:before {
+        content: "Delphi";
+      }
+      pre.src-html:before {
+        content: "HTML";
+      }
+      pre.src-idl:before {
+        content: "IDL";
+      }
+      pre.src-mercury:before {
+        content: "Mercury";
+      }
+      pre.src-metapost:before {
+        content: "MetaPost";
+      }
+      pre.src-modula-2:before {
+        content: "Modula-2";
+      }
+      pre.src-pascal:before {
+        content: "Pascal";
+      }
+      pre.src-ps:before {
+        content: "PostScript";
+      }
+      pre.src-prolog:before {
+        content: "Prolog";
+      }
+      pre.src-simula:before {
+        content: "Simula";
+      }
+      pre.src-tcl:before {
+        content: "tcl";
+      }
+      pre.src-tex:before {
+        content: "TeX";
+      }
+      pre.src-plain-tex:before {
+        content: "Plain TeX";
+      }
+      pre.src-verilog:before {
+        content: "Verilog";
+      }
+      pre.src-vhdl:before {
+        content: "VHDL";
+      }
+      pre.src-xml:before {
+        content: "XML";
+      }
+      pre.src-nxml:before {
+        content: "XML";
+      }
+      /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+      pre.src-conf:before {
+        content: "Configuration File";
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+      caption.t-above {
+        caption-side: top;
+      }
+      caption.t-bottom {
+        caption-side: bottom;
+      }
+      td,
+      th {
+        vertical-align: top;
+      }
+      th.org-right {
+        text-align: center;
+      }
+      th.org-left {
+        text-align: center;
+      }
+      th.org-center {
+        text-align: center;
+      }
+      td.org-right {
+        text-align: right;
+      }
+      td.org-left {
+        text-align: left;
+      }
+      td.org-center {
+        text-align: center;
+      }
+      dt {
+        font-weight: bold;
+      }
+      .footpara {
+        display: inline;
+      }
+      .footdef {
+        margin-bottom: 1em;
+      }
+      .figure {
+        padding: 1em;
+      }
+      .figure p {
+        text-align: center;
+      }
+      .equation-container {
+        display: table;
+        text-align: center;
+        width: 100%;
+      }
+      .equation {
+        vertical-align: middle;
+      }
+      .equation-label {
+        display: table-cell;
+        text-align: right;
+        vertical-align: middle;
+      }
+      .inlinetask {
+        padding: 10px;
+        border: 2px solid gray;
+        margin: 10px;
+        background: #ffffcc;
+      }
+      #org-div-home-and-up {
+        text-align: right;
+        font-size: 70%;
+        white-space: nowrap;
+      }
+      textarea {
+        overflow-x: auto;
+      }
+      .linenr {
+        font-size: smaller;
+      }
+      .code-highlighted {
+        background-color: #ffff00;
+      }
+      .org-info-js_info-navigation {
+        border-style: none;
+      }
+      #org-info-js_console-label {
+        font-size: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+      .org-info-js_search-highlight {
+        background-color: #ffff00;
+        color: #000000;
+        font-weight: bold;
+      }
+      .org-svg {
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content" class="content">
+      <h1 class="title">React</h1>
+      <div id="table-of-contents" role="doc-toc">
+        <h2>Table of Contents</h2>
+        <div id="text-table-of-contents" role="doc-toc">
+          <ul>
+            <li>
+              <a href="#orgf3b0973">1. From 0 to Production</a>
+              <ul>
+                <li><a href="#orgb5962ee">1.1. Starting Work</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#orgbb8e595">2. React Hooks</a>
+              <ul>
+                <li>
+                  <a href="#org0e5689f">2.1. State management</a>
+                  <ul>
+                    <li><a href="#org5cef02a">2.1.1. useState</a></li>
+                    <li><a href="#orgc60164e">2.1.2. useReducer</a></li>
+                    <li>
+                      <a href="#org4958128">2.1.3. useSyncExternalStore</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#orgd108ed0">2.2. Ref Hooks</a>
+                  <ul>
+                    <li><a href="#org21ec23b">2.2.1. useRef</a></li>
+                    <li>
+                      <a href="#orgfe2f7e7">2.2.2. useImperativeHandle</a>
+                    </li>
+                    <li><a href="#orga1800a5">2.2.3. useRef()</a></li>
+                    <li>
+                      <a href="#org6a4dc5b">2.2.4. userImperativeHandle()</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org52e73fd">2.3. Effect Hooks</a>
+                  <ul>
+                    <li><a href="#org5068f88">2.3.1. useEffect</a></li>
+                    <li><a href="#orge9464ee">2.3.2. useLayoutEffect</a></li>
+                    <li><a href="#org6579ef6">2.3.3. useInsertionEffect</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org3afed6a">2.4. Context Hooks</a>
+                  <ul>
+                    <li><a href="#org5784f21">2.4.1. useContext</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org6840650">2.5. Random Hooks</a>
+                  <ul>
+                    <li><a href="#org1965d39">2.5.1. useDebugValue</a></li>
+                    <li><a href="#org2a3a462">2.5.2. useId</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#orge175aba">2.6. React 19 Hooks</a>
+                  <ul>
+                    <li><a href="#org95d79b6">2.6.1. useFormStatus</a></li>
+                    <li><a href="#orgbe674f6">2.6.2. useFormState</a></li>
+                    <li><a href="#org43a0a07">2.6.3. useOptimistic</a></li>
+                    <li><a href="#org30a0f36">2.6.4. use</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org2a454ea">2.7. Transition Hooks</a>
+                  <ul>
+                    <li><a href="#org9060fe6">2.7.1. useTransition</a></li>
+                    <li><a href="#orga7a1925">2.7.2. useDeferredValue</a></li>
+                    <li><a href="#org2c6cbf5">2.7.3. useTransition()</a></li>
+                    <li><a href="#org33b876f">2.7.4. useDeferredValue()</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org117bf3a">2.8. Performance Hooks</a>
+                  <ul>
+                    <li><a href="#org26a19e8">2.8.1. useMemo</a></li>
+                    <li><a href="#orge818277">2.8.2. useCallback</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#org8332cab">3. Concepts</a>
+              <ul>
+                <li><a href="#org6d31e43">3.1. Components</a></li>
+                <li><a href="#org0c5738d">3.2. JSX</a></li>
+                <li><a href="#org0f59beb">3.3. Props</a></li>
+                <li><a href="#org74e82b2">3.4. Children</a></li>
+                <li><a href="#org8a599c7">3.5. Key Props</a></li>
+                <li><a href="#org6418f58">3.6. Rendering</a></li>
+                <li><a href="#org7ea41cb">3.7. Event Handling</a></li>
+                <li><a href="#org968fe4b">3.8. Data mangement</a></li>
+                <li><a href="#org1781f1c">3.9. Control components</a></li>
+                <li><a href="#org122d22e">3.10. Hooks</a></li>
+                <li><a href="#orgc7bb554">3.11. Purity</a></li>
+                <li><a href="#org19dc379">3.12. Strict Mode</a></li>
+                <li><a href="#org69294c4">3.13. Effects</a></li>
+                <li><a href="#org257fa5a">3.14. Refs</a></li>
+                <li><a href="#orgb02004b">3.15. Context</a></li>
+                <li><a href="#org6776d50">3.16. Portal</a></li>
+                <li><a href="#org2e1f775">3.17. Suspense</a></li>
+                <li><a href="#orgf35456d">3.18. Error Boundaries</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#orge739dc2">4. Complete Intro to React V18</a>
+              <ul>
+                <li><a href="#orge92c66b">4.1. Pure React</a></li>
+                <li><a href="#org2ddcf25">4.2. NPM and Prettier</a></li>
+                <li><a href="#org5c1139c">4.3. Core React Concepts</a></li>
+                <li><a href="#org636f036">4.4. Hooks</a></li>
+                <li><a href="#org1bb4196">4.5. Effects</a></li>
+                <li><a href="#org5d7c47b">4.6. Custom Hook</a></li>
+                <li>
+                  <a href="#org722c5dc">4.7. React Capabilities</a>
+                  <ul>
+                    <li><a href="#orgd988c93">4.7.1. React Router</a></li>
+                    <li><a href="#org231f2cd">4.7.2. UseParams</a></li>
+                    <li><a href="#orgf45d4e6">4.7.3. React Query</a></li>
+                    <li><a href="#orgb04895f">4.7.4. Uncontrolled Form</a></li>
+                    <li><a href="#org8036124">4.7.5. Class Component</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org8f00e99">4.8. React Tools</a>
+                  <ul>
+                    <li><a href="#org77fa905">4.8.1. Error Boundaries</a></li>
+                    <li><a href="#org478ba47">4.8.2. Portals</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#orgc3051e0">5. Intermediate React</a>
+              <ul>
+                <li>
+                  <a href="#org11a73b8">5.1. Intermediate Hooks</a>
+                  <ul>
+                    <li><a href="#orgdb544f1">5.1.1. useState</a></li>
+                    <li><a href="#orgd7c0090">5.1.2. useEffect</a></li>
+                    <li><a href="#orgc81aa43">5.1.3. useContext</a></li>
+                    <li><a href="#org7af9145">5.1.4. useRef</a></li>
+                    <li><a href="#orga90d549">5.1.5. useMemo</a></li>
+                    <li><a href="#org17d5bcc">5.1.6. useCallback</a></li>
+                    <li><a href="#orgb1bed06">5.1.7. useLayoutEffect</a></li>
+                    <li>
+                      <a href="#org60d638a">5.1.8. useImperativeHandle</a>
+                    </li>
+                    <li><a href="#org6d95239">5.1.9. useDebugValue</a></li>
+                    <li><a href="#orgdffc52c">5.1.10. useId</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#orgdf2f9f8">6. Advanced React Performance</a>
+              <ul>
+                <li><a href="#org0ba58f2">6.1. Code Splitting</a></li>
+                <li><a href="#org99a2383">6.2. Server Side Rendering</a></li>
+              </ul>
+            </li>
+            <li><a href="#org7dcfb5d">7. Low Priority Re-Rendering</a></li>
+            <li><a href="#orgdecb73d">8. Redux</a></li>
+            <li>
+              <a href="#org04ea862">9. Interview Question</a>
+              <ul>
+                <li>
+                  <a href="#org0744305"
+                    >9.1. What will happen if setCounter() function is called
+                    multiple times</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#org0bd1abd">10. Background Changer Project</a>
+              <ul>
+                <li>
+                  <a href="#org8fe4ec3">10.1. Create a Bar component</a>
+                  <ul>
+                    <li>
+                      <a href="#org681217e"
+                        >10.1.1. Create the project with Vite and TailwindCSS
+                        documentation</a
+                      >
+                    </li>
+                    <li>
+                      <a href="#org63caa41">10.1.2. Create file with .jsx</a>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org209616f"
+                    >10.2. Made an array with different all the colors.</a
+                  >
+                </li>
+                <li>
+                  <a href="#org940e83b"
+                    >10.3. Map method to traverse all the color and populate
+                    their buttons and a function with color</a
+                  >
+                </li>
+                <li>
+                  <a href="#org303b512"
+                    >10.4. In the Onclick Function use the color to change the
+                    color of page</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#org50d6d0f">11. Password Generator</a>
+              <ul>
+                <li><a href="#org33bbb08">11.1. Overview</a></li>
+                <li><a href="#org09f7a74">11.2. Concepts</a></li>
+                <li><a href="#org6f0f865">11.3. Setting up the project</a></li>
+                <li>
+                  <a href="#org3866c8e">11.4. Starting the work</a>
+                  <ul>
+                    <li>
+                      <a href="#orgbb2609f"
+                        >11.4.1. To synchronize the component with external
+                        system</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#org8fd4a52">11.5. UseRef hook to use Clipboard</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#org25a6a81">12. Custom Hooks</a>
+              <ul>
+                <li><a href="#orgb61d631">12.1. Overview</a></li>
+                <li><a href="#orgface5e2">12.2. Creating the project</a></li>
+                <li><a href="#org546a24b">12.3. Hook</a></li>
+                <li>
+                  <a href="#org7aceac0">12.4. Creating resusable component</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="outline-container-orgf3b0973" class="outline-2">
+        <h2 id="orgf3b0973">
+          <span class="section-number-2">1.</span> From 0 to Production
+        </h2>
+        <div class="outline-text-2" id="text-1">
+          <p>
+            T3 stack Next.js, React, Typescript, TailwindCSS, shadcn/ui,
+            drizzle, pnpm
+          </p>
+          <div class="org-src-container">
+            <pre class="src src-bash">
+pnpm create t3-app@latest
+</pre
+            >
+          </div>
+          <p>
+            t3gallery, Typescript, Tailwind, No tRPC, None authentication
+            provider Next.js App Router PostgreSQL Git init
+          </p>
+
+          <p>pnpm dev</p>
+        </div>
+        <div id="outline-container-orgb5962ee" class="outline-3">
+          <h3 id="orgb5962ee">
+            <span class="section-number-3">1.1.</span> Starting Work
+          </h3>
+          <div class="outline-text-3" id="text-1-1">
+            <p>Make a TODO list</p>
+            <div class="org-src-container">
+              <pre class="src src-markdown">**TODO
+<span style="color: #ff6c6b;">-</span> [] make it deploy (vercel)
+<span style="color: #ff6c6b;">-</span> [] scaffold the basic ui with mock data
+<span style="color: #ff6c6b;">-</span> [] actually set up the database (vercel/database)
+<span style="color: #ff6c6b;">-</span> [] Attach database to the UI
+<span style="color: #ff6c6b;">-</span> [] Add authentication (w/ clerk)
+<span style="color: #ff6c6b;">-</span> [] Add image upload
+<span style="color: #ff6c6b;">-</span> [] Error Management (w/ Sentry)
+<span style="color: #ff6c6b;">-</span> [] Routing / image page(parallel route)
+<span style="color: #ff6c6b;">-</span> [] Delete button (w/ Server Action)
+<span style="color: #ff6c6b;">-</span> [] Analytics (posthog)
+<span style="color: #ff6c6b;">-</span> [] Ratelimiting (upstream)
+
+</pre>
+            </div>
+            <p>
+              use git add -p git commit -m &ldquo;starting point and
+              readme&rdquo; gh repo create Push the exisiting repo Set the path
+              name owner description visibility, add a remote go to vercel.com
+              register with the github account new project / project / import
+              t3gallery go to settings and environment variables paste the
+              database<sub>url</sub> from .env file redeploy the app Uploadthing
+              signup with github uploadthing -&gt; create new project -&gt;
+              t3gallery files-&gt; upload -&gt; upload files In page.tsx
+            </p>
+            <div class="org-src-container">
+              <pre
+                class="src src-javascript"
+              ><span style="color: #51afef;">const</span> <span style="color: #dcaeea;">mockUrls</span> = [getUrls from above file]
+<span style="color: #51afef;">const</span> <span style="color: #dcaeea;">mockImages</span> = mockUrls.map((url,index)=&gt;{
+        id: index + <span style="color: #da8548; font-weight: bold;">1</span>,
+        url,
+})
+
+<span style="color: #51afef;">export</span> <span style="color: #51afef;">default</span> <span style="color: #51afef;">function</span> HomePage(){
+<span style="color: #51afef;">return</span> (
+    &lt;main className = <span style="color: #98be65;">""</span>&gt;
+        &lt;div className=<span style="color: #98be65;">"flex flex-wrap"</span>&gt;
+        {mockImages.map((image)=&gt;{
+            &lt;div key={image.id} className&gt;
+                &lt;img src={image.url}/&gt;
+            &lt;/div&gt;
+        })}
+        Hello
+        &lt;/div&gt;
+    &lt;/main&gt;
+)
+}
+./global.css
+body{
+    @apply bg-black text-white;
+}
+</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-orgbb8e595" class="outline-2">
+        <h2 id="orgbb8e595">
+          <span class="section-number-2">2.</span> React Hooks
+        </h2>
+        <div class="outline-text-2" id="text-2"></div>
+        <div id="outline-container-org0e5689f" class="outline-3">
+          <h3 id="org0e5689f">
+            <span class="section-number-3">2.1.</span> State management
+          </h3>
+          <div class="outline-text-3" id="text-2-1">
+            <p>To work/manage react State</p>
+          </div>
+          <div id="outline-container-org5cef02a" class="outline-4">
+            <h4 id="org5cef02a">
+              <span class="section-number-4">2.1.1.</span> useState
+            </h4>
+            <div class="outline-text-4" id="text-2-1-1">
+              <p>
+                const [var,setVar] = useState(420) destructed as an array state
+                variable and function to update state variable Most commonly
+                used hooks React exists to better manage state Rerender when
+                state changes Best for client components that need simple state
+                Most versatile hook Usage- Mange user input toggle visiblity
+                with boolean value conditionally apply styles counters
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgc60164e" class="outline-4">
+            <h4 id="orgc60164e">
+              <span class="section-number-4">2.1.2.</span> useReducer
+            </h4>
+            <div class="outline-text-4" id="text-2-1-2">
+              <p>
+                Sparsely used for more complex state management used when one
+                has a lot of related state it has a reducer function to update
+                state can greatly simply the code
+              </p>
+
+              <div class="org-src-container">
+                <pre
+                  class="src src-js"
+                ><span style="color: #51afef;">const</span> <span style="color: #dcaeea;">reducer</span> = (state,action) =&gt; {
+    <span style="color: #51afef;">switch</span>(action){
+        <span style="color: #51afef;">case</span> <span style="color: #98be65;">'increment'</span>:
+            <span style="color: #51afef;">return</span> state+<span style="color: #da8548; font-weight: bold;">1</span>
+    }}
+<span style="color: #51afef;">const</span> [<span style="color: #dcaeea;">count</span>,<span style="color: #dcaeea;">dispatch</span>] = useReducer(reducer,<span style="color: #da8548; font-weight: bold;">0</span>)
+&lt;button onclick={()=&gt;dispatch(<span style="color: #98be65;">'increment'</span>)}&gt;Increment&lt;/button&gt;
+
+</pre>
+              </div>
+              <ol class="org-ol">
+                <li>takes a reducer and inital state</li>
+                <li>returns state and dispatch</li>
+                <li>calls reducer with an action</li>
+                <li>set state conditional based off the action dispatched</li>
+              </ol>
+
+              <p>
+                It works well with simplifying state values with multiple state
+                values Dependent state Highly interactive apps
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org4958128" class="outline-4">
+            <h4 id="org4958128">
+              <span class="section-number-4">2.1.3.</span> useSyncExternalStore
+            </h4>
+            <div class="outline-text-4" id="text-2-1-3">
+              <p>
+                Very rarely used to integreate non react state stores with React
+                For state mangement library
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-orgd108ed0" class="outline-3">
+          <h3 id="orgd108ed0">
+            <span class="section-number-3">2.2.</span> Ref Hooks
+          </h3>
+          <div class="outline-text-3" id="text-2-2">
+            <p>To reference javascript values or DOM elements</p>
+          </div>
+          <div id="outline-container-org21ec23b" class="outline-4">
+            <h4 id="org21ec23b">
+              <span class="section-number-4">2.2.1.</span> useRef
+            </h4>
+          </div>
+          <div id="outline-container-orgfe2f7e7" class="outline-4">
+            <h4 id="orgfe2f7e7">
+              <span class="section-number-4">2.2.2.</span> useImperativeHandle
+            </h4>
+            <div class="outline-text-4" id="text-2-2-2">
+              <p>
+                Used to Step outside react refs are an &rsquo;escape
+                hatch&rsquo; refs lets us remember data like useState
+                don&rsquo;t trigger a re render
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orga1800a5" class="outline-4">
+            <h4 id="orga1800a5">
+              <span class="section-number-4">2.2.3.</span> useRef()
+            </h4>
+            <div class="outline-text-4" id="text-2-2-3">
+              <p>const ref = useRef(0) ref.current</p>
+
+              <ol class="org-ol">
+                <li>Pass an intial value</li>
+                <li>access ref directly</li>
+                <li>use current property to access the current value</li>
+              </ol>
+
+              <p>
+                refs are mutable (can modify directly) but states are immutable
+                (Can&rsquo;t modified directly) ref.current =
+                &rsquo;something&rsquo;
+              </p>
+
+              <p>refs can also store DOM element</p>
+            </div>
+          </div>
+          <div id="outline-container-org6a4dc5b" class="outline-4">
+            <h4 id="org6a4dc5b">
+              <span class="section-number-4">2.2.4.</span>
+              userImperativeHandle()
+            </h4>
+            <div class="outline-text-4" id="text-2-2-4">
+              <p>
+                a ref hook but rarely used used only when you need to forward a
+                ref used in combination with forwardRef used to expose a method
+                to the parent component
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org52e73fd" class="outline-3">
+          <h3 id="org52e73fd">
+            <span class="section-number-3">2.3.</span> Effect Hooks
+          </h3>
+          <div class="outline-text-3" id="text-2-3">
+            <p>Effect Hooks to perform Side effects</p>
+          </div>
+          <div id="outline-container-org5068f88" class="outline-4">
+            <h4 id="org5068f88">
+              <span class="section-number-4">2.3.1.</span> useEffect
+            </h4>
+            <div class="outline-text-4" id="text-2-3-1">
+              <p>
+                Used to perform side effects in react For most side effects Runs
+                after paint Asynchronous Side effect let you synchronize with a
+                system outside react
+              </p>
+
+              <p>
+                const [count,setCount] = useState(0) useEffect(()=&gt;{
+                docuement.title = &rsquo;You clicked ${count} times&rsquo;
+                },[count]) &lt;button onclick={()=&gt; setCount(count+1)}&gt;
+              </p>
+
+              <ol class="org-ol">
+                <li>Add a function to run</li>
+                <li>Add dependencies to array</li>
+                <li>Updatea tile when count changes</li>
+              </ol>
+
+              <p>Ideal for syncing your react code with browser API</p>
+
+              <p>Types of sideeffect</p>
+              <ol class="org-ol">
+                <li>
+                  Event Based Which run some event takes place Button click Use
+                  a eventHandler for this
+                </li>
+                <li>
+                  Render Based Which runs after render fetching data Use a react
+                  query or framework tool
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div id="outline-container-orge9464ee" class="outline-4">
+            <h4 id="orge9464ee">
+              <span class="section-number-4">2.3.2.</span> useLayoutEffect
+            </h4>
+            <div class="outline-text-4" id="text-2-3-2">
+              <p>
+                More limited than useEffects runs before paint Synchronous Used
+                to Set inital state from browser API
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org6579ef6" class="outline-4">
+            <h4 id="org6579ef6">
+              <span class="section-number-4">2.3.3.</span> useInsertionEffect
+            </h4>
+            <div class="outline-text-4" id="text-2-3-3">
+              <p>
+                A lesser known hooks used by CSS and JS library maker runs
+                before any effect hooks Used to insert styles
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org3afed6a" class="outline-3">
+          <h3 id="org3afed6a">
+            <span class="section-number-3">2.4.</span> Context Hooks
+          </h3>
+          <div class="outline-text-3" id="text-2-4">
+            <p>To read from react Contex</p>
+          </div>
+          <div id="outline-container-org5784f21" class="outline-4">
+            <h4 id="org5784f21">
+              <span class="section-number-4">2.4.1.</span> useContext
+            </h4>
+            <div class="outline-text-4" id="text-2-4-1">
+              <p>
+                Used to read the context values use context must called inside
+                Provider useContext is made to read this value
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org6840650" class="outline-3">
+          <h3 id="org6840650">
+            <span class="section-number-3">2.5.</span> Random Hooks
+          </h3>
+          <div class="outline-text-3" id="text-2-5"></div>
+          <div id="outline-container-org1965d39" class="outline-4">
+            <h4 id="org1965d39">
+              <span class="section-number-4">2.5.1.</span> useDebugValue
+            </h4>
+            <div class="outline-text-4" id="text-2-5-1">
+              <p>
+                used with react dev tools used to label customs hooks with
+                custom values function useOnlineStatus(){
+                useDebugValue(&ldquo;online&rdquo;) }
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org2a3a462" class="outline-4">
+            <h4 id="org2a3a462">
+              <span class="section-number-4">2.5.2.</span> useId
+            </h4>
+            <div class="outline-text-4" id="text-2-5-2">
+              <p>
+                It creates unique Ids no arguments needed dont use to generate
+                keys in list keys should come from data best for id prop on form
+                fields
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-orge175aba" class="outline-3">
+          <h3 id="orge175aba">
+            <span class="section-number-3">2.6.</span> React 19 Hooks
+          </h3>
+          <div class="outline-text-3" id="text-2-6">
+            <p>Powerful new hook introduced in react 19</p>
+          </div>
+          <div id="outline-container-org95d79b6" class="outline-4">
+            <h4 id="org95d79b6">
+              <span class="section-number-4">2.6.1.</span> useFormStatus
+            </h4>
+          </div>
+          <div id="outline-container-orgbe674f6" class="outline-4">
+            <h4 id="orgbe674f6">
+              <span class="section-number-4">2.6.2.</span> useFormState
+            </h4>
+          </div>
+          <div id="outline-container-org43a0a07" class="outline-4">
+            <h4 id="org43a0a07">
+              <span class="section-number-4">2.6.3.</span> useOptimistic
+            </h4>
+          </div>
+          <div id="outline-container-org30a0f36" class="outline-4">
+            <h4 id="org30a0f36">
+              <span class="section-number-4">2.6.4.</span> use
+            </h4>
+          </div>
+        </div>
+        <div id="outline-container-org2a454ea" class="outline-3">
+          <h3 id="org2a454ea">
+            <span class="section-number-3">2.7.</span> Transition Hooks
+          </h3>
+          <div class="outline-text-3" id="text-2-7">
+            <p>To use transition for better UX</p>
+          </div>
+          <div id="outline-container-org9060fe6" class="outline-4">
+            <h4 id="org9060fe6">
+              <span class="section-number-4">2.7.1.</span> useTransition
+            </h4>
+          </div>
+          <div id="outline-container-orga7a1925" class="outline-4">
+            <h4 id="orga7a1925">
+              <span class="section-number-4">2.7.2.</span> useDeferredValue
+            </h4>
+          </div>
+
+          <div id="outline-container-org2c6cbf5" class="outline-4">
+            <h4 id="org2c6cbf5">
+              <span class="section-number-4">2.7.3.</span> useTransition()
+            </h4>
+            <div class="outline-text-4" id="text-2-7-3">
+              <p>
+                all state updates are urgent by default to specify certain
+                updates are non urgent good for heavy computation transition can
+                make app more interactiveh it also gives us a isPending to show
+                pending state
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org33b876f" class="outline-4">
+            <h4 id="org33b876f">
+              <span class="section-number-4">2.7.4.</span> useDeferredValue()
+            </h4>
+            <div class="outline-text-4" id="text-2-7-4">
+              <p>
+                let you defer updates to keep your apps responsive similar to
+                useTransition schedule an update at an optimal time const
+                [query,setQuery] = useState(&ldquo;&rdquo;) const deferredQuery
+                = useDeferredValue(query) great for filtering list no pending
+                state
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org117bf3a" class="outline-3">
+          <h3 id="org117bf3a">
+            <span class="section-number-3">2.8.</span> Performance Hooks
+          </h3>
+          <div class="outline-text-3" id="text-2-8">
+            <p>To improve app performance with memoization</p>
+          </div>
+          <div id="outline-container-org26a19e8" class="outline-4">
+            <h4 id="org26a19e8">
+              <span class="section-number-4">2.8.1.</span> useMemo
+            </h4>
+            <div class="outline-text-4" id="text-2-8-1">
+              <p>
+                hook made to improve app performance uses memoization to remeber
+                values by caching previous results calcualates values only when
+                dependencies change good for expensive computation not for side
+                effects and must return a value
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orge818277" class="outline-4">
+            <h4 id="orge818277">
+              <span class="section-number-4">2.8.2.</span> useCallback
+            </h4>
+            <div class="outline-text-4" id="text-2-8-2">
+              <p>
+                similar to useMemo for callback function not computated values
+                greate for functions passed as a props prevents callback
+                function from being remade
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-org8332cab" class="outline-2">
+        <h2 id="org8332cab">
+          <span class="section-number-2">3.</span> Concepts
+        </h2>
+        <div class="outline-text-2" id="text-3"></div>
+        <div id="outline-container-org6d31e43" class="outline-3">
+          <h3 id="org6d31e43">
+            <span class="section-number-3">3.1.</span> Components
+          </h3>
+          <div class="outline-text-3" id="text-3-1">
+            <p>
+              Building blocks of react app all the visibile parts of the app can
+              be reused indefinitely It is a js function which return markup As
+              react in a JS libarary it return JSX JSX is optional written in
+              camelCase So no html Attributes class className
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org0c5738d" class="outline-3">
+          <h3 id="org0c5738d">
+            <span class="section-number-3">3.2.</span> JSX
+          </h3>
+          <div class="outline-text-3" id="text-3-2">
+            <p>
+              HTML is static React helps in using dynamic javascript Values {}
+              to use data from variables to use in attribute {{}} to use style
+              JS functions return one thing components must return one element
+              &lt;&gt;&lt;/&gt; a react fragment
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org0f59beb" class="outline-3">
+          <h3 id="org0f59beb">
+            <span class="section-number-3">3.3.</span> Props
+          </h3>
+          <div class="outline-text-3" id="text-3-3">
+            <p>
+              To send data into another component refers to propeteries on a
+              object accessed like a object property used just like a tag
+              attribute &lt;p text = {&rsquo;YO&rsquo;}&gt; can be accessed in
+              the components function p(props){ return
+              &lt;p&gt;props.text&lt;/p&gt; }
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org74e82b2" class="outline-3">
+          <h3 id="org74e82b2">
+            <span class="section-number-3">3.4.</span> Children
+          </h3>
+          <div class="outline-text-3" id="text-3-4">
+            <p>
+              We can pass anything as a prop even other component this passing
+              can be done using children props &lt;Parent&gt; &lt;Child/&gt;
+              &lt;/Parent&gt;
+            </p>
+
+            <p>
+              function Parent(props){ return
+              &lt;div&gt;{props.children}&lt;/div&gt; } Used for composition for
+              optimially organizing our components Great for layout components
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org8a599c7" class="outline-3">
+          <h3 id="org8a599c7">
+            <span class="section-number-3">3.5.</span> Key Props
+          </h3>
+          <div class="outline-text-3" id="text-3-5">
+            <p>
+              is builtIn Props for react Used to distinguish components it is a
+              unique number or string to identify a components
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org6418f58" class="outline-3">
+          <h3 id="org6418f58">
+            <span class="section-number-3">3.6.</span> Rendering
+          </h3>
+          <div class="outline-text-3" id="text-3-6">
+            <p>
+              To change the code into the browser page How and when to react is
+              determined by VDOM or virtual dom DOM Document Object Model is
+              used by the browser to model all the webpages It looks like a tree
+            </p>
+
+            <ol class="org-ol">
+              <li>If state of the react app is changes</li>
+              <li>React updates the VDOM</li>
+              <li>
+                React uses Diffing Algorithm to find differnnce between VDOM and
+                DOM
+              </li>
+              <li>Reconciliation is done by react to update the DOM</li>
+            </ol>
+          </div>
+        </div>
+        <div id="outline-container-org7ea41cb" class="outline-3">
+          <h3 id="org7ea41cb">
+            <span class="section-number-3">3.7.</span> Event Handling
+          </h3>
+          <div class="outline-text-3" id="text-3-7">
+            <p>
+              clicks mouse movements and key presses event handling is taking
+              these user events and do something
+            </p>
+            <ol class="org-ol">
+              <li>onClick</li>
+              <li>onChange</li>
+              <li>onSubmit</li>
+            </ol>
+
+            <p>
+              To show an alert for clicking a button we will add a onclick props
+              to the button then write a function which will actually show that
+              alert
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org968fe4b" class="outline-3">
+          <h3 id="org968fe4b">
+            <span class="section-number-3">3.8.</span> Data mangement
+          </h3>
+          <div class="outline-text-3" id="text-3-8">
+            <p>
+              We need to use state state is like a snapshot of the app at a
+              particular time To manage we can use basic simple variable We have
+              to use React hooks useState or useReducer to handle state
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org1781f1c" class="outline-3">
+          <h3 id="org1781f1c">
+            <span class="section-number-3">3.9.</span> Control components
+          </h3>
+          <div class="outline-text-3" id="text-3-9">
+            <p>
+              These use state values to have more predictable behaviour
+              onChange{(e)=&gt;setValue(e.target.value)} great to use we just
+              have to change the state that is being used
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org122d22e" class="outline-3">
+          <h3 id="org122d22e">
+            <span class="section-number-3">3.10.</span> Hooks
+          </h3>
+          <div class="outline-text-3" id="text-3-10">
+            <p>
+              these allow us to hook into features such as State into function
+              components State hooks, COntext hooks, ref Hooks, Effect hooks,
+              Performance hooks
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-orgc7bb554" class="outline-3">
+          <h3 id="orgc7bb554">
+            <span class="section-number-3">3.11.</span> Purity
+          </h3>
+          <div class="outline-text-3" id="text-3-11">
+            <p>
+              How react components would render same for same props Only return
+              JSX doesnt changes objects that existed before rendering
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org19dc379" class="outline-3">
+          <h3 id="org19dc379">
+            <span class="section-number-3">3.12.</span> Strict Mode
+          </h3>
+          <div class="outline-text-3" id="text-3-12">
+            <p>
+              Special componentsthat tells us about our mistakes during
+              development
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org69294c4" class="outline-3">
+          <h3 id="org69294c4">
+            <span class="section-number-3">3.13.</span> Effects
+          </h3>
+          <div class="outline-text-3" id="text-3-13">
+            <p>
+              Used to talk outside react to Browser APi or fetch data Done
+              within event handlers Else useEffect hook
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org257fa5a" class="outline-3">
+          <h3 id="org257fa5a">
+            <span class="section-number-3">3.14.</span> Refs
+          </h3>
+          <div class="outline-text-3" id="text-3-14">
+            <p>
+              Work directly with DOM const ref = useRef() &lt;Button
+              ref={ref}/&gt; ref.current.focus()
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-orgb02004b" class="outline-3">
+          <h3 id="orgb02004b">
+            <span class="section-number-3">3.15.</span> Context
+          </h3>
+          <div class="outline-text-3" id="text-3-15">
+            <p>
+              To pass props data through components React apps have nested
+              components To avoid give same props to components on each level
+              COntext lets us jump this tree use data any levels without props
+              const AppContext = createContext() &lt;AppContext.Provider
+              value=&ldquo;helo&rdquo;&gt; &lt;App/&gt;
+              &lt;AppContext.Provider/&gt;
+            </p>
+
+            <p>Access this value using</p>
+
+            <p>
+              function title(){ const text = useContext(AppContext) return
+              &lt;h1&gt;{text}&lt;/h1&gt; }
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org6776d50" class="outline-3">
+          <h3 id="org6776d50">
+            <span class="section-number-3">3.16.</span> Portal
+          </h3>
+          <div class="outline-text-3" id="text-3-16">
+            <p>
+              Portals are like context but for components Move react components
+              between html elements Prefect for modals tooltips and dropdowns
+              createPortal(&lt;p&gt;This is a portal&lt;/p&gt;,document.body)
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org2e1f775" class="outline-3">
+          <h3 id="org2e1f775">
+            <span class="section-number-3">3.17.</span> Suspense
+          </h3>
+          <div class="outline-text-3" id="text-3-17">
+            <p>
+              Component to wait for something to load &lt;Suspense fallback =
+              {&lt;Loading/&gt;} &lt;Component/&gt; &lt;/Suspense Helpful for
+              better UX while data is being fetched displaying fallback c
+              component usef for lazy loading components to load components when
+              they are needed
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-orgf35456d" class="outline-3">
+          <h3 id="orgf35456d">
+            <span class="section-number-3">3.18.</span> Error Boundaries
+          </h3>
+          <div class="outline-text-3" id="text-3-18">
+            <p>
+              components to catch errors and give a better reponse
+              &lt;ErrorBoundary FallbackComponent={Fallback}&gt; &lt;App/&gt;
+              &lt;/ErrorBoundary&gt;
+            </p>
+
+            <p>
+              Show the Fallback component when an error has occured in the App
+              components
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-orge739dc2" class="outline-2">
+        <h2 id="orge739dc2">
+          <span class="section-number-2">4.</span> Complete Intro to React V18
+        </h2>
+        <div class="outline-text-2" id="text-4">
+          <p>
+            React is used because it has few API to build Frontend Good at
+            handling lots of state and not opionated about data, renders Also
+            flow of data is legible V8 introduced React Query and Reac Toolkit
+          </p>
+        </div>
+        <div id="outline-container-orge92c66b" class="outline-3">
+          <h3 id="orge92c66b">
+            <span class="section-number-3">4.1.</span> Pure React
+          </h3>
+          <div class="outline-text-3" id="text-4-1">
+            <p>React app without the Create React App Rawdogging react in JS</p>
+            <div class="org-src-container">
+              <pre
+                class="src src-html"
+              >&lt;<span style="color: #51afef;">!DOCTYPE</span> html&gt;
+&lt;<span style="color: #c678dd;">html</span> <span style="color: #dcaeea;">lang</span>=<span style="color: #98be65;">"en"</span>&gt;
+
+&lt;<span style="color: #c678dd;">head</span>&gt;
+  &lt;<span style="color: #c678dd;">meta</span> <span style="color: #dcaeea;">charset</span>=<span style="color: #98be65;">"UTF-8"</span>&gt;
+  &lt;<span style="color: #c678dd;">meta</span> <span style="color: #dcaeea;">name</span>=<span style="color: #98be65;">"viewport"</span> <span style="color: #dcaeea;">content</span>=<span style="color: #98be65;">"width=device-width, initial-scale=1.0"</span>&gt;
+  &lt;<span style="color: #c678dd;">meta</span> <span style="color: #dcaeea;">http-equiv</span>=<span style="color: #98be65;">"X-UA-Compatible"</span> <span style="color: #dcaeea;">content</span>=<span style="color: #98be65;">"ie=edge"</span>&gt;
+  &lt;<span style="color: #c678dd;">link</span> <span style="color: #dcaeea;">rel</span>=<span style="color: #98be65;">"stylesheet"</span> <span style="color: #dcaeea;">href</span>=<span style="color: #98be65;">"./style.css"</span>&gt;
+  &lt;<span style="color: #c678dd;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Adopt Me</span>&lt;/<span style="color: #c678dd;">title</span>&gt;
+&lt;/<span style="color: #c678dd;">head</span>&gt;
+
+&lt;<span style="color: #c678dd;">body</span>&gt;
+  &lt;<span style="color: #c678dd;">div</span> <span style="color: #dcaeea;">id</span>=<span style="color: #98be65;">"root"</span>&gt;not rendered&lt;/<span style="color: #c678dd;">div</span>&gt;
+  &lt;<span style="color: #c678dd;">script</span> <span style="color: #dcaeea;">src</span>=<span style="color: #98be65;">"https://unpkg.com/react@18.2.0/umd/react.development.js"</span>&gt;&lt;/<span style="color: #c678dd;">script</span>&gt;
+  &lt;<span style="color: #c678dd;">script</span> <span style="color: #dcaeea;">src</span>=<span style="color: #98be65;">"https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"</span>&gt;&lt;/<span style="color: #c678dd;">script</span>&gt;
+  &lt;<span style="color: #c678dd;">script</span>&gt;
+    // Your code is going to go here
+    const App = () =&gt; {
+  return React.createElement(
+    "div",
+    {},
+    React.createElement("h1", {}, "Adopt Me!")
+  );
+};
+
+const container = document.getElementById("root");
+const root = ReactDOM.createRoot(container);
+root.render(React.createElement(App));
+  &lt;/<span style="color: #c678dd;">script</span>&gt;
+&lt;/<span style="color: #c678dd;">body</span>&gt;
+
+&lt;/<span style="color: #c678dd;">html</span>&gt;
+</pre>
+            </div>
+            <p>
+              First 2 tags contain the JS file for react18 and reactDOM to allow
+              react as global variable ReactDOM is seperate because react can be
+              used in React Native but the code remains the same only the
+              renderer differs which in this case is the reactDOM We can see
+              these file on the network tab All Components must start with
+              Capital letter react.creatElement(tag,{},&ldquo;Inner text&rdquo;)
+              First is the tag which we want to create Second is the object from
+              where to take attributes from which include id classname or
+              style,etc Third is the children of the tag This can be taken as a
+              class which can be initialized We take the a element as the root
+              by ReactDOM.createRoot(container) then we render the app by
+              root.render(React.createElement(App)) We give a component to
+              createElement as we can use it to create some tag by using string
+              or use it to create a Component by giving it a function So we can
+              create components out of components which can reused as many times
+              as needed createElement has the attributes and children are
+              optionals We can create components with let, var, const createRoot
+              was not in the previous verions of react It tells react to not use
+              the legacy code which helps in concurrency We can use root.render
+              to re render our react application as per our need Components must
+              return markup always CreatElement can take a array of elements or
+              extend the number of children in the element but at the end it
+              will act as an array
+            </p>
+            <div class="org-src-container">
+              <pre
+                class="src src-javascript"
+              ><span style="color: #51afef;">const</span> <span style="color: #dcaeea;">Pet</span> = () =&gt; {
+    <span style="color: #51afef;">return</span> React.createElement(<span style="color: #98be65;">"div"</span>,{},[
+        React.createElement(<span style="color: #98be65;">"h1"</span>,{},<span style="color: #98be65;">"June"</span>),
+        React.createElement(<span style="color: #98be65;">"h1"</span>,{},<span style="color: #98be65;">"Kaho"</span>),
+        React.createElement(<span style="color: #98be65;">"h1"</span>,{},<span style="color: #98be65;">"Sydsnap"</span>),
+        React.createElement(<span style="color: #98be65;">"h1"</span>,{},<span style="color: #98be65;">"Akidearest"</span>),
+    ])
+}
+</pre>
+            </div>
+            <p>
+              One Way Data flow means that Data can flow from App to Pet then
+              further but not back For this we use props object on the child
+              component from where we take various attributes values which are
+              send by the parent in form of another object
+            </p>
+
+            <div class="org-src-container">
+              <pre
+                class="src src-javascript"
+              ><span style="color: #51afef;">const</span> <span style="color: #dcaeea;">App</span> = ()=&gt;{ <span style="color: #5B6268;">// </span><span style="color: #5B6268;">Always Capitalize the Components</span>
+    <span style="color: #51afef;">return</span> React.createElement(
+        <span style="color: #98be65;">"div"</span>,<span style="color: #5B6268;">//</span><span style="color: #5B6268;">Name of the Tag</span>
+        {},<span style="color: #5B6268;">// </span><span style="color: #5B6268;">Properties of the Tag like ID, Class, etc Optional</span>
+        [React.createElement( <span style="color: #5B6268;">//</span><span style="color: #5B6268;">The Children of the tag  Optional</span>
+            <span style="color: #98be65;">"h1"</span>,{},<span style="color: #98be65;">"Hello world"</span>),
+            React.createElement(Pet,{a:<span style="color: #98be65;">"June"</span>,b:<span style="color: #98be65;">"Kaho"</span>,c:<span style="color: #98be65;">"Sydsnap"</span>}),
+            React.createElement(Pet),
+            React.createElement(Pet),
+        ]
+    )
+};
+
+<span style="color: #51afef;">const</span> <span style="color: #dcaeea;">Pet</span> = (props) =&gt; {
+    <span style="color: #51afef;">return</span> React.createElement(<span style="color: #98be65;">"div"</span>,{},[
+        React.createElement(<span style="color: #98be65;">"h1"</span>,{},props.a),
+        React.createElement(<span style="color: #98be65;">"h1"</span>,{},props.b),
+        React.createElement(<span style="color: #98be65;">"h1"</span>,{},props.c),
+    ])
+}
+</pre>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org2ddcf25" class="outline-3">
+          <h3 id="org2ddcf25">
+            <span class="section-number-3">4.2.</span> NPM and Prettier
+          </h3>
+          <div class="outline-text-3" id="text-4-2">
+            <p>
+              React.createElement is reused again and again So we will use JSX
+              which will render back to html
+            </p>
+
+            <p>
+              npm init -y To add various dependencies we use a package -y to
+              skip all the questions
+            </p>
+
+            <p>
+              Prettier can be used to handle the indentation and the semicolons,
+              commas and other to allow use to focus on the code itself
+            </p>
+
+            <p>
+              npm i -D prettier -D to send this to developer dependencies not
+              the project dependencies touch .prettierrc for the configurations
+              use a {} for all the default options Make Sure Format on Paste,
+              prettier require config and Format on Save are checked And make
+              sure it is the default formatter
+            </p>
+
+            <p>
+              ESlint catchs all the simple JS errors npm - -D eslint
+              eslint-config-prettier touch .eslintrc.json
+            </p>
+
+            <div class="org-src-container">
+              <pre class="src src-json">
+{
+    "extends":[
+        "eslint:recommended",
+        "prettier"
+    ],
+    "plugins": [],
+    "parserOptions": {
+        "ecmaVersion": 2022,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "env": {
+        "es6": true,
+        "browser": true,
+        "node": true
+    }
+}
+</pre
+              >
+            </div>
+            <p>
+              eslint:recommended uses the eslint recommended settings prettier
+              tells that there is not need for code formatiing parsserOptions
+              tells what ecma version we are using, what sourceType is this and
+              if we are using jsx We are using es6, in browser and in node and
+              allow their features
+            </p>
+
+            <p>
+              npm run lint &#x2013; &#x2013;debug passing &#x2013;debug to lint
+              npm run lint &#x2013; &#x2013;fix to fix some issue
+            </p>
+
+            <p>make .gitignore</p>
+
+            <p>node<sub>modules</sub>/ dist/ .env coverage/ .vscode/</p>
+
+            <p>vite is built by vue team For fast react creation</p>
+
+            <p>npm i -D vite@3.1.4 vitejs/plugin-react@2.10</p>
+
+            <p>Delete the 2 script tags</p>
+
+            <p>
+              use type=&ldquo;module&rdquo; in the third file and change src to
+              jsx
+            </p>
+
+            <p>touch vite.config.js</p>
+            <div class="org-src-container">
+              <pre
+                class="src src-javascript"
+              ><span style="color: #51afef;">import</span> { defineConfig } from <span style="color: #98be65;">"vite"</span>;
+<span style="color: #51afef;">import</span> { react } from <span style="color: #98be65;">"@vitejs/plugin-React"</span>;
+
+<span style="color: #51afef;">export</span> <span style="color: #51afef;">default</span> defineConfig({
+  plugins: [react()],
+  root: <span style="color: #98be65;">"src"</span>,
+});
+
+</pre>
+            </div>
+            <p>parcel is zero config</p>
+
+            <p>
+              It is the almost complete build process It goes in /src find the
+              app.jsx and then crawls the whole application
+            </p>
+
+            <p>npm i react@18.2.0 react-dom@18.2.0</p>
+
+            <p>
+              The import plugin helps ESLint catch commons bugs around imports,
+              exports, and modules in general jsx-a11y catches many bugs around
+              accessibility that can accidentally arise using React, like not
+              having an alt attribute on an img tag. react is mostly common
+              React bugs like not calling one of your props children.
+              eslint-plugin-react now requires you to inform of it what version
+              of React you&rsquo;re using. We&rsquo;re telling it here to look
+              at the package.json to figure it out.
+              &ldquo;react/react-in-jsx-scope&rdquo;: 0 is new since you used to
+              have to import React everywhere but now with the recent revision
+              of React you don&rsquo;t need to. Prop types allow you to add
+              types to a component&rsquo;s props at runtime. In general if
+              you&rsquo;re interested in doing that just use TypeScript. We need
+              to set the import plugin to look for both js and jsx extensions or
+              else it won&rsquo;t resolve imports for us.
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org5c1139c" class="outline-3">
+          <h3 id="org5c1139c">
+            <span class="section-number-3">4.3.</span> Core React Concepts
+          </h3>
+          <div class="outline-text-3" id="text-4-3">
+            <p>
+              JSX is being used to imitate HTML So instead of using JSX to JS to
+              HTML we can directly use JSX Vite allows us to seperate these
+              components into their seperate files which helps in seperation of
+              concerns
+            </p>
+
+            <p>
+              As this increases readability so adding a build setup cost is
+              valid Pet.jsx
+            </p>
+            <div class="org-src-container">
+              <pre
+                class="src src-javascript"
+              ><span style="color: #51afef;">import</span> React from <span style="color: #98be65;">"react"</span>;
+<span style="color: #51afef;">const</span> <span style="color: #dcaeea;">Pet</span> = (props) =&gt; {
+  <span style="color: #51afef;">return</span> (
+    &lt;<span style="color: #c678dd;">div</span>&gt;
+<span style="color: #bbc2cf; background-color: #21242b;">      </span>&lt;<span style="color: #c678dd;">h1</span>&gt;{props.name}&lt;/<span style="color: #c678dd;">h1</span>&gt;
+<span style="color: #bbc2cf; background-color: #21242b;">      </span>&lt;<span style="color: #c678dd;">h2</span>&gt;{props.animal}&lt;/<span style="color: #c678dd;">h2</span>&gt;
+<span style="color: #bbc2cf; background-color: #21242b;">      </span>&lt;<span style="color: #c678dd;">h2</span>&gt;{props.breed}&lt;/<span style="color: #c678dd;">h2</span>&gt;
+<span style="color: #bbc2cf; background-color: #21242b;">    </span>&lt;/<span style="color: #c678dd;">div</span>&gt;
+  );
+};
+<span style="color: #51afef;">export</span> <span style="color: #51afef;">default</span> Pet;
+
+</pre>
+            </div>
+
+            <p>
+              export default is for ECMA script export eport const Thing = Pet;
+            </p>
+
+            <p>
+              by capitalize components we tell vite that it is a componets and
+              deiffer from normal tag which are exported as it is components are
+              self closing tag
+            </p>
+            <div class="org-src-container">
+              <pre
+                class="src src-javascript"
+              >&lt;Pet name=<span style="color: #98be65;">"luna"</span> animal=<span style="color: #98be65;">"dog"</span> breed=<span style="color: #98be65;">"golden"</span>
+</pre>
+            </div>
+            <p>ESLINT is useful for TS also</p>
+          </div>
+        </div>
+        <div id="outline-container-org636f036" class="outline-3">
+          <h3 id="org636f036">
+            <span class="section-number-3">4.4.</span> Hooks
+          </h3>
+          <div class="outline-text-3" id="text-4-4">
+            <p>
+              cant use class in jsx as class is a keyword for js cant use for in
+              jsx as for is a keyword for loop
+            </p>
+
+            <p>
+              React app will re render the application everytime some change.
+            </p>
+            <div class="org-src-container">
+              <pre
+                class="src src-javascript"
+              ><span style="color: #51afef;">const</span> [<span style="color: #dcaeea;">location</span>,<span style="color: #dcaeea;">setLocation</span>] = useState(<span style="color: #98be65;">"Seattle, WA"</span>)
+
+&lt;input value={location} onchange=(e)=&gt;{setLocation(e.target.value) }&gt;
+
+</pre>
+            </div>
+            <p>
+              setlocation will take the value to update the location Hooks need
+              to be called in order everytime Don&rsquo;t use conditionals or
+              iterations with hooks rendering call the functions multiple times
+            </p>
+
+            <p>
+              const is called only once. It is reassigned when the function runs
+              again. Let can also be used All hooks start with use useState
+              returns an array of variable and function to change the variable
+            </p>
+
+            <div class="org-src-container">
+              <pre class="src src-javascript">
+          &lt;option /&gt;
+          {ANIMALS.map((animal) =&gt; (
+            &lt;option key={animal}&gt;{animal}&lt;/option&gt;
+          ))}
+        &lt;/select&gt;
+
+</pre
+              >
+            </div>
+            <p>As this returns an array that will rendered by react</p>
+            <div class="org-src-container">
+              <pre
+                class="src src-javascript"
+              ><span style="color: #51afef;">import</span> { useState } from <span style="color: #98be65;">"react"</span>;
+
+<span style="color: #51afef;">const</span> <span style="color: #dcaeea;">ANIMALS</span> = [<span style="color: #98be65;">"bird"</span>, <span style="color: #98be65;">"cat"</span>, <span style="color: #98be65;">"dog"</span>, <span style="color: #98be65;">"rabbit"</span>, <span style="color: #98be65;">"reptile"</span>];
+
+<span style="color: #51afef;">const</span> <span style="color: #dcaeea;">SearchParams</span> = () =&gt; {
+  <span style="color: #51afef;">const</span> [<span style="color: #dcaeea;">location</span>, <span style="color: #dcaeea;">setLocation</span>] = useState(<span style="color: #98be65;">""</span>);
+  <span style="color: #51afef;">const</span> [<span style="color: #dcaeea;">animal</span>, <span style="color: #dcaeea;">setAnimal</span>] = useState(<span style="color: #98be65;">""</span>);
+  <span style="color: #51afef;">const</span> [<span style="color: #dcaeea;">breed</span>, <span style="color: #dcaeea;">setBreed</span>] = useState(<span style="color: #98be65;">""</span>);
+
+  <span style="color: #51afef;">const</span> <span style="color: #dcaeea;">breeds</span> = [<span style="color: #98be65;">"poodle"</span>];
+
+  <span style="color: #51afef;">return</span> (
+    &lt;div className=<span style="color: #98be65;">"search-params"</span>&gt;
+      &lt;form action=<span style="color: #98be65;">""</span>&gt;
+        &lt;label htmlFor=<span style="color: #98be65;">"location"</span>&gt;
+          Location
+          &lt;input
+            onChange={(e) =&gt; setLocation(e.target.value)}
+            type=<span style="color: #98be65;">"location"</span>
+            value={location}
+            placeholder=<span style="color: #98be65;">"location"</span>
+          /&gt;
+        &lt;/label&gt;
+        &lt;label htmlFor=<span style="color: #98be65;">"animal"</span>&gt;Animal&lt;/label&gt;
+        &lt;select
+          name=<span style="color: #98be65;">"animal"</span>
+          id=<span style="color: #98be65;">"animal"</span>
+          value={animal}
+          onChange={(e) =&gt; {
+            setAnimal(e.target.value);
+            setBreed(<span style="color: #98be65;">""</span>);
+          }}
+        &gt;
+          &lt;option /&gt;
+          {ANIMALS.map((animal) =&gt; (
+            &lt;option key={animal}&gt;{animal}&lt;/option&gt;
+          ))}
+        &lt;/select&gt;
+        &lt;label htmlFor=<span style="color: #98be65;">"breed"</span>&gt;Breed&lt;/label&gt;
+
+        &lt;select
+          onChange={(e) =&gt; setBreed(e.target.value)}
+          type=<span style="color: #98be65;">"breed"</span>
+          value={breed}
+          disabled={breeds.length === <span style="color: #da8548; font-weight: bold;">0</span>}
+          placeholder=<span style="color: #98be65;">"breed"</span>
+        &gt;
+          &lt;option /&gt;
+          {breeds.map((breed) =&gt; (
+            &lt;option key={breed}&gt;{breed}&lt;/option&gt;
+          ))}
+        &lt;/select&gt;
+        &lt;button&gt;Submit&lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  );
+};
+
+<span style="color: #51afef;">export</span> <span style="color: #51afef;">default</span> SearchParams;
+
+</pre>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org1bb4196" class="outline-3">
+          <h3 id="org1bb4196">
+            <span class="section-number-3">4.5.</span> Effects
+          </h3>
+          <div class="outline-text-3" id="text-4-5">
+            <p>
+              Effect is for something happening outside the components Generally
+              It is an API request, it can also be API service or Localstorage
+              request or send Network request we use useEffect To avoid whole re
+              rendering of elements we have to use key Key is a unique identifer
+              per item in array Effect will run every time there is a re render
+              of the page So it will cause rate limit We give it an array of
+              dependencies Which will call api only at the beginning Then we can
+              add animal to dependencies which will call the api with animal
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org5d7c47b" class="outline-3">
+          <h3 id="org5d7c47b">
+            <span class="section-number-3">4.6.</span> Custom Hook
+          </h3>
+          <div class="outline-text-3" id="text-4-6">
+            <p>
+              Custom hook is a user defined hook which is created from various
+              other hooks This is a hook to get the breed list for a particular
+              animal We have a local cache to avoid calling the api again and
+              again It also returns a status giving us the status of the request
+            </p>
+            <div class="org-src-container">
+              <pre
+                class="src src-javascript"
+              ><span style="color: #51afef;">import</span> { useState, useEffect } from <span style="color: #98be65;">"react"</span>;
+
+<span style="color: #51afef;">const</span> <span style="color: #dcaeea;">localCache</span> = {};
+
+<span style="color: #51afef;">export</span> <span style="color: #51afef;">default</span> <span style="color: #51afef;">function</span> useBreedList(<span style="color: #dcaeea;">animal</span>) {
+  <span style="color: #51afef;">const</span> [<span style="color: #dcaeea;">breedList</span>, <span style="color: #dcaeea;">setBreedList</span>] = useState([]);
+  <span style="color: #51afef;">const</span> [<span style="color: #dcaeea;">status</span>, <span style="color: #dcaeea;">setStatus</span>] = useState(<span style="color: #98be65;">"unloaded"</span>);
+
+  useEffect(() =&gt; {
+    <span style="color: #51afef;">if</span> (!animal) {
+      setBreedList([]);
+    } <span style="color: #51afef;">else</span> <span style="color: #51afef;">if</span> (localCache[animal]) {
+      setBreedList(localCache[animal]);
+    } <span style="color: #51afef;">else</span> {
+      requestBreedList();
+    }
+    <span style="color: #51afef;">async</span> <span style="color: #51afef;">function</span> requestBreedList() {
+      setBreedList([]);
+      setStatus(<span style="color: #98be65;">"loading"</span>);
+
+      <span style="color: #51afef;">const</span> <span style="color: #dcaeea;">res</span> = <span style="color: #51afef;">await</span> fetch(
+        <span style="color: #98be65;">`https://pets-v2.dev-apis.com/breeds?animal=${animal}`</span>
+      );
+      <span style="color: #51afef;">const</span> <span style="color: #dcaeea;">json</span> = <span style="color: #51afef;">await</span> res.json();
+      localCache[animal] = json.breeds || [];
+      setBreedList(localCache[animal]);
+      setStatus(<span style="color: #98be65;">"loaded"</span>);
+    }
+  }, [animal]);
+  <span style="color: #51afef;">return</span> [breedList, status];
+}
+</pre>
+            </div>
+
+            <p>
+              requestBreedlist is inside useEffect as it is recommended by react
+              and it is part of one effect It must be rendered by one render
+              Async function is a function that returns a promise To do async
+              await inside a function we must do a asynch inside the effect
+              Status helps us to test the program as needed e is a fake dom
+              event or a synthetic react event It is a part of the virtual dom
+              React manages the vritual dom and minimizes the changing then work
+              on the actual but slow dom
+            </p>
+
+            <p>
+              If we do something a lot of times we can extract it WHen something
+              is individual testable, usable or getting too long Smaller Single
+              purpose componets are easy to read, share and understand
+            </p>
+
+            <p>
+              {&#x2026;obj} is called the spread operator. It is similar to JS
+              spread operator It means obj has various properties for the
+              component and spread it to the respective attributes But it is
+              very implicit but it has more information. So we can&rsquo;t know
+              what properties get and from where But we can use it when
+              component is just pass through that means it just useEffect and
+              doesn&rsquo;t need to know anything about it
+            </p>
+
+            <p>
+              Break components when length is getting too long even though we
+              are not reusing it. But don&rsquo;t break the components too much
+              because that will slow the app perfomance Developer package for
+              react is 4 times larger than the production. So don&rsquo;t push
+              the development package to server But vite manages it
+              automatically but else set NODE<sub>ENV</sub>=production Strict
+              mode helps to manage the application when it is changing in major
+              version They Render the apps twice which also make twice api calls
+              just wrap the main app in &lt;StrictMode&gt; React Dev Tools which
+              include Components and Profiler we can modify React App too and
+              see the props which are being passed. State is mutable but props
+              are immutable
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org722c5dc" class="outline-3">
+          <h3 id="org722c5dc">
+            <span class="section-number-3">4.7.</span> React Capabilities
+          </h3>
+          <div class="outline-text-3" id="text-4-7"></div>
+          <div id="outline-container-orgd988c93" class="outline-4">
+            <h4 id="orgd988c93">
+              <span class="section-number-4">4.7.1.</span> React Router
+            </h4>
+            <div class="outline-text-4" id="text-4-7-1">
+              <p>
+                React Router is the most popular client side router. This is
+                used for a website which has many routes to use. Here we have a
+                single page app which we will extend for search and details
+                pages We have to install react-router-dom as an development
+                dependency Then we have to import BrowserRouter, Routes and
+                route from react-router-dom Wrap the code where we want to use
+                routes in &lt;BrowserRouter&gt; React Router used to have a
+                switch component is all gone Now only one route is rendered at a
+                time :id means id is a variable which is accessible in details
+                component There is a hashRouter which will route for path with #
+                Try to avoid it as it leads to bad SEO but can be useful for
+                Django Static Router for Server Side Rendering a tag here will
+                cause the whole app to render to avoid it we use Link Component
+                inside React Router React Router is very good for accessibility
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org231f2cd" class="outline-4">
+            <h4 id="org231f2cd">
+              <span class="section-number-4">4.7.2.</span> UseParams
+            </h4>
+            <div class="outline-text-4" id="text-4-7-2">
+              <p>
+                Hook to get variables from the url App.jsx has browserRouter
+                which makes context available to components underneath it which
+                is a store of data. In Details then useParams pulls the data
+                from browser Router component
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgf45d4e6" class="outline-4">
+            <h4 id="orgf45d4e6">
+              <span class="section-number-4">4.7.3.</span> React Query
+            </h4>
+            <div class="outline-text-4" id="text-4-7-3">
+              <p>
+                React Query does the makes the request to API, store it in Cache
+                memory and returns the result Secret to writing long time
+                maintainable code is by carefully managing the useEffect hook
+                React Query can handle all the API request and minimize the
+                useEffect in the code Use @tanstack/react-query and import
+                queryClient and QueryClientProvider Higher Order Component are
+                components which doesn&rsquo;t display anything but only wrap
+                another components and provide context to them
+              </p>
+
+              <p>
+                useQuery array can be as long as neededk For posting we
+                useMutation hook
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgb04895f" class="outline-4">
+            <h4 id="orgb04895f">
+              <span class="section-number-4">4.7.4.</span> Uncontrolled Form
+            </h4>
+            <div class="outline-text-4" id="text-4-7-4">
+              <p>
+                We are currently tracking animal and location for no purpose
+                except calling the api So we can allow the browser to handle it
+                and just it call it out on submit of the form Try to organize
+                fetch in a folder and all the components in a folder
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org8036124" class="outline-4">
+            <h4 id="org8036124">
+              <span class="section-number-4">4.7.5.</span> Class Component
+            </h4>
+            <div class="outline-text-4" id="text-4-7-5">
+              <p>
+                Older way of doing things is class components Class components
+                must extend component all must contain a render function which
+                may or maynot return markup components don&rsquo;t work with
+                Hooks Life cycle methods
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org8f00e99" class="outline-3">
+          <h3 id="org8f00e99">
+            <span class="section-number-3">4.8.</span> React Tools
+          </h3>
+          <div class="outline-text-3" id="text-4-8"></div>
+          <div id="outline-container-org77fa905" class="outline-4">
+            <h4 id="org77fa905">
+              <span class="section-number-4">4.8.1.</span> Error Boundaries
+            </h4>
+            <div class="outline-text-4" id="text-4-8-1">
+              <p>
+                When we have erros inside a components like malformed API
+                response. We can help it with error boundary. It is something
+                class components can only do
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-org478ba47" class="outline-4">
+            <h4 id="org478ba47">
+              <span class="section-number-4">4.8.2.</span> Portals
+            </h4>
+            <div class="outline-text-4" id="text-4-8-2">
+              <p>Render elsewhere the components :w</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-orgc3051e0" class="outline-2">
+        <h2 id="orgc3051e0">
+          <span class="section-number-2">5.</span> Intermediate React
+        </h2>
+        <div class="outline-text-2" id="text-5"></div>
+        <div id="outline-container-org11a73b8" class="outline-3">
+          <h3 id="org11a73b8">
+            <span class="section-number-3">5.1.</span> Intermediate Hooks
+          </h3>
+          <div class="outline-text-3" id="text-5-1"></div>
+          <div id="outline-container-orgdb544f1" class="outline-4">
+            <h4 id="orgdb544f1">
+              <span class="section-number-4">5.1.1.</span> useState
+            </h4>
+            <div class="outline-text-4" id="text-5-1-1">
+              <p>
+                useState is a hook for setting and changing a variable inside a
+                react component Don&rsquo;t make a default value something too
+                big to process As the hook is executed for every function call
+                It returns a tuple for the state and a function to update state
+              </p>
+            </div>
+          </div>
+          <div id="outline-container-orgd7c0090" class="outline-4">
+            <h4 id="orgd7c0090">
+              <span class="section-number-4">5.1.2.</span> useEffect
+            </h4>
+            <div class="outline-text-4" id="text-5-1-2">
+              <p>It is a hook to :</p>
+            </div>
+          </div>
+          <div id="outline-container-orgc81aa43" class="outline-4">
+            <h4 id="orgc81aa43">
+              <span class="section-number-4">5.1.3.</span> useContext
+            </h4>
+          </div>
+          <div id="outline-container-org7af9145" class="outline-4">
+            <h4 id="org7af9145">
+              <span class="section-number-4">5.1.4.</span> useRef
+            </h4>
+          </div>
+          <div id="outline-container-orga90d549" class="outline-4">
+            <h4 id="orga90d549">
+              <span class="section-number-4">5.1.5.</span> useMemo
+            </h4>
+          </div>
+          <div id="outline-container-org17d5bcc" class="outline-4">
+            <h4 id="org17d5bcc">
+              <span class="section-number-4">5.1.6.</span> useCallback
+            </h4>
+          </div>
+          <div id="outline-container-orgb1bed06" class="outline-4">
+            <h4 id="orgb1bed06">
+              <span class="section-number-4">5.1.7.</span> useLayoutEffect
+            </h4>
+          </div>
+          <div id="outline-container-org60d638a" class="outline-4">
+            <h4 id="org60d638a">
+              <span class="section-number-4">5.1.8.</span> useImperativeHandle
+            </h4>
+          </div>
+          <div id="outline-container-org6d95239" class="outline-4">
+            <h4 id="org6d95239">
+              <span class="section-number-4">5.1.9.</span> useDebugValue
+            </h4>
+          </div>
+          <div id="outline-container-orgdffc52c" class="outline-4">
+            <h4 id="orgdffc52c">
+              <span class="section-number-4">5.1.10.</span> useId
+            </h4>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-orgdf2f9f8" class="outline-2">
+        <h2 id="orgdf2f9f8">
+          <span class="section-number-2">6.</span> Advanced React Performance
+        </h2>
+        <div class="outline-text-2" id="text-6"></div>
+        <div id="outline-container-org0ba58f2" class="outline-3">
+          <h3 id="org0ba58f2">
+            <span class="section-number-3">6.1.</span> Code Splitting
+          </h3>
+          <div class="outline-text-3" id="text-6-1">
+            <p>
+              React Size in itself is of 45 Kb Code Splitting is the idea that
+              you just load the bare minimum necessary code to get the app up
+              and running, so render everything beforehand
+            </p>
+
+            <p>
+              import lazy, Suspense from React Split the various routes in the
+              app to selectively load the needed components only
+            </p>
+
+            <p>
+              <code>const component = lazy(()=&gt;import("./Components"))</code>
+              This imports the component at that time when needed import is a
+              function built inside JS In our app It will load the component at
+              that time the Route is loaded Suspense actually load the file at
+              the time of the requirement Suspense is a tag inside the Query
+              Client Provider. It takes a fallback which is render at the time
+              loading As the bundles are not big so makes the code slow Try to
+              split in modules 30kb or more We can use this to load chunks in
+              background using ServiceWorker Serviceworker is a middleman
+              between application and API server. It can be used to load
+              components in background To use it we have to genereate a manifest
+              file for all the chunks using vite, parcel or webpack
+              Serviceworker will use this manifest to load the chunks in advance
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org99a2383" class="outline-3">
+          <h3 id="org99a2383">
+            <span class="section-number-3">6.2.</span> Server Side Rendering
+          </h3>
+          <div class="outline-text-3" id="text-6-2">
+            <p>
+              Users receive the bare HTML then App.jsx is executed to make the
+              actual app With ServerSide Scripting we can do all the rendering
+              of the markup before and send it to the user at once It helps to
+              reduce time to first meaningful paint but increase time for
+              interactivity But we still have to see the performance metrics
+              before doing this
+            </p>
+
+            <p>
+              We create a seperate jsx file for ClientApp.jsx Don&rsquo;t try to
+              load anything anything which interacts with the DOM directly as
+              there are no window in Node
+            </p>
+
+            <p>import hydrateRoot, BrowserRouter and App</p>
+            <div class="org-src-container">
+              <pre class="src src-javascript">hydrateRoot(
+document.getElementById(<span style="color: #98be65;">"root"</span>),
+&lt;BrowserRouter&gt;
+&lt;App/&gt;
+&lt;/BrowserRouter&gt;
+)
+</pre>
+            </div>
+            <p>
+              Everything happening inside the browser will stay in ClientApp.jsx
+              Update App.jsx to ClientApp.jsx in index.html, App.jsx Remove the
+              create root inside the app.jsx and default export the function
+              This will make the App.jsx to run both on Node and Brooswer Create
+              ServerApp.jsx import App, StaticRouter and renderToPipeableStream
+            </p>
+
+            <p>
+              Static Router is similar to normmal Router which can run in Node
+              It doesn&rsquo;t uses the history renderToPipeableStream will run
+              the react app inside a node stream which will progressive load the
+              app We can use vite to build out ServerApp.jsx and import the
+              output into the Node App. As Node can&rsquo;t read JSX Alternative
+              to using Babel Add the build commands for the client and the
+              server
+            </p>
+
+            <p>Create an express server in server.js</p>
+
+            <p>Run the build and run the server</p>
+
+            <p>
+              for node 18 we can use node &#x2013;experimental-fetch server.js
+              and add suspense:true in the QueryClient To manage some APIs which
+              are being called again and again to cache their data All the data
+              will be stored in server and then it will be send in order of
+              request
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-org7dcfb5d" class="outline-2">
+        <h2 id="org7dcfb5d">
+          <span class="section-number-2">7.</span> Low Priority Re-Rendering
+        </h2>
+        <div class="outline-text-2" id="text-7">
+          <p>
+            Focus on rendering on the stuff on the screen Dividing rendering in
+            low priority and high priority Import useDeferredValue, useMemo
+          </p>
+          <div class="org-src-container">
+            <pre
+              class="src src-javascript"
+            ><span style="color: #51afef;">const</span> <span style="color: #dcaeea;">deferredPets</span> = useDeferredValue(pets)
+<span style="color: #51afef;">const</span> <span style="color: #dcaeea;">renderedPets</span> = useMemo(()=&gt; &lt;Results pets={deferredPets}/&gt;,[deferredPets])
+</pre>
+          </div>
+          <p>change &lt;results/&gt; to {renderredPets}</p>
+
+          <p>
+            We store the values from API into deferredPets when we are sure that
+            there is nothing left in our queue Then render the Results with the
+            deferredPets and update only if deferredPets is changed So the
+            results is in low priority rendering and can be delayed if user is
+            interacting with the form
+          </p>
+
+          <p>Transition to show an intermediate state between two states</p>
+
+          <div class="org-src-container">
+            <pre
+              class="src src-javascript"
+            ><span style="color: #51afef;">in</span> SearchParams
+
+<span style="color: #51afef;">import</span> useTransition
+
+<span style="color: #51afef;">const</span> [<span style="color: #dcaeea;">isPending</span>, <span style="color: #dcaeea;">startTransition</span>,] = useTransition();
+
+on formSubmit
+startTransition(()=&gt;{
+    setRequestParams(obj)
+});
+
+<span style="color: #51afef;">in</span> the button
+
+{
+    isPending?(
+        &lt;div classname=<span style="color: #98be65;">"mini loading-pane"</span>&gt;
+             &lt;h2&gt;Loading&lt;/h2&gt;
+            &lt;/div&gt;
+    )
+}
+</pre>
+          </div>
+          <p>useTransition is something to show but is low priority</p>
+        </div>
+      </div>
+      <div id="outline-container-orgdecb73d" class="outline-2">
+        <h2 id="orgdecb73d"><span class="section-number-2">8.</span> Redux</h2>
+        <div class="outline-text-2" id="text-8">
+          <p>
+            Redux is now not that useful because of the core react Redux Toolkit
+            to refactor redux so can be useful It is a central store of data.
+            Also it is very testable to help in testing npm install
+            @reduxjs/toolkit react-redux As Redux works with various frameworks
+            create a file store.js
+          </p>
+          <div class="org-src-container">
+            <pre
+              class="src src-javascript"
+            ><span style="color: #51afef;">import</span> {configureStore} from <span style="color: #98be65;">"@reduxjs/toolkit"</span>
+<span style="color: #51afef;">import</span> adoptedPet from <span style="color: #98be65;">"./adoptedPetSlice"</span>
+
+<span style="color: #51afef;">const</span> <span style="color: #dcaeea;">store</span> = configureStore({
+    reducer: {
+        adoptedPet,
+    },
+})
+<span style="color: #51afef;">export</span> <span style="color: #51afef;">default</span> store;
+
+</pre>
+          </div>
+
+          <p>
+            import {Provider } from &rsquo;react-redux&rsquo; import store from
+            &rsquo;react-redux&rsquo;
+          </p>
+
+          <p>
+            replace the AdoptedPetContext.provider with Provider store={store}
+            create new file adoptedPetSlice.js slice is a new idea to redux to
+            put all the reducers, action creator in one single bundle
+          </p>
+
+          <div class="org-src-container">
+            <pre
+              class="src src-javascript"
+            ><span style="color: #51afef;">import</span> {createSlice} from <span style="color: #98be65;">"@reduxjs/toolkit"</span>
+
+<span style="color: #51afef;">export</span> <span style="color: #51afef;">const</span> <span style="color: #dcaeea;">adoptedPetSlice</span> = createSlice({
+name:<span style="color: #98be65;">"adoptedPet"</span>,
+initalState:{
+        value:<span style="color: #a9a1e1;">null</span>
+},
+reducers: {
+adopt:(state, action) =&gt; {
+ state.value = action.payload;
+}
+    unadopt:(state, action) =&gt; {
+    state.value = <span style="color: #a9a1e1;">null</span>;
+    }
+}
+})
+
+<span style="color: #51afef;">function</span> <span style="color: #c678dd;">adopt</span>(<span style="color: #dcaeea;">pet</span>){
+    <span style="color: #51afef;">return</span> { type:<span style="color: #98be65;">"adopt"</span>,  payload: pet}
+}
+
+<span style="color: #51afef;">export</span> <span style="color: #51afef;">const</span> {adopt, unadopt} = adoptedPetSlice.actions
+<span style="color: #51afef;">export</span> <span style="color: #51afef;">default</span> adoptedPetSlice.reducer
+</pre>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-org04ea862" class="outline-2">
+        <h2 id="org04ea862">
+          <span class="section-number-2">9.</span> Interview Question
+        </h2>
+        <div class="outline-text-2" id="text-9"></div>
+        <div id="outline-container-org0744305" class="outline-3">
+          <h3 id="org0744305">
+            <span class="section-number-3">9.1.</span> What will happen if
+            setCounter() function is called multiple times
+          </h3>
+          <div class="outline-text-3" id="text-9-1">
+            <p>
+              Even if setCounter() is called multiple times but only one
+              increment is done as react. Optimises the code under the hood, It
+              is done as useStates sends the calls in form of batch. To use this
+              multiple calls use the hidden callback in
+              setCounter((Counter)=&gt; prevCounter + 1)
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-org0bd1abd" class="outline-2">
+        <h2 id="org0bd1abd">
+          <span class="section-number-2">10.</span> Background Changer Project
+        </h2>
+        <div class="outline-text-2" id="text-10"></div>
+        <div id="outline-container-org8fe4ec3" class="outline-3">
+          <h3 id="org8fe4ec3">
+            <span class="section-number-3">10.1.</span> Create a Bar component
+          </h3>
+          <div class="outline-text-3" id="text-10-1"></div>
+          <div id="outline-container-org681217e" class="outline-4">
+            <h4 id="org681217e">
+              <span class="section-number-4">10.1.1.</span> Create the project
+              with Vite and TailwindCSS documentation
+            </h4>
+          </div>
+          <div id="outline-container-org63caa41" class="outline-4">
+            <h4 id="org63caa41">
+              <span class="section-number-4">10.1.2.</span> Create file with
+              .jsx
+            </h4>
+          </div>
+        </div>
+        <div id="outline-container-org209616f" class="outline-3">
+          <h3 id="org209616f">
+            <span class="section-number-3">10.2.</span> Made an array with
+            different all the colors.
+          </h3>
+        </div>
+        <div id="outline-container-org940e83b" class="outline-3">
+          <h3 id="org940e83b">
+            <span class="section-number-3">10.3.</span> Map method to traverse
+            all the color and populate their buttons and a function with color
+          </h3>
+          <div class="outline-text-3" id="text-10-3"></div>
+          <ol class="org-ol">
+            <li>
+              <a id="orgd1ea4be"></a>colors.map(color) =&gt; (&lt;button&gt;)<br />
+            </li>
+            <li><a id="orgd3d8f8c"></a>function handleClick<br /></li>
+            <li><a id="org29e6bbe"></a>style={{}}<br /></li>
+          </ol>
+        </div>
+        <div id="outline-container-org303b512" class="outline-3">
+          <h3 id="org303b512">
+            <span class="section-number-3">10.4.</span> In the Onclick Function
+            use the color to change the color of page
+          </h3>
+          <div class="outline-text-3" id="text-10-4"></div>
+          <ol class="org-ol">
+            <li>
+              <a id="org4cb8cfa"></a>window.document.body.style.backgroundColor
+              = color;<br />
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div id="outline-container-org50d6d0f" class="outline-2">
+        <h2 id="org50d6d0f">
+          <span class="section-number-2">11.</span> Password Generator
+        </h2>
+        <div class="outline-text-2" id="text-11"></div>
+        <div id="outline-container-org33bbb08" class="outline-3">
+          <h3 id="org33bbb08">
+            <span class="section-number-3">11.1.</span> Overview
+          </h3>
+          <div class="outline-text-3" id="text-11-1">
+            <ul class="org-ul">
+              <li>Make a password in Input</li>
+              <li>Add a copy button</li>
+              <li>
+                Add 2 checkboxes to use number or special characters optional
+              </li>
+              <li>Add a slider for the length of the password</li>
+            </ul>
+          </div>
+        </div>
+        <div id="outline-container-org09f7a74" class="outline-3">
+          <h3 id="org09f7a74">
+            <span class="section-number-3">11.2.</span> Concepts
+          </h3>
+          <div class="outline-text-3" id="text-11-2">
+            <ul class="org-ul">
+              <li>Use state for the length, number and characters</li>
+              <li>Create a method to generate passwords fastly</li>
+              <li>
+                Reuse the methods &rsquo;useCallback&rsquo; hook efficiently
+              </li>
+              <li>Use UseEffects and useRef hook</li>
+            </ul>
+          </div>
+        </div>
+        <div id="outline-container-org6f0f865" class="outline-3">
+          <h3 id="org6f0f865">
+            <span class="section-number-3">11.3.</span> Setting up the project
+          </h3>
+          <div class="outline-text-3" id="text-11-3">
+            <div class="org-src-container">
+              <pre class="src src-bash">
+create vite@latest
+</pre
+              >
+            </div>
+            <ul class="org-ul">
+              <li>Choose the name for project</li>
+              <li>Choose the framework and varient as react and javascript</li>
+              <li>Cd in project</li>
+              <li>npm install</li>
+              <li>Install the tailwindcss</li>
+              <li>npx install</li>
+              <li>npx install -D tailwindcss postcss autoprefixer</li>
+              <li>npx tailwindccss init -p</li>
+              <li>Set up using the website</li>
+              <li>npm run dev</li>
+            </ul>
+          </div>
+        </div>
+        <div id="outline-container-org3866c8e" class="outline-3">
+          <h3 id="org3866c8e">
+            <span class="section-number-3">11.4.</span> Starting the work
+          </h3>
+          <div class="outline-text-3" id="text-11-4">
+            <ul class="org-ul">
+              <li>
+                To track password, length, hasCharacters and hasNumbers use
+                useState hook
+              </li>
+            </ul>
+            <div class="org-src-container">
+              <pre
+                class="src src-javascript"
+              ><span style="color: #51afef;">import</span> {useCallback} from <span style="color: #98be65;">'react'</span>
+<span style="color: #51afef;">const</span> <span style="color: #dcaeea;">passwordGenerator</span> = useCallback(()=&gt;{
+    <span style="color: #51afef;">let</span> <span style="color: #dcaeea;">pass</span> = <span style="color: #98be65;">""</span>
+    <span style="color: #51afef;">let</span> <span style="color: #dcaeea;">str</span> = <span style="color: #98be65;">"abcdefghijlmnopqrstuvwxyzABCDEFGHIJLMNOPQRSTUVWXYZ"</span>
+    <span style="color: #51afef;">if</span>(isNumber){
+        str += <span style="color: #98be65;">"0123456789"</span>
+    }
+
+    <span style="color: #51afef;">if</span>(isCharacter){
+        str += <span style="color: #98be65;">"!@#$%^&amp;*(){}[],.-_+="</span>
+    }
+    <span style="color: #51afef;">for</span>(<span style="color: #51afef;">let</span> <span style="color: #dcaeea;">i</span> = <span style="color: #da8548; font-weight: bold;">0</span>; i &lt; length; i++){
+        password += str.charAt(Math.floor(Math.random()*str.length+<span style="color: #da8548; font-weight: bold;">1</span>))
+    }
+    setPassword(password)
+},[length,isCharacter,isNumber,setPassword])
+</pre>
+            </div>
+
+            <div class="org-src-container">
+              <pre class="src src-html">return(
+    &lt;&gt;
+      &lt;<span style="color: #c678dd;">div</span>&gt;
+        &lt;<span style="color: #c678dd;">input</span> <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"text"</span>
+        value={password}
+        <span style="color: #dcaeea;">placeholder</span>=<span style="color: #98be65;">'password'</span>
+        readonly,
+        ref={passwordRef}
+        &gt;&lt;/<span style="color: #c678dd;">input</span>&gt;
+      &lt;/<span style="color: #c678dd;">div</span>&gt;
+      &lt;<span style="color: #c678dd;">div</span>&gt;
+        &lt;<span style="color: #c678dd;">input</span>
+          <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"range"</span>
+          onChange{(e)=&gt; {setLength(e.target.value)}}
+        &lt;/<span style="color: #c678dd;">input</span>&gt;
+        &lt;<span style="color: #c678dd;">input</span>
+          <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"checkbox"</span>,
+          defaultChecked={numberAllowed}
+          <span style="color: #dcaeea;">id</span>=<span style="color: #98be65;">"numberInput"</span>,
+          onChange={()=&gt;{
+                setNumberAllowed((prev) =&gt; !prev);
+        }}&gt;
+        &lt;/<span style="color: #c678dd;">input</span>&gt;
+        &lt;<span style="color: #c678dd;">input</span>
+          <span style="color: #dcaeea;">type</span>=<span style="color: #98be65;">"checkbox"</span>,
+          defaultChecked={characterAllowed}
+          <span style="color: #dcaeea;">id</span>=<span style="color: #98be65;">"numberInput"</span>,
+          onChange={()=&gt;{
+                setCharacterAllowed((prev) =&gt; !prev);
+        }}&gt;
+        &lt;/<span style="color: #c678dd;">input</span>&gt;
+      &lt;/<span style="color: #c678dd;">div</span>&gt;
+    &lt;/&gt;
+)
+</pre>
+            </div>
+            <p>Way to call useCallback</p>
+            <ul class="org-ul">
+              <li>Via a onclick</li>
+              <li>UseEffect hook</li>
+            </ul>
+          </div>
+          <div id="outline-container-orgbb2609f" class="outline-4">
+            <h4 id="orgbb2609f">
+              <span class="section-number-4">11.4.1.</span> To synchronize the
+              component with external system
+            </h4>
+            <div class="outline-text-4" id="text-11-4-1">
+              <p>
+                useEffect(()=&gt;{ passwordGenerator()
+                },[length,numberAllowed,charAllowed,passwordGenerator])
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org8fd4a52" class="outline-3">
+          <h3 id="org8fd4a52">
+            <span class="section-number-3">11.5.</span> UseRef hook to use
+            Clipboard
+          </h3>
+          <div class="outline-text-3" id="text-11-5">
+            <p>It is used to make a reference to something</p>
+            <div class="org-src-container">
+              <pre
+                class="src src-javascript"
+              ><span style="color: #51afef;">const</span> <span style="color: #dcaeea;">passwordRef</span> = useRef(<span style="color: #a9a1e1;">null</span>)
+&lt;button onClick={copyPasswordToClipboard}&gt;
+<span style="color: #51afef;">const</span> <span style="color: #dcaeea;">copyPasswordToClipboard</span> = useCallback(()=&gt;{
+    passwordRef.current?.select()<span style="color: #5B6268;">//</span><span style="color: #5B6268;">Just to give selection</span>
+    passwordRef.current?.setSelectionRange(<span style="color: #da8548; font-weight: bold;">0</span>,<span style="color: #da8548; font-weight: bold;">3</span>)<span style="color: #5B6268;">// </span><span style="color: #5B6268;">To make selection of first 3 letters</span>
+    window.navigator.clipboard.writeText(password)
+},[password])
+
+</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="outline-container-org25a6a81" class="outline-2">
+        <h2 id="org25a6a81">
+          <span class="section-number-2">12.</span> Custom Hooks
+        </h2>
+        <div class="outline-text-2" id="text-12"></div>
+        <div id="outline-container-orgb61d631" class="outline-3">
+          <h3 id="orgb61d631">
+            <span class="section-number-3">12.1.</span> Overview
+          </h3>
+          <div class="outline-text-3" id="text-12-1">
+            <ul class="org-ul">
+              <li>Currency Conversion</li>
+              <li>call an API and get the exact exchange rate</li>
+              <li>Optimization for various currency</li>
+              <li>Swap button to swap currencies</li>
+              <li>Drop down menu to select various currencies</li>
+              <li>Reusable component</li>
+            </ul>
+          </div>
+        </div>
+        <div id="outline-container-orgface5e2" class="outline-3">
+          <h3 id="orgface5e2">
+            <span class="section-number-3">12.2.</span> Creating the project
+          </h3>
+          <div class="outline-text-3" id="text-12-2">
+            <p>
+              npx create vite@latest currencyConvertor &#x2013; &#x2013;template
+              react Install tailwind css
+            </p>
+          </div>
+        </div>
+        <div id="outline-container-org546a24b" class="outline-3">
+          <h3 id="org546a24b">
+            <span class="section-number-3">12.3.</span> Hook
+          </h3>
+          <div class="outline-text-3" id="text-12-3">
+            <p>
+              Hook is a method in itself Custom hook is method of creating hook
+              for our needs These hooks are mostly .js. We have to maintain the
+              same extension as the extension of the returning code Make
+              seperate file in /hooks/useCurrencyInfo.js Hooks can use other
+              hooks inside Hooks generally start with use
+            </p>
+            <div class="org-src-container">
+              <pre
+                class="src src-javascript"
+              ><span style="color: #51afef;">import</span> {useEffect,useState} from <span style="color: #98be65;">'react'</span>
+
+<span style="color: #51afef;">function</span> <span style="color: #c678dd;">useCurrencyInfo</span>(<span style="color: #dcaeea;">currency</span>){
+    <span style="color: #51afef;">const</span>[<span style="color: #dcaeea;">data</span>,<span style="color: #dcaeea;">setData</span>] = useState({})
+    <span style="color: #51afef;">let</span> <span style="color: #dcaeea;">URL</span> = <span style="color: #98be65;">""</span>
+   useEffect(()=&gt;{
+       fetch(URL)
+       .then((res)=&gt;res.json())
+       .then((res)=&gt; setData(res[currency]))
+   },[currency]) <span style="color: #5B6268;">// </span><span style="color: #5B6268;">Calling the API only when component is update</span>
+    <span style="color: #51afef;">return</span> data
+}
+
+<span style="color: #51afef;">export</span> <span style="color: #51afef;">default</span> useCurrencyInfo;
+</pre>
+            </div>
+          </div>
+        </div>
+        <div id="outline-container-org7aceac0" class="outline-3">
+          <h3 id="org7aceac0">
+            <span class="section-number-3">12.4.</span> Creating resusable
+            component
+          </h3>
+          <div class="outline-text-3" id="text-12-4">
+            <p>Create a ./component/InputBox.jsx</p>
+            <div class="org-src-container">
+              <pre
+                class="src src-js"
+              ><span style="color: #51afef;">import</span> React from <span style="color: #98be65;">'react'</span>
+<span style="color: #51afef;">return</span>(
+ &lt;&gt;
+<span style="color: #bbc2cf; background-color: #21242b;">     get code from MD file</span>
+<span style="color: #bbc2cf; background-color: #21242b;"> </span>&lt;/&gt;
+)
+</pre>
+            </div>
+            <p>Add inside the function at the top</p>
+            <div class="org-src-container">
+              <pre
+                class="src src-js"
+              ><span style="color: #51afef;">function</span> <span style="color: #c678dd;">InputBox</span>({
+    label,
+    amount,
+    onAmountChange,
+    onCurrencyChange,
+    currencyOptions=[],
+    selectCurrency = <span style="color: #98be65;">"usd"</span>,
+    amountDisable = <span style="color: #a9a1e1;">false</span>,
+    currencyDisable = <span style="color: #a9a1e1;">false</span>,
+})
+
+Inside the input field
+disabled={amountDisable}
+value={amount=&gt;onAmountChange &amp;&amp; onAmountChange(Number(e.target.value))} <span style="color: #5B6268;">//</span><span style="color: #5B6268;">To check if onAmountChange exists and then call it</span>
+
+
+Inside select
+value={selectCurrency}
+onChange={(e)=&gt;onCurrencyChange &amp;&amp; onCurrencyChange(e.target.value)}
+disabled = {currencyDisable}
+&gt;
+
+{currencyOptions.map((currency)=&gt;(
+    &lt;option key={currency} value={currency}&gt;
+        {currency}
+    &lt;/option&gt;
+))}
+</pre>
+            </div>
+            <p>Create index.js inside the ./component/</p>
+
+            <div class="org-src-container">
+              <pre
+                class="src src-javascript"
+              ><span style="color: #51afef;">import</span> InputBox from <span style="color: #98be65;">'./InputBox'</span>
+<span style="color: #51afef;">export</span> {InputBox}
+</pre>
+            </div>
+
+            <p>
+              useId is a hook to create unique ID&rsquo;s that can be passed to
+              accessibility attributes;
+            </p>
+            <div class="org-src-container">
+              <pre
+                class="src src-javascript"
+              ><span style="color: #51afef;">const</span> <span style="color: #dcaeea;">amountInputId</span> = useId()
+First Label tag
+&lt;label htmlFor={amountInputId} ..
+&lt;input id={amountInputId}
+</pre>
+            </div>
+
+            <p>In app.jsx</p>
+            <div class="org-src-container">
+              <pre
+                class="src src-javascript"
+              ><span style="color: #51afef;">import</span> {InputBox} from <span style="color: #98be65;">'./components'</span>
+<span style="color: #51afef;">import</span> useCurrencyInfo from <span style="color: #98be65;">"./hooks/useCurrencyInfo"</span>
+<span style="color: #51afef;">function</span> <span style="color: #c678dd;">App</span>(){
+    <span style="color: #51afef;">const</span> [<span style="color: #dcaeea;">amount</span>,<span style="color: #dcaeea;">setAmount</span>] = useState(<span style="color: #da8548; font-weight: bold;">0</span>)
+    <span style="color: #51afef;">const</span> [<span style="color: #dcaeea;">from</span>,<span style="color: #dcaeea;">setFrom</span>] = useState(<span style="color: #98be65;">"usd"</span>)
+    <span style="color: #51afef;">const</span> [<span style="color: #dcaeea;">to</span>,<span style="color: #dcaeea;">setTo</span>] = useState(<span style="color: #98be65;">"inr"</span>)
+    <span style="color: #51afef;">const</span> [<span style="color: #dcaeea;">convertedAmount</span>, <span style="color: #dcaeea;">setConvertedAmount</span>] = useState(<span style="color: #da8548; font-weight: bold;">0</span>)
+    <span style="color: #51afef;">const</span> <span style="color: #dcaeea;">currencyInfo</span> = useCurrencyInfo(from)
+    <span style="color: #51afef;">const</span> <span style="color: #dcaeea;">options</span> = Object.keys(currencyInfo)
+
+    <span style="color: #51afef;">const</span> <span style="color: #dcaeea;">swap</span> = ()=&gt;{
+        setFrom(to)
+        setTo(from)
+        setConvertedAmount(amount)
+        setAmount(convertedAmount)
+    }
+
+    <span style="color: #51afef;">const</span> <span style="color: #dcaeea;">convert</span> = ()=&gt;{
+        setConvertedAmount(amount * currenyInfo[to])
+    }
+}
+
+<span style="color: #51afef;">return</span>(
+&lt;div style ={{
+        backgroundImage: <span style="color: #98be65;">`url('url/to/bg')`</span>
+}}
+)
+
+&lt;form onSubmit={(e)=&gt;{
+    e.preventDefault();
+    convert()
+}}
+
+&lt;InputBox
+label=<span style="color: #98be65;">"From"</span>
+amount={amount}
+currencyOptions={options}
+onCurrencyChange={(currency)=&gt;setAmount(amount)
+selectCurrency={from}}
+onAmountChange={(amount)=&gt;setAmount}
+    &gt;&lt;/InputBox&gt;
+
+&lt;InputBox
+label=<span style="color: #98be65;">"To"</span>
+amount={amount}
+currencyOptions={options}
+onCurrencyChange={(currency)=&gt;setTo(currency)
+amountDisable
+selectCurrency={To}}&gt;&lt;/InputBox&gt;
+
+&lt;button onClick={swap}&gt; swap &lt;/button&gt;
+</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="postamble" class="status">
+      <p class="author">Author: Shaswat Satyam</p>
+      <p class="date">Created: 2025-01-12 日 18:40</p>
+    </div>
+  </body>
+</html>
