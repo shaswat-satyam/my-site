@@ -4,8 +4,8 @@ const Header = ({
   setScreen: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   return (
-    <div className="center w-full backdrop-blur-sm border-2 border-gray-900 rounded-xl p-3">
-      <ul className="flex gap-5 ">
+    <div className="center w-fit flex backdrop-blur-sm border-2 border-gray-900 rounded-xl p-3">
+      <div className="flex gap-9 ">
         <a
           onClick={() => setScreen("profile")}
           className="border-black hover:animate-pulse"
@@ -42,7 +42,7 @@ const Header = ({
         >
           Current Obession
         </a>
-      </ul>
+      </div>
     </div>
   );
 };

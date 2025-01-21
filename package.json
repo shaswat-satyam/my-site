@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "home": "https://shaswat-satyam.github.io/my-site",
+  "homepage": "https://shaswat-satyam.github.io/my-site",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -13,8 +13,11 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.36.1",
+    "dotenv": "^16.4.7",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "trakt.tv": "^8.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",

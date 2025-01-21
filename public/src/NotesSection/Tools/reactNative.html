@@ -1,0 +1,1400 @@
+<html>
+  <head>
+    <!-- 2025-01-12 日 18:41 -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>&lrm;</title>
+    <meta name="author" content="Shaswat" />
+    <meta name="generator" content="Org Mode" />
+    <style type="text/css">
+      #content {
+        max-width: 60em;
+        margin: auto;
+      }
+      .title {
+        text-align: center;
+        margin-bottom: 0.2em;
+      }
+      .subtitle {
+        text-align: center;
+        font-size: medium;
+        font-weight: bold;
+        margin-top: 0;
+      }
+      .todo {
+        font-family: monospace;
+        color: red;
+      }
+      .done {
+        font-family: monospace;
+        color: green;
+      }
+      .priority {
+        font-family: monospace;
+        color: orange;
+      }
+      .tag {
+        background-color: #eee;
+        font-family: monospace;
+        padding: 2px;
+        font-size: 80%;
+        font-weight: normal;
+      }
+      .timestamp {
+        color: #bebebe;
+      }
+      .timestamp-kwd {
+        color: #5f9ea0;
+      }
+      .org-right {
+        margin-left: auto;
+        margin-right: 0px;
+        text-align: right;
+      }
+      .org-left {
+        margin-left: 0px;
+        margin-right: auto;
+        text-align: left;
+      }
+      .org-center {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+      .underline {
+        text-decoration: underline;
+      }
+      #postamble p,
+      #preamble p {
+        font-size: 90%;
+        margin: 0.2em;
+      }
+      p.verse {
+        margin-left: 3%;
+      }
+      pre {
+        border: 1px solid #e6e6e6;
+        border-radius: 3px;
+        background-color: #f2f2f2;
+        padding: 8pt;
+        font-family: monospace;
+        overflow: auto;
+        margin: 1.2em;
+      }
+      pre.src {
+        position: relative;
+        overflow: auto;
+      }
+      pre.src:before {
+        display: none;
+        position: absolute;
+        top: -8px;
+        right: 12px;
+        padding: 3px;
+        color: #555;
+        background-color: #f2f2f299;
+      }
+      pre.src:hover:before {
+        display: inline;
+        margin-top: 14px;
+      }
+      /* Languages per Org manual */
+      pre.src-asymptote:before {
+        content: "Asymptote";
+      }
+      pre.src-awk:before {
+        content: "Awk";
+      }
+      pre.src-authinfo::before {
+        content: "Authinfo";
+      }
+      pre.src-C:before {
+        content: "C";
+      }
+      /* pre.src-C++ doesn't work in CSS */
+      pre.src-clojure:before {
+        content: "Clojure";
+      }
+      pre.src-css:before {
+        content: "CSS";
+      }
+      pre.src-D:before {
+        content: "D";
+      }
+      pre.src-ditaa:before {
+        content: "ditaa";
+      }
+      pre.src-dot:before {
+        content: "Graphviz";
+      }
+      pre.src-calc:before {
+        content: "Emacs Calc";
+      }
+      pre.src-emacs-lisp:before {
+        content: "Emacs Lisp";
+      }
+      pre.src-fortran:before {
+        content: "Fortran";
+      }
+      pre.src-gnuplot:before {
+        content: "gnuplot";
+      }
+      pre.src-haskell:before {
+        content: "Haskell";
+      }
+      pre.src-hledger:before {
+        content: "hledger";
+      }
+      pre.src-java:before {
+        content: "Java";
+      }
+      pre.src-js:before {
+        content: "Javascript";
+      }
+      pre.src-latex:before {
+        content: "LaTeX";
+      }
+      pre.src-ledger:before {
+        content: "Ledger";
+      }
+      pre.src-lisp:before {
+        content: "Lisp";
+      }
+      pre.src-lilypond:before {
+        content: "Lilypond";
+      }
+      pre.src-lua:before {
+        content: "Lua";
+      }
+      pre.src-matlab:before {
+        content: "MATLAB";
+      }
+      pre.src-mscgen:before {
+        content: "Mscgen";
+      }
+      pre.src-ocaml:before {
+        content: "Objective Caml";
+      }
+      pre.src-octave:before {
+        content: "Octave";
+      }
+      pre.src-org:before {
+        content: "Org mode";
+      }
+      pre.src-oz:before {
+        content: "OZ";
+      }
+      pre.src-plantuml:before {
+        content: "Plantuml";
+      }
+      pre.src-processing:before {
+        content: "Processing.js";
+      }
+      pre.src-python:before {
+        content: "Python";
+      }
+      pre.src-R:before {
+        content: "R";
+      }
+      pre.src-ruby:before {
+        content: "Ruby";
+      }
+      pre.src-sass:before {
+        content: "Sass";
+      }
+      pre.src-scheme:before {
+        content: "Scheme";
+      }
+      pre.src-screen:before {
+        content: "Gnu Screen";
+      }
+      pre.src-sed:before {
+        content: "Sed";
+      }
+      pre.src-sh:before {
+        content: "shell";
+      }
+      pre.src-sql:before {
+        content: "SQL";
+      }
+      pre.src-sqlite:before {
+        content: "SQLite";
+      }
+      /* additional languages in org.el's org-babel-load-languages alist */
+      pre.src-forth:before {
+        content: "Forth";
+      }
+      pre.src-io:before {
+        content: "IO";
+      }
+      pre.src-J:before {
+        content: "J";
+      }
+      pre.src-makefile:before {
+        content: "Makefile";
+      }
+      pre.src-maxima:before {
+        content: "Maxima";
+      }
+      pre.src-perl:before {
+        content: "Perl";
+      }
+      pre.src-picolisp:before {
+        content: "Pico Lisp";
+      }
+      pre.src-scala:before {
+        content: "Scala";
+      }
+      pre.src-shell:before {
+        content: "Shell Script";
+      }
+      pre.src-ebnf2ps:before {
+        content: "ebfn2ps";
+      }
+      /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+      pre.src-cpp:before {
+        content: "C++";
+      }
+      pre.src-abc:before {
+        content: "ABC";
+      }
+      pre.src-coq:before {
+        content: "Coq";
+      }
+      pre.src-groovy:before {
+        content: "Groovy";
+      }
+      /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+      pre.src-bash:before {
+        content: "bash";
+      }
+      pre.src-csh:before {
+        content: "csh";
+      }
+      pre.src-ash:before {
+        content: "ash";
+      }
+      pre.src-dash:before {
+        content: "dash";
+      }
+      pre.src-ksh:before {
+        content: "ksh";
+      }
+      pre.src-mksh:before {
+        content: "mksh";
+      }
+      pre.src-posh:before {
+        content: "posh";
+      }
+      /* Additional Emacs modes also supported by the LaTeX listings package */
+      pre.src-ada:before {
+        content: "Ada";
+      }
+      pre.src-asm:before {
+        content: "Assembler";
+      }
+      pre.src-caml:before {
+        content: "Caml";
+      }
+      pre.src-delphi:before {
+        content: "Delphi";
+      }
+      pre.src-html:before {
+        content: "HTML";
+      }
+      pre.src-idl:before {
+        content: "IDL";
+      }
+      pre.src-mercury:before {
+        content: "Mercury";
+      }
+      pre.src-metapost:before {
+        content: "MetaPost";
+      }
+      pre.src-modula-2:before {
+        content: "Modula-2";
+      }
+      pre.src-pascal:before {
+        content: "Pascal";
+      }
+      pre.src-ps:before {
+        content: "PostScript";
+      }
+      pre.src-prolog:before {
+        content: "Prolog";
+      }
+      pre.src-simula:before {
+        content: "Simula";
+      }
+      pre.src-tcl:before {
+        content: "tcl";
+      }
+      pre.src-tex:before {
+        content: "TeX";
+      }
+      pre.src-plain-tex:before {
+        content: "Plain TeX";
+      }
+      pre.src-verilog:before {
+        content: "Verilog";
+      }
+      pre.src-vhdl:before {
+        content: "VHDL";
+      }
+      pre.src-xml:before {
+        content: "XML";
+      }
+      pre.src-nxml:before {
+        content: "XML";
+      }
+      /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+      pre.src-conf:before {
+        content: "Configuration File";
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+      caption.t-above {
+        caption-side: top;
+      }
+      caption.t-bottom {
+        caption-side: bottom;
+      }
+      td,
+      th {
+        vertical-align: top;
+      }
+      th.org-right {
+        text-align: center;
+      }
+      th.org-left {
+        text-align: center;
+      }
+      th.org-center {
+        text-align: center;
+      }
+      td.org-right {
+        text-align: right;
+      }
+      td.org-left {
+        text-align: left;
+      }
+      td.org-center {
+        text-align: center;
+      }
+      dt {
+        font-weight: bold;
+      }
+      .footpara {
+        display: inline;
+      }
+      .footdef {
+        margin-bottom: 1em;
+      }
+      .figure {
+        padding: 1em;
+      }
+      .figure p {
+        text-align: center;
+      }
+      .equation-container {
+        display: table;
+        text-align: center;
+        width: 100%;
+      }
+      .equation {
+        vertical-align: middle;
+      }
+      .equation-label {
+        display: table-cell;
+        text-align: right;
+        vertical-align: middle;
+      }
+      .inlinetask {
+        padding: 10px;
+        border: 2px solid gray;
+        margin: 10px;
+        background: #ffffcc;
+      }
+      #org-div-home-and-up {
+        text-align: right;
+        font-size: 70%;
+        white-space: nowrap;
+      }
+      textarea {
+        overflow-x: auto;
+      }
+      .linenr {
+        font-size: smaller;
+      }
+      .code-highlighted {
+        background-color: #ffff00;
+      }
+      .org-info-js_info-navigation {
+        border-style: none;
+      }
+      #org-info-js_console-label {
+        font-size: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+      .org-info-js_search-highlight {
+        background-color: #ffff00;
+        color: #000000;
+        font-weight: bold;
+      }
+      .org-svg {
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content" class="content">
+      <div id="table-of-contents" role="doc-toc">
+        <h2>Table of Contents</h2>
+        <div id="text-table-of-contents" role="doc-toc">
+          <ul>
+            <li><a href="#org2e87719">1. React Native</a></li>
+            <li><a href="#orgbe87203">2. React Native Frameworks</a></li>
+            <li><a href="#org025ba50">3. Setting up Linting</a></li>
+            <li><a href="#org38404be">4. First Components</a></li>
+            <li>
+              <a href="#orgc6f09f8">5. Create a delete button with Pressable</a>
+            </li>
+            <li><a href="#org789e211">6. React Components</a></li>
+            <li>
+              <a href="#org7cde856">7. Using multiple styles with components</a>
+            </li>
+            <li><a href="#org625f23c">8. Icon Buttons</a></li>
+            <li><a href="#org4f0aed8">9. Navigation Libraries</a></li>
+            <li><a href="#orga663d9f">10. Stack Navigation</a></li>
+            <li>
+              <a href="#orga435da9">11. Modal and Bottom tab Navigation</a>
+            </li>
+            <li><a href="#orgd5f8271">12. Nested Navigators</a></li>
+            <li><a href="#orgd4ecfd3">13. Taking INput</a></li>
+            <li><a href="#orgc5f9403">14. Flat View</a></li>
+            <li><a href="#org678f3cb">15. Ordering</a></li>
+            <li><a href="#orge5bb1d5">16. Data Persistence</a></li>
+            <li><a href="#orgc3f870b">17. Animation</a></li>
+            <li><a href="#orgb002e84">18. Haptics</a></li>
+            <li><a href="#org3cf0806">19. Push Notifications</a></li>
+            <li><a href="#orgbf1dc53">20. Creating a Timer</a></li>
+            <li>
+              <a href="#org4801e1f"
+                >21. Rendering the Conditional UI for timer</a
+              >
+            </li>
+            <li><a href="#org2072e2c">22. Expo Router</a></li>
+            <li><a href="#org99f254e">23. Navigation methods</a></li>
+            <li><a href="#orgc5efcc2">24. Path Alasing</a></li>
+            <li><a href="#org08d7642">25. Layout Groups</a></li>
+            <li><a href="#orgc823d95">26. State Management</a></li>
+            <li><a href="#org8f6b58f">27. Persisitng Onboarding state</a></li>
+            <li><a href="#org003fe2f">28. Creating Custom component</a></li>
+            <li><a href="#org22809a2">29. Haptic Feedback</a></li>
+            <li><a href="#org71e3ac2">30. Change color when pressed</a></li>
+            <li><a href="#org5c6d648">31. Linear Gradient</a></li>
+            <li><a href="#org7a7511a">32. Image Component</a></li>
+            <li><a href="#org0eb28a6">33. Full Screen modal</a></li>
+            <li><a href="#org66c33fa">34. New Plant form</a></li>
+            <li><a href="#orgb2ee1e8">35. Saving and indexing plants</a></li>
+            <li>
+              <a href="#orgf180007"
+                >36. Selecting Photos with Expo Image Picker</a
+              >
+            </li>
+            <li><a href="#org5c60543">37. Saving Plant Data</a></li>
+            <li><a href="#orge33848f">38. Dynamic Routes</a></li>
+            <li><a href="#org54cee7b">39. Development Builds</a></li>
+            <li><a href="#org744d40e">40. Andorid / IOS Build</a></li>
+            <li><a href="#org4e31af4">41. Building in the CLoud in EAS</a></li>
+            <li><a href="#org6e37da7">42. SPlash Screen and APp Icons</a></li>
+            <li><a href="#org115854d">43. CUstom Font</a></li>
+            <li><a href="#org902164c">44. Quick Actions</a></li>
+            <li><a href="#orgaa315f3">45. Deep Linking</a></li>
+          </ul>
+        </div>
+      </div>
+      <div id="outline-container-org2e87719" class="outline-2">
+        <h2 id="org2e87719">
+          <span class="section-number-2">1.</span> React Native
+        </h2>
+        <div class="outline-text-2" id="text-1">
+          <p>
+            Ensure the Node is in LTS version Nodes LTS are in even version
+            number We are using package manager Yarn classic We use npx as node
+            package eXecutor which helps to execute node packages that are
+            available npx create-expo-app &#x2013;help We will use a template
+            because by default React Native gives a basic template which helps
+            to get started with navigation and styling yarn create expo-app
+            taskly -t We choose the blank typescript template To run the package
+            yarn start this gives us a QR Code
+          </p>
+
+          <p>
+            React Native App consists of two parts JS side and Native app Side
+            We use Expo Go for view our app working on Android We can change
+            App.tsx to edit our view. We can reload the view by shaking the
+            device. Make sure the both devices are same LAN network If it is not
+            possible then run yarn start &#x2013;tunnel
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-orgbe87203" class="outline-2">
+        <h2 id="orgbe87203">
+          <span class="section-number-2">2.</span> React Native Frameworks
+        </h2>
+        <div class="outline-text-2" id="text-2">
+          <p>
+            We use Expo is a react native framework. These are similar types of
+            frameworks like redwoodjs, Nextjs or Remix Meta recommends using
+            react native framework We don&rsquo;t use react native vanilla. It
+            helps us to run normal react code on native IOS and android
+            platforms using underlying componets. Many things which are need in
+            apps are not like push notification, store data across app launches
+            and many things are hard to do. So we need to add these things React
+            Native Directory are used to get react utilties It is hard to mix
+            and match these libraries for a begineer. SO we use Expo helping us
+            to use tools and libraries not provided by react natives. There are
+            many restrictions on what libraries can become a React Nativve
+            library as they need to be Open Source, Core Free and popular. Expo
+            Go is not Expo Expo Go is a subset of Expo that is sandbox
+            environment meant for learning, Prototyping and getting started
+            quickly. We then use development Libraries at an intermediate level
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org025ba50" class="outline-2">
+        <h2 id="org025ba50">
+          <span class="section-number-2">3.</span> Setting up Linting
+        </h2>
+        <div class="outline-text-2" id="text-3">
+          <p>
+            npx expo lint will setup ESLINT and .eslintrc yarn add - D prettier
+            eslint-config-prettier eslint-plugin-prettier We update the
+            .eslintrc
+            <i
+              >/
+              <a href="https://docs.expo.dev/guides/using-eslint"
+                >https://docs.expo.dev/guides/using-eslint</a
+              ></i
+            >
+            module.exports = { extends:[
+            &rsquo;expo&rsquo;,&rsquo;prettier&rsquo;], plugins:
+            [&rsquo;prettier&rsquo;], rules:{ &ldquo;prettier/prettier&rdquo;:
+            error, } }; This causes the prettier errors to be shown like eslint
+            errors and these errrors are auto fixallable by yarn lint
+            &#x2013;fix
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org38404be" class="outline-2">
+        <h2 id="org38404be">
+          <span class="section-number-2">4.</span> First Components
+        </h2>
+        <div class="outline-text-2" id="text-4">
+          <p>
+            Everything is wrapped inside a commponents View is same as divs in
+            react native as in web We can use View multiple types All The text
+            must be inside a text Components because Native creates components
+            for both IOS and Android and tvOS We can do conditional rendering
+            here but if something is falsy and it renders to screen. Eg - Use 0
+            &amp;&amp; Text will cause error as 0 takes as text But
+            &ldquo;&rdquo; empty string can work To safeguard from this we use a
+            if else block or ternary operators Styling in react native is
+            similar to styling in web We will use style props to style the app
+            with css in the form of an object All these style properties are
+            from StyleSheet.d.ts All Styling in the react naative is done in the
+            form of flex We are using no units as react native uses display
+            points whose width differs from device to device To use a global css
+            we create a flie theme.ts There are no CSS modules, CSS variables or
+            SASS But we can us Nativewind to use like tailwindcss, or others
+            Common pattern is to create a style object to be resused everywhere
+            Stylesheet.create checks the types only
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-orgc6f09f8" class="outline-2">
+        <h2 id="orgc6f09f8">
+          <span class="section-number-2">5.</span> Create a delete button with
+          Pressable
+        </h2>
+        <div class="outline-text-2" id="text-5">
+          <p>
+            React native comes with button which is never used it renders a
+            native looking button for platform We can&rsquo;t style it too so it
+            is used by development only Instead we use a pressable or touchable
+            component Pressable are new generations of buttons which many extra
+            props that wwe can use like onHover onPressIn onPressOut and pass
+            styles conditionally based on states Alert is a component in react
+            native It can create an alert when called as Alert.alert() It takes
+            3 components first is the title and second is the subtext, then
+            array of objects which contain text for the display text and then
+            the functio to run by onPress and style string which include
+            destructive, canccel and others Alerts are different for IOS and
+            android. Android dialog buttons are the same.
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org789e211" class="outline-2">
+        <h2 id="org789e211">
+          <span class="section-number-2">6.</span> React Components
+        </h2>
+        <div class="outline-text-2" id="text-6">
+          <p>
+            To avoid the large and unreadable code in App.tsx we divide the page
+            into components so thery are used again and again and save space and
+            time Pass props like react but use types define the types Props =
+            {name :string}; ESlint plugin detect unused styles Stylesheet.create
+            create an object of Styles in production
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org7cde856" class="outline-2">
+        <h2 id="org7cde856">
+          <span class="section-number-2">7.</span> Using multiple styles with
+          components
+        </h2>
+        <div class="outline-text-2" id="text-7">
+          <p>
+            We can pass an array of styles to an component. This array can also
+            take undefined. So we can use it for applying conditional styling
+            with ternary operator Styles at the end are applied
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org625f23c" class="outline-2">
+        <h2 id="org625f23c">
+          <span class="section-number-2">8.</span> Icon Buttons
+        </h2>
+        <div class="outline-text-2" id="text-8">
+          <p>
+            We can use icons in place of text to make it more user friendly We
+            can import our own SVGs or use some premade icons provided by react
+            or Go But we try to avoid SVGs om android as thery are slow to load
+            We use npx install as this is already included inside the package
+            And It finds the latest compatible version npx expo intall
+            @expo/vector-icons We must maintain the versions of btoth react
+            native and native SDK 1
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org4f0aed8" class="outline-2">
+        <h2 id="org4f0aed8">
+          <span class="section-number-2">9.</span> Navigation Libraries
+        </h2>
+        <div class="outline-text-2" id="text-9">
+          <p>
+            Andorid apps have various ways to navigate through screens Earlier
+            we create a blank template no Navigation Libraries were bundled with
+            react native Now we will use a Expo router which is similar to react
+            router help use to visualize the items Here we use a filed based
+            routin method We have to manage normal routes, modals and tabs
+            Anything inside a app folder is a screeen or layout file A Layout
+            file with an underscore is called a underscore layout file These are
+            unique for each folder They tell about the basic layout of that
+            screen Install all the related expo router libraries npx expo
+            install expo-router react-native-safe-area-context
+            react-native-screens expo-linking expo-constants expo-status-bar
+          </p>
+
+          <p>
+            react native safe area context is used to help which IOS
+            applications. It helps to determine the area that we can use safely
+            react native screesns expo linking with deep linking builit in expo
+            constatns to store some important device infromations expo status
+            bar for the top status bar
+          </p>
+
+          <p>
+            package.lock has a main file which tells the app to begin from that
+            screen App Entry.js takes the app.tsx and makes it the root of the
+            appliactions Update the main to expo-router/entry Add scheme to
+            app.json App listens to a scheme so other apps don&rsquo;t interfere
+            with this app&rsquo;s intent
+          </p>
+
+          <p>
+            Expo router needs to have atleast one index file We have to import
+            Stack to import the stack navigation Use stack.screen to view the
+            stack for application
+          </p>
+
+          <p>
+            We can add deep link from another application using deep linking and
+            uploading the address To add a app link or universal link
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-orga663d9f" class="outline-2">
+        <h2 id="orga663d9f">
+          <span class="section-number-2">10.</span> Stack Navigation
+        </h2>
+        <div class="outline-text-2" id="text-10">
+          <p>
+            It is a basic type of navigation By default everything rendered in a
+            stack Every new Sccreen is rendered on top of the old screen To ways
+            to navigate through stack naviagation First is using Link components
+            with href to the desired path:w IOS and Android Contains some style
+            specific to the platform
+          </p>
+
+          <p>
+            Second waay to navigate programmatically Push the screen to top
+            replace will replace the screen Navigate will navigate to the screen
+            or first instance in stack
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-orga435da9" class="outline-2">
+        <h2 id="orga435da9">
+          <span class="section-number-2">11.</span> Modal and Bottom tab
+          Navigation
+        </h2>
+        <div class="outline-text-2" id="text-11">
+          <p>
+            We need define screeen to add additional properties to it because
+            unlike react navigation this is a file based navigations We need to
+            Import Tabs and Use It will give us a bottom tabs to different
+            screens We can add icons by giving a function which return the SVG
+            inside Tabs options tabBarIcon this functions can take an object
+            which contains bothsize ad color to show color from android system
+            We can set tabBar Active color inside Tabs
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-orgd5f8271" class="outline-2">
+        <h2 id="orgd5f8271">
+          <span class="section-number-2">12.</span> Nested Navigators
+        </h2>
+        <div class="outline-text-2" id="text-12">
+          <p>
+            We can nest one navigation inside another By Moving each tab into a
+            seperate folder
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-orgd4ecfd3" class="outline-2">
+        <h2 id="orgd4ecfd3">
+          <span class="section-number-2">13.</span> Taking INput
+        </h2>
+        <div class="outline-text-2" id="text-13">
+          <p>
+            For text input we can use TextINput which can be sed to store some
+            small information. we call on channge text event to get a reference
+            of text which is being writter. We can set placeholder, style, value
+            and physical returnKeyType will show the enter button type on th
+            keyboard. We can submit the text by calling back a function with
+            onSubmitEditing Content ContainerStyles to add UI styles to
+            scrollable view To make parts of scroll view sticky use
+            StickyHeaderIndeices
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-orgc5f9403" class="outline-2">
+        <h2 id="orgc5f9403">
+          <span class="section-number-2">14.</span> Flat View
+        </h2>
+        <div class="outline-text-2" id="text-14">
+          <p>
+            If we are mapping to render an array of Items we must use FlatList
+            More optimized to render the list by trackig the visible area and
+            unmount items which are not in visible area It has many propeties,
+            we can use something which is builtin flatlist
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org678f3cb" class="outline-2">
+        <h2 id="org678f3cb">
+          <span class="section-number-2">15.</span> Ordering
+        </h2>
+      </div>
+      <div id="outline-container-orge5bb1d5" class="outline-2">
+        <h2 id="orge5bb1d5">
+          <span class="section-number-2">16.</span> Data Persistence
+        </h2>
+        <div class="outline-text-2" id="text-16">
+          <p>
+            The native equivalent of localstorage is asyncStorage It is a
+            unsecured key value store this is asynchronous in nature npx expo
+            install @react-native-async-storage/async-storage This used to be
+            part of core react native But React team seperate it to a community
+            project Every app has a seperate asyncstorage We can&rsquo;t access
+            data from one asyncStorage to another unless device has been jail
+            breaked Doesn&rsquo;t work currently
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-orgc3f870b" class="outline-2">
+        <h2 id="orgc3f870b">
+          <span class="section-number-2">17.</span> Animation
+        </h2>
+        <div class="outline-text-2" id="text-17">
+          <p>
+            There is a lot of code for animations To do limited full page easy
+            animation that is layout animation Layout animation can be imported
+            from react native It animates the uI from previous state to current
+            stateo LayoutAnimation.configureNext()// It animate the next UI
+            change To use it call just before the state changes which can lead
+            to UI change We have various presets which can be done we can use
+            React Natie reanimated to be animated fastwhich is hooked based.
+            Gesture handler is also a good library
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-orgb002e84" class="outline-2">
+        <h2 id="orgb002e84">
+          <span class="section-number-2">18.</span> Haptics
+        </h2>
+        <div class="outline-text-2" id="text-18">
+          <p>
+            It is little vibrations on pressing Use haptics easily npx exp
+            install expo-haptics
+            Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium)
+            Haptics.NotificationAsync(Haptics.notificationAsync.Success)
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org3cf0806" class="outline-2">
+        <h2 id="org3cf0806">
+          <span class="section-number-2">19.</span> Push Notifications
+        </h2>
+        <div class="outline-text-2" id="text-19">
+          <p>
+            Notifications from App to status Remote notifications are send by
+            server like Apple or Firebase PushAPI can be used to implement
+            Remote notification. It requires setting up a server and maintaining
+            notifications token for the device Local notification are scheduled
+            at time npx expo install expo-notifications expo-device We need
+            permissions to send notifications As a developer we can ask it once
+            and only else user need to set it in setting itself Android
+            notification are group with similarity
+          </p>
+
+          <p>So we have extra permissions for android</p>
+        </div>
+      </div>
+      <div id="outline-container-orgbf1dc53" class="outline-2">
+        <h2 id="orgbf1dc53">
+          <span class="section-number-2">20.</span> Creating a Timer
+        </h2>
+        <div class="outline-text-2" id="text-20">
+          <p>
+            Use a useeffect to start a use timeout when the component mounts and
+            then for every 1000ms call a function in setSeconds to set val =&gt;
+            val + 1 To handle data we will use date-fns npx expo install
+            date-fns
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org4801e1f" class="outline-2">
+        <h2 id="org4801e1f">
+          <span class="section-number-2">21.</span> Rendering the Conditional UI
+          for timer
+        </h2>
+      </div>
+      <div id="outline-container-org2072e2c" class="outline-2">
+        <h2 id="org2072e2c">
+          <span class="section-number-2">22.</span> Expo Router
+        </h2>
+        <div class="outline-text-2" id="text-22">
+          <p>
+            Used for files based routing like next.js We don&rsquo;t need to
+            setup the routes as they will be setup from the files We get a deep
+            linking for free main is the main entry point of the application.
+            Three navigation libraries React Navigation, React Native Navigation
+            and Expo Router By default it point to a file in node modules We use
+            a scheme to make sure any links with plantly:// will open inside the
+            app only Try to make scheme unique but multiple apps can have same
+            scheme If multiple apps can open a link It will give a choice to
+            choose the relevant app to use Move the app.tsx to inside a new
+            folder app and rename to index.tsx We create new _layout.tsx for
+            each type of file screen or layout file we have to use default
+            exports _layout functiono can be named anything WE create a
+            &lt;Stack&gt; and &lt;Stack.screen name = &ldquo;index&rdquo;/&gt;
+            This creates a header with file name as default which can be changed
+            by options props
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org99f254e" class="outline-2">
+        <h2 id="org99f254e">
+          <span class="section-number-2">23.</span> Navigation methods
+        </h2>
+        <div class="outline-text-2" id="text-23">
+          <p>
+            Bottom tabs to add seond screen add a new file profile.tsx in app to
+            change to tabs we just change the stacks to tabs And create a new
+            screen for profile Screens exists as soon as they are added to file
+            system They become navigable when you add a Screen to it We can skip
+            the Tabs.Screen then all the sccreens will get a default links
+          </p>
+
+          <p>
+            Expo Vectors are vector icons built on react vector icons Import the
+            required vector icons from the library and render it using the
+            tabBarIcon attribute inside the options of Tabs.Screen By passing a
+            function to which render it It can get two properties {size, color}
+            and can pass it to the icon to improve the UI
+          </p>
+
+          <p>
+            To Share consta themeing among the whole map Create a theme.ts and
+            export const theme which contains all the relevant properties
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-orgc5efcc2" class="outline-2">
+        <h2 id="orgc5efcc2">
+          <span class="section-number-2">24.</span> Path Alasing
+        </h2>
+        <div class="outline-text-2" id="text-24">
+          <p>
+            To setup Path Alias we updat ethe TS config and path alias paths:
+            {&ldquo;@/*&rdquo;: [&ldquo;./*&rdquo;]}
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org08d7642" class="outline-2">
+        <h2 id="org08d7642">
+          <span class="section-number-2">25.</span> Layout Groups
+        </h2>
+        <div class="outline-text-2" id="text-25">
+          <p>
+            We are going to do a onboarding process for the first time We use a
+            full screen modal to render over the current app We have to use
+            layout groups so the (name) is going to be used we create (tabs)
+            inside the app an move all the files inside the (tabs) and create
+            new onboarding.tsx and create a new _layout.tsx Inside the layout
+            file we return a stack with Stack.Screen name = &ldquo;(tabs)&rdquo;
+            options={{headerShown: false}} Stack.Screen name =
+            &ldquo;onboarding&rdquo; This will render these as a stack. Then on
+            going to (tabs) then (tabs)/<sub>layout</sub> will manage the
+            rendering from there
+          </p>
+
+          <p>
+            To redirect to the onboarding we intercept the rendering and
+            redirect to onboarding using Redirect href=&ldquo;/onboarding&rdquo;
+            component
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-orgc823d95" class="outline-2">
+        <h2 id="orgc823d95">
+          <span class="section-number-2">26.</span> State Management
+        </h2>
+        <div class="outline-text-2" id="text-26">
+          <p>
+            We will use a state management library, we generally use this over
+            Asyncstorage. But these libraries use AsyncStorage under the hood.
+            But as they will handle the data storage more efficiently than
+            users. We have multiple choices here like Redux, Zustarrd and Jotai.
+            We use Zustard here. We create a new directory store which wil have
+            userStore.ts type UserStore = { hasFinishedOnboarding: boolean;
+            toggleHadOnboarded : () =&gt; void; }
+          </p>
+
+          <p>import create from zustard</p>
+
+          <p>
+            export const useUserStore = create&lt;UserStore&gt;((set) =&gt; ({
+            hasFinishedOnboarding: false, toggleHadOnboarded: () =&gt; {
+            set(state)=&gt;{ return{ &#x2026;state, hasFinishedOnboarding:
+            !state.hasFinishedOnboarding, }}}
+          </p>
+
+          <p>}))</p>
+        </div>
+      </div>
+      <div id="outline-container-org8f6b58f" class="outline-2">
+        <h2 id="org8f6b58f">
+          <span class="section-number-2">27.</span> Persisitng Onboarding state
+        </h2>
+        <div class="outline-text-2" id="text-27">
+          <p>
+            we use Async Storage to store this State Mangement libraries has
+            some adapter to store data in async storage We installed
+            AsyncStorage and then instead of setting hasFinishedOnboarding false
+            directly We import persist and createJSONStoarage from zustard
+            persist takes a function so we pass the function inside the create
+            into persist and use the UserStore type. It Will a options objects
+            to set the name to identify it uniquely and storage:
+            createJSONStoarage in which pe pas a function to AsycnStorage
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org003fe2f" class="outline-2">
+        <h2 id="org003fe2f">
+          <span class="section-number-2">28.</span> Creating Custom component
+        </h2>
+        <div class="outline-text-2" id="text-28">
+          <p>
+            We create component directory and add the file plantlyButton.jsx To
+            avoid name conflicts with other buttons
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org22809a2" class="outline-2">
+        <h2 id="org22809a2">
+          <span class="section-number-2">29.</span> Haptic Feedback
+        </h2>
+        <div class="outline-text-2" id="text-29">
+          <p>
+            INstall npx expo install expo-haptics we will a condition to avoid
+            haptic feedback for the web component as they will introduct errors
+            if(Platform.OS != &ldquo;web&rdquo;){
+            Haptics.impactAsync(Haptics.ImpactFeedbackStyle.light); } Andorid
+            Haptics are switched off when battery is low Try to use sparingly
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org71e3ac2" class="outline-2">
+        <h2 id="org71e3ac2">
+          <span class="section-number-2">30.</span> Change color when pressed
+        </h2>
+        <div class="outline-text-2" id="text-30">
+          <p>
+            Added the dark green inside the theme Add a style when the button is
+            pressed Then pass a function inside the sytle in side pressable then
+            reutrn styles.button use thet state of being pressed if(pressed){
+            return [styles.button,styles.buttonPressed] } later styles will
+            override the first styles
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org5c6d648" class="outline-2">
+        <h2 id="org5c6d648">
+          <span class="section-number-2">31.</span> Linear Gradient
+        </h2>
+        <div class="outline-text-2" id="text-31">
+          <p>
+            Using the library expo-linear-gradient We add the new colors inside
+            the theme Then we import linear-gradient inside onboarding then
+            change the view to linear gradient and pass colors = {[]} various
+            colors we want to use Then set the start and end for the coordinate
+            from beginning and end Then we change the status bar to the light
+            version &lt;StatusBar style=&ldquo;light&rdquo;/&gt;
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org7a7511a" class="outline-2">
+        <h2 id="org7a7511a">
+          <span class="section-number-2">32.</span> Image Component
+        </h2>
+        <div class="outline-text-2" id="text-32">
+          <p>
+            We will use a image component to show a image on the onboarding
+            screen We should try to use expo image or fast image to improve our
+            launch times USes caching and support addtional types We create a
+            new component so we can reuse it agian and again create
+            PlantlyImage.tsx
+          </p>
+          <div class="org-src-container">
+            <pre
+              class="src src-javascript"
+            ><span style="color: #51afef;">export</span> <span style="color: #51afef;">function</span> PlantlyImage(){
+    <span style="color: #51afef;">const</span> {width} = useWindowDImesnsion();
+    <span style="color: #51afef;">const</span> <span style="color: #dcaeea;">imageSize</span> = Math.min( width/<span style="color: #da8548; font-weight: bold;">1.5</span>, <span style="color: #da8548; font-weight: bold;">400</span>);
+<span style="color: #51afef;">return</span>(&lt;Image source={require(<span style="color: #98be65;">"@/assets/plantly.png"</span>)} style={{width:imageSize, height: imageSize}}/&gt;)}
+</pre>
+          </div>
+          <p>Then import inside the onboarding size</p>
+        </div>
+      </div>
+      <div id="outline-container-org0eb28a6" class="outline-2">
+        <h2 id="org0eb28a6">
+          <span class="section-number-2">33.</span> Full Screen modal
+        </h2>
+        <div class="outline-text-2" id="text-33">
+          <p>
+            When we want to render a modal over top of content Modal needs the
+            same level or above the content So in App folder create new.tsx
+            Inside the layout add the new Stack.screen then add a options for
+            presentation:&ldquo;modals&rdquo; and title: &ldquo;new Plant&rdquo;
+            To add the button to the header add the butotn to the tabs/<sub
+              >layout</sub
+            >
+            Add a headerRight:()=&gt;{Link Pressable AntDesign} inside
+            Tabs.screen indx We need to add asChild inside Link as we have make
+            a link to the whole sub components Add hitSlop={20} to add the area
+            where a click is registered and it doesn&rsquo;t effect the styling
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org66c33fa" class="outline-2">
+        <h2 id="org66c33fa">
+          <span class="section-number-2">34.</span> New Plant form
+        </h2>
+        <div class="outline-text-2" id="text-34">
+          <p>
+            We have no Form tag in Native so we have to use Text Input
+            independently We can use a form library and we use scrollView to
+            allow scroll for different screens For the number of days TextInput
+            we change the keyboardType to number-pad
+          </p>
+
+          <p>
+            Added shouldKeyboardpersistsTaps is so that we don&rsquo;t have to
+            remove the keyboard to start interacting with the buttons We can use
+            keyboard avoiding view to scroll the form input so that they are not
+            blocked by the keyboad KeyboardAwareScrollView
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-orgb2ee1e8" class="outline-2">
+        <h2 id="orgb2ee1e8">
+          <span class="section-number-2">35.</span> Saving and indexing plants
+        </h2>
+        <div class="outline-text-2" id="text-35">
+          <p>
+            We should use a seperate plantStore to show the plants, create
+            plants, remove plants and water the plants store/plantsStore.ts
+            After the validations we pass the addPlant function from
+            usePlantSore(state =&gt; state.addPlant) addPlant(name,Number(days))
+            router.navigate(&ldquo;/&rdquo;);
+          </p>
+
+          <p>
+            Add colorBlack and colorGray to the theme file To implement the
+            index file IN PlantStore export PlantType Create a component for
+            each plant card. as PlantCard.tsx WE can optionally send a size prop
+            to the plantImage Give it a props for optional size size ??
+            Math.min(width / 1.5, 400)
+          </p>
+
+          <p>
+            In index.tsx we should use a Flat List to display all lists const
+            plants = usePlantStore(state =&gt; state.plants) In react native
+            don&rsquo;t use array.map instead use FlatList for optimized viewing
+            experience FlatList data = {plants} renderItem={{{item}} =&gt;
+            Plantcard plant={item}/&gt; Add some padding to seperate them To add
+            style do&rsquo;t use the style attribute better to use
+            contentContainerStyle Flatlist we have some helpful components to
+            render wheen data is empty something to render at top and something
+            to render at end WE can add a button button when there are no plants
+            added and then on click we can router.navigate(&ldquo;/new&rdquo;)
+          </p>
+
+          <p>
+            Shadow only effects IOS for Android we have to use elevations for
+            this
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-orgf180007" class="outline-2">
+        <h2 id="orgf180007">
+          <span class="section-number-2">36.</span> Selecting Photos with Expo
+          Image Picker
+        </h2>
+        <div class="outline-text-2" id="text-36">
+          <p>
+            To store a image with the plant itself and store in the async
+            storage first install with npx install expo-image-picker We would
+            need to take a permission if we use a camera Then we use the default
+            image to choose their image Wrap the image instead of View around
+            the PlantlyImage Change the activeOpacity = 0.8
+            onPress={handleChooseImage} add const handleChooseImage = async ()
+            <code>&gt; { if(Platform.OS ==</code> &ldquo;Web&rdquo;){ return; }
+            const result = await ImagePicker.LaunchImageLibraryAsync({
+            mediaTypes: ImagePicker.MeidaTypeOptions.Images, allowsEditing:True,
+            aspect: [1,1,] quality:1}) } FIrs option to limit to image only
+            Second option To crop the image Last is 0 to 1 for the quality
+            if(!result.canclled){ setImageURI(result.assets[0].uri)}
+          </p>
+
+          <p>
+            then pass the imageURI to plantly Image Update the PlantlyImage to
+            take a imageURI optionally source={imageURI? {uriL imageURi}:
+            Require(&ldquo;path/to.template&rdquo;)} style={{width:imageSize,
+            height:imageSize, borderRadius: 6}}
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org5c60543" class="outline-2">
+        <h2 id="org5c60543">
+          <span class="section-number-2">37.</span> Saving Plant Data
+        </h2>
+        <div class="outline-text-2" id="text-37">
+          <p>
+            To save this plant We can&rsquo;t save the uri to image as the image
+            caan be moved So we have to make a copy in cache to use For this we
+            use npx expo install expo-file-system Update the addPlant to send
+            uri The iamge uri has the last imageName.extension const
+            SavedImageUri = FileSystem.documentDirecotry + `new
+            Date().getTIme()-${imageUri?.split(&ldquo;/&rdquo;).slice(-1)[0]}`
+            if(imageUri){ await FIleSystem.copyAsync({from:imageUri,
+            to:savedIMageURi}) } update the savePlant add imageUri: imageUri?
+            savedIMageURi : undefined
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-orge33848f" class="outline-2">
+        <h2 id="orge33848f">
+          <span class="section-number-2">38.</span> Dynamic Routes
+        </h2>
+        <div class="outline-text-2" id="text-38">
+          <p>
+            Path for each plant details
+            <i>plants</i>[plantId] for plant details WE have to use a grouping
+            routes ccreate (home) insdie (tabs) and move index file into home
+            Create _layout.tsx inside it Create a Stack with Stack.screen with
+            name = index rename the index indide tabs _layout to (home) Then we
+            hide the parent header Move the pressable to the tabs layout to home
+            layout To get [plantId] we need to new folder plants Create the
+            dynamic route to [plantId].tsx export default function
+            PlantScreen(){ return ( const parms = useLocalSearchParams(); View
+            Text Plant Screen ) }
+          </p>
+
+          <p>
+            Change the View to pressable for the plant card And wrap inside a
+            link href={`plants/${plant.id}`}
+          </p>
+
+          <p>
+            In HOme/<sub>layoutout</sub>
+            Define a stakc.screen aname - &ldquo;plants/[plantId]&rdquo;
+            optional title = {}
+          </p>
+
+          <p>
+            use In plantScreen add a useEffect(()=&gt;{ navigation.setOptions({
+            titile:&ldquo;plant name&rdquo;+params.plantId}) },[])
+          </p>
+
+          <p>
+            To manage the dates and times npx install date-fns To help with
+            management with dates and time
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org54cee7b" class="outline-2">
+        <h2 id="org54cee7b">
+          <span class="section-number-2">39.</span> Development Builds
+        </h2>
+        <div class="outline-text-2" id="text-39">
+          <p>
+            For started builds we can use expo Go But as we go on we have to
+            switch to native app as expo doesn&rsquo;t have all features Things
+            which are not pre bundled with expo like Reactive VIsion Camer or
+            firebase or In App Purchase or Quick Actions IOS can only use latest
+            published EXPO GO SDK It is a customizable version of Expo Go that
+            contains the native libraries that are actually needed inside the
+            project. This is for the local building
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org744d40e" class="outline-2">
+        <h2 id="org744d40e">
+          <span class="section-number-2">40.</span> Andorid / IOS Build
+        </h2>
+        <div class="outline-text-2" id="text-40">
+          <p>
+            First install npx expo install expo-dev to get the dev menu inside
+            the devvelopment build npx expo prebuild &#x2013;platform android
+            npx expo prebuild &#x2013;platform ios This will create the IOS and
+            android folders Convention is to use reversed URL This created
+            folders can be openned in android studio or Xcode We should use same
+            package names for both andorid and IOS Continouse Native Generation
+            is it generate native projects form the inputs Similar to Node
+            Modules we don&rsquo;t commit them To build the app use npx expo
+            run:ios/ android
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org4e31af4" class="outline-2">
+        <h2 id="org4e31af4">
+          <span class="section-number-2">41.</span> Building in the CLoud in EAS
+        </h2>
+        <div class="outline-text-2" id="text-41">
+          <p>
+            We can create app in Cloud Expo Application Services It is a cloud
+            service to createe react native apps eas init eas build configure It
+            will have 3 build Development Preview and Production Develeopment
+            with dev Preview is similar to production Production is delivery for
+            app through playstore by different sigining IOS require the 99$ fees
+            per year eas build &#x2013;profile=development &#x2013;platform=ios
+            For andorid needs to new android keystore for distribution on
+            playstore Then we can download build in form of apk or install as QR
+            Code or use Expo Orbit for install physical builds for testing and
+            QA
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org6e37da7" class="outline-2">
+        <h2 id="org6e37da7">
+          <span class="section-number-2">42.</span> SPlash Screen and APp Icons
+        </h2>
+        <div class="outline-text-2" id="text-42">
+          <p>
+            Just use the resolutions from the assets folder to change the splash
+            and app icons No Rounded corners are necessary for ios build and No
+            transparency For Android we can use a solid or transparency icons we
+            must name it adaptive-icon We can also add a favicon for the web
+            support Then we can also update the app Name with captializations
+            With the prebuild command all icons for differnt resolutions are
+            also generated Al the auth and storage permisiosn can be done during
+            splash screen Then we can stop SplasScreen.StopAutoHide() and
+            SplashScreen.hideAsync();
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org115854d" class="outline-2">
+        <h2 id="org115854d">
+          <span class="section-number-2">43.</span> CUstom Font
+        </h2>
+        <div class="outline-text-2" id="text-43">
+          <p>
+            We have to bundle the fonts with the app Or we can async load during
+            runtime or use expo-font-plugin Try to use OTF format as they are
+            smaller Plugins and mods are js functino that run during prebuild so
+            they change native build WE can download the file or use the
+            libraries for the google fonts Add the plugin and expo-font and then
+            add the path to the font file We ca nuse Mockoon to creat fake data
+            at local level For Android font family is same as file name fOr IOS
+            font family is differtn from file name and comes from PostScript
+            name SO we have to suse Platform.OS or
+            Platform.select({ios:&ldquo;Caveat-Regular&rdquo;,andorid:&ldquo;CaveatRegular800&rdquo;})
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-org902164c" class="outline-2">
+        <h2 id="org902164c">
+          <span class="section-number-2">44.</span> Quick Actions
+        </h2>
+        <div class="outline-text-2" id="text-44">
+          <p>
+            Little dev menu when we click and hold the app npx expo install
+            expo/quick-actions we pass the image which is bundled with the app
+            for leaf icons for android
+          </p>
+
+          <p>
+            We need to use Effect to the app layout To setItems using
+            QuickActions
+          </p>
+
+          <p>
+            Emulator will have the actual andoird memory IOS emulator will have
+            virtual memory so simulator is more powerfull than the actual device
+          </p>
+        </div>
+      </div>
+      <div id="outline-container-orgaa315f3" class="outline-2">
+        <h2 id="orgaa315f3">
+          <span class="section-number-2">45.</span> Deep Linking
+        </h2>
+      </div>
+    </div>
+    <div id="postamble" class="status">
+      <p class="author">Author: Shaswat</p>
+      <p class="date">Created: 2025-01-12 日 18:41</p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,742 @@
+<html>
+  <head>
+    <!-- 2025-01-12 日 18:39 -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bash</title>
+    <meta name="author" content="Shaswat" />
+    <meta name="generator" content="Org Mode" />
+    <style type="text/css">
+      #content {
+        max-width: 60em;
+        margin: auto;
+      }
+      .title {
+        text-align: center;
+        margin-bottom: 0.2em;
+      }
+      .subtitle {
+        text-align: center;
+        font-size: medium;
+        font-weight: bold;
+        margin-top: 0;
+      }
+      .todo {
+        font-family: monospace;
+        color: red;
+      }
+      .done {
+        font-family: monospace;
+        color: green;
+      }
+      .priority {
+        font-family: monospace;
+        color: orange;
+      }
+      .tag {
+        background-color: #eee;
+        font-family: monospace;
+        padding: 2px;
+        font-size: 80%;
+        font-weight: normal;
+      }
+      .timestamp {
+        color: #bebebe;
+      }
+      .timestamp-kwd {
+        color: #5f9ea0;
+      }
+      .org-right {
+        margin-left: auto;
+        margin-right: 0px;
+        text-align: right;
+      }
+      .org-left {
+        margin-left: 0px;
+        margin-right: auto;
+        text-align: left;
+      }
+      .org-center {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+      .underline {
+        text-decoration: underline;
+      }
+      #postamble p,
+      #preamble p {
+        font-size: 90%;
+        margin: 0.2em;
+      }
+      p.verse {
+        margin-left: 3%;
+      }
+      pre {
+        border: 1px solid #e6e6e6;
+        border-radius: 3px;
+        background-color: #f2f2f2;
+        padding: 8pt;
+        font-family: monospace;
+        overflow: auto;
+        margin: 1.2em;
+      }
+      pre.src {
+        position: relative;
+        overflow: auto;
+      }
+      pre.src:before {
+        display: none;
+        position: absolute;
+        top: -8px;
+        right: 12px;
+        padding: 3px;
+        color: #555;
+        background-color: #f2f2f299;
+      }
+      pre.src:hover:before {
+        display: inline;
+        margin-top: 14px;
+      }
+      /* Languages per Org manual */
+      pre.src-asymptote:before {
+        content: "Asymptote";
+      }
+      pre.src-awk:before {
+        content: "Awk";
+      }
+      pre.src-authinfo::before {
+        content: "Authinfo";
+      }
+      pre.src-C:before {
+        content: "C";
+      }
+      /* pre.src-C++ doesn't work in CSS */
+      pre.src-clojure:before {
+        content: "Clojure";
+      }
+      pre.src-css:before {
+        content: "CSS";
+      }
+      pre.src-D:before {
+        content: "D";
+      }
+      pre.src-ditaa:before {
+        content: "ditaa";
+      }
+      pre.src-dot:before {
+        content: "Graphviz";
+      }
+      pre.src-calc:before {
+        content: "Emacs Calc";
+      }
+      pre.src-emacs-lisp:before {
+        content: "Emacs Lisp";
+      }
+      pre.src-fortran:before {
+        content: "Fortran";
+      }
+      pre.src-gnuplot:before {
+        content: "gnuplot";
+      }
+      pre.src-haskell:before {
+        content: "Haskell";
+      }
+      pre.src-hledger:before {
+        content: "hledger";
+      }
+      pre.src-java:before {
+        content: "Java";
+      }
+      pre.src-js:before {
+        content: "Javascript";
+      }
+      pre.src-latex:before {
+        content: "LaTeX";
+      }
+      pre.src-ledger:before {
+        content: "Ledger";
+      }
+      pre.src-lisp:before {
+        content: "Lisp";
+      }
+      pre.src-lilypond:before {
+        content: "Lilypond";
+      }
+      pre.src-lua:before {
+        content: "Lua";
+      }
+      pre.src-matlab:before {
+        content: "MATLAB";
+      }
+      pre.src-mscgen:before {
+        content: "Mscgen";
+      }
+      pre.src-ocaml:before {
+        content: "Objective Caml";
+      }
+      pre.src-octave:before {
+        content: "Octave";
+      }
+      pre.src-org:before {
+        content: "Org mode";
+      }
+      pre.src-oz:before {
+        content: "OZ";
+      }
+      pre.src-plantuml:before {
+        content: "Plantuml";
+      }
+      pre.src-processing:before {
+        content: "Processing.js";
+      }
+      pre.src-python:before {
+        content: "Python";
+      }
+      pre.src-R:before {
+        content: "R";
+      }
+      pre.src-ruby:before {
+        content: "Ruby";
+      }
+      pre.src-sass:before {
+        content: "Sass";
+      }
+      pre.src-scheme:before {
+        content: "Scheme";
+      }
+      pre.src-screen:before {
+        content: "Gnu Screen";
+      }
+      pre.src-sed:before {
+        content: "Sed";
+      }
+      pre.src-sh:before {
+        content: "shell";
+      }
+      pre.src-sql:before {
+        content: "SQL";
+      }
+      pre.src-sqlite:before {
+        content: "SQLite";
+      }
+      /* additional languages in org.el's org-babel-load-languages alist */
+      pre.src-forth:before {
+        content: "Forth";
+      }
+      pre.src-io:before {
+        content: "IO";
+      }
+      pre.src-J:before {
+        content: "J";
+      }
+      pre.src-makefile:before {
+        content: "Makefile";
+      }
+      pre.src-maxima:before {
+        content: "Maxima";
+      }
+      pre.src-perl:before {
+        content: "Perl";
+      }
+      pre.src-picolisp:before {
+        content: "Pico Lisp";
+      }
+      pre.src-scala:before {
+        content: "Scala";
+      }
+      pre.src-shell:before {
+        content: "Shell Script";
+      }
+      pre.src-ebnf2ps:before {
+        content: "ebfn2ps";
+      }
+      /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+      pre.src-cpp:before {
+        content: "C++";
+      }
+      pre.src-abc:before {
+        content: "ABC";
+      }
+      pre.src-coq:before {
+        content: "Coq";
+      }
+      pre.src-groovy:before {
+        content: "Groovy";
+      }
+      /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+      pre.src-bash:before {
+        content: "bash";
+      }
+      pre.src-csh:before {
+        content: "csh";
+      }
+      pre.src-ash:before {
+        content: "ash";
+      }
+      pre.src-dash:before {
+        content: "dash";
+      }
+      pre.src-ksh:before {
+        content: "ksh";
+      }
+      pre.src-mksh:before {
+        content: "mksh";
+      }
+      pre.src-posh:before {
+        content: "posh";
+      }
+      /* Additional Emacs modes also supported by the LaTeX listings package */
+      pre.src-ada:before {
+        content: "Ada";
+      }
+      pre.src-asm:before {
+        content: "Assembler";
+      }
+      pre.src-caml:before {
+        content: "Caml";
+      }
+      pre.src-delphi:before {
+        content: "Delphi";
+      }
+      pre.src-html:before {
+        content: "HTML";
+      }
+      pre.src-idl:before {
+        content: "IDL";
+      }
+      pre.src-mercury:before {
+        content: "Mercury";
+      }
+      pre.src-metapost:before {
+        content: "MetaPost";
+      }
+      pre.src-modula-2:before {
+        content: "Modula-2";
+      }
+      pre.src-pascal:before {
+        content: "Pascal";
+      }
+      pre.src-ps:before {
+        content: "PostScript";
+      }
+      pre.src-prolog:before {
+        content: "Prolog";
+      }
+      pre.src-simula:before {
+        content: "Simula";
+      }
+      pre.src-tcl:before {
+        content: "tcl";
+      }
+      pre.src-tex:before {
+        content: "TeX";
+      }
+      pre.src-plain-tex:before {
+        content: "Plain TeX";
+      }
+      pre.src-verilog:before {
+        content: "Verilog";
+      }
+      pre.src-vhdl:before {
+        content: "VHDL";
+      }
+      pre.src-xml:before {
+        content: "XML";
+      }
+      pre.src-nxml:before {
+        content: "XML";
+      }
+      /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+      pre.src-conf:before {
+        content: "Configuration File";
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+      caption.t-above {
+        caption-side: top;
+      }
+      caption.t-bottom {
+        caption-side: bottom;
+      }
+      td,
+      th {
+        vertical-align: top;
+      }
+      th.org-right {
+        text-align: center;
+      }
+      th.org-left {
+        text-align: center;
+      }
+      th.org-center {
+        text-align: center;
+      }
+      td.org-right {
+        text-align: right;
+      }
+      td.org-left {
+        text-align: left;
+      }
+      td.org-center {
+        text-align: center;
+      }
+      dt {
+        font-weight: bold;
+      }
+      .footpara {
+        display: inline;
+      }
+      .footdef {
+        margin-bottom: 1em;
+      }
+      .figure {
+        padding: 1em;
+      }
+      .figure p {
+        text-align: center;
+      }
+      .equation-container {
+        display: table;
+        text-align: center;
+        width: 100%;
+      }
+      .equation {
+        vertical-align: middle;
+      }
+      .equation-label {
+        display: table-cell;
+        text-align: right;
+        vertical-align: middle;
+      }
+      .inlinetask {
+        padding: 10px;
+        border: 2px solid gray;
+        margin: 10px;
+        background: #ffffcc;
+      }
+      #org-div-home-and-up {
+        text-align: right;
+        font-size: 70%;
+        white-space: nowrap;
+      }
+      textarea {
+        overflow-x: auto;
+      }
+      .linenr {
+        font-size: smaller;
+      }
+      .code-highlighted {
+        background-color: #ffff00;
+      }
+      .org-info-js_info-navigation {
+        border-style: none;
+      }
+      #org-info-js_console-label {
+        font-size: 10px;
+        font-weight: bold;
+        white-space: nowrap;
+      }
+      .org-info-js_search-highlight {
+        background-color: #ffff00;
+        color: #000000;
+        font-weight: bold;
+      }
+      .org-svg {
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content" class="content">
+      <h1 class="title">Bash</h1>
+      <p>
+        Extension .sh or nothing using chmod +x script name to add executable
+        ./script.sh to run the script To identify a bash we use shebang
+        #!/bin/bash Shebang tells the script which interpreter to use TO declare
+        a variable var=value to Reference the variable use $ to differentiate
+        with commands and variable echo $var Variables dont persist for logout
+        and login
+      </p>
+
+      <p>
+        Strings with single quotes doesn&rsquo;t use string templating It
+        supports string templating by default \&rsquo; to escape characters to
+        store the output of an command use $(cmd) This is a subshell which helps
+        to execute a command in the background Few variables are declared by
+        default known as environment variables Thery are captial $SHELL $USER
+        Uppercase variables are used to reference environment variables They are
+        generally avoided in scirpting programs env command to get all the
+        environment variables
+      </p>
+
+      <p>-eq is for equal to</p>
+      <div class="org-src-container">
+        <pre
+          class="src src-bash"
+        ><span style="color: #dcaeea;">count</span>=<span style="color: #da8548; font-weight: bold;">12</span>
+<span style="color: #51afef;">if</span> <span style="color: #51afef;">[</span> $<span style="color: #dcaeea;">count</span> -eq <span style="color: #da8548; font-weight: bold;">10</span> <span style="color: #51afef;">]</span>
+<span style="color: #51afef;">then</span>
+    <span style="color: #ECBE7B;">echo</span> <span style="color: #98be65;">"Condition is True"</span>
+<span style="color: #51afef;">else</span>
+    <span style="color: #ECBE7B;">echo</span> <span style="color: #98be65;">"Condition is False"</span>
+<span style="color: #51afef;">fi</span>
+
+</pre>
+      </div>
+      <p>-ne is for not equal to</p>
+      <div class="org-src-container">
+        <pre
+          class="src src-bash"
+        ><span style="color: #dcaeea;">count</span>=<span style="color: #da8548; font-weight: bold;">12</span>
+<span style="color: #51afef;">if</span> <span style="color: #51afef;">[</span> $<span style="color: #dcaeea;">count</span> -ne <span style="color: #da8548; font-weight: bold;">10</span> <span style="color: #51afef;">]</span>
+<span style="color: #51afef;">then</span>
+    <span style="color: #ECBE7B;">echo</span> <span style="color: #98be65;">"Condition is True"</span>
+<span style="color: #51afef;">else</span>
+    <span style="color: #ECBE7B;">echo</span> <span style="color: #98be65;">"Condition is False"</span>
+<span style="color: #51afef;">fi</span>
+
+</pre>
+      </div>
+
+      <p>-gt is for greater than</p>
+
+      <div class="org-src-container">
+        <pre
+          class="src src-bash"
+        ><span style="color: #dcaeea;">count</span>=<span style="color: #da8548; font-weight: bold;">12</span>
+<span style="color: #51afef;">if</span> <span style="color: #51afef;">[</span> $<span style="color: #dcaeea;">count</span> -gt <span style="color: #da8548; font-weight: bold;">10</span> <span style="color: #51afef;">]</span>
+<span style="color: #51afef;">then</span>
+    <span style="color: #ECBE7B;">echo</span> <span style="color: #98be65;">"Condition is True"</span>
+<span style="color: #51afef;">else</span>
+    <span style="color: #ECBE7B;">echo</span> <span style="color: #98be65;">"Condition is False"</span>
+<span style="color: #51afef;">fi</span>
+
+</pre>
+      </div>
+
+      <p>-lt is for lesser than</p>
+      <div class="org-src-container">
+        <pre
+          class="src src-bash"
+        ><span style="color: #dcaeea;">count</span>=<span style="color: #da8548; font-weight: bold;">12</span>
+<span style="color: #51afef;">if</span> <span style="color: #51afef;">[</span> $<span style="color: #dcaeea;">count</span> -lt <span style="color: #da8548; font-weight: bold;">10</span> <span style="color: #51afef;">]</span>
+<span style="color: #51afef;">then</span>
+    <span style="color: #ECBE7B;">echo</span> <span style="color: #98be65;">"Condition is True"</span>
+<span style="color: #51afef;">else</span>
+    <span style="color: #ECBE7B;">echo</span> <span style="color: #98be65;">"Condition is False"</span>
+<span style="color: #51afef;">fi</span>
+
+</pre>
+      </div>
+
+      <p>Use (()) to use normal notation</p>
+      <div class="org-src-container">
+        <pre
+          class="src src-bash"
+        ><span style="color: #dcaeea;">count</span>=<span style="color: #da8548; font-weight: bold;">10</span>
+
+<span style="color: #51afef;">if</span><span style="color: #51afef;">(</span><span style="color: #c678dd;">(</span><span style="color: #dcaeea;">count</span>==<span style="color: #da8548; font-weight: bold;">10</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+<span style="color: #51afef;">then</span>
+    <span style="color: #ECBE7B;">echo</span> <span style="color: #98be65;">"Condition is True"</span>
+<span style="color: #51afef;">else</span>
+    <span style="color: #ECBE7B;">echo</span> <span style="color: #98be65;">"Condition is False"</span>
+<span style="color: #51afef;">fi</span>
+
+</pre>
+      </div>
+
+      <p>use following for elseif conditional block elif ((condition)) then</p>
+      <div class="org-src-container">
+        <pre
+          class="src src-bash"
+        ><span style="color: #dcaeea;">count</span>=<span style="color: #da8548; font-weight: bold;">1</span>
+
+<span style="color: #51afef;">if</span><span style="color: #51afef;">(</span><span style="color: #c678dd;">(</span><span style="color: #dcaeea;">count</span>==<span style="color: #da8548; font-weight: bold;">10</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+<span style="color: #51afef;">then</span>
+    <span style="color: #ECBE7B;">echo</span> <span style="color: #98be65;">"Count is 10"</span>
+<span style="color: #51afef;">elif</span><span style="color: #51afef;">(</span><span style="color: #c678dd;">(</span>count &gt; <span style="color: #da8548; font-weight: bold;">10</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+<span style="color: #51afef;">then</span>
+    <span style="color: #ECBE7B;">echo</span> <span style="color: #98be65;">"Count is greather than 10"</span>
+<span style="color: #51afef;">else</span>
+    <span style="color: #ECBE7B;">echo</span> <span style="color: #98be65;">"Count is lesser than 10"</span>
+<span style="color: #51afef;">fi</span>
+
+</pre>
+      </div>
+
+      <p>And Opertor use &amp;&amp;</p>
+      <div class="org-src-container">
+        <pre
+          class="src src-bash"
+        ><span style="color: #dcaeea;">count</span>=<span style="color: #da8548; font-weight: bold;">1</span>
+
+<span style="color: #51afef;">if</span><span style="color: #51afef;">(</span><span style="color: #c678dd;">(</span><span style="color: #dcaeea;">count</span>==<span style="color: #da8548; font-weight: bold;">10</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span> &amp;&amp; <span style="color: #51afef;">(</span><span style="color: #c678dd;">(</span>count &lt; <span style="color: #da8548; font-weight: bold;">10</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+<span style="color: #51afef;">then</span>
+    <span style="color: #ECBE7B;">echo</span> <span style="color: #98be65;">"count is </span><span style="color: #98be65;">less</span><span style="color: #98be65;"> and equal to 10"</span>
+<span style="color: #51afef;">else</span>
+    <span style="color: #ECBE7B;">echo</span> <span style="color: #98be65;">"Count is  than 10"</span>
+<span style="color: #51afef;">fi</span>
+
+</pre>
+      </div>
+      <p>And Opertor use &amp;&amp; , -a inside a expression</p>
+      <div class="org-src-container">
+        <pre
+          class="src src-bash"
+        ><span style="color: #dcaeea;">count</span>=<span style="color: #da8548; font-weight: bold;">1</span>
+
+<span style="color: #51afef;">if</span> <span style="color: #51afef;">[</span> $<span style="color: #dcaeea;">count</span> -gt <span style="color: #da8548; font-weight: bold;">10</span> -a $<span style="color: #dcaeea;">count</span> -lt <span style="color: #da8548; font-weight: bold;">20</span> <span style="color: #51afef;">]</span>
+<span style="color: #51afef;">then</span>
+    <span style="color: #ECBE7B;">echo</span> <span style="color: #98be65;">"count is </span><span style="color: #98be65;">less</span><span style="color: #98be65;"> and equal to 10"</span>
+<span style="color: #51afef;">else</span>
+    <span style="color: #ECBE7B;">echo</span> <span style="color: #98be65;">"Count is  than 10"</span>
+<span style="color: #51afef;">fi</span>
+
+</pre>
+      </div>
+
+      <p>For or operator use -o or ||</p>
+
+      <div class="org-src-container">
+        <pre
+          class="src src-bash"
+        ><span style="color: #dcaeea;">number</span>=<span style="color: #da8548; font-weight: bold;">1</span>
+<span style="color: #51afef;">while</span> <span style="color: #51afef;">[</span> $<span style="color: #dcaeea;">number</span> -lt <span style="color: #da8548; font-weight: bold;">10</span> <span style="color: #51afef;">]</span>
+<span style="color: #51afef;">do</span>
+    <span style="color: #ECBE7B;">echo</span> <span style="color: #98be65;">"</span><span style="color: #a9a1e1;">$</span><span style="color: #dcaeea;">number</span><span style="color: #98be65;">"</span>
+    <span style="color: #dcaeea;">number</span>=$<span style="color: #51afef;">(</span><span style="color: #c678dd;">(</span> number + <span style="color: #da8548; font-weight: bold;">1</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+<span style="color: #51afef;">done</span>
+
+
+</pre>
+      </div>
+
+      <div class="org-src-container">
+        <pre
+          class="src src-bash"
+        ><span style="color: #dcaeea;">number</span>=<span style="color: #da8548; font-weight: bold;">1</span>
+<span style="color: #51afef;">until</span> <span style="color: #51afef;">[</span> $<span style="color: #dcaeea;">number</span> -gt <span style="color: #da8548; font-weight: bold;">10</span> <span style="color: #51afef;">]</span>
+<span style="color: #51afef;">do</span>
+    <span style="color: #ECBE7B;">echo</span> <span style="color: #98be65;">"</span><span style="color: #a9a1e1;">$</span><span style="color: #dcaeea;">number</span><span style="color: #98be65;">"</span>
+    <span style="color: #dcaeea;">number</span>=$<span style="color: #51afef;">(</span><span style="color: #c678dd;">(</span> number + <span style="color: #da8548; font-weight: bold;">1</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+<span style="color: #51afef;">done</span>
+
+
+</pre>
+      </div>
+
+      <p>use {a..b..c} as a range</p>
+      <div class="org-src-container">
+        <pre
+          class="src src-bash"
+        ><span style="color: #51afef;">for</span> i<span style="color: #51afef;"> in</span> <span style="color: #51afef;">{</span>0..20<span style="color: #51afef;">}</span>
+<span style="color: #51afef;">do</span>
+    <span style="color: #ECBE7B;">echo</span> $<span style="color: #dcaeea;">i</span>
+<span style="color: #51afef;">done</span>
+
+</pre>
+      </div>
+
+      <div class="org-src-container">
+        <pre
+          class="src src-bash"
+        ><span style="color: #51afef;">for</span> <span style="color: #51afef;">(</span><span style="color: #c678dd;">(</span><span style="color: #dcaeea;">i</span>=<span style="color: #da8548; font-weight: bold;">0</span>; i&lt;<span style="color: #da8548; font-weight: bold;">5</span>;<span style="color: #dcaeea;">i</span>+=<span style="color: #da8548; font-weight: bold;">1</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+<span style="color: #51afef;">do</span>
+    <span style="color: #ECBE7B;">echo</span> $<span style="color: #dcaeea;">i</span>
+<span style="color: #51afef;">done</span>
+
+</pre>
+      </div>
+
+      <div class="org-src-container">
+        <pre
+          class="src src-bash"
+        ><span style="color: #51afef;">for</span> <span style="color: #51afef;">(</span><span style="color: #c678dd;">(</span><span style="color: #dcaeea;">i</span>=<span style="color: #da8548; font-weight: bold;">0</span>; i&lt;=<span style="color: #da8548; font-weight: bold;">10</span>; i++<span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+    <span style="color: #51afef;">do</span>
+        <span style="color: #51afef;">if</span> <span style="color: #51afef;">[</span> $<span style="color: #dcaeea;">i</span> -gt <span style="color: #da8548; font-weight: bold;">5</span> <span style="color: #51afef;">]</span>
+           <span style="color: #51afef;">then</span>
+               <span style="color: #51afef;">break</span>
+        <span style="color: #51afef;">fi</span>
+        <span style="color: #ECBE7B;">echo</span> $<span style="color: #dcaeea;">i</span>
+    <span style="color: #51afef;">done</span>
+
+</pre>
+      </div>
+
+      <div class="org-src-container">
+        <pre
+          class="src src-bash"
+        ><span style="color: #51afef;">for</span> <span style="color: #51afef;">(</span><span style="color: #c678dd;">(</span><span style="color: #dcaeea;">i</span>=<span style="color: #da8548; font-weight: bold;">0</span>; i&lt;=<span style="color: #da8548; font-weight: bold;">10</span>; i++<span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+    <span style="color: #51afef;">do</span>
+        <span style="color: #51afef;">if</span> <span style="color: #51afef;">[</span> $<span style="color: #dcaeea;">i</span> -lt <span style="color: #da8548; font-weight: bold;">5</span> <span style="color: #51afef;">]</span>
+           <span style="color: #51afef;">then</span>
+               <span style="color: #51afef;">continue</span>
+        <span style="color: #51afef;">fi</span>
+        <span style="color: #ECBE7B;">echo</span> $<span style="color: #dcaeea;">i</span>
+    <span style="color: #51afef;">done</span>
+
+</pre>
+      </div>
+
+      <div class="org-src-container">
+        <pre
+          class="src src-bash"
+        ><span style="color: #ECBE7B;">echo</span> $<span style="color: #da8548; font-weight: bold;">0</span> $<span style="color: #da8548; font-weight: bold;">1</span> $<span style="color: #da8548; font-weight: bold;">2</span> $<span style="color: #da8548; font-weight: bold;">3</span>
+<span style="color: #dcaeea;">args</span>=<span style="color: #51afef;">(</span><span style="color: #98be65;">"</span><span style="color: #a9a1e1;">$</span><span style="color: #dcaeea;">0</span><span style="color: #98be65;">"</span><span style="color: #51afef;">)</span>
+<span style="color: #ECBE7B;">echo</span> $<span style="color: #51afef;">{</span><span style="color: #dcaeea;">args</span><span style="color: #c678dd;">[</span><span style="color: #da8548; font-weight: bold;">0</span><span style="color: #c678dd;">]</span><span style="color: #51afef;">}</span> $<span style="color: #51afef;">{</span><span style="color: #dcaeea;">args</span><span style="color: #c678dd;">[</span><span style="color: #da8548; font-weight: bold;">1</span><span style="color: #c678dd;">]</span><span style="color: #51afef;">}</span>
+<span style="color: #ECBE7B;">echo</span> $<span style="color: #da8548; font-weight: bold;">0</span>
+<span style="color: #ECBE7B;">echo</span> $<span style="color: #dcaeea;">#</span>
+
+</pre>
+      </div>
+
+      <div class="org-src-container">
+        <pre
+          class="src src-bash"
+        ><span style="color: #51afef;">while </span><span style="color: #c678dd;">read</span> line
+<span style="color: #51afef;">do</span>
+    <span style="color: #ECBE7B;">echo</span> <span style="color: #98be65;">"</span><span style="color: #a9a1e1;">$</span><span style="color: #dcaeea;">line</span><span style="color: #98be65;">"</span>
+<span style="color: #51afef;">done</span> &lt; <span style="color: #98be65;">'${1:-/dev.stdin}'</span>
+</pre>
+      </div>
+
+      <p>
+        script output STDOUT STDERR 1&gt; 2&gt; &gt; defaults ot STDOUT
+        &gt;&amp; STDOUT and STDERR
+      </p>
+
+      <p>Pipes to send output from one command to another</p>
+
+      <p>export VARIABLE</p>
+
+      <div class="org-src-container">
+        <pre
+          class="src src-bash"
+        ><span style="color: #ECBE7B;">echo</span> <span style="color: #98be65;">"Enter !st String"</span>
+<span style="color: #c678dd;">read</span> st1
+
+<span style="color: #ECBE7B;">echo</span> <span style="color: #98be65;">"Enter 2nd Stirng"</span>
+<span style="color: #c678dd;">read</span> st2
+
+<span style="color: #51afef;">if</span> <span style="color: #51afef;">(</span><span style="color: #c678dd;">(</span>st1 == st2<span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+<span style="color: #51afef;">then</span>
+    <span style="color: #ECBE7B;">echo</span> <span style="color: #98be65;">"String same"</span>
+<span style="color: #51afef;">else</span>
+    <span style="color: #ECBE7B;">echo</span> <span style="color: #98be65;">"String different"</span>
+<span style="color: #51afef;">fi</span>
+
+</pre>
+      </div>
+    </div>
+    <div id="postamble" class="status">
+      <p class="author">Author: Shaswat</p>
+      <p class="date">Created: 2025-01-12 日 18:39</p>
+    </div>
+  </body>
+</html>

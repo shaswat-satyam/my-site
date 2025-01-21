@@ -1,4 +1,9 @@
 import Card from "../components/Card";
+import os from "../assets/subject/os.jpeg";
+import dbms from "../assets/subject/dbms.jpg";
+import algo from "../assets/subject/algo.gif";
+import cd from "../assets/subject/cd.png";
+import se from "../assets/subject/se.png";
 
 export default function Subjects() {
   return (
@@ -11,7 +16,7 @@ export default function Subjects() {
         <div className="flex gap-5 py-5">
           <Card
             name={"Operating System"}
-            path={"./src/assets/subject/os.jpeg"}
+            path={os}
             url={"./src/NotesSection/CS/Operating.html"}
             creator="Shaswat Satyam"
             date="5th Semester"
@@ -19,7 +24,7 @@ export default function Subjects() {
           />
           <Card
             name={"Databases"}
-            path={"./src/assets/subject/dbms.jpg"}
+            path={dbms}
             url={"./src/NotesSection/CS/DBMS.html"}
             creator="Shaswat Satyam"
             date="5th Semester"
@@ -27,7 +32,7 @@ export default function Subjects() {
           />
           <Card
             name={"Algorithm"}
-            path={"./src/assets/subject/algo.gif"}
+            path={algo}
             url={"./src/NotesSection/CS/algo.html"}
             creator="Shaswat Satyam"
             date="5th Semester"
@@ -35,7 +40,7 @@ export default function Subjects() {
           />
           <Card
             name={"Software Engineering"}
-            path={"./src/assets/subject/se.png"}
+            path={se}
             url={"./src/NotesSection/CS/Software.html"}
             creator="Shaswat Satyam"
             date="5th Semester"
@@ -43,7 +48,7 @@ export default function Subjects() {
           />
           <Card
             name={"Compiler"}
-            path={"./src/assets/subject/cd.png"}
+            path={cd}
             url={"./src/NotesSection/CS/compiler.html"}
             creator="Shaswat Satyam"
             date="5th Semester"
@@ -72,7 +77,7 @@ export default function Subjects() {
           />
           <Card
             name={"JavaScript"}
-            path={"./src/assets/lang/javascript.svg"}
+            path={"./src/assets/lang/js.svg"}
             url={"./src/NotesSection/Lang/javascript.html"}
             creator="Shaswat Satyam"
             date="5th Semester"
