@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
-import { WatchedShow } from "../../types";
+import { ComponentShow } from "../../types";
 
-export default function SeriesCard(series: WatchedShow) {
+export default function SeriesCard(series: ComponentShow) {
   const APIKEY = "c12fea4a";
   const { isLoading, error, data } = useQuery({
     queryKey: ["MetaData", series.series.show.ids.imdb],
@@ -41,7 +41,7 @@ export default function SeriesCard(series: WatchedShow) {
           <div>
             <div className="text-sm text-gray-400">Series</div>
             <div className="text-lg text-gray-800">
-              {series.series.show.ids.year}
+              {series.series.show.year}
             </div>
           </div>
           <p className=" text-gray-400 max-h-40 overflow-y-hidden">

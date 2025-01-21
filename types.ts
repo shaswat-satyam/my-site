@@ -11,13 +11,16 @@ type Movie = {
   ids: MovieIds;
 };
 
-export type WatchedMovie = {
+type WatchedMovie = {
   plays: number;
   last_watched_at: string;
   last_updated_at: string;
   movie: Movie;
 };
 
+export type ComponentMovie = {
+  movie: WatchedMovie;
+};
 export type WatchedMoviesList = WatchedMovie[];
 
 type ShowIds = {
@@ -53,6 +56,10 @@ export type WatchedShow = {
   reset_at: string | null;
   show: Show;
   seasons: Season[];
+};
+
+export type ComponentShow = {
+  series: WatchedShow;
 };
 
 export type WatchedShowsList = WatchedShow[];

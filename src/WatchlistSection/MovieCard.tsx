@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
-import { WatchedMovie } from "../../types";
+import { ComponentMovie } from "../../types";
 
-export default function MovieCard(movie: WatchedMovie) {
+export default function MovieCard(movie: ComponentMovie) {
   const APIKEY = "c12fea4a";
   const { isLoading, error, data } = useQuery({
     queryKey: ["MetaData", movie.movie.movie.ids.imdb],
@@ -26,7 +26,7 @@ export default function MovieCard(movie: WatchedMovie) {
                 ? data.Poster
                 : `http://img.omdbapi.com/?apikey=${APIKEY}&i=${movie.movie.movie.ids.imdb}`
             }
-            alt={movie.movie.movie.slug}
+            alt={movie.movie.movie.ids.slug}
           />
         </div>
         <div className="flex flex-col w-1/2 space-y-4">
