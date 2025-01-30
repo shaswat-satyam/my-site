@@ -15,11 +15,7 @@ export default function Card({
 }) {
   return (
     <a href={url} target="_blank">
-      <div
-        className={
-          "bg-gray-800 rounded-lg shadow-lg overflow-hidden max-w-lg w-full"
-        }
-      >
+      <div className="bg-gray-800 rounded-lg shadow-lg overflow-hidden max-w-lg w-64">
         <img
           src={path}
           alt={name + " logo"}

@@ -7,7 +7,7 @@ const Header = ({
     <div className="center w-fit flex backdrop-blur-sm border-2 border-gray-900 rounded-xl p-3">
       <div className="flex gap-9 ">
         <a
-          onClick={() => setScreen("profile")}
+          onClick={() => setScreen("projects")}
           className="border-black hover:animate-pulse"
         >
           Projects

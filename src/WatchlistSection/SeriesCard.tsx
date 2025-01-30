@@ -7,7 +7,7 @@ export default function SeriesCard(series: ComponentShow) {
     queryKey: ["MetaData", series.series.show.ids.imdb],
     queryFn: () =>
       fetch(
-        `http://omdbapi.com/?apikey=${APIKEY}&i=${series.series.show.ids.imdb}`
+        `https://omdbapi.com/?apikey=${APIKEY}&i=${series.series.show.ids.imdb}`
       ).then((res) => res.json()),
     staleTime: 60000,
     retry: 5,
@@ -24,12 +24,12 @@ export default function SeriesCard(series: ComponentShow) {
             src={
               data?.Poster
                 ? data.Poster
-                : `http://img.omdbapi.com/?apikey=${APIKEY}&i=${series.series.show.ids.imdb}`
+                : `https://img.omdbapi.com/?apikey=${APIKEY}&i=${series.series.show.ids.imdb}`
             }
             alt={series.series.show.ids.slug}
           />
         </div>
-        <div className="flex flex-col w-1/2 space-y-4">
+        <div className="flex flex-col w-1/2 space-y-4 ml-5">
           <div className="flex justify-between items-start">
             <h2 className="text-3xl font-bold text-white">
               {series.series.show.title}

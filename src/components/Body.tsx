@@ -1,6 +1,7 @@
 import Card from "./Card";
 export default function Body() {
   return (
+    <>
     <div className="backdrop-blur-sm p-5 rounded-xl flex flex-col gap-5 border-gray-900 border-2">
       <div>
         <h1 className="font-bold text-3xl pb-5">Language</h1>
@@ -59,7 +60,9 @@ export default function Body() {
           />
         </div>
       </div>
-      <div>
+      </div>
+
+      <div className="backdrop-blur-sm p-5 rounded-xl flex flex-col gap-5 border-gray-900 border-2">
         <h1 className="font-bold text-3xl">Tools</h1>
         <div className=" flex flex-wrap gap-5 rounded p-5">
           <Card
@@ -112,7 +115,8 @@ export default function Body() {
           />
         </div>
       </div>
-      <div>
+
+      <div className="backdrop-blur-sm p-5 rounded-xl flex flex-col gap-5 border-gray-900 border-2">
         <h1 className="font-bold text-3xl">Frameworks</h1>
         <div className="flex flex-wrap p-5 gap-5">
           <Card
@@ -158,6 +162,6 @@ export default function Body() {
           />
         </div>
       </div>
-    </div>
+</>
   );
 }

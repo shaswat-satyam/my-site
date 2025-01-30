@@ -7,7 +7,7 @@ export default function MovieCard(movie: ComponentMovie) {
     queryKey: ["MetaData", movie.movie.movie.ids.imdb],
     queryFn: () =>
       fetch(
-        `http://omdbapi.com/?apikey=${APIKEY}&i=${movie.movie.movie.ids.imdb}`
+        `https://omdbapi.com/?apikey=${APIKEY}&i=${movie.movie.movie.ids.imdb}`
       ).then((res) => res.json()),
     staleTime: 60000,
     retry: 5,
@@ -15,7 +15,7 @@ export default function MovieCard(movie: ComponentMovie) {
   });
 
   return (
-    <div className="py-3 sm:max-w-xl  sm:mx-auto">
+    <div className="py-3 sm:max-w-xl sm:mx-auto">
       <div className="bg-slate-800 shadow-lg min-h-fit border-gray-100d w-fit border sm:rounded-3xl p-3 flex">
         {error ? <div>{error.toString()}</div> : <></>}
         <div className=" overflow-visible w-3/5">
@@ -24,12 +24,12 @@ export default function MovieCard(movie: ComponentMovie) {
             src={
               data?.Poster
                 ? data.Poster
-                : `http://img.omdbapi.com/?apikey=${APIKEY}&i=${movie.movie.movie.ids.imdb}`
+                : `https://img.omdbapi.com/?apikey=${APIKEY}&i=${movie.movie.movie.ids.imdb}`
             }
             alt={movie.movie.movie.ids.slug}
           />
         </div>
-        <div className="flex flex-col w-1/2 space-y-4">
+        <div className="flex flex-col w-1/2 ml-5 space-y-4">
           <div className="flex justify-between items-start">
             <h2 className="text-3xl font-bold text-white">
               {movie.movie.movie.title}

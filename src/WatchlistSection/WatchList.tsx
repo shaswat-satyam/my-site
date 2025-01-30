@@ -45,7 +45,7 @@ export default function WatchList() {
       </div>
       <div className="border-2 rounded-xl p-5 backdrop-blur-sm border-gray-900">
         <h1 className="text-3xl font-bold">Movies</h1>
-        <div className="flex gap-5 flex-wrap justify-center">
+        <div className="flex gap-5 flex-wrap auto-rows-max justify-center">
           {movies
             .sort((series1, series2) =>
               new Date(series1.last_watched_at) <
