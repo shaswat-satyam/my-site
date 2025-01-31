@@ -19,7 +19,9 @@ export default function CurrentObession() {
           <ol>
             <li>
               stable, so if I tinker it but some important work comes around I
-              could go back, and
+              could go back, and get the work done. Also If I crash my computer
+              I could recover from it without having to setup everything from
+              beginning.
             </li>
             <li>
               New, I have been in this linux rabbit hole for quite long around 2
