@@ -4,8 +4,15 @@ import series from "./watched_shows.json";
 import MovieCard from "./MovieCard";
 import SeriesCard from "./SeriesCard";
 import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
 
 export default function WatchList() {
+  const [moviesCount, setMovieCount] = useState(0);
+  const [moviesSort, setMoviesSort] = useState("recent");
+
+  const [seriesCount, setSeriesCount] = useState(6);
+  const [seriesSort, setSeriesSort] = useState("recent");
+
   const { isLoading, error, data } = useQuery({
     queryKey: ["quote"],
     queryFn: () =>
@@ -44,16 +51,66 @@ export default function WatchList() {
         </figure>
       </div>
       <div className="border-2 rounded-xl p-5 backdrop-blur-sm border-gray-900">
-        <h1 className="text-3xl font-bold">Movies</h1>
+        <div className="flex justify-between">
+          <h1 className="text-3xl font-bold">Movies</h1>
+          <div className="inline-flex">
+            <button
+              onClick={() => setMoviesSort("recent")}
+              disabled={moviesSort == "recent"}
+              className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
+            >
+              Recently Watched
+            </button>
+            <button
+              onClick={() => setMoviesSort("release")}
+              disabled={moviesSort == "release"}
+              className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 "
+            >
+              Recently released
+            </button>
+            <button
+              onClick={() => setMoviesSort("rating")}
+              disabled={moviesSort == "rating"}
+              className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r"
+            >
+              Rating
+            </button>
+          </div>
+          <div className="inline-flex">
+            <button
+              onClick={() => setMovieCount(moviesCount - 6)}
+              disabled={moviesCount == 0}
+              className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
+            >
+              Prev
+            </button>
+            <button
+              onClick={() => setMovieCount(moviesCount + 6)}
+              disabled={moviesCount + 6 >= movies.length}
+              className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r"
+            >
+              Next
+            </button>
+          </div>
+        </div>
         <div className="flex gap-5 flex-wrap auto-rows-max justify-center">
           {movies
-            .sort((series1, series2) =>
-              new Date(series1.last_watched_at) <
-              new Date(series2.last_watched_at)
-                ? 1
-                : 0
+            .sort(
+              moviesSort == "recent"
+                ? (series1, series2) =>
+                    new Date(series1.last_watched_at) <
+                    new Date(series2.last_watched_at)
+                      ? 1
+                      : 0
+                : moviesSort == "release"
+                ? (series1, series2) =>
+                    new Date(series1.movie.year) < new Date(series2.movie.year)
+                      ? 1
+                      : 0
+                : (series1, series2) =>
+                    series1.movie.ids.trakt > series2.movie.ids.trakt ? 1 : 0
             )
-            .slice(0, 6)
+            .slice(0 + moviesCount, 6 + moviesCount)
             .map((movie) => (
               <p>{<MovieCard movie={movie} key={movie.movie.ids.imdb} />}</p>
             ))}
@@ -61,16 +118,66 @@ export default function WatchList() {
       </div>
 
       <div className="border-2 rounded-xl p-5 backdrop-blur-sm border-gray-900 ">
-        <h1 className="text-3xl font-bold">Series</h1>
+        <div className="flex justify-between">
+          <h1 className="text-3xl font-bold">Series</h1>
+          <div className="inline-flex">
+            <button
+              onClick={() => setSeriesSort("recent")}
+              disabled={seriesSort == "recent"}
+              className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
+            >
+              Recently Watched
+            </button>
+            <button
+              onClick={() => setSeriesSort("release")}
+              disabled={seriesSort == "release"}
+              className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 "
+            >
+              Recently released
+            </button>
+            <button
+              onClick={() => setSeriesSort("rating")}
+              disabled={seriesSort == "rating"}
+              className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r"
+            >
+              Rating
+            </button>
+          </div>
+          <div className="inline-flex">
+            <button
+              onClick={() => setSeriesCount(seriesCount - 6)}
+              disabled={seriesCount == 0}
+              className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
+            >
+              Prev
+            </button>
+            <button
+              onClick={() => setSeriesCount(seriesCount + 6)}
+              disabled={seriesCount + 6 >= series.length}
+              className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r"
+            >
+              Next
+            </button>
+          </div>
+        </div>
         <div className="flex gap-5 flex-wrap justify-center">
           {series
-            .sort((series1, series2) =>
-              new Date(series1.last_watched_at) <
-              new Date(series2.last_watched_at)
-                ? 1
-                : 0
+            .sort(
+              seriesSort == "recent"
+                ? (series1, series2) =>
+                    new Date(series1.last_watched_at) <
+                    new Date(series2.last_watched_at)
+                      ? 1
+                      : 0
+                : seriesSort == "release"
+                ? (series1, series2) =>
+                    new Date(series1.show.year) < new Date(series2.show.year)
+                      ? 1
+                      : 0
+                : (series1, series2) =>
+                    series1.show.ids.trakt > series2.show.ids.trakt ? 1 : 0
             )
-            .slice(0, 6)
+            .slice(0 + seriesCount, 6 + seriesCount)
             .map((series) => (
               <p>{<SeriesCard series={series} key={series.show.ids.imdb} />}</p>
             ))}
