@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function projects() {
   const [more, setMore] = useState(false);
   return (
-    <div className="backdrop-blur-sm p-5 rounded-xl flex flex-col gap-5 border-gray-900 border-2">
+    <div className="backdrop-blur-sm text-balance p-5 rounded-xl flex flex-col gap-5 border-gray-900 border-2">
       <h1 className="font-mono text-3xl font-extrabold bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 text-transparent bg-clip-text">
         HTMX Todo
       </h1>
@@ -17,7 +17,7 @@ export default function projects() {
           <div className="flex flex-col gap-3">
             <p>Basic Todo App using HTMX</p>
             <h1 className="font-bold">Tech stack</h1>
-            <ul className="flex justify-around">
+            <ul className="flex justify-around max-sm:flex-col max-sm:gap-2 ">
               <li>Javascript Language</li>
               <li>HTMX Library</li>
               <li>Express Server</li>
@@ -28,12 +28,14 @@ export default function projects() {
               <a
                 href="https://htmx-todo-575602528238.us-central1.run.app/"
                 target="_blank"
+                className="p-2 cursor-pointer font-bold bg-sky-800 rounded-sm"
               >
                 Link to App
               </a>
               <a
                 href="https://hub.docker.com/r/shaswat51/htmx-todo"
                 target="_blank"
+                className="p-2 cursor-pointer font-bold bg-sky-800 rounded-sm"
               >
                 Link to Image
               </a>
@@ -270,11 +272,14 @@ export default function projects() {
         )}
       </div>
 
-      <div>
+      <div className="text-balance">
         <div className="backdrop-blur-sm p-5 rounded-xl flex flex-col gap-5 border-gray-900 border-2">
           <div className="flex flex-row gap-16">
             <h1 className="text-xl font-bold">Nix OS</h1>{" "}
-            <img className="w-64" src="./src/assets/icons/NixOS.svg" />
+            <img
+              className="w-64 max-sm:w-32"
+              src="./src/assets/icons/NixOS.svg"
+            />
           </div>
           <p>
             Last Month, My POP_OS! based machine died. Because Pop_OS! is a
