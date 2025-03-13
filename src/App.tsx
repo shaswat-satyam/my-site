@@ -30,7 +30,6 @@ function App() {
           {currentScreen == "contact" ? <Contact /> : <></>}
           {currentScreen == "notes" ? <Subjects /> : <></>}
           {currentScreen == "watchlist" ? <WatchList /> : <></>}
-          {currentScreen == "current" ? <CurrentObession /> : <></>}
         </div>
       </div>
     </QueryClientProvider>

@@ -36,12 +36,6 @@ const Header = ({
         >
           Watchlist
         </a>
-        <a
-          onClick={() => setScreen("current")}
-          className="border-black hover:animate-pulse"
-        >
-          Current Obession
-        </a>
       </div>
     </div>
   );
