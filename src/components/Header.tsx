@@ -1,41 +1,38 @@
-const Header = ({
-  setScreen,
-}: {
-  setScreen: React.Dispatch<React.SetStateAction<string>>;
-}) => {
+import { Link } from "react-router-dom";
+const Header = () => {
   return (
     <div className="center sm:w-fit max-sm:w-full min-w-fit backdrop-blur-sm border-2 border-gray-900 rounded-xl py-3 sm:px-3">
       <div className="flex sm:gap-5 align-middle justify-around ">
-        <a
-          onClick={() => setScreen("projects")}
+        <Link
+          to="/projects"
           className="border-black cursor-pointer hover:animate-pulse"
         >
           Projects
-        </a>
-        <a
-          onClick={() => setScreen("about")}
+        </Link>
+        <Link
+          to="/"
           className="border-black cursor-pointer hover:animate-pulse"
         >
           About
-        </a>
-        <a
-          onClick={() => setScreen("contact")}
+        </Link>
+        <Link
+          to="/contact"
           className="border-black cursor-pointer hover:animate-pulse"
         >
           Contact
-        </a>
-        <a
-          onClick={() => setScreen("notes")}
+        </Link>
+        <Link
+          to="/notes"
           className="border-black cursor-pointer hover:animate-pulse"
         >
           Notes
-        </a>
-        <a
-          onClick={() => setScreen("watchlist")}
+        </Link>
+        <Link
+          to="/watchlist"
           className="border-black cursor-pointer hover:animate-pulse"
         >
           Watchlist
-        </a>
+        </Link>
       </div>
     </div>
   );
