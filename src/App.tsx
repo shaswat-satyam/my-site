@@ -7,12 +7,10 @@ import Contact from "./contact/Contact";
 import Projects from "./projects/Projects";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { useState } from "react";
 
 import { Routes, Route } from "react-router-dom";
 
 function App() {
-  const [currentScreen, setCurrentScreen] = useState<string>("about");
   const queryClient = new QueryClient();
 
   return (

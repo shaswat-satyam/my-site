@@ -13,7 +13,7 @@ export default function Card({
   creator: string;
   date: string;
   url: string;
-  rating: number;
+  rating?: number;
 }) {
   return (
     <a href={url} target="_blank" className="w-64">
