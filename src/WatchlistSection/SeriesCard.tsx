@@ -7,7 +7,7 @@ export default function SeriesCard(series: ComponentShow) {
     queryKey: ["MetaData", series.series.show.ids.imdb],
     queryFn: () =>
       fetch(
-        `https://omdbapi.com/?apikey=${APIKEY}&i=${series.series.show.ids.imdb}`
+        `https://omdbapi.com/?apikey=${APIKEY}&i=${series.series.show.ids.imdb}`,
       ).then((res) => res.json()),
     staleTime: 60000,
     retry: 5,
@@ -48,7 +48,7 @@ export default function SeriesCard(series: ComponentShow) {
             {isLoading ? "No Plot" : data.Plot}
           </p>
           <div className="flex text-2xl font-bold text-a text-white">
-            {isLoading ? "2-3 hours" : data.Runtime}
+            {isLoading ? "2-3 hours" : data?.Runtime}
           </div>
         </div>
       </div>

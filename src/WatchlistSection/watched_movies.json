@@ -1,8 +1,8 @@
 [
   {
-    "plays": 2,
+    "plays": 3,
     "last_watched_at": "2024-12-29T08:30:39.000Z",
-    "last_updated_at": "2024-12-29T08:30:39.000Z",
+    "last_updated_at": "2025-05-03T03:51:50.000Z",
     "movie": {
       "title": "Harry Potter and the Philosopher's Stone",
       "year": 2001,
@@ -11,6 +11,81 @@
         "slug": "harry-potter-and-the-philosopher-s-stone-2001",
         "imdb": "tt0241527",
         "tmdb": 671
+      }
+    }
+  },
+  {
+    "plays": 2,
+    "last_watched_at": "2023-06-26T12:01:01.000Z",
+    "last_updated_at": "2025-05-03T03:51:13.000Z",
+    "movie": {
+      "title": "Fight Club",
+      "year": 1999,
+      "ids": {
+        "trakt": 432,
+        "slug": "fight-club-1999",
+        "imdb": "tt0137523",
+        "tmdb": 550
+      }
+    }
+  },
+  {
+    "plays": 2,
+    "last_watched_at": "2023-06-26T12:01:21.000Z",
+    "last_updated_at": "2025-05-03T03:52:02.000Z",
+    "movie": {
+      "title": "Pulp Fiction",
+      "year": 1994,
+      "ids": {
+        "trakt": 554,
+        "slug": "pulp-fiction-1994",
+        "imdb": "tt0110912",
+        "tmdb": 680
+      }
+    }
+  },
+  {
+    "plays": 2,
+    "last_watched_at": "2025-05-03T03:52:10.000Z",
+    "last_updated_at": "2025-05-03T03:52:11.000Z",
+    "movie": {
+      "title": "The Dark Knight Rises",
+      "year": 2012,
+      "ids": {
+        "trakt": 34073,
+        "slug": "the-dark-knight-rises-2012",
+        "imdb": "tt1345836",
+        "tmdb": 49026
+      }
+    }
+  },
+  {
+    "plays": 2,
+    "last_watched_at": "2022-09-12T04:03:46.000Z",
+    "last_updated_at": "2025-05-03T03:51:31.000Z",
+    "movie": {
+      "title": "John Wick",
+      "year": 2014,
+      "ids": {
+        "trakt": 149640,
+        "slug": "john-wick-2014",
+        "imdb": "tt2911666",
+        "tmdb": 245891
+      }
+    }
+  },
+  {
+    "plays": 2,
+    "last_watched_at": "2022-09-12T04:03:51.000Z",
+    "last_updated_at": "2025-05-03T03:52:24.000Z",
+    "movie": {
+      "title": "John Wick: Chapter 2",
+      "year": 2017,
+      "ids": {
+        "trakt": 205127,
+        "slug": "john-wick-chapter-2-2017",
+        "imdb": "tt4425200",
+        "tmdb": 324552
       }
     }
   },
@@ -45,11 +120,86 @@
     }
   },
   {
+    "plays": 2,
+    "last_watched_at": "2025-05-08T14:41:36.000Z",
+    "last_updated_at": "2025-05-08T14:41:37.000Z",
+    "movie": {
+      "title": "Harry Potter 20th Anniversary: Return to Hogwarts",
+      "year": 2022,
+      "ids": {
+        "trakt": 721239,
+        "slug": "harry-potter-20th-anniversary-return-to-hogwarts-2022",
+        "imdb": "tt16116174",
+        "tmdb": 899082
+      }
+    }
+  },
+  {
+    "plays": 2,
+    "last_watched_at": "2025-04-28T18:30:00.000Z",
+    "last_updated_at": "2025-05-03T03:53:10.000Z",
+    "movie": {
+      "title": "Conclave",
+      "year": 2024,
+      "ids": {
+        "trakt": 783046,
+        "slug": "conclave-2024",
+        "imdb": "tt20215234",
+        "tmdb": 974576
+      }
+    }
+  },
+  {
+    "plays": 2,
+    "last_watched_at": "2025-01-15T12:54:51.000Z",
+    "last_updated_at": "2025-01-15T12:54:51.000Z",
+    "movie": {
+      "title": "Ghost in the Shell: Hard-Wired Humanity - Making Ghost in the Shell",
+      "year": 2017,
+      "ids": {
+        "trakt": 1078730,
+        "slug": "ghost-in-the-shell-hard-wired-humanity-making-ghost-in-the-shell-2017",
+        "imdb": "tt7182244",
+        "tmdb": 1319463
+      }
+    }
+  },
+  {
+    "plays": 1,
+    "last_watched_at": "2025-05-13T09:25:14.000Z",
+    "last_updated_at": "2025-05-13T09:25:15.000Z",
+    "movie": {
+      "title": "Scarface",
+      "year": 1983,
+      "ids": {
+        "trakt": 80,
+        "slug": "scarface-1983",
+        "imdb": "tt0086250",
+        "tmdb": 111
+      }
+    }
+  },
+  {
+    "plays": 1,
+    "last_watched_at": "2025-01-31T18:30:00.000Z",
+    "last_updated_at": "2025-05-03T03:59:16.000Z",
+    "movie": {
+      "title": "The Dark Knight",
+      "year": 2008,
+      "ids": {
+        "trakt": 120,
+        "slug": "the-dark-knight-2008",
+        "imdb": "tt0468569",
+        "tmdb": 155
+      }
+    }
+  },
+  {
     "plays": 1,
     "last_watched_at": "2023-08-24T13:28:10.000Z",
     "last_updated_at": "2023-08-24T13:28:10.000Z",
     "movie": {
-      "title": "Willy Wonka \u0026 the Chocolate Factory",
+      "title": "Willy Wonka & the Chocolate Factory",
       "year": 1971,
       "ids": {
         "trakt": 210,
@@ -76,21 +226,6 @@
   },
   {
     "plays": 1,
-    "last_watched_at": "2023-06-26T12:01:01.000Z",
-    "last_updated_at": "2023-06-26T12:01:01.000Z",
-    "movie": {
-      "title": "Fight Club",
-      "year": 1999,
-      "ids": {
-        "trakt": 432,
-        "slug": "fight-club-1999",
-        "imdb": "tt0137523",
-        "tmdb": 550
-      }
-    }
-  },
-  {
-    "plays": 1,
     "last_watched_at": "2022-09-12T04:04:58.000Z",
     "last_updated_at": "2022-09-12T04:04:58.000Z",
     "movie": {
@@ -101,6 +236,21 @@
         "slug": "monsters-inc-2001",
         "imdb": "tt0198781",
         "tmdb": 585
+      }
+    }
+  },
+  {
+    "plays": 1,
+    "last_watched_at": "2025-05-11T17:00:46.000Z",
+    "last_updated_at": "2025-05-11T17:00:46.000Z",
+    "movie": {
+      "title": "The Terminal",
+      "year": 2004,
+      "ids": {
+        "trakt": 472,
+        "slug": "the-terminal-2004",
+        "imdb": "tt0362227",
+        "tmdb": 594
       }
     }
   },
@@ -211,21 +361,6 @@
   },
   {
     "plays": 1,
-    "last_watched_at": "2023-06-26T12:01:21.000Z",
-    "last_updated_at": "2023-06-26T12:01:21.000Z",
-    "movie": {
-      "title": "Pulp Fiction",
-      "year": 1994,
-      "ids": {
-        "trakt": 554,
-        "slug": "pulp-fiction-1994",
-        "imdb": "tt0110912",
-        "tmdb": 680
-      }
-    }
-  },
-  {
-    "plays": 1,
     "last_watched_at": "2022-09-12T04:05:49.000Z",
     "last_updated_at": "2022-09-12T04:05:49.000Z",
     "movie": {
@@ -251,6 +386,21 @@
         "slug": "home-alone-2-lost-in-new-york-1992",
         "imdb": "tt0104431",
         "tmdb": 772
+      }
+    }
+  },
+  {
+    "plays": 1,
+    "last_watched_at": "2025-04-21T18:30:00.000Z",
+    "last_updated_at": "2025-05-03T03:56:37.000Z",
+    "movie": {
+      "title": "Se7en",
+      "year": 1995,
+      "ids": {
+        "trakt": 650,
+        "slug": "se7en-1995",
+        "imdb": "tt0114369",
+        "tmdb": 807
       }
     }
   },
@@ -316,6 +466,21 @@
   },
   {
     "plays": 1,
+    "last_watched_at": "2025-04-24T17:42:48.000Z",
+    "last_updated_at": "2025-04-24T17:42:48.000Z",
+    "movie": {
+      "title": "The Darjeeling Limited",
+      "year": 2007,
+      "ids": {
+        "trakt": 2666,
+        "slug": "the-darjeeling-limited-2007",
+        "imdb": "tt0838221",
+        "tmdb": 4538
+      }
+    }
+  },
+  {
+    "plays": 1,
     "last_watched_at": "2024-04-13T17:13:52.000Z",
     "last_updated_at": "2024-04-13T17:13:52.000Z",
     "movie": {
@@ -341,6 +506,21 @@
         "slug": "like-stars-on-earth-2007",
         "imdb": "tt0986264",
         "tmdb": 7508
+      }
+    }
+  },
+  {
+    "plays": 1,
+    "last_watched_at": "2025-01-14T11:34:26.000Z",
+    "last_updated_at": "2025-01-14T11:34:26.000Z",
+    "movie": {
+      "title": "The Kid",
+      "year": 1921,
+      "ids": {
+        "trakt": 5318,
+        "slug": "the-kid-1921",
+        "imdb": "tt0012349",
+        "tmdb": 10098
       }
     }
   },
@@ -814,7 +994,7 @@
     "last_watched_at": "2022-09-12T05:32:56.000Z",
     "last_updated_at": "2022-09-12T05:32:56.000Z",
     "movie": {
-      "title": "Student of the Year",
+      "title": "Student Of The Year",
       "year": 2012,
       "ids": {
         "trakt": 92812,
@@ -836,6 +1016,21 @@
         "slug": "the-conjuring-2013",
         "imdb": "tt1457767",
         "tmdb": 138843
+      }
+    }
+  },
+  {
+    "plays": 1,
+    "last_watched_at": "2025-04-11T12:19:06.000Z",
+    "last_updated_at": "2025-04-11T12:19:06.000Z",
+    "movie": {
+      "title": "Prisoners",
+      "year": 2013,
+      "ids": {
+        "trakt": 96797,
+        "slug": "prisoners-2013",
+        "imdb": "tt1392214",
+        "tmdb": 146233
       }
     }
   },
@@ -881,6 +1076,21 @@
         "slug": "special-26-2013",
         "imdb": "tt2377938",
         "tmdb": 165904
+      }
+    }
+  },
+  {
+    "plays": 1,
+    "last_watched_at": "2022-05-02T18:30:00.000Z",
+    "last_updated_at": "2025-05-03T03:56:56.000Z",
+    "movie": {
+      "title": "The Lunchbox",
+      "year": 2013,
+      "ids": {
+        "trakt": 119788,
+        "slug": "the-lunchbox-2013",
+        "imdb": "tt2350496",
+        "tmdb": 191714
       }
     }
   },
@@ -941,21 +1151,6 @@
         "slug": "the-imitation-game-2014",
         "imdb": "tt2084970",
         "tmdb": 205596
-      }
-    }
-  },
-  {
-    "plays": 1,
-    "last_watched_at": "2022-09-12T04:03:46.000Z",
-    "last_updated_at": "2022-09-12T04:03:46.000Z",
-    "movie": {
-      "title": "John Wick",
-      "year": 2014,
-      "ids": {
-        "trakt": 149640,
-        "slug": "john-wick-2014",
-        "imdb": "tt2911666",
-        "tmdb": 245891
       }
     }
   },
@@ -1081,21 +1276,6 @@
   },
   {
     "plays": 1,
-    "last_watched_at": "2022-09-12T04:03:51.000Z",
-    "last_updated_at": "2022-09-12T04:03:51.000Z",
-    "movie": {
-      "title": "John Wick: Chapter 2",
-      "year": 2017,
-      "ids": {
-        "trakt": 205127,
-        "slug": "john-wick-chapter-2-2017",
-        "imdb": "tt4425200",
-        "tmdb": 324552
-      }
-    }
-  },
-  {
-    "plays": 1,
     "last_watched_at": "2023-05-27T08:38:34.000Z",
     "last_updated_at": "2023-05-27T08:38:34.000Z",
     "movie": {
@@ -1106,6 +1286,21 @@
         "slug": "hacksaw-ridge-2016",
         "imdb": "tt2119532",
         "tmdb": 324786
+      }
+    }
+  },
+  {
+    "plays": 1,
+    "last_watched_at": "2025-04-07T18:30:00.000Z",
+    "last_updated_at": "2025-05-03T03:55:49.000Z",
+    "movie": {
+      "title": "Masaan",
+      "year": 2015,
+      "ids": {
+        "trakt": 216909,
+        "slug": "masaan-2015",
+        "imdb": "tt4635372",
+        "tmdb": 336203
       }
     }
   },
@@ -1321,6 +1516,21 @@
   },
   {
     "plays": 1,
+    "last_watched_at": "2025-05-03T03:48:41.000Z",
+    "last_updated_at": "2025-05-03T03:48:42.000Z",
+    "movie": {
+      "title": "Madaari",
+      "year": 2016,
+      "ids": {
+        "trakt": 240208,
+        "slug": "madaari-2016",
+        "imdb": "tt5713232",
+        "tmdb": 397365
+      }
+    }
+  },
+  {
+    "plays": 1,
     "last_watched_at": "2023-05-27T08:36:57.000Z",
     "last_updated_at": "2023-05-27T08:36:57.000Z",
     "movie": {
@@ -1406,6 +1616,21 @@
         "slug": "viceroy-s-house-2017",
         "imdb": "tt4977530",
         "tmdb": 429662
+      }
+    }
+  },
+  {
+    "plays": 1,
+    "last_watched_at": "2025-01-15T15:50:43.000Z",
+    "last_updated_at": "2025-01-15T15:50:43.000Z",
+    "movie": {
+      "title": "The Nun",
+      "year": 2018,
+      "ids": {
+        "trakt": 285153,
+        "slug": "the-nun-2018",
+        "imdb": "tt5814060",
+        "tmdb": 439079
       }
     }
   },
@@ -1541,6 +1766,21 @@
         "slug": "john-wick-chapter-3-parabellum-2019",
         "imdb": "tt6146586",
         "tmdb": 458156
+      }
+    }
+  },
+  {
+    "plays": 1,
+    "last_watched_at": "2025-05-11T10:43:49.000Z",
+    "last_updated_at": "2025-05-11T10:43:50.000Z",
+    "movie": {
+      "title": "Kedarnath",
+      "year": 2018,
+      "ids": {
+        "trakt": 312762,
+        "slug": "kedarnath-2018",
+        "imdb": "tt7027278",
+        "tmdb": 465656
       }
     }
   },
@@ -1981,6 +2221,36 @@
   },
   {
     "plays": 1,
+    "last_watched_at": "2025-05-11T10:43:36.000Z",
+    "last_updated_at": "2025-05-11T10:43:37.000Z",
+    "movie": {
+      "title": "Dil Bechara",
+      "year": 2020,
+      "ids": {
+        "trakt": 482912,
+        "slug": "dil-bechara-2020",
+        "imdb": "tt8110330",
+        "tmdb": 645484
+      }
+    }
+  },
+  {
+    "plays": 1,
+    "last_watched_at": "2025-05-11T10:40:51.000Z",
+    "last_updated_at": "2025-05-11T10:40:51.000Z",
+    "movie": {
+      "title": "Ludo",
+      "year": 2020,
+      "ids": {
+        "trakt": 492484,
+        "slug": "ludo-2020",
+        "imdb": "tt7212754",
+        "tmdb": 658412
+      }
+    }
+  },
+  {
+    "plays": 1,
     "last_watched_at": "2023-08-24T13:08:05.000Z",
     "last_updated_at": "2023-08-24T13:08:05.000Z",
     "movie": {
@@ -2036,6 +2306,21 @@
         "slug": "dune-part-two-2024",
         "imdb": "tt15239678",
         "tmdb": 693134
+      }
+    }
+  },
+  {
+    "plays": 1,
+    "last_watched_at": "2025-05-14T02:05:26.000Z",
+    "last_updated_at": "2025-05-14T02:05:27.000Z",
+    "movie": {
+      "title": "Choked: Paisa Bolta Hai",
+      "year": 2020,
+      "ids": {
+        "trakt": 550111,
+        "slug": "choked-paisa-bolta-hai-2020",
+        "imdb": "tt11651780",
+        "tmdb": 706783
       }
     }
   },
@@ -2221,6 +2506,21 @@
   },
   {
     "plays": 1,
+    "last_watched_at": "2025-05-11T10:40:23.000Z",
+    "last_updated_at": "2025-05-11T10:40:24.000Z",
+    "movie": {
+      "title": "Sam Bahadur",
+      "year": 2023,
+      "ids": {
+        "trakt": 647996,
+        "slug": "sam-bahadur-2023",
+        "imdb": "tt10786774",
+        "tmdb": 814215
+      }
+    }
+  },
+  {
+    "plays": 1,
     "last_watched_at": "2023-06-11T06:41:33.000Z",
     "last_updated_at": "2023-06-11T06:41:33.000Z",
     "movie": {
@@ -2341,21 +2641,6 @@
   },
   {
     "plays": 1,
-    "last_watched_at": "2024-06-29T17:16:18.000Z",
-    "last_updated_at": "2024-11-24T06:11:33.000Z",
-    "movie": {
-      "title": "Harry Potter 20th Anniversary: Return to Hogwarts",
-      "year": 2022,
-      "ids": {
-        "trakt": 721239,
-        "slug": "harry-potter-20th-anniversary-return-to-hogwarts-2022",
-        "imdb": "tt16116174",
-        "tmdb": 899082
-      }
-    }
-  },
-  {
-    "plays": 1,
     "last_watched_at": "2022-09-12T04:25:31.000Z",
     "last_updated_at": "2022-09-12T04:25:31.000Z",
     "movie": {
@@ -2366,6 +2651,36 @@
         "slug": "oddtaxi-in-the-woods-2022",
         "imdb": "tt16609250",
         "tmdb": 919609
+      }
+    }
+  },
+  {
+    "plays": 1,
+    "last_watched_at": "2025-02-07T00:00:00.000Z",
+    "last_updated_at": "2025-05-11T10:39:48.000Z",
+    "movie": {
+      "title": "Mrs.",
+      "year": 2023,
+      "ids": {
+        "trakt": 756548,
+        "slug": "mrs-2023",
+        "imdb": "tt27032419",
+        "tmdb": 942411
+      }
+    }
+  },
+  {
+    "plays": 1,
+    "last_watched_at": "2025-04-19T17:15:22.000Z",
+    "last_updated_at": "2025-04-19T17:15:23.000Z",
+    "movie": {
+      "title": "A Minecraft Movie",
+      "year": 2025,
+      "ids": {
+        "trakt": 763995,
+        "slug": "a-minecraft-movie-2025",
+        "imdb": "tt3566834",
+        "tmdb": 950387
       }
     }
   },
@@ -2401,6 +2716,21 @@
   },
   {
     "plays": 1,
+    "last_watched_at": "2025-05-11T10:52:23.000Z",
+    "last_updated_at": "2025-05-11T10:52:24.000Z",
+    "movie": {
+      "title": "Vadh",
+      "year": 2022,
+      "ids": {
+        "trakt": 842373,
+        "slug": "vadh-2022",
+        "imdb": "tt10233718",
+        "tmdb": 1046991
+      }
+    }
+  },
+  {
+    "plays": 1,
     "last_watched_at": "2024-04-13T17:06:52.000Z",
     "last_updated_at": "2024-04-13T17:06:52.000Z",
     "movie": {
@@ -2431,6 +2761,66 @@
   },
   {
     "plays": 1,
+    "last_watched_at": "2025-05-14T02:05:13.000Z",
+    "last_updated_at": "2025-05-14T02:05:14.000Z",
+    "movie": {
+      "title": "8 A.M. Metro",
+      "year": 2023,
+      "ids": {
+        "trakt": 902385,
+        "slug": "8-a-m-metro-2023",
+        "imdb": "tt27511275",
+        "tmdb": 1121330
+      }
+    }
+  },
+  {
+    "plays": 1,
+    "last_watched_at": "2025-04-18T18:30:00.000Z",
+    "last_updated_at": "2025-05-03T03:59:24.000Z",
+    "movie": {
+      "title": "The Monkey",
+      "year": 2025,
+      "ids": {
+        "trakt": 904978,
+        "slug": "the-monkey-2025",
+        "imdb": "tt27714946",
+        "tmdb": 1124620
+      }
+    }
+  },
+  {
+    "plays": 1,
+    "last_watched_at": "2025-01-26T17:06:08.000Z",
+    "last_updated_at": "2025-01-26T17:06:08.000Z",
+    "movie": {
+      "title": "Meiyazhagan",
+      "year": 2024,
+      "ids": {
+        "trakt": 914850,
+        "slug": "meiyazhagan-2024",
+        "imdb": "tt26758372",
+        "tmdb": 1136423
+      }
+    }
+  },
+  {
+    "plays": 1,
+    "last_watched_at": "2025-05-24T18:38:33.000Z",
+    "last_updated_at": "2025-05-24T18:38:33.000Z",
+    "movie": {
+      "title": "The Diplomat",
+      "year": 2025,
+      "ids": {
+        "trakt": 924363,
+        "slug": "the-diplomat-2025",
+        "imdb": "tt26229612",
+        "tmdb": 1147546
+      }
+    }
+  },
+  {
+    "plays": 1,
     "last_watched_at": "2024-04-13T16:59:06.000Z",
     "last_updated_at": "2024-04-13T16:59:06.000Z",
     "movie": {
@@ -2456,6 +2846,51 @@
         "slug": "shaitaan-2024",
         "imdb": "tt27744786",
         "tmdb": 1187619
+      }
+    }
+  },
+  {
+    "plays": 1,
+    "last_watched_at": "2025-05-11T10:25:52.000Z",
+    "last_updated_at": "2025-05-11T10:25:53.000Z",
+    "movie": {
+      "title": "The Sabarmati Report",
+      "year": 2024,
+      "ids": {
+        "trakt": 979018,
+        "slug": "the-sabarmati-report-2024",
+        "imdb": "tt30889755",
+        "tmdb": 1213906
+      }
+    }
+  },
+  {
+    "plays": 1,
+    "last_watched_at": "2025-05-09T10:37:46.000Z",
+    "last_updated_at": "2025-05-09T10:37:47.000Z",
+    "movie": {
+      "title": "Raid 2",
+      "year": 2025,
+      "ids": {
+        "trakt": 991740,
+        "slug": "raid-2-2025",
+        "imdb": "tt28089700",
+        "tmdb": 1227128
+      }
+    }
+  },
+  {
+    "plays": 1,
+    "last_watched_at": "2025-05-14T02:05:05.000Z",
+    "last_updated_at": "2025-05-14T02:05:06.000Z",
+    "movie": {
+      "title": "Agni",
+      "year": 2024,
+      "ids": {
+        "trakt": 1001426,
+        "slug": "agni-2024",
+        "imdb": "tt27930683",
+        "tmdb": 1238167
       }
     }
   },
