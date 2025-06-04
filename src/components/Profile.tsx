@@ -35,10 +35,17 @@ export default function Profile() {
           </p>
           <p className="pt-8 text-sm">A Nobody trying to become somebody.</p>
 
-          <div className="pt-12 pb-8">
-            <button className="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded-full">
+          <div className="pt-12 pb-8 gap-2">
+            <button className="bg-green-700 hover:bg-green-900 text-white font-bold mx-5 py-2 px-4 rounded-full">
               Get In Touch
             </button>
+            <a
+              className="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded-full"
+              target="_blank"
+              href={"./src/ProfileSection/Resume.pdf"}
+            >
+              Resume
+            </a>
           </div>
 
           <div className="mt-6 pb-16 lg:pb-0 w-4/5 lg:w-full mx-auto flex flex-wrap items-center justify-between">

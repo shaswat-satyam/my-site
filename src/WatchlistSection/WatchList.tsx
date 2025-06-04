@@ -16,7 +16,7 @@ export default function WatchList() {
   const { isLoading, error, data } = useQuery({
     queryKey: ["quote"],
     queryFn: () =>
-      fetch("https://qapi.vercel.app/api/random").then((res) => res.json()),
+      fetch("https://api.quotable.io/random").then((res) => res.json()),
     staleTime: 60000,
     retry: 5,
     retryDelay: 1000,
@@ -38,7 +38,7 @@ export default function WatchList() {
           </svg>
           <blockquote>
             <p className="text-2xl italic font-medium text-gray-900 dark:text-white">
-              {isLoading ? "Provoking Thought" : data.quote}
+              {isLoading ? "Provoking Thought" : data.content}
             </p>
           </blockquote>
           <figcaption className="flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse">
@@ -103,12 +103,13 @@ export default function WatchList() {
                       ? 1
                       : 0
                 : moviesSort == "release"
-                ? (series1, series2) =>
-                    new Date(series1.movie.year) < new Date(series2.movie.year)
-                      ? 1
-                      : 0
-                : (series1, series2) =>
-                    series1.movie.ids.trakt > series2.movie.ids.trakt ? 1 : 0
+                  ? (series1, series2) =>
+                      new Date(series1.movie.year) <
+                      new Date(series2.movie.year)
+                        ? 1
+                        : 0
+                  : (series1, series2) =>
+                      series1.movie.ids.trakt > series2.movie.ids.trakt ? 1 : 0,
             )
             .slice(0 + moviesCount, 6 + moviesCount)
             .map((movie) => (
@@ -170,12 +171,12 @@ export default function WatchList() {
                       ? 1
                       : 0
                 : seriesSort == "release"
-                ? (series1, series2) =>
-                    new Date(series1.show.year) < new Date(series2.show.year)
-                      ? 1
-                      : 0
-                : (series1, series2) =>
-                    series1.show.ids.trakt > series2.show.ids.trakt ? 1 : 0
+                  ? (series1, series2) =>
+                      new Date(series1.show.year) < new Date(series2.show.year)
+                        ? 1
+                        : 0
+                  : (series1, series2) =>
+                      series1.show.ids.trakt > series2.show.ids.trakt ? 1 : 0,
             )
             .slice(0 + seriesCount, 6 + seriesCount)
             .map((series) => (
