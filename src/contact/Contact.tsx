@@ -8,17 +8,14 @@ export default function Contact() {
               width="100%"
               height="100%"
               className="absolute   inset-0"
-              frameBorder="0"
               title="map"
-              marginHeight={0}
-              marginWidth={0}
-              scrolling="no"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=85.1007628440857%2C25.62258742363783%2C85.11535406112672%2C25.633324842401812&amp;layer=mapnik"
               style={{
                 filter: "grayscale(1) contrast(1.2) invert(1)  opacity(0.6)",
               }}
+              src="https://www.openstreetmap.org/export/embed.html?bbox=85.08924007415771%2C25.617063093539016%2C85.12807846069337%2C25.639079617289667&amp;layer=mapnik"
               content="dark"
             ></iframe>
+            <br />
             <div className="bg-gray-900 backdrop-blur-sm transition hover:bg-opacity-100 bg-opacity-55 text-white relative flex flex-wrap py-6 rounded shadow-md">
               <div className="lg:w-1/2 px-6">
                 <h2 className="title-font font-semibold text-gray-400 tracking-widest text-xs">
@@ -46,15 +43,9 @@ export default function Contact() {
             </div>
           </div>
           <div className="lg:w-1/3 md:w-1/2 backdrop-blur-sm border-gray-900 border-2 rounded px-3 font-white flex flex-col md:ml-auto w-full pt-3 ">
-            <h2 className="text-gray-300 text-lg mb-1 font-medium title-font">
+            <h2 className="text-gray-300 text-lg mb-1  title-font font-bold font-xl">
               Feedback
             </h2>
-            <blockquote className="text-l italic font-semibold text-gray-900 dark:text-white">
-              <p>
-                "If you don't judge anyone, Do you judge yourself?" - Iravati, 8
-                AM Metro
-              </p>
-            </blockquote>
 
             <form
               className="text-white"
@@ -118,10 +109,11 @@ export default function Contact() {
                 ></textarea>
               </div>
               <button className="text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg">
-                Button
+                Send
               </button>
             </form>
-            <p className="text-xs text-gray-500 mt-3">
+
+            <p className="text-xs opacity-25 text-gray-500 mt-3">
               Yes I wil read what you post
             </p>
           </div>
