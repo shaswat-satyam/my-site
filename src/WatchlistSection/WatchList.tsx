@@ -51,7 +51,7 @@ export default function WatchList() {
         </figure>
       </div>
       <div className="border-2 rounded-xl p-5 backdrop-blur-sm border-gray-900">
-        <div className="flex justify-between">
+        <div className="flex justify-between flex-wrap gap-5">
           <h1 className="text-3xl font-bold">Movies</h1>
           <div className="inline-flex">
             <button
@@ -119,7 +119,7 @@ export default function WatchList() {
       </div>
 
       <div className="border-2 rounded-xl p-5 backdrop-blur-sm border-gray-900 ">
-        <div className="flex justify-between">
+        <div className="flex justify-between flex-wrap gap-5">
           <h1 className="text-3xl font-bold">Series</h1>
           <div className="inline-flex">
             <button

@@ -13,7 +13,7 @@ export default function Subjects() {
       </div>
       <div>
         <h1 className="text-3xl font-semibold">Computer Science</h1>
-        <div className="flex gap-5 py-5">
+        <div className="flex gap-5 py-5 scroll-smooth overflow-x-auto">
           <Card
             name={"Operating System"}
             path={os}
@@ -57,8 +57,8 @@ export default function Subjects() {
         </div>
       </div>
       <div>
-        <h1 className="text-3xl font-semibold">Programming Languages</h1>
-        <div className="flex gap-5 py-5">
+        <h1 className="text-3xl font-semibold ">Programming Languages</h1>
+        <div className="flex gap-5 py-5 scroll-smooth overflow-x-auto">
           <Card
             name={"Java"}
             path={"./src/assets/lang/java.svg"}
@@ -95,7 +95,7 @@ export default function Subjects() {
       </div>
       <div>
         <h1 className="text-3xl font-semibold">Tools & Frameworks</h1>
-        <div className="flex gap-5 py-5">
+        <div className="flex gap-5 py-5 scroll-smooth overflow-x-auto">
           <Card
             name={"GIT"}
             path={"./src/assets/tool/git.svg"}

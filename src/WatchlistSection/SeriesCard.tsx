@@ -30,8 +30,8 @@ export default function SeriesCard(series: ComponentShow) {
           />
         </div>
         <div className="flex flex-col w-1/2 space-y-4 ml-5">
-          <div className="flex justify-between items-start">
-            <h2 className="text-3xl font-bold text-white">
+          <div className="flex justify-between items-start flex-wrap gap-2">
+            <h2 className="text-3xl font-bold text-white text-ellipsis overflow-hidden">
               {series.series.show.title}
             </h2>
             <div className="bg-yellow-400 font-bold rounded-xl p-2">
@@ -44,7 +44,7 @@ export default function SeriesCard(series: ComponentShow) {
               {series.series.show.year}
             </div>
           </div>
-          <p className=" text-gray-400 max-h-40 overflow-y-hidden">
+          <p className=" text-gray-400 max-h-40 overflow-hidden text-ellipsis">
             {isLoading ? "No Plot" : data.Plot}
           </p>
           <div className="flex text-2xl font-bold text-a text-white">

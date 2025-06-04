@@ -267,7 +267,6 @@ export default function projects() {
             onClick={() => setMore(true)}
           >
             Read More <br />
-            <p className="text-sm">Warning Serial Yapper ahead</p>
           </button>
         )}
       </div>
