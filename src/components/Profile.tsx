@@ -36,13 +36,16 @@ export default function Profile() {
           <p className="pt-8 text-sm">A Nobody trying to become somebody.</p>
 
           <div className="pt-12 pb-8 gap-2">
-            <button className="bg-green-700 hover:bg-green-900 text-white font-bold mx-5 py-2 px-4 rounded-full">
+            <a
+              className="bg-green-700 hover:bg-green-900 text-white font-bold mx-5 py-2 px-4 rounded-full"
+              href="mailto:shaswatsatyam51@gmail.com"
+            >
               Get In Touch
-            </button>
+            </a>
             <a
               className="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded-full"
               target="_blank"
-              href={"./src/ProfileSection/Resume.pdf"}
+              href="./src/ProfileSection/general.pdf"
             >
               Resume
             </a>
@@ -63,7 +66,7 @@ export default function Profile() {
             <a
               className="link"
               href="https://mastodon.social/@palmtrees2308"
-              data-tippy-content="@twitter_handle"
+              data-tippy-content="@mastodon_handle"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -111,8 +114,8 @@ export default function Profile() {
             </a>
             <a
               className="link"
-              href="https://www.leetcode.com/shaswat_51"
-              data-tippy-content="@Leetcode_handle"
+              href="https://www.leetcode.com/palmtrees2308"
+              data-tippy-content="@leetcode_handle"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
