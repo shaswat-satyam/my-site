@@ -13,17 +13,25 @@
   </head>
   <header style="display: flex; justify-content: space-between; gap: 5px">
     <div>
-      <a href="{{'/'}}"> Home </a>
+      <a href="/"> Home </a>
       <button id="theme-toggle">Day</button>
     </div>
     <div style="display: flex; gap: 5px">
-      <a href="{{'/about/'}}"> About </a>
-      <a href="{{'/blogs/'}}"> Blog </a>
-      <a href="{{'/contact/'}}"> Contact </a>
+      <a href="/about/"> About </a>
+      <a href="/blogs/"> Blog </a>
+      <a href="/contact/"> Contact </a>
     </div>
   </header>
   <body>
-    {{ content }}
+    <h1>Blog Index</h1>
+<h2>Entries</h2>
+<a href="/blogs/2026/2026-1/">
+Entry Title - 2
+</a>
+<a href="/blogs/2025/data/">
+Entry Title - 2025
+</a>
+
     <footer
       style="
         display: flex;
