@@ -13,19 +13,20 @@ export default function WatchList() {
   const [seriesCount, setSeriesCount] = useState(6);
   const [seriesSort, setSeriesSort] = useState("recent");
 
-  const { isLoading, error, data } = useQuery({
-    queryKey: ["quote"],
-    queryFn: () =>
-      fetch("https://api.quotable.io/random").then((res) => res.json()),
-    staleTime: 60000,
-    retry: 5,
-    retryDelay: 1000,
-    refetchOnWindowFocus: true,
-  });
+  // const { isLoading, error, quoteData } = useQuery({
+  //   queryKey: ["quote"],
+  //   queryFn: () =>
+  //     fetch("https://api.quotify.top/random").then((res) => res.json()),
+  //   staleTime: 60000,
+  //   retry: 1,
+  //   retryDelay: 1000,
+  //   refetchOnWindowFocus: true,
+  // });
+
   return (
     <div className="flex gap-5 flex-col">
       <div className="border-2 rounded-xl p-5 backdrop-blur-sm border-gray-900">
-        {error ? <div>{error.toString()}</div> : <></>}
+        {/* {error ? <div>{error.toString()}</div> : <></>} */}
         <figure className="max-w-screen-md mx-auto text-center">
           <svg
             className="w-10 h-10 mx-auto mb-3 text-gray-400 dark:text-gray-600"
@@ -36,18 +37,19 @@ export default function WatchList() {
           >
             <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z" />
           </svg>
-          <blockquote>
-            <p className="text-2xl italic font-medium text-gray-900 dark:text-white">
-              {isLoading ? "Provoking Thought" : data.content}
-            </p>
-          </blockquote>
-          <figcaption className="flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse">
-            <div className="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500 dark:divide-gray-700">
-              <cite className="pe-3 font-medium text-gray-900 dark:text-white">
-                {isLoading ? "Some Smart Person" : data.author}
-              </cite>
-            </div>
-          </figcaption>
+          {/*           <blockquote>
+                <p className="text-2xl italic font-medium text-gray-900 dark:text-white">
+                  {isLoading ? "Provoking Thought" : quoteData.text}
+                </p>
+              </blockquote>
+              <figcaption className="flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse">
+                <div className="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500 dark:divide-gray-700">
+                  <cite className="pe-3 font-medium text-gray-900 dark:text-white">
+                    {isLoading ? "Some Smart Person" : quoteData.author}
+                  </cite>
+                </div>
+              </figcaption>
+          */}
         </figure>
       </div>
       <div className="border-2 rounded-xl p-5 backdrop-blur-sm border-gray-900">
@@ -117,7 +119,6 @@ export default function WatchList() {
             ))}
         </div>
       </div>
-
       <div className="border-2 rounded-xl p-5 backdrop-blur-sm border-gray-900 ">
         <div className="flex justify-between flex-wrap gap-5">
           <h1 className="text-3xl font-bold">Series</h1>

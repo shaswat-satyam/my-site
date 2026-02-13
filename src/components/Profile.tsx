@@ -1,4 +1,3 @@
-import myPic from "../assets/img/profile-removebg-preview.png";
 export default function Profile() {
   return (
     <>
@@ -7,9 +6,9 @@ export default function Profile() {
         className=" lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl backdrop-blur-sm opacity-75 mx-6 lg:mx-0"
       >
         <div className=" md:p-12 text-center lg:text-left">
-          <div className="block lg:hidden rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center">
+          {/* <div className="block rounded-full shadow-xl mx-auto -mt-16 h-48 w-48 bg-cover bg-center">
             <img src={myPic} alt="Me" />
-          </div>
+          </div> */}
 
           <h1 className="text-3xl font-bold pt-8 lg:pt-0">Shaswat Satyam</h1>
           <div className="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-green-500 opacity-25"></div>
@@ -20,7 +19,7 @@ export default function Profile() {
               viewBox="0 0 20 20"
             >
               <path d="M9 12H1v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6h-8v2H9v-2zm0-1H0V5c0-1.1.9-2 2-2h4V2a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1h4a2 2 0 0 1 2 2v6h-9V9H9v2zm3-8V2H8v1h4z" />
-            </svg>{" "}
+            </svg>
             Student at GGSIPU
           </p>
           <p className="pt-2 text-gray-100 text-xs lg:text-sm flex items-center justify-center lg:justify-start">
