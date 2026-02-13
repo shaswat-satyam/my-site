@@ -15,5 +15,6 @@ layout: layout.html
 # Heading
 This is my Home Page.
 Current Home page.
+I will do a change to the INdex file which should be visible on hosting
 
 
