@@ -11,41 +11,37 @@
     />
     <link rel="stylesheet" href="/bundle.css" />
   </head>
-  <header style="display: flex; justify-content: space-between; gap: 5px">
-    <div>
-      <a href="/"> Home </a>
-      <button id="theme-toggle">Day</button>
-    </div>
-    <div style="display: flex; gap: 5px">
-      <a href="/about/"> About </a>
-      <a href="/blogs/"> Blog </a>
-      <a href="/contact/"> Contact </a>
-    </div>
-  </header>
   <body>
-    <h1>This is about contact me</h1>
-
-    <footer
-      style="
-        display: flex;
-        position: sticky;
-        justify-content: space-between;
-        background: rgba(255, 255, 255, 0.5);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        box-shadow: black 2px 2px 5px;
-        padding: 2%;
-        min-width: fit-content;
-      "
-    >
-      <small>c 2026 Shaswat Satyam</small>
-      <div style="display: flex; gap: 5px">
-        <div style="text-decoration: underline">InIcon LinkedIn</div>
-        <div style="text-decoration: underline">
-          MailIcon Shaswatsatyam51@gmail.com
+    <div id="page-container">
+      <header style="display: flex; justify-content: space-between; gap: 5px">
+        <div>
+          <a href="/"> Home </a>
+          <button id="theme-toggle">Day</button>
         </div>
-      </div>
-    </footer>
+        <div style="display: flex; gap: 5px">
+          <a href="/about/"> About </a>
+          <a href="/blogs/"> Blog </a>
+          <a href="/contact/"> Contact </a>
+        </div>
+      </header>
+      <main><h1>This is about contact me</h1>
+<p>I'm always interested in hearing about new projects, opportunities, or just connecting with fellow professionals in the digital space.</p>
+<p>Fill out the form below and Ill get back to you as soon as possible.</p>
+<form class="text-white" action="https://api.staticforms.xyz/submit" method="post"><input type="hidden" name="accessKey" value="57333892-ae63-4f21-94df-16215d3a28f7"><input type="hidden" name="replyTo" value="palmtrees2308@protonmail.com"><input type="hidden" name="redirectTo" value="https://shaswat.software"><div class="relative mb-4"><label for="name" class="leading-7 text-sm text-gray-300">Name</label><input type="text" id="name" name="name" class="w-full bg-gray-500 rounded border border-gray-600 focus:border-red-500 focus:ring-2 focus:ring-red-400 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></div><div class="relative mb-4"><label for="email" class="leading-7 text-sm text-gray-300">Email</label><input type="email" id="email" name="email" class="w-full bg-gray-500 rounded border border-gray-600 focus:border-red-500 focus:ring-2 focus:ring-red-400 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"></div><div class="relative mb-4"><label for="message" class="leading-7 text-sm text-gray-300">Message</label><textarea id="message" name="message" class="w-full bg-gray-500 rounded border border-gray-600 focus:border-red-500 focus:ring-2 focus:ring-red-400 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea></div><button class="text-white bg-red-500 border-0 py-2 px-6 focus:outline-none hover:bg-red-600 rounded text-lg">Send</button></form>
+<p>Prefer to connect directly ?
+<a href = "mailto:shaswatsatyam@gmail.com"> Email Me </a>
+<a href="www.linkedin.com/in/shaswat-satyam"> LinkedIn </a></p>
+</main>
+      <footer style="">
+        <small>c 2026 Shaswat Satyam</small>
+        <div style="display: flex; gap: 5px">
+          <div style="text-decoration: underline">InIcon LinkedIn</div>
+          <div style="text-decoration: underline">
+            MailIcon Shaswatsatyam51@gmail.com
+          </div>
+        </div>
+      </footer>
+    </div>
 
     <script>
       const toggle = document.getElementById("theme-toggle");

@@ -28,7 +28,20 @@ html {
     radial-gradient(50% 50%, var(--_g)) calc(var(--s) / 2) calc(var(--s) / 2)
       var(--c1);
   background-size: var(--s) var(--s);
+  height: 100%;
+  margin: 0;
 }
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
 body {
   background-color: var(--text-background);
   border-radius: 5px;
@@ -48,4 +61,26 @@ body {
 
 a:hover {
   text-decoration: underline;
+}
+main {
+  flex: 1;
+}
+
+footer {
+  display: flex;
+  position: sticky;
+  justify-content: space-between;
+  background: var(--text-background);
+  color: var(--text);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: black 2px 2px 5px;
+  padding: 2%;
+  min-width: fit-content;
+}
+
+@media (min-width: 768px) {
+  footer {
+    display: none;
+  }
 }
