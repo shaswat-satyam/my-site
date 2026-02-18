@@ -8,4 +8,4 @@ export const MAIL = "shaswatsatyam51@gmail.com";
 export const LOCATION = "Bengaluru, India";
 export const COMPANY = "IBM";
 export const ROLE = "Associate System Engineer";
-export const CURRENT_TECH = "Enterprise Level Java";
+export const CURRENT_TECH = "Java";
