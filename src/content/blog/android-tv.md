@@ -115,7 +115,6 @@ But chatting would be a nightmare if you use google keyboard.
 
 ## [Button Remapper](https://buttonmapper.app/)
 ![Random TV Remote](https://www.electronics-lab.com/wp-content/uploads/2021/06/NewRemoteSolutionEnergyAutonomousTVRemoteControl-scaled.jpg)
-Link - 
 
 If you look at your remote, you can see some redundant buttons like youtube (which leads to ad infested youtube), netflix or Prime Video.
 You can use `Button Mapper Remap Your keys` to remap these buttons to the your desired apps
@@ -144,7 +143,7 @@ Just set the links required or import a json file.
 This is on my radar to create a starter pack to share with people.
 You can expect an update for that soon.
 
-### AFTVnews downloader
+### [AFTVnews downloader](https://www.aftvnews.com/downloader/)
 This app can generate a passcode which can be used as a shortened link to the apps.
 I think they expire after some time. 
 But I don't trust it yet, 
