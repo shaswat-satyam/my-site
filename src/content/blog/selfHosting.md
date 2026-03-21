@@ -1,5 +1,5 @@
 ---
-title: 'My Experience with New Jaisa, Refurbished hardware and Selfhosting'
+title: 'Dipping my toes into Selfhosting (NixOS btw)'
 description: 'This blog describes my experience with Self Hosting from Hardware Acquisition to Cloudflare Tunnelling'
 pubDate: 'March 21 2026'
 heroImage: '../../assets/Dell_OptiPlex_3020_002.jpg'
