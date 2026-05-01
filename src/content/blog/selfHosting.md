@@ -1,5 +1,5 @@
 ---
-title: 'Dipping my toes into Selfhosting (NixOS btw)'
+title: 'Intro to Selfhosting (NixOS btw)'
 description: 'This blog describes my experience with Self Hosting from Hardware Acquisition to Cloudflare Tunnelling'
 pubDate: 'March 21 2026'
 heroImage: '../../assets/Dell_OptiPlex_3020_002.jpg'
@@ -39,9 +39,16 @@ I am getting a Refurbished Dell OptiPlex Desktop with Intel i3-2nd Gen and Win 1
 
 I know the hardware is not worth 7K but the big tech has decided that all the RAM, HDD and SSD whether tangible or planned to be made in the future belongs to them and manufacturers have complied with the demand. The Hardware will go for 3-4k at any normal situation. But What can we do in this situation.
 
-Also my plan was to get a "Mini" PC but the all the mini pcs were either sold out or cost was just skyrocketing to justify the purchase so I had to go with a tower PC. Also any upgrade has would be difficult to do. My aim is not to get any sort of gaming done here but a light level of video transcoding for jellyfin and running all the other services.
+Also my plan was to get a "Mini" PC but all the mini pcs were either sold out or cost was just skyrocketing to justify the purchase so I had to go with a tower PC. Also any upgrade would have been difficult to do. My aim is not to get any sort of gaming done here but a light level of video transcoding for jellyfin and running all the other services.
 
-I will add my review further of the Computer when It gets delivered and then I will decide if I was worth to get a order from NewJaisa, Please remind me that time. Also I need a kindle If any one gets a cheaper unit for sale around 3-4k please let me know about it.
+I will add my review further of the Computer when It gets delivered and then I will decide if I was worth to get a order from NewJaisa, Please remind me that time.
+--
+Update - Got the computer delivered from NewJaisa. I would give 3.5 out of 5 stars. Because they almost gave me what I want. But as the HDMI port of the motherboard was not working. So I was not able to use my Android TV as the monitor. So I had to buy another cheap monitor for 2k inr. that's why I would give 3.5 stars
+
+Also I need a kindle If any one gets a cheaper unit for sale around 3-4k please let me know about it.
+-- 
+Update - Bought a Kindle gen 3 from resellpur. I would give 5 out of 5 stars. I got the kindle as I was promised. Resellpur checked the kindle before shipping. Actually I had to place a order twice. Because the first time, the Kindle was not able to pass the Quality Check from Resellpur and I was promptly refunded the initial amount. I had a bit of difficulty to setup of kindle. and I would talk about it another post.
+Also got to jailbreak this kindle but I was unable to get a data transfer Micro USB wire. So Look forward to it.
 
 
 # What will I do?
@@ -71,7 +78,7 @@ A Google photos alternative which can run Machine Learning Algorithms but locall
 To liberate yourself from spotify or youtube music on every platform that you wish to listen too.
 No more spotify's or youtube's obnixous ads and bad recommendations.
 
-### Copy Party File Mangement Software
+### Copy Party 
 CopyParty is the Goat at Client - Server File management with users, permission, passwords written in python on termux on android.
 I am aiming to setup samba so that it can be a network storage for all devices.
 
